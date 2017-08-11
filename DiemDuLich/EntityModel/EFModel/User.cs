@@ -15,12 +15,14 @@ namespace EntityModel.EFModel
             Categories = new HashSet<Category>();
             Contacts = new HashSet<Contact>();
             Contents = new HashSet<Content>();
+            Feedbacks = new HashSet<Feedback>();
             Footers = new HashSet<Footer>();
             Menus = new HashSet<Menu>();
             Sliders = new HashSet<Slider>();
+            Tickets = new HashSet<Ticket>();
         }
 
-        public int UserID { get; set; }
+        public long UserID { get; set; }
 
         [Required]
         [StringLength(250)]
@@ -80,6 +82,9 @@ namespace EntityModel.EFModel
         public virtual ICollection<Content> Contents { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Footer> Footers { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -87,5 +92,8 @@ namespace EntityModel.EFModel
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Slider> Sliders { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

@@ -1,63 +1,124 @@
 ﻿@model IEnumerable<EntityModel.EFModel.User>
 
 @{
-	ViewBag.Title = "Quản lý tài khoản";
-	Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">Quản lý tài khoản</h1>
-	</div>
-	<!-- /.col-lg-12 -->
-</div>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				Bảng danh sách tài khoản
-			</div>
-			<!-- /.panel-heading -->
-			<div class="panel-body">
-				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Tên tài khoản</th>
-							<th>Họ tên</th>
-							<th>Hình</th>
-							<th>Trạng thái</th>
-							<th>Tùy chọn</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach (var item in Model)
-						{
-							<tr class="odd gradeX">
-								<td>@Html.DisplayFor(modelItem => item.UserID)</td>
-								<td>@Html.DisplayFor(modelItem => item.UserName)</td>
-								<td>@Html.DisplayFor(modelItem => item.LastName) @Html.DisplayFor(modelItem => item.FirstName)</td>
-								<td>@Html.DisplayFor(modelItem => item.Avatar)</td>
-								<td class="center">@Html.DisplayFor(modelItem => item.Status)</td>
-								<td class="center">
-									@Html.ActionLink("Sửa", "Edit", new { id = item.UserID }) |
-									@Html.ActionLink("Xem", "Details", new { id = item.UserID }) |
-									@Html.ActionLink("Xóa", "Delete", new { id = item.UserID })
-								</td>
-							</tr>
-						}
-						
-					</tbody>
-				</table>
-			</div>
-			<!-- /.panel-body -->
-		</div>
-		<!-- /.panel -->
-	</div>
-	<!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvinceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProvinceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

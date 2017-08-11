@@ -17,7 +17,8 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // GET: Administrator/Feedbacks
         public ActionResult Index()
         {
-            return View(db.Feedbacks.ToList());
+            var feedbacks = db.Feedbacks.Include(f => f.User);
+            return View(feedbacks.ToList());
         }
 
         // GET: Administrator/Feedbacks/Details/5
@@ -38,6 +39,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // GET: Administrator/Feedbacks/Create
         public ActionResult Create()
         {
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Phone,Email,Address,Contents,CreateDate,Status")] Feedback feedback)
+        public ActionResult Create([Bind(Include = "ID,Name,Phone,Email,Address,Contents,UserID,CreateDate,Status")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", feedback.UserID);
             return View(feedback);
         }
 
@@ -70,6 +73,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", feedback.UserID);
             return View(feedback);
         }
 
@@ -78,7 +82,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Phone,Email,Address,Contents,CreateDate,Status")] Feedback feedback)
+        public ActionResult Edit([Bind(Include = "ID,Name,Phone,Email,Address,Contents,UserID,CreateDate,Status")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", feedback.UserID);
             return View(feedback);
         }
 

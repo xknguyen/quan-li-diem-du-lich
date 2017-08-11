@@ -10,112 +10,112 @@ using EntityModel.EFModel;
 
 namespace DiemDuLich.Areas.Administrator.Controllers
 {
-    public class ImagesController : Controller
+    public class TicketsController : Controller
     {
         private DiemDuLichDBContext db = new DiemDuLichDBContext();
 
-        // GET: Administrator/Images
+        // GET: Administrator/Tickets
         public ActionResult Index()
         {
-            var images = db.Images.Include(i => i.AlbumImage);
-            return View(images.ToList());
+            var tickets = db.Tickets.Include(t => t.User);
+            return View(tickets.ToList());
         }
 
-        // GET: Administrator/Images/Details/5
-        public ActionResult Details(int? id)
+        // GET: Administrator/Tickets/Details/5
+        public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Image image = db.Images.Find(id);
-            if (image == null)
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
             {
                 return HttpNotFound();
             }
-            return View(image);
+            return View(ticket);
         }
 
-        // GET: Administrator/Images/Create
+        // GET: Administrator/Tickets/Create
         public ActionResult Create()
         {
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name");
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName");
             return View();
         }
 
-        // POST: Administrator/Images/Create
+        // POST: Administrator/Tickets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Link,Description,AlbumImageID,Status")] Image image)
+        public ActionResult Create([Bind(Include = "ID,Name,Price,CreateDate,UserID")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
-                db.Images.Add(image);
+                db.Tickets.Add(ticket);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", image.AlbumImageID);
-            return View(image);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", ticket.UserID);
+            return View(ticket);
         }
 
-        // GET: Administrator/Images/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Administrator/Tickets/Edit/5
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Image image = db.Images.Find(id);
-            if (image == null)
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", image.AlbumImageID);
-            return View(image);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", ticket.UserID);
+            return View(ticket);
         }
 
-        // POST: Administrator/Images/Edit/5
+        // POST: Administrator/Tickets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Link,Description,AlbumImageID,Status")] Image image)
+        public ActionResult Edit([Bind(Include = "ID,Name,Price,CreateDate,UserID")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(image).State = EntityState.Modified;
+                db.Entry(ticket).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", image.AlbumImageID);
-            return View(image);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", ticket.UserID);
+            return View(ticket);
         }
 
-        // GET: Administrator/Images/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Administrator/Tickets/Delete/5
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Image image = db.Images.Find(id);
-            if (image == null)
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
             {
                 return HttpNotFound();
             }
-            return View(image);
+            return View(ticket);
         }
 
-        // POST: Administrator/Images/Delete/5
+        // POST: Administrator/Tickets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
-            Image image = db.Images.Find(id);
-            db.Images.Remove(image);
+            Ticket ticket = db.Tickets.Find(id);
+            db.Tickets.Remove(ticket);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

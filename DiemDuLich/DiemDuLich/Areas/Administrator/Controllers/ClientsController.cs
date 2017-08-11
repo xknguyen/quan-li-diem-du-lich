@@ -10,107 +10,107 @@ using EntityModel.EFModel;
 
 namespace DiemDuLich.Areas.Administrator.Controllers
 {
-    public class AlbumImagesController : Controller
+    public class ClientsController : Controller
     {
         private DiemDuLichDBContext db = new DiemDuLichDBContext();
 
-        // GET: Administrator/AlbumImages
+        // GET: Administrator/Clients
         public ActionResult Index()
         {
-            return View(db.AlbumImages.ToList());
+            return View(db.Clients.ToList());
         }
 
-        // GET: Administrator/AlbumImages/Details/5
-        public ActionResult Details(int? id)
+        // GET: Administrator/Clients/Details/5
+        public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AlbumImage albumImage = db.AlbumImages.Find(id);
-            if (albumImage == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(albumImage);
+            return View(client);
         }
 
-        // GET: Administrator/AlbumImages/Create
+        // GET: Administrator/Clients/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Administrator/AlbumImages/Create
+        // POST: Administrator/Clients/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,Status")] AlbumImage albumImage)
+        public ActionResult Create([Bind(Include = "ClientID,ClientName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,IsAdmin,Status")] Client client)
         {
             if (ModelState.IsValid)
             {
-                db.AlbumImages.Add(albumImage);
+                db.Clients.Add(client);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(albumImage);
+            return View(client);
         }
 
-        // GET: Administrator/AlbumImages/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Administrator/Clients/Edit/5
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AlbumImage albumImage = db.AlbumImages.Find(id);
-            if (albumImage == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(albumImage);
+            return View(client);
         }
 
-        // POST: Administrator/AlbumImages/Edit/5
+        // POST: Administrator/Clients/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Description,Status")] AlbumImage albumImage)
+        public ActionResult Edit([Bind(Include = "ClientID,ClientName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,IsAdmin,Status")] Client client)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(albumImage).State = EntityState.Modified;
+                db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(albumImage);
+            return View(client);
         }
 
-        // GET: Administrator/AlbumImages/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Administrator/Clients/Delete/5
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AlbumImage albumImage = db.AlbumImages.Find(id);
-            if (albumImage == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(albumImage);
+            return View(client);
         }
 
-        // POST: Administrator/AlbumImages/Delete/5
+        // POST: Administrator/Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
-            AlbumImage albumImage = db.AlbumImages.Find(id);
-            db.AlbumImages.Remove(albumImage);
+            Client client = db.Clients.Find(id);
+            db.Clients.Remove(client);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -54,18 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFModel\AlbumImage.cs" />
     <Compile Include="EFModel\Category.cs" />
+    <Compile Include="EFModel\Client.cs" />
     <Compile Include="EFModel\Contact.cs" />
     <Compile Include="EFModel\Content.cs" />
-    <Compile Include="EFModel\ContentTag.cs" />
     <Compile Include="EFModel\DiemDuLichDBContext.cs" />
     <Compile Include="EFModel\Feedback.cs" />
     <Compile Include="EFModel\Footer.cs" />
-    <Compile Include="EFModel\Image.cs" />
     <Compile Include="EFModel\Menu.cs" />
+    <Compile Include="EFModel\Order.cs" />
+    <Compile Include="EFModel\OrderDetail.cs" />
     <Compile Include="EFModel\Slider.cs" />
     <Compile Include="EFModel\Tag.cs" />
+    <Compile Include="EFModel\Ticket.cs" />
     <Compile Include="EFModel\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

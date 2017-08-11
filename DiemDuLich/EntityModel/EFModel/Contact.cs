@@ -15,7 +15,7 @@ namespace EntityModel.EFModel
         [Column(TypeName = "ntext")]
         public string Contents { get; set; }
 
-        public int? UserID { get; set; }
+        public long? UserID { get; set; }
 
         public bool? Status { get; set; }
 

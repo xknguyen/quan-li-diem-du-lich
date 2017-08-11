@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Delete</h2>
@@ -12,14 +12,6 @@
     <h4>Content</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumImage.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AlbumImage.Name)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Category.Name)
         </dt>
@@ -77,6 +69,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.MoreImages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoreImages)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CreateDate)
         </dt>
 
@@ -85,35 +85,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ModifiedDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedBy)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Status)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopHot)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopHot)
         </dd>
 
         <dt>

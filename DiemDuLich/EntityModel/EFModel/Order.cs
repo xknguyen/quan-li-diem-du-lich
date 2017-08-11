@@ -6,31 +6,29 @@ namespace EntityModel.EFModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("AlbumImage")]
-    public partial class AlbumImage
+    [Table("Order")]
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AlbumImage()
+        public Order()
         {
-            Contents = new HashSet<Content>();
-            Images = new HashSet<Image>();
+            OrderDetails = new HashSet<OrderDetail>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public long ID { get; set; }
 
-        [StringLength(250)]
-        public string Name { get; set; }
+        public long? ClientID { get; set; }
 
-        [StringLength(50)]
-        public string Description { get; set; }
+        public decimal? TotalPrice { get; set; }
+
+        public DateTime? CreateDate { get; set; }
 
         public bool? Status { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Content> Contents { get; set; }
+        public virtual Client Client { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Image> Images { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

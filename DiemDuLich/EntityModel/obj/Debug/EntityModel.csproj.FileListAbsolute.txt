@@ -10,3 +10,15 @@ C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.
 C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
 C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.dll
 C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.pdb
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll.config
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityModel.pdb
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.dll
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.dll
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.xml
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.xml
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.dll
+D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.pdb

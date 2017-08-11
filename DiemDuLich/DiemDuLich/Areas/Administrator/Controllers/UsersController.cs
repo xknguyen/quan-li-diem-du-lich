@@ -21,7 +21,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/Users/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(long? id)
         {
             if (id == null)
             {
@@ -59,7 +59,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/Users/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
@@ -90,7 +90,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/Users/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
@@ -107,7 +107,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // POST: Administrator/Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
             User user = db.Users.Find(id);
             db.Users.Remove(user);

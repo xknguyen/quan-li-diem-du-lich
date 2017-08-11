@@ -26,8 +26,12 @@ namespace EntityModel.EFModel
         [StringLength(250)]
         public string Contents { get; set; }
 
+        public long? UserID { get; set; }
+
         public DateTime? CreateDate { get; set; }
 
         public bool Status { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

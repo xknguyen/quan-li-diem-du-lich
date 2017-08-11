@@ -17,7 +17,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // GET: Administrator/Contents
         public ActionResult Index()
         {
-            var contents = db.Contents.Include(c => c.AlbumImage).Include(c => c.Category).Include(c => c.User);
+            var contents = db.Contents.Include(c => c.Category).Include(c => c.User);
             return View(contents.ToList());
         }
 
@@ -39,7 +39,6 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // GET: Administrator/Contents/Create
         public ActionResult Create()
         {
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name");
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName");
             return View();
@@ -50,7 +49,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Images,CategoryID,Detail,AlbumImageID,CreateDate,UserID,ModifiedDate,ModifiedBy,Status,TopHot,ViewCount,Tags")] Content content)
+        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Images,CategoryID,Detail,MoreImages,CreateDate,UserID,Status,ViewCount,Tags")] Content content)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +58,6 @@ namespace DiemDuLich.Areas.Administrator.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", content.AlbumImageID);
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", content.CategoryID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", content.UserID);
             return View(content);
@@ -77,7 +75,6 @@ namespace DiemDuLich.Areas.Administrator.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", content.AlbumImageID);
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", content.CategoryID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", content.UserID);
             return View(content);
@@ -88,7 +85,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,Description,Images,CategoryID,Detail,AlbumImageID,CreateDate,UserID,ModifiedDate,ModifiedBy,Status,TopHot,ViewCount,Tags")] Content content)
+        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,Description,Images,CategoryID,Detail,MoreImages,CreateDate,UserID,Status,ViewCount,Tags")] Content content)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +93,6 @@ namespace DiemDuLich.Areas.Administrator.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AlbumImageID = new SelectList(db.AlbumImages, "ID", "Name", content.AlbumImageID);
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", content.CategoryID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "UserName", content.UserID);
             return View(content);

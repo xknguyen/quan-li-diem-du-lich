@@ -1,8 +1,8 @@
-﻿@model IEnumerable<EntityModel.EFModel.Image>
+﻿@model IEnumerable<EntityModel.EFModel.Order>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -13,16 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AlbumImage.Name)
+            @Html.DisplayNameFor(model => model.Client.ClientName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.TotalPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Link)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.CreateDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
@@ -33,16 +30,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AlbumImage.Name)
+            @Html.DisplayFor(modelItem => item.Client.ClientName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.TotalPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Link)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.CreateDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Status)

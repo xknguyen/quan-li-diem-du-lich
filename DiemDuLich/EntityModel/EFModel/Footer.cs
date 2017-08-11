@@ -17,7 +17,7 @@ namespace EntityModel.EFModel
 
         public DateTime? CreateDate { get; set; }
 
-        public int? UserID { get; set; }
+        public long? UserID { get; set; }
 
         public bool? Status { get; set; }
 
