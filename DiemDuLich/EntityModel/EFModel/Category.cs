@@ -30,11 +30,6 @@ namespace EntityModel.EFModel
 
         public long? UserID { get; set; }
 
-        public DateTime? ModifiedDate { get; set; }
-
-        [StringLength(50)]
-        public string ModifiedBy { get; set; }
-
         [StringLength(250)]
         public string MetaKeywords { get; set; }
 

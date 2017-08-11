@@ -48,7 +48,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,DisplayOrder,CreateDate,UserID,ModifiedDate,ModifiedBy,MetaKeywords,MetaDescriptions,Status,ShowOnHome")] Category category)
+        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,DisplayOrder,CreateDate,UserID,MetaKeywords,MetaDescriptions,Status,ShowOnHome")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,DisplayOrder,CreateDate,UserID,ModifiedDate,ModifiedBy,MetaKeywords,MetaDescriptions,Status,ShowOnHome")] Category category)
+        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,DisplayOrder,CreateDate,UserID,MetaKeywords,MetaDescriptions,Status,ShowOnHome")] Category category)
         {
             if (ModelState.IsValid)
             {

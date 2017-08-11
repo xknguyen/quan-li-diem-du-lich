@@ -22,3 +22,15 @@ D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.xml
 D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
 D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.dll
 D:\GITHUB\DiemDuLich\DiemDuLich\EntityModel\obj\Debug\EntityModel.pdb
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll.config
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityModel.pdb
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.dll
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.dll
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.xml
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.xml
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\obj\Debug\EntityModel.dll
+D:\GITHUB\quan-li-diem-du-lich\DiemDuLich\EntityModel\obj\Debug\EntityModel.pdb

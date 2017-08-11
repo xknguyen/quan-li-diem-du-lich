@@ -46,7 +46,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,ModifiedDate,ModifiedBy,IsAdmin,Status")] User user)
+        public ActionResult Create([Bind(Include = "UserID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,IsAdmin,Status")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DiemDuLich.Areas.Administrator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,ModifiedDate,ModifiedBy,IsAdmin,Status")] User user)
+        public ActionResult Edit([Bind(Include = "UserID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,ProvinceID,DistrictID,CreateDate,CreateBy,IsAdmin,Status")] User user)
         {
             if (ModelState.IsValid)
             {
