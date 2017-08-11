@@ -1,0 +1,12 @@
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll.config
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityModel.dll
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityModel.pdb
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityFramework.dll
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityFramework.xml
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.dll
+C:\Users\khanh\Desktop\Thực tập\DiemDuLich\EntityModel\obj\Debug\EntityModel.pdb
