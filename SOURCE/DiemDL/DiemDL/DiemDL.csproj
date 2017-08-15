@@ -119,6 +119,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrator\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -285,6 +286,11 @@
     <Content Include="Content\AdministratorTheme\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Administrator\Views\Shared\_Menu.cshtml" />
     <Content Include="Areas\Administrator\Views\Shared\_MenuTop.cshtml" />
+    <Content Include="Areas\Administrator\Views\Accounts\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Accounts\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Accounts\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Accounts\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Accounts\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
