@@ -120,7 +120,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\InvestsController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\TickersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +294,21 @@
     <Content Include="Areas\Administrator\Views\Accounts\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Tickers\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Tickers\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Tickers\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Tickers\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Tickers\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Invests\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Invests\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Invests\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Invests\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Invests\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Feedbacks\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Feedbacks\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Feedbacks\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Feedbacks\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Feedbacks\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
