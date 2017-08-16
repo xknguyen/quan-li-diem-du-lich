@@ -120,7 +120,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AccountsController.cs" />
+<<<<<<< HEAD
     <Compile Include="Areas\Administrator\Controllers\FeedbacksController.cs" />
+=======
+    <Compile Include="Areas\Administrator\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\ContentsController.cs" />
+>>>>>>> master
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administrator\Controllers\InvestsController.cs" />
     <Compile Include="Areas\Administrator\Controllers\TickersController.cs" />
@@ -294,6 +299,7 @@
     <Content Include="Areas\Administrator\Views\Accounts\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Areas\Administrator\Views\Tickers\Create.cshtml" />
     <Content Include="Areas\Administrator\Views\Tickers\Delete.cshtml" />
     <Content Include="Areas\Administrator\Views\Tickers\Details.cshtml" />
@@ -309,6 +315,18 @@
     <Content Include="Areas\Administrator\Views\Feedbacks\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\Feedbacks\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Feedbacks\Index.cshtml" />
+=======
+    <Content Include="Areas\Administrator\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Index.cshtml" />
+>>>>>>> master
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
