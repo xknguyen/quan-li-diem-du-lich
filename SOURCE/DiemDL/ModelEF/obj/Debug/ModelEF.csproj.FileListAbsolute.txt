@@ -1,0 +1,12 @@
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\ModelEF.dll.config
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\ModelEF.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\ModelEF.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\EntityFramework.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\EntityFramework.SqlServer.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\Newtonsoft.Json.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\EntityFramework.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\EntityFramework.SqlServer.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\bin\Debug\Newtonsoft.Json.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\obj\Debug\ModelEF.csprojResolveAssemblyReference.cache
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\obj\Debug\ModelEF.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\DiemDL\ModelEF\obj\Debug\ModelEF.pdb
