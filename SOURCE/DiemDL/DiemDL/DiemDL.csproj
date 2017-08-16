@@ -120,6 +120,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\ContentsController.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -291,6 +293,16 @@
     <Content Include="Areas\Administrator\Views\Accounts\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Contents\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
