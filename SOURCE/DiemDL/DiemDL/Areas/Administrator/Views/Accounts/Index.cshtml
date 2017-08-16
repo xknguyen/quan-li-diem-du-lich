@@ -63,6 +63,9 @@
 										@Html.DisplayFor(modelItem => item.ID)
 									</td>
 									<td>
+										@Html.DisplayFor(modelItem => item.UserName)
+									</td>
+									<td>
 										@Html.DisplayFor(modelItem => item.FirstName)
 									</td>
 									<td>
@@ -77,7 +80,7 @@
 									<td>
 										@Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
 										@Html.ActionLink("Xem", "Details", new { id = item.ID }) |
-										@Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+										<a href="@Url.Action("Delete", new { @id = item.ID })" title="Xóa @item.UserName" class="delete-link"><p class="fa fa-times"></p> </a>
 									</td>
 								</tr>
 							}

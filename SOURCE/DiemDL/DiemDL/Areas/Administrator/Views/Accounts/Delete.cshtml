@@ -1,121 +1,48 @@
 ﻿@model ModelEF.Model.Account
 
 @{
-    ViewBag.Title = "Delete";
-    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Xóa tài khoản";
+	Layout = null;// "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Account</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Birthday)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Birthday)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Avatar)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Avatar)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProvinceID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProvinceID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DistrictID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DistrictID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+<div class="modal fade" id="deleteModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Xóa tài khoản: @Html.DisplayFor(model => model.UserName) </h4>
+			</div>
+			<div class="modal-body">
+				<h5 class="panel-heading"><strong>Bạn có chắc muốn xóa tài khoản này?</strong></h5>
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>Tài khoản:</th>
+						<td>@Html.DisplayFor(model => model.UserName)</td>
+					</tr>
+					<tr>
+						<th>Họ tên:</th>
+						<td>@Html.DisplayFor(model => model.LastName) @Html.DisplayFor(model => model.FirstName)</td>
+					</tr>
+					<tr>
+						<th>Avatar:</th>
+						<td>@Html.DisplayFor(model => model.Avatar)</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal-footer">
+				@using (Html.BeginForm("Delete", "Users", FormMethod.Post))
+				{
+					@Html.AntiForgeryToken()
+					<div class="form-actions no-color text-center">
+						<input type="submit" value="Xóa" class="btn btn-danger" />
+						<button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
 </div>
+

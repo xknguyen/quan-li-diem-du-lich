@@ -23,7 +23,7 @@
 </head>
 <body>
 
-	<div id="wrapper">
+	<div id="wrapper" class="body-content">
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 			<div class="navbar-header">
@@ -61,6 +61,22 @@
 	<!-- Custom Theme JavaScript -->
 	<script src="~/Content/AdministratorTheme/dist/js/sb-admin-2.js"></script>
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+		//model xóa
+		$('.delete-link').click(function (e) {
+			var a_href = $(this).attr('href'); /* Lấy giá trị của thuộc tính href */
+			e.preventDefault(); /* Không thực hiện action mặc định */
+			$.ajax({ /* Gửi request lên server */
+				url: a_href, /* Nội dung trong Delete.cshtml cụ thể là deleteModal div được server trả về */
+				type: 'GET',
+				contentType: 'application/json; charset=utf-8',
+				success: function (data) { /* Sau khi nhận được giá */
+					$('.body-content').prepend(data); /* body-content div (định nghĩa trong _Layout.cshtml) sẽ thêm deleteModal div vào dưới cùng */
+					$('#deleteModal').modal('show'); /* Hiển thị deleteModal div dưới kiểu modal */
+				}
+			});
+		});
+	</script>
 	<script>
 		$(document).ready(function () {
 			$('#dataTables-example').DataTable({
