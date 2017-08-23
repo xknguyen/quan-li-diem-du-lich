@@ -12,70 +12,57 @@ namespace EntityModel.EF
 		{
 		}
 
-		public virtual DbSet<BaiHoc> BaiHocs { get; set; }
-		public virtual DbSet<BaiKhoa> BaiKhoas { get; set; }
-		public virtual DbSet<CauHoi> CauHois { get; set; }
-		public virtual DbSet<DamThoai> DamThoais { get; set; }
-		public virtual DbSet<DanhMuc> DanhMucs { get; set; }
-		public virtual DbSet<DanhMucCon> DanhMucCons { get; set; }
-		public virtual DbSet<DichKHoViet> DichKHoViets { get; set; }
-		public virtual DbSet<DichVietKHo> DichVietKHoes { get; set; }
-		public virtual DbSet<Hinh> Hinhs { get; set; }
-		public virtual DbSet<LoiHayYDep> LoiHayYDeps { get; set; }
-		public virtual DbSet<LuyenTap> LuyenTaps { get; set; }
-		public virtual DbSet<TuVung> TuVungs { get; set; }
+		public virtual DbSet<Account> Accounts { get; set; }
+		public virtual DbSet<Contact> Contacts { get; set; }
+		public virtual DbSet<Content> Contents { get; set; }
+		public virtual DbSet<Feedback> Feedbacks { get; set; }
+		public virtual DbSet<Instruction> Instructions { get; set; }
+		public virtual DbSet<Menu> Menus { get; set; }
+		public virtual DbSet<Request> Requests { get; set; }
+		public virtual DbSet<Slider> Sliders { get; set; }
+		public virtual DbSet<Ticker> Tickers { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<BaiHoc>()
-				.HasMany(e => e.DanhMucs)
-				.WithOptional(e => e.BaiHoc)
-				.HasForeignKey(e => e.IDBaiHoc);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Contacts)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<BaiHoc>()
-				.HasMany(e => e.LoiHayYDeps)
-				.WithOptional(e => e.BaiHoc)
-				.HasForeignKey(e => e.IDBaiHoc);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Contents)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMuc>()
-				.HasMany(e => e.DanhMucCons)
-				.WithOptional(e => e.DanhMuc)
-				.HasForeignKey(e => e.IDDanhMuc);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Instructions)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.BaiKhoas)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Menus)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.CauHois)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Sliders)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.DamThoais)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
+			modelBuilder.Entity<Account>()
+				.HasMany(e => e.Tickers)
+				.WithRequired(e => e.Account)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.DichKHoViets)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
+			modelBuilder.Entity<Content>()
+				.HasMany(e => e.Feedbacks)
+				.WithRequired(e => e.Content)
+				.HasForeignKey(e => e.IDContent)
+				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.DichVietKHoes)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
-
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.LuyenTaps)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
-
-			modelBuilder.Entity<DanhMucCon>()
-				.HasMany(e => e.TuVungs)
-				.WithOptional(e => e.DanhMucCon)
-				.HasForeignKey(e => e.IDDanhMucCon);
+			modelBuilder.Entity<Ticker>()
+				.Property(e => e.Price)
+				.HasPrecision(18, 0);
 		}
 	}
 }

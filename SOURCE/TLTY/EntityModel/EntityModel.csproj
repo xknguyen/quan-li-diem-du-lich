@@ -84,19 +84,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF\BaiHoc.cs" />
-    <Compile Include="EF\BaiKhoa.cs" />
-    <Compile Include="EF\CauHoi.cs" />
-    <Compile Include="EF\DamThoai.cs" />
-    <Compile Include="EF\DanhMuc.cs" />
-    <Compile Include="EF\DanhMucCon.cs" />
-    <Compile Include="EF\DichKHoViet.cs" />
-    <Compile Include="EF\DichVietKHo.cs" />
-    <Compile Include="EF\Hinh.cs" />
-    <Compile Include="EF\LoiHayYDep.cs" />
-    <Compile Include="EF\LuyenTap.cs" />
+    <Compile Include="EF\Account.cs" />
+    <Compile Include="EF\Contact.cs" />
+    <Compile Include="EF\Content.cs" />
+    <Compile Include="EF\Feedback.cs" />
+    <Compile Include="EF\Instruction.cs" />
+    <Compile Include="EF\Menu.cs" />
+    <Compile Include="EF\Request.cs" />
+    <Compile Include="EF\Slider.cs" />
+    <Compile Include="EF\Ticker.cs" />
     <Compile Include="EF\TLTYDBContext.cs" />
-    <Compile Include="EF\TuVung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
