@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -135,6 +136,11 @@
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.min.css" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
+    <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
+    <Content Include="Content\AdminTheme\js\delete-modal.js" />
+    <Content Include="Content\AdminTheme\js\edit-modal.js" />
+    <Content Include="Content\AdminTheme\js\create-modal.js" />
+    <Content Include="Content\AdminTheme\js\detail-modal.js" />
     <Content Include="Content\AdminTheme\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="Content\AdminTheme\vendor\bootstrap\css\bootstrap.css" />
@@ -145,7 +151,6 @@
     <Content Include="Content\AdminTheme\vendor\datatables-plugins\dataTables.bootstrap.css" />
     <Content Include="Content\AdminTheme\vendor\datatables-plugins\dataTables.bootstrap.js" />
     <Content Include="Content\AdminTheme\vendor\datatables-plugins\dataTables.bootstrap.min.js" />
-    <Content Include="Content\AdminTheme\vendor\datatables-plugins\index.html" />
     <Content Include="Content\AdminTheme\vendor\datatables-responsive\dataTables.responsive.css" />
     <Content Include="Content\AdminTheme\vendor\datatables-responsive\dataTables.responsive.js" />
     <Content Include="Content\AdminTheme\vendor\datatables\css\dataTables.bootstrap.css" />
@@ -286,6 +291,12 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Nav.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
