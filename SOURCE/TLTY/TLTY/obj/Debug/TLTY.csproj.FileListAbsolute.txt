@@ -30,3 +30,35 @@ D:\Study\Thực tập\Source\TLTY\TLTY\bin\Antlr3.Runtime.pdb
 D:\Study\Thực tập\Source\TLTY\TLTY\obj\Debug\TLTY.csprojResolveAssemblyReference.cache
 D:\Study\Thực tập\Source\TLTY\TLTY\obj\Debug\TLTY.dll
 D:\Study\Thực tập\Source\TLTY\TLTY\obj\Debug\TLTY.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\TLTY.dll.config
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\TLTY.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\TLTY.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Antlr3.Runtime.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityFramework.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityFramework.SqlServer.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityModel.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Microsoft.Web.Infrastructure.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Newtonsoft.Json.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Helpers.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Mvc.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Optimization.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Razor.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.Deployment.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.Razor.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\WebGrease.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityModel.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityFramework.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\EntityFramework.SqlServer.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Newtonsoft.Json.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Helpers.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Mvc.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Optimization.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.Razor.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.Deployment.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\System.Web.WebPages.Razor.xml
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Antlr3.Runtime.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.csprojResolveAssemblyReference.cache
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.pdb
