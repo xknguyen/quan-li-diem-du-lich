@@ -1,75 +1,55 @@
 ﻿@model EntityModel.EF.Instruction
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Xem chi tiết giới thiệu " + @Model.Name;
+	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="modal fade" id="detailModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Xem chi tiết giới thiệu @Model.Name</h4>
+			</div>
+			<div class="modal-body">
+				<dl class="dl-horizontal">
+					<dt>
+						Tiêu đề:
+					</dt>
 
-<div>
-    <h4>Instruction</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Account.UserName)
-        </dt>
+					<dd>
+						@Html.DisplayFor(model => model.Name)
+					</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Account.UserName)
-        </dd>
+					<dt>
+						Nội dung:
+					</dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+					<dd>
+						@Html.DisplayFor(model => model.Detail)
+					</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+					<dt>
+						Ngày tạo:
+					</dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
+					<dd>
+						@Html.DisplayFor(model => model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.Account.UserName)
+					</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Detail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Detail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Images)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Images)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MoreImages)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MoreImages)
-        </dd>
-
-    </dl>
+				</dl>
+				<div class="clearfix"></div>
+			</div>
+			<div class="modal-footer">
+				<div class="form-actions no-color text-center">
+					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa giới thiệu @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
