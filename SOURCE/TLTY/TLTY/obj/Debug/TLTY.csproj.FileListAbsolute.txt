@@ -62,3 +62,5 @@ D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\Antlr3.Runtime.pdb
 D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.csprojResolveAssemblyReference.cache
 D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.dll
 D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\obj\Debug\TLTY.pdb
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\CKFinder.dll
+D:\GITHUB\quan-li-diem-du-lich\SOURCE\TLTY\TLTY\bin\CKFinder.pdb

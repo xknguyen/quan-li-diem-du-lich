@@ -28,6 +28,9 @@ namespace EntityModel.EF
         [StringLength(250)]
         public string Images { get; set; }
 
+		[Column(TypeName = "xml")]
+		public string MoreImages { get; set; }
+
         public virtual Account Account { get; set; }
     }
 }

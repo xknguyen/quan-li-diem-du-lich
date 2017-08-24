@@ -10,6 +10,25 @@
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
 	<link rel="stylesheet" type="text/css" href="~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css" />
+	<style>
+		td.center {
+			margin: 0 auto;
+			position: relative;
+		}
+
+			td.center img {
+				width: 40px;
+				height: 40px;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+			}
+	</style>
 </head>
 <body id="wrapper" class="body-content">
 	<div id="wrapper">
@@ -41,6 +60,8 @@
 	</div>
 	<!-- jQuery -->
 	@Scripts.Render("~/bundles/Admin/jquery")
+	<script src="~/Content/AdminTheme/tool/ckeditor/ckeditor.js"></script>
+	<script src="~/Content/AdminTheme/tool/ckfinder/ckfinder.js"></script>
 	@Scripts.Render("~/bundles/Admin/bootstrap")
 	<script>
 		$(document).ready(function () {

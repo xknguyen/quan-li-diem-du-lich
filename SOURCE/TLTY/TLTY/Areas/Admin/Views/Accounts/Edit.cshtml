@@ -80,16 +80,30 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label class="control-label col-md-2">Hình:</label>
-								<div class="col-md-10">
-									@Html.TextBoxFor(model => model.Avatar, new { @class = "form-control",id = "disabledInput", placeholder = "Đường dẫn hình" })
-									@Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
-								</div>
-							</div>
-							<div class="form-group">
-								<div style="width: 100%; height: 245px; border: 1px solid red;"></div>
-								<div class="col-md-12">
-									<input type="submit" value="Chọn ảnh" class="btn btn-success" />
+								<div class="form-group">
+									<label class="control-label col-md-2">Hình:</label>
+									<div class="col-md-12">
+										<img alt="" id="img" src="@Model.Avatar" width="200" height="245" class="img-responsive"/>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-8">
+										@Html.TextBoxFor(model => model.Avatar, new { @class = "form-control disabled", placeholder = "Đường dẫn hình" })
+										@Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+									</div>
+									<div class="col-md-4">
+										<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
+										<script>
+										$('#Browse').click(function () {
+											var finder = new CKFinder();
+											finder.selectActionFunction = function (fileUrl) {
+												//fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+												$('#Avatar').val(fileUrl);
+												$('#img').attr('src', fileUrl);
+											};
+											finder.popup();
+										});
+										</script>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -55,7 +55,8 @@ namespace TLTY
 					  "~/Content/AdminTheme/js/detail-modal.js",
 					  "~/Content/AdminTheme/js/edit-modal.js",
 					  "~/Content/AdminTheme/js/delete-modal.js",
-					  "~/Content/AdminTheme/js/Controller/AccountController.js"
+					  "~/Content/AdminTheme/js/Controller/AccountController.js",
+					  "~/Content/AdminTheme/js/ChangeImages.js"
 				));
 
 			BundleTable.EnableOptimizations = true;

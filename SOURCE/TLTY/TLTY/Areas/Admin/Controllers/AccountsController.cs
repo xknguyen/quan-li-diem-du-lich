@@ -136,5 +136,27 @@ namespace TLTY.Areas.Admin.Controllers
 				status = user.Status
 			});
 		}
+
+		public string ChangeImage(int id, string picture)
+		{
+			if (id < 0)
+			{
+				return "Mã tài khoản không tồn tại";
+			}
+			else
+			{
+				Account p = db.Accounts.Find(id);
+				if (p == null)
+				{
+					return "Mã tài khoản không được tìm thấy";
+				}
+				else
+				{
+					p.Avatar = picture;
+					db.SaveChanges();
+					return "";
+				}
+			}
+		}
     }
 }
