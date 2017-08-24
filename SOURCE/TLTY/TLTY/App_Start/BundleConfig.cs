@@ -20,7 +20,8 @@ namespace TLTY
 						"~/Scripts/modernizr-*"));
 
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Content/ClientTheme/js/bootstrap.min.js"));
+                        "~/Content/ClientTheme/js/bootstrap.min.js",
+						"~/Scripts/jquery.nicescroll.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
@@ -56,7 +57,10 @@ namespace TLTY
 					  "~/Content/AdminTheme/js/edit-modal.js",
 					  "~/Content/AdminTheme/js/delete-modal.js",
 					  "~/Content/AdminTheme/js/Controller/AccountController.js",
-					  "~/Content/AdminTheme/js/ChangeImages.js"
+					  "~/Content/AdminTheme/js/ChangeImages.js",
+					  "~/Content/AdminTheme/js/Controller/InstructionController.js",
+					  "~/Content/AdminTheme/js/Controller/InstructionController2.js",
+					  "~/Scripts/jquery.nicescroll.js"
 				));
 
 			BundleTable.EnableOptimizations = true;

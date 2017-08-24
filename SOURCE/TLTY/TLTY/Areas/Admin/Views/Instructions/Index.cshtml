@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<EntityModel.EF.Instruction>
 
 @{
-    ViewBag.Title = "Danh sách giới thiệu";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Danh sách giới thiệu";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
@@ -15,53 +15,82 @@
 <div class="col-lg-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			Bảng danh sách giới thiệu <p class="fa fa-caret-right"></p><p class="fa fa-caret-right"></p> <a href="@Url.Action("Create")" title="Tạo mới giới thiệu" class="create-link" style="color: white; text-decoration: none">Tạo mới</a>
+			Bảng danh sách giới thiệu
+			<p class="fa fa-caret-right"></p>
+			<p class="fa fa-caret-right"></p> <a href="@Url.Action("Create")" title="Tạo mới giới thiệu" class="create-link" style="color: white; text-decoration: none">Tạo mới</a>
 		</div>
 		<!-- /.panel-heading -->
 		<div class="panel-body">
 			<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Tiêu đề</th>
-						<th>Hình ảnh</th>
-						<th>Trạng thái</th>
-						<th>Tùy chọn</th>
-					</tr>
+				<tr>
+					<th>ID</th>
+					<th>Tiêu đề</th>
+					<th>Hình ảnh</th>
+					<th>Trạng thái</th>
+					<th>Tùy chọn</th>
+				</tr>
 				</thead>
 				<tbody>
-					@foreach (var item in Model)
-					{
-						<tr class="odd gradeX" role="row" id="item_@item.ID">
-							<td>
-								@Html.DisplayFor(modelItem => item.ID)
-							</td>
-							<td>
-								@Html.DisplayFor(modelItem => item.Name)
-							</td>
-							<td class="center">
-								<img title="Nhấn để chỉnh sửa hình ảnh" id="img_@item.ID" alt="@item.Images" src="@item.Images" onclick="selectImage('/Admin/Instructions/ChangeImage/@item.ID',this.id)" class="img-responsive" />
-							</td>
-							<td class="center" style="text-align: center;">
-								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
-							</td>
-							<td class="center" style="text-align: center;">
-								<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
-									<p class="fa fa-edit"></p>
-								</a>
-								<a href="@Url.Action("Details", new {@id = item.ID})" tit title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
-									<p class="fa fa-folder"></p>
-								</a>
-								<a href="@Url.Action("Delete", new {@id = item.ID})" tit title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
-									<p class="fa fa-times"></p>
-								</a>
-							</td>
-						</tr>
-					}
+				@foreach (var item in Model)
+				{
+					<tr class="odd gradeX" role="row" id="item_@item.ID">
+						<td>
+							@Html.DisplayFor(modelItem => item.ID)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Name)
+						</td>
+						<td class="center">
+							<img title="Nhấn để chỉnh sửa hình ảnh" id="img_@item.ID" alt="@item.ID" src="@item.Images" onclick=" selectImage('/Admin/Instructions/ChangeImage/@item.ID', this.id) " class="img-responsive"/>
+						</td>
+						<td class="center" style="text-align: center;">
+							<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+						</td>
+						<td class="center" style="text-align: center;">
+							<a href="#" data-id="@item.ID" class="btn-images" title="Quản lý ảnh @item.Name" style="text-decoration: none">
+								<p class=" fa fa-photo"></p>
+							</a>
+							<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
+								<p class="fa fa-edit"></p>
+							</a>
+							<a href="@Url.Action("Details", new {@id = item.ID})" tit title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
+								<p class="fa fa-folder"></p>
+							</a>
+							<a href="@Url.Action("Delete", new {@id = item.ID})" tit title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
+								<p class="fa fa-times"></p>
+							</a>
+						</td>
+					</tr>
+				}
 				</tbody>
 			</table>
 		</div>
 		<!-- /.panel-body -->
 	</div>
 	<!-- /.panel -->
+</div>
+
+<div class="modal fade" id="imagesManage" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Quản lý hình ảnh giới thiệu <i class="fa fa-caret-right"></i><i class="fa fa-caret-right"></i><a href="#" id="btnChooImages" title="Nhấn để thêm ảnh" style="text-decoration: none;"> Thêm ảnh</a></></h4>
+				<input type="hidden" id="hidProductID" value="0" />
+			</div>
+			<div class="modal-body">
+				<div id="imageList" style="margin:5px;">
+				</div>
+				<div class="clear">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" id="btnSaveImages">Lưu</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+			</div>
+		</div>
+	</div>
 </div>

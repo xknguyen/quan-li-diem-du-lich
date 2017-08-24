@@ -145,6 +145,8 @@
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
+    <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
+    <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
     <Content Include="Content\AdminTheme\js\delete-modal.js" />
     <Content Include="Content\AdminTheme\js\edit-modal.js" />
     <Content Include="Content\AdminTheme\js\create-modal.js" />
@@ -1165,8 +1167,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="image\to-top.png" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\AdminTheme\less\mixins.less" />
     <Content Include="Content\AdminTheme\less\sb-admin-2.less" />
@@ -1257,24 +1257,14 @@
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.ttf" />
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.woff" />
     <Content Include="Content\ClientTheme\font\FontAwesome.otf" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.nicescroll.js" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Index.cshtml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1289,7 +1279,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Shared\_slider.cshtml" />
     <Content Include="Views\Shared\_menu.cshtml" />
