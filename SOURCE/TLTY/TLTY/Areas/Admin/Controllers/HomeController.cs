@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Web.Services;
+
 namespace TLTY.Areas.Admin.Controllers
 {
     public class HomeController : Controller
@@ -14,4 +16,5 @@ namespace TLTY.Areas.Admin.Controllers
             return View();
         }
     }
+
 }

@@ -9,7 +9,7 @@ namespace TLTY
 		public static void RegisterBundles(BundleCollection bundles)
 		{
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-						"~/Content/ClientTheme/js/jquery-{version}.js"));
+						"~/Content/ClientTheme/js/jquery-2.0.3.min.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
 						"~/Scripts/jquery.validate*"));
@@ -23,7 +23,9 @@ namespace TLTY
                         "~/Content/ClientTheme/js/bootstrap.min.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
-					  "~/Content/ClientTheme/css/bootstrap.css"));
+					  "~/Content/ClientTheme/css/bootstrap.css",
+					  "~/Content/ClientTheme/css/icon.css",
+					  "~/Content/ClientTheme/css/vinhstyle.css"));
 
 
 			//admin

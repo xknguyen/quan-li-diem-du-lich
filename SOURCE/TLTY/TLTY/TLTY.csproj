@@ -135,7 +135,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Default\vinhstyle.css" />
+    <Content Include="App_Themes\Default\stylelb.css" />
+    <Content Include="App_Themes\Pink\stylelb.css" />
     <Content Include="Content\AdminTheme\data\flot-data.js" />
     <Content Include="Content\AdminTheme\data\morris-data.js" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
@@ -1146,6 +1147,7 @@
     <Content Include="Content\ClientTheme\image\to-top.png" />
     <Content Include="Content\ClientTheme\js\bootstrap.js" />
     <Content Include="Content\ClientTheme\js\bootstrap.min.js" />
+    <Content Include="Content\ClientTheme\css\icon.css" />
     <Content Include="Content\ClientTheme\js\jgallery.js" />
     <Content Include="Content\ClientTheme\js\jgallery.min.js" />
     <Content Include="Content\ClientTheme\js\jquery-2.0.3.min.js" />
@@ -1155,10 +1157,14 @@
     <Content Include="Content\ClientTheme\slider\2.jpg" />
     <Content Include="Content\ClientTheme\slider\3.jpg" />
     <Content Include="Content\ClientTheme\slider\4.jpg" />
+    <Content Include="DATA\images\Avatar\10l.jpg" />
+    <Content Include="DATA\images\Avatar\3sKVHO28.png" />
+    <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\to-top.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -1290,9 +1296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_Themes\Pink\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="DATA\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
