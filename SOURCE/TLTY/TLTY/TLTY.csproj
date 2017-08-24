@@ -1239,11 +1239,6 @@
     <Content Include="Content\AdminTheme\tool\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\AdminTheme\tool\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Content\AdminTheme\tool\ckfinder\userfiles\.htaccess" />
-    <Content Include="Areas\Admin\Views\Instructions\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Instructions\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Instructions\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Instructions\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Instructions\Index.cshtml" />
     <Content Include="Content\ClientTheme\css\bootstrap-theme.css.map" />
     <Content Include="Content\ClientTheme\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\ClientTheme\css\bootstrap.css.map" />
@@ -1257,6 +1252,11 @@
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.woff" />
     <Content Include="Content\ClientTheme\font\FontAwesome.otf" />
     <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructions\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructions\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructions\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
