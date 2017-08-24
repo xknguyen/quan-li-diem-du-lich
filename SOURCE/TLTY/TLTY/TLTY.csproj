@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Default\vinhstyle.css" />
     <Content Include="Content\AdminTheme\data\flot-data.js" />
     <Content Include="Content\AdminTheme\data\morris-data.js" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
@@ -1120,6 +1121,40 @@
     <Content Include="Content\AdminTheme\vendor\raphael\raphael.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ClientTheme\css\bootstrap-theme.css" />
+    <Content Include="Content\ClientTheme\css\bootstrap-theme.min.css" />
+    <Content Include="Content\ClientTheme\css\bootstrap.css" />
+    <Content Include="Content\ClientTheme\css\bootstrap.min.css" />
+    <Content Include="Content\ClientTheme\css\font-awesome.min.css" />
+    <Content Include="Content\ClientTheme\css\jgallery.css" />
+    <Content Include="Content\ClientTheme\css\jgallery.min.css" />
+    <Content Include="Content\ClientTheme\css\vinhstyle.css" />
+    <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\ClientTheme\font\fontawesome-webfont.svg" />
+    <Content Include="Content\ClientTheme\icon\contact.png" />
+    <Content Include="Content\ClientTheme\icon\express.png" />
+    <Content Include="Content\ClientTheme\icon\instruction.png" />
+    <Content Include="Content\ClientTheme\icon\news.png" />
+    <Content Include="Content\ClientTheme\image\1.png" />
+    <Content Include="Content\ClientTheme\image\2.jpg" />
+    <Content Include="Content\ClientTheme\image\3.png" />
+    <Content Include="Content\ClientTheme\image\4.jpg" />
+    <Content Include="Content\ClientTheme\image\BANGGIA.jpg" />
+    <Content Include="Content\ClientTheme\image\Express\switch\XE-DIEN.jpg" />
+    <Content Include="Content\ClientTheme\image\Express\switch\XE-LUA.jpg" />
+    <Content Include="Content\ClientTheme\image\tlty.png" />
+    <Content Include="Content\ClientTheme\image\to-top.png" />
+    <Content Include="Content\ClientTheme\js\bootstrap.js" />
+    <Content Include="Content\ClientTheme\js\bootstrap.min.js" />
+    <Content Include="Content\ClientTheme\js\jgallery.js" />
+    <Content Include="Content\ClientTheme\js\jgallery.min.js" />
+    <Content Include="Content\ClientTheme\js\jquery-2.0.3.min.js" />
+    <Content Include="Content\ClientTheme\js\npm.js" />
+    <Content Include="Content\ClientTheme\js\tinycolor-0.9.16.min.js" />
+    <Content Include="Content\ClientTheme\slider\1.jpg" />
+    <Content Include="Content\ClientTheme\slider\2.jpg" />
+    <Content Include="Content\ClientTheme\slider\3.jpg" />
+    <Content Include="Content\ClientTheme\slider\4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1209,6 +1244,19 @@
     <Content Include="Areas\Admin\Views\Instructions\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Index.cshtml" />
+    <Content Include="Content\ClientTheme\css\bootstrap-theme.css.map" />
+    <Content Include="Content\ClientTheme\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\ClientTheme\css\bootstrap.css.map" />
+    <Content Include="Content\ClientTheme\css\bootstrap.min.css.map" />
+    <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\ClientTheme\font\fontawesome-webfont.eot" />
+    <Content Include="Content\ClientTheme\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\ClientTheme\font\fontawesome-webfont.woff" />
+    <Content Include="Content\ClientTheme\font\FontAwesome.otf" />
+    <Content Include="Views\Shared\_footer.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1236,9 +1284,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_slider.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Pink\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="DATA\" />
     <Folder Include="Models\" />

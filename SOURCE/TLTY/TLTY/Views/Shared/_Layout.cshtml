@@ -1,42 +1,97 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thung lũng tình yêu</title>
     @Styles.Render("~/Content/css")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @Html.Partial("_header")
+    <div class="container-fuid top-slider">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            @Html.Partial("_slider")
+            <div class="row">
+                <div class="clearfix"></div>
+                @Html.Partial("_menu")
+                @RenderBody()
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
+    <div class="clearfix"></div>
+    <div class="col-lg-12 footer">
+        @Html.Partial("_footer")
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        var index = 1;
+
+        function plusIndex(n) {
+            index = index + n;
+            showImage(index);
+        }
+        showImage(1);
+        function showImage(n) {
+            var i;
+            var x = document.getElementsByClassName("img-slider");
+            if (n > x.length) {
+                index = 1;
+            }
+            if (n < 1) {
+                index = x.length;
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[index - 1].style.display = "block";
+
+        }
+        autoSlider();
+        function autoSlider() {
+            var i;
+            var x = document.getElementsByClassName("img-slider");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            if (index > x.length) {
+                index = 1;
+            }
+            x[index - 1].style.display = "block";
+            index++;
+            setTimeout(autoSlider, 3000);
+        }
+    </script>
+    <script type="text/javascript">
+        $('#menu li').click(function () {
+            $('#menu li.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".btn-top").hide();
+            if ($(".btn-top").length > 0) {
+                $(window).scroll(function () {
+                    var e = $(window).scrollTop();
+                    if (e > 300) {
+                        $(".btn-top").show()
+                    } else {
+                        $(".btn-top").hide()
+                    }
+                });
+                $(".btn-top").click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    })
+                })
+            }
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
