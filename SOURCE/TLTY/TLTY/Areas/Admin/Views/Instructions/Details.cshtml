@@ -5,8 +5,8 @@
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="modal fade" id="detailModal">
-	<div class="modal-dialog modal-lg">
+<div class="modal fade" id="detailModal" style="display: block !important;">
+	<div class="modal-dialog modal-lg" style="overflow-y: initial !important; max-height: 85%; margin-top: 50px; margin-bottom: 50px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">
@@ -15,7 +15,7 @@
 				</button>
 				<h4 class="modal-title">Xem chi tiết giới thiệu @Model.Name</h4>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body" style="height: 400px; overflow-y: auto">
 				<dl class="dl-horizontal">
 					<dt>
 						Tiêu đề:
@@ -53,3 +53,4 @@
 		</div>
 	</div>
 </div>
+<script src="~/Content/AdminTheme/js/edit-modal.js"></script>
