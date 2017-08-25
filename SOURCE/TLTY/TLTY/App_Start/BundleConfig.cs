@@ -21,6 +21,7 @@ namespace TLTY
 
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Content/ClientTheme/js/bootstrap.min.js",
+						"~/Scripts/Alert.js",
 						"~/Scripts/jquery.nicescroll.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -52,14 +53,13 @@ namespace TLTY
 					  "~/Content/AdminTheme/dist/js/sb-admin-2.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/Admin/bootstrap").Include(
-					  "~/Content/AdminTheme/js/create-modal.js",
+					  "~/Scripts/Alert.js",
+						"~/Content/AdminTheme/js/create-modal.js",
 					  "~/Content/AdminTheme/js/detail-modal.js",
+					  "~/Content/AdminTheme/js/change-modal.js",
 					  "~/Content/AdminTheme/js/edit-modal.js",
 					  "~/Content/AdminTheme/js/delete-modal.js",
-					  "~/Content/AdminTheme/js/Controller/AccountController.js",
 					  "~/Content/AdminTheme/js/ChangeImages.js",
-					  "~/Content/AdminTheme/js/Controller/InstructionController.js",
-					  "~/Content/AdminTheme/js/Controller/InstructionController2.js",
 					  "~/Scripts/jquery.nicescroll.js"
 				));
 

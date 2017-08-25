@@ -23,46 +23,46 @@
 		<div class="panel-body">
 			<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				<thead>
-				<tr>
-					<th>ID</th>
-					<th>Tiêu đề</th>
-					<th>Hình ảnh</th>
-					<th>Trạng thái</th>
-					<th>Tùy chọn</th>
-				</tr>
+					<tr>
+						<th>ID</th>
+						<th>Tiêu đề</th>
+						<th>Hình ảnh</th>
+						<th>Trạng thái</th>
+						<th>Tùy chọn</th>
+					</tr>
 				</thead>
 				<tbody>
-				@foreach (var item in Model)
-				{
-					<tr class="odd gradeX" role="row" id="item_@item.ID">
-						<td>
-							@Html.DisplayFor(modelItem => item.ID)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Name)
-						</td>
-						<td class="center">
-							<img title="Nhấn để chỉnh sửa hình ảnh" id="img_@item.ID" alt="@item.ID" src="@item.Images" onclick=" selectImage('/Admin/Instructions/ChangeImage/@item.ID', this.id) " class="img-responsive"/>
-						</td>
-						<td class="center" style="text-align: center;">
-							<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
-						</td>
-						<td class="center" style="text-align: center;">
-							<a href="#" data-id="@item.ID" class="btn-images" title="Quản lý ảnh @item.Name" style="text-decoration: none">
-								<p class=" fa fa-photo"></p>
-							</a>
-							<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
-								<p class="fa fa-edit"></p>
-							</a>
-							<a href="@Url.Action("Details", new {@id = item.ID})" tit title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
-								<p class="fa fa-folder"></p>
-							</a>
-							<a href="@Url.Action("Delete", new {@id = item.ID})" tit title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
-								<p class="fa fa-times"></p>
-							</a>
-						</td>
-					</tr>
-				}
+					@foreach (var item in Model)
+					{
+						<tr class="odd gradeX" role="row" id="item_@item.ID">
+							<td>
+								@Html.DisplayFor(modelItem => item.ID)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.Name)
+							</td>
+							<td class="center">
+								<img title="Nhấn để chỉnh sửa hình ảnh" id="img_@item.ID" alt="@item.ID" src="@item.Images" onclick=" selectimage(' />Admin/Instructions/ChangeImage/@item.ID', this.id) " class="img-responsive"/>
+							</td>
+							<td class="center" style="text-align: center;">
+								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+							</td>
+							<td class="center" style="text-align: center;">
+								<a href="#" data-id="@item.ID" class="btn-images" title="Quản lý ảnh @item.Name" style="text-decoration: none">
+									<p class=" fa fa-photo"></p>
+								</a>
+								<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
+									<p class="fa fa-edit"></p>
+								</a>
+								<a href="@Url.Action("Details", new {@id = item.ID})" tit title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
+									<p class="fa fa-folder"></p>
+								</a>
+								<a href="@Url.Action("Delete", new {@id = item.ID})" tit title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
+									<p class="fa fa-times"></p>
+								</a>
+							</td>
+						</tr>
+					}
 				</tbody>
 			</table>
 		</div>
@@ -94,3 +94,8 @@
 		</div>
 	</div>
 </div>
+
+@section scripts{
+	<script src="~/Content/AdminTheme/js/Controller/InstructionController.js"></script>
+	<script src="~/Content/AdminTheme/js/Controller/InstructionController2.js"></script>
+}
