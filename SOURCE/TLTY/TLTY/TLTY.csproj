@@ -126,8 +126,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\InstructionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Models\Common.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,6 +149,7 @@
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
+    <Content Include="Content\AdminTheme\js\change-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
     <Content Include="Content\AdminTheme\js\delete-modal.js" />
@@ -1161,6 +1166,8 @@
     <Content Include="Content\ClientTheme\slider\4.jpg" />
     <Content Include="DATA\images\Avatar\10l.jpg" />
     <Content Include="DATA\images\Avatar\3sKVHO28.png" />
+    <Content Include="DATA\images\ChucNang\del.png" />
+    <Content Include="DATA\images\ChucNang\ok.png" />
     <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1257,6 +1264,7 @@
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.ttf" />
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.woff" />
     <Content Include="Content\ClientTheme\font\FontAwesome.otf" />
+    <Content Include="Scripts\Alert.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.nicescroll.js" />
     <Content Include="Views\Shared\_footer.cshtml" />
@@ -1285,7 +1293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -1293,6 +1301,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\ChangPassword.cshtml" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
