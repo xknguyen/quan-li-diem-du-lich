@@ -1143,7 +1143,6 @@
     <Content Include="Content\ClientTheme\image\3.png" />
     <Content Include="Content\ClientTheme\image\4.jpg" />
     <Content Include="Content\ClientTheme\image\BANGGIA.jpg" />
-    <Content Include="Content\ClientTheme\image\bg.jpg" />
     <Content Include="Content\ClientTheme\image\Express\switch\XE-DIEN.jpg" />
     <Content Include="Content\ClientTheme\image\Express\switch\XE-LUA.jpg" />
     <Content Include="Content\ClientTheme\image\tlty.png" />
@@ -1168,6 +1167,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="image\bg.jpg" />
+    <Content Include="image\giphy.gif" />
     <Content Include="image\to-top.png" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\AdminTheme\less\mixins.less" />
