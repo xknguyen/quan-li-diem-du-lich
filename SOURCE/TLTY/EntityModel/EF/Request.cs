@@ -26,7 +26,14 @@ namespace EntityModel.EF
 
         public bool Status { get; set; }
 
+        [Column(TypeName = "xml")]
+        public string MoreImage { get; set; }
+
+        public long? ContentID { get; set; }
+
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
+
+        public virtual Content Content { get; set; }
     }
 }

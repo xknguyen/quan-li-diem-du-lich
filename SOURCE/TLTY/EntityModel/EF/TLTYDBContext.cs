@@ -13,52 +13,32 @@ namespace EntityModel.EF
 		}
 
 		public virtual DbSet<Account> Accounts { get; set; }
+		public virtual DbSet<AccountGroup> AccountGroups { get; set; }
 		public virtual DbSet<Contact> Contacts { get; set; }
 		public virtual DbSet<Content> Contents { get; set; }
 		public virtual DbSet<Feedback> Feedbacks { get; set; }
+		public virtual DbSet<GroupPath> GroupPaths { get; set; }
 		public virtual DbSet<Instruction> Instructions { get; set; }
-		public virtual DbSet<Menu> Menus { get; set; }
+		public virtual DbSet<Path> Paths { get; set; }
 		public virtual DbSet<Request> Requests { get; set; }
 		public virtual DbSet<Slider> Sliders { get; set; }
 		public virtual DbSet<Ticker> Tickers { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Contacts)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Contents)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Instructions)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Menus)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Sliders)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Account>()
-				.HasMany(e => e.Tickers)
-				.WithRequired(e => e.Account)
-				.WillCascadeOnDelete(false);
+			modelBuilder.Entity<AccountGroup>()
+				.HasMany(e => e.GroupPaths)
+				.WithOptional(e => e.AccountGroup)
+				.HasForeignKey(e => e.GroupID);
 
 			modelBuilder.Entity<Content>()
-				.HasMany(e => e.Feedbacks)
+				.HasMany(e => e.Sliders)
 				.WithRequired(e => e.Content)
-				.HasForeignKey(e => e.IDContent)
 				.WillCascadeOnDelete(false);
+
+			modelBuilder.Entity<Slider>()
+				.Property(e => e.Link)
+				.IsFixedLength();
 
 			modelBuilder.Entity<Ticker>()
 				.Property(e => e.Price)

@@ -12,7 +12,8 @@ namespace EntityModel.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Content()
         {
-            Feedbacks = new HashSet<Feedback>();
+            Requests = new HashSet<Request>();
+            Sliders = new HashSet<Slider>();
         }
 
         public long ID { get; set; }
@@ -26,7 +27,9 @@ namespace EntityModel.EF
 
         public DateTime CreateDate { get; set; }
 
-        public long AccountID { get; set; }
+        [Required]
+        [StringLength(250)]
+        public string UserName { get; set; }
 
         public bool Status { get; set; }
 
@@ -48,9 +51,10 @@ namespace EntityModel.EF
 
         public bool Category { get; set; }
 
-        public virtual Account Account { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Request> Requests { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Slider> Sliders { get; set; }
     }
 }
