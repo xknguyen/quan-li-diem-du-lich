@@ -137,8 +137,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Default\stylelb.css" />
-    <Content Include="App_Themes\Pink\stylelb.css" />
     <Content Include="Content\AdminTheme\data\flot-data.js" />
     <Content Include="Content\AdminTheme\data\morris-data.js" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
@@ -1125,16 +1123,15 @@
     <Content Include="Content\AdminTheme\vendor\morrisjs\morris.min.js" />
     <Content Include="Content\AdminTheme\vendor\raphael\raphael.js" />
     <Content Include="Content\AdminTheme\vendor\raphael\raphael.min.js" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ClientTheme\css\bootstrap-theme.css" />
     <Content Include="Content\ClientTheme\css\bootstrap-theme.min.css" />
     <Content Include="Content\ClientTheme\css\bootstrap.css" />
     <Content Include="Content\ClientTheme\css\bootstrap.min.css" />
     <Content Include="Content\ClientTheme\css\font-awesome.min.css" />
+    <Content Include="Content\ClientTheme\css\giangstyle.css" />
     <Content Include="Content\ClientTheme\css\jgallery.css" />
     <Content Include="Content\ClientTheme\css\jgallery.min.css" />
-    <Content Include="Content\ClientTheme\css\vinhstyle.css" />
+    <Content Include="Content\ClientTheme\css\quanstyle.css" />
     <Content Include="Content\ClientTheme\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\ClientTheme\font\fontawesome-webfont.svg" />
     <Content Include="Content\ClientTheme\icon\contact.png" />
@@ -1146,6 +1143,7 @@
     <Content Include="Content\ClientTheme\image\3.png" />
     <Content Include="Content\ClientTheme\image\4.jpg" />
     <Content Include="Content\ClientTheme\image\BANGGIA.jpg" />
+    <Content Include="Content\ClientTheme\image\bg.jpg" />
     <Content Include="Content\ClientTheme\image\Express\switch\XE-DIEN.jpg" />
     <Content Include="Content\ClientTheme\image\Express\switch\XE-LUA.jpg" />
     <Content Include="Content\ClientTheme\image\tlty.png" />
@@ -1168,8 +1166,8 @@
     <Content Include="DATA\images\ChucNang\ok.png" />
     <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="image\to-top.png" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\AdminTheme\less\mixins.less" />
@@ -1270,7 +1268,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Shared\_slider.cshtml" />
@@ -1283,7 +1281,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">

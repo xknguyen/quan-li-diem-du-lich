@@ -4,9 +4,21 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="@ViewBag.Keywords" />
+	<meta name="description" content="@ViewBag.Descriptions" />
 	<title>Thung lũng tình yêu</title>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	
 	@Styles.Render("~/Content/css")
+	@Styles.Render("~/Content/css1")
 	@Scripts.Render("~/bundles/modernizr")
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<style>
+		* {
+			font-family: 'Lobster', cursive;
+			font-size: 18px;
+		}
+	</style>
 </head>
 <body>
 	@Html.Partial("_header")
