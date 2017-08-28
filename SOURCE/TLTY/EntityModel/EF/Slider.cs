@@ -16,19 +16,22 @@ namespace EntityModel.EF
 
         public int DisplayOrder { get; set; }
 
-        [Required]
-        [StringLength(250)]
+        [StringLength(10)]
         public string Link { get; set; }
+
+        public long ContentID { get; set; }
 
         public DateTime CreateDate { get; set; }
 
-        public long AccountID { get; set; }
+        [Required]
+        [StringLength(250)]
+        public string UserName { get; set; }
 
         public bool Status { get; set; }
 
         [StringLength(50)]
         public string Description { get; set; }
 
-        public virtual Account Account { get; set; }
+        public virtual Content Content { get; set; }
     }
 }

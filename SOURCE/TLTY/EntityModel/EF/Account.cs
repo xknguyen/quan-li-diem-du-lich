@@ -12,12 +12,7 @@ namespace EntityModel.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Account()
         {
-            Contacts = new HashSet<Contact>();
-            Contents = new HashSet<Content>();
-            Instructions = new HashSet<Instruction>();
-            Menus = new HashSet<Menu>();
-            Sliders = new HashSet<Slider>();
-            Tickers = new HashSet<Ticker>();
+            AccountGroups = new HashSet<AccountGroup>();
         }
 
         public long ID { get; set; }
@@ -55,24 +50,9 @@ namespace EntityModel.EF
 
         public DateTime? CreateDate { get; set; }
 
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Contact> Contacts { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Content> Contents { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Instruction> Instructions { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Menu> Menus { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Slider> Sliders { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ticker> Tickers { get; set; }
+        public virtual ICollection<AccountGroup> AccountGroups { get; set; }
     }
 }

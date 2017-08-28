@@ -85,11 +85,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\Account.cs" />
+    <Compile Include="EF\AccountGroup.cs" />
     <Compile Include="EF\Contact.cs" />
     <Compile Include="EF\Content.cs" />
     <Compile Include="EF\Feedback.cs" />
+    <Compile Include="EF\GroupPath.cs" />
     <Compile Include="EF\Instruction.cs" />
-    <Compile Include="EF\Menu.cs" />
+    <Compile Include="EF\Path.cs" />
     <Compile Include="EF\Request.cs" />
     <Compile Include="EF\Slider.cs" />
     <Compile Include="EF\Ticker.cs" />

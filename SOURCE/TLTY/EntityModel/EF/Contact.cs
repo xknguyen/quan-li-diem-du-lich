@@ -13,7 +13,9 @@ namespace EntityModel.EF
 
         public DateTime CreateDate { get; set; }
 
-        public long AccountID { get; set; }
+        [Required]
+        [StringLength(250)]
+        public string UserName { get; set; }
 
         public bool Status { get; set; }
 
@@ -25,7 +27,5 @@ namespace EntityModel.EF
 
         [StringLength(250)]
         public string Email { get; set; }
-
-        public virtual Account Account { get; set; }
     }
 }

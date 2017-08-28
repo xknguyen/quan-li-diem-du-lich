@@ -29,9 +29,5 @@ namespace EntityModel.EF
         [Column(TypeName = "ntext")]
         [Required]
         public string Description { get; set; }
-
-        public long IDContent { get; set; }
-
-        public virtual Content Content { get; set; }
     }
 }
