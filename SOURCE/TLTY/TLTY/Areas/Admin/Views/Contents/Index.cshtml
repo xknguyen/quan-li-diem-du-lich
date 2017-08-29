@@ -55,9 +55,10 @@
                                     }
                                     @a
                             </td>
-                            <td class="center">
-                                <img title="Nhấn để chỉnh sửa nội dung" id="img_@item.ID" alt="@item.Images" src="@item.ID" onclick=" selectimage(' />Admin/Accounts/ChangeImage/@item.ID', this.id) " class="img-responsive"/>
-                            </td>
+                        <td class="center">
+							<img id="img_@item.ID" class="img-responsive" alt="@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Images" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
+	                        
+                        </td>
                             <td class="center" style="text-align: center;">
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
