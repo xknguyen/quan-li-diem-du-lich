@@ -129,6 +129,7 @@
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TickersController.cs" />
     <Compile Include="Areas\Admin\Models\Common.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1293,6 +1294,11 @@
     <Content Include="Areas\Admin\Views\Accounts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Accounts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Accounts\ChangPassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
