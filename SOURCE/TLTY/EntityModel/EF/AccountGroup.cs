@@ -24,7 +24,7 @@ namespace EntityModel.EF
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        public bool? status { get; set; }
+        public bool status { get; set; }
 
         public virtual Account Account { get; set; }
 

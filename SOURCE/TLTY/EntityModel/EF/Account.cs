@@ -50,7 +50,7 @@ namespace EntityModel.EF
 
         public DateTime? CreateDate { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccountGroup> AccountGroups { get; set; }
