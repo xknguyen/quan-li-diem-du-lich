@@ -26,7 +26,7 @@ namespace EntityModel.EF
         [StringLength(150)]
         public string Link { get; set; }
 
-        public bool? status { get; set; }
+        public bool status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GroupPath> GroupPaths { get; set; }
