@@ -49,7 +49,7 @@
 								@Html.DisplayFor(modelItem => item.Email)
 							</td>
 							<td class="center">
-								<img title="Nhấn để chỉnh sửa hình ảnh" id="img_@item.ID" alt="@item.UserName" src="@item.Avatar" onclick=" selectimage(' />Admin/Accounts/ChangeImage/@item.ID', this.id) " class="img-responsive"/>
+								<img id="img_@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Avatar" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
 							</td>
 							<td class="center" style="text-align: center;">
 								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>

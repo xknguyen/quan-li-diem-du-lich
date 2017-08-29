@@ -8,44 +8,44 @@ using System;
 
 namespace TLTY.Areas.Admin.Controllers
 {
-    public class AccountsController : BaseController
-    {
-        private TLTYDBContext _db = new TLTYDBContext();
+	public class AccountsController : BaseController
+	{
+		private TLTYDBContext _db = new TLTYDBContext();
 
-        // GET: Admin/Accounts
-        public ActionResult Index()
-        {
-            return View(_db.Accounts.ToList());
-        }
+		// GET: Admin/Accounts
+		public ActionResult Index()
+		{
+			return View(_db.Accounts.ToList());
+		}
 
-        // GET: Admin/Accounts/Details/5
-        public ActionResult Details(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-                return HttpNotFound();
-            }
-            return View(account);
-        }
+		// GET: Admin/Accounts/Details/5
+		public ActionResult Details(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			return View(account);
+		}
 
-        // GET: Admin/Accounts/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+		// GET: Admin/Accounts/Create
+		public ActionResult Create()
+		{
+			return View();
+		}
 
-        // POST: Admin/Accounts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-        {
+		// POST: Admin/Accounts/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Create([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+		{
 			if (string.IsNullOrEmpty(account.UserName))
 			{
 				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản trống xin hãy kiểm tra lại!", "error");
@@ -82,7 +82,7 @@ namespace TLTY.Areas.Admin.Controllers
 						_db.SaveChanges();
 						if (account.ID > 0)
 						{
-							SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm tài khoản thành công! Mật khẩu mặc định là <strong>" + account.UserName + password + "</strong>. Hãy kích hoạt tài khoản vừa tạo để đăng nhập.", "success");
+							SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm tài khoản thành công! Mật khẩu mặc định là <strong>" + password + "</strong>. Hãy kích hoạt tài khoản vừa tạo để đăng nhập.", "success");
 							return RedirectToAction("Index");
 						}
 						else
@@ -98,30 +98,30 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 			}
 			return RedirectToAction("Index");
-        }
+		}
 
-        // GET: Admin/Accounts/Edit/5
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-                return HttpNotFound();
-            }
-            return View(account);
-        }
+		// GET: Admin/Accounts/Edit/5
+		public ActionResult Edit(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			return View(account);
+		}
 
-        // POST: Admin/Accounts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-        {
+		// POST: Admin/Accounts/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+		{
 			if (Session["AccountID"].GetHashCode() != 1 && account.ID == 1)
 			{
 				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Bạn không thể sửa tài khoản quyền cao nhất!", "error");
@@ -163,33 +163,30 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 			}
 			return RedirectToAction("Index");
-        }
+		}
 
-        // GET: Admin/Accounts/Delete/5
-        public ActionResult Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-				if (account.ID == 1 || account.UserName == "admin")
-				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Đây là tài khoản admin quyền cao nhất, bạn không thể xóa!", "error");
-					return RedirectToAction("Index");
-				}
-            }
-            return View(account);
-        }
+		// GET: Admin/Accounts/Delete/5
+		public ActionResult Delete(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			return View(account);
 
-        // POST: Admin/Accounts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
-        {
-            Account account = _db.Accounts.Find(id);
+		}
+
+		// POST: Admin/Accounts/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(long id)
+		{
+			Account account = _db.Accounts.Find(id);
 			if (account.ID == 1 || account.UserName == "admin")
 			{
 				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Đây là tài khoản admin quyền cao nhất, bạn không thể xóa!", "error");
@@ -219,16 +216,16 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 
 			}
-        }
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				_db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
 		//Change password
 		public ActionResult ChangPassword(int? id)
@@ -240,11 +237,7 @@ namespace TLTY.Areas.Admin.Controllers
 			Account account = _db.Accounts.Find(id);
 			if (account == null)
 			{
-				if (account.ID == 1 || account.UserName == "admin")
-				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Đây là tài khoản admin quyền cao nhất, bạn không thể đổi mật khẩu!", "error");
-					return RedirectToAction("Index");
-				}
+				return HttpNotFound();
 			}
 			return View(account);
 		}
@@ -254,7 +247,6 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-
 				if (!string.IsNullOrEmpty(oldPass))
 				{
 					string username = Session["UserName"].ToString();
@@ -345,5 +337,5 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 			}
 		}
-    }
+	}
 }
