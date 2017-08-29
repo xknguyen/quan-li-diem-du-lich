@@ -27,7 +27,7 @@
                         <th>Tiêu đề</th>
                         <th>Lượt xem</th>
                         <th>Thể loại</th>
-                        <th>Hình</th>
+                        <th>@Html.DisplayNameFor(model => model.Detail)</th>
                         <th>Trạng thái</th>
                         <th>Tùy chọn</th>
                     </tr>
@@ -47,29 +47,29 @@
                             </td>
                             <td>
                                 @{
-                            string a = "Tin tức";
+                            string a = "Dịch vụ";
                             if (item.Category)
                             {
-                                a = "Dịch vụ";
+                                a = "Tin tức";
                             }
                                     }
                                     @a
                             </td>
                         <td class="center">
-							<img id="img_@item.ID" class="img-responsive" alt="@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Images" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
+							<img id="img_@item.ID" class="img-responsive" alt="@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Images" onclick="selectImage('/Admin/Contents/ChangeImage/@item.ID',this.id)" />
 	                        
                         </td>
                             <td class="center" style="text-align: center;">
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
                             <td class="center" style="text-align: center;">
-                                <a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.UserName" class="edit-link" style="text-decoration: none">
+                                <a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
                                     <p class="fa fa-edit"></p>
                                 </a>
-                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.UserName" class="detail-link" style="text-decoration: none">
+                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
                                     <p class="fa fa-folder"></p>
                                 </a>
-                                <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.UserName" class="delete-link" style="text-decoration: none">
+                                <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
                                     <p class="fa fa-times"></p>
                                 </a>
                             </td>
