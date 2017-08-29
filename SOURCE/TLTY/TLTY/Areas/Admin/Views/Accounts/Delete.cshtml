@@ -23,6 +23,7 @@
 				<div class="form-actions no-color text-center">
 					@using (Html.BeginForm())
 					{
+						@Html.AntiForgeryToken()
 						<input type="submit" value="Xóa" class="btn btn-warning" />
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 					}

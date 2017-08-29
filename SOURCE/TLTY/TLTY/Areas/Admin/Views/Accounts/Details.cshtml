@@ -16,73 +16,78 @@
 				<h4 class="modal-title">Xem chi tiết tài khoản @Model.UserName</h4>
 			</div>
 			<div class="modal-body">
-				<dl class="dl-horizontal">
-					<dt>
-						Tài khoản:
-					</dt>
+				<div class="col-md-7">
+					<dl class="dl-horizontal">
+						<dt>
+							Tài khoản:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.UserName)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.UserName)
+						</dd>
 
-					<dt>
-						Tên
-					</dt>
+						<dt>
+							Tên
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.FirstName)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.FirstName)
+						</dd>
 
-					<dt>
-						Họ:
-					</dt>
+						<dt>
+							Họ:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.LastName)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.LastName)
+						</dd>
 
-					<dt>
-						Ngày sinh:
-					</dt>
+						<dt>
+							Ngày sinh:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Birthday)
-					</dd>
+						<dd>
+							@string.Format("{0:dd-MM-yyyy}", Model.Birthday)
+						</dd>
 
-					<dt>
-						Email:
-					</dt>
+						<dt>
+							Email:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Email)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.Email)
+						</dd>
 
-					<dt>
-						Số điện thoại:
-					</dt>
+						<dt>
+							Số điện thoại:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Phone)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.Phone)
+						</dd>
 
 
-					<dt>
-						Địa chỉ:
-					</dt>
+						<dt>
+							Địa chỉ:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Address)
-					</dd>
+						<dd>
+							@Html.DisplayFor(model => model.Address)
+						</dd>
 
-					<dt>
-						Ngày tạo:
-					</dt>
+						<dt>
+							Ngày tạo:
+						</dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.CreateDate)
-					</dd>
+						<dd>
+							@string.Format("{0:dd-MM-yyyy}", Model.CreateDate)
+						</dd>
 
-				</dl>
+					</dl>
+				</div>
+				<div class="col-md-5">
+					<img alt="" src="@Model.Avatar" width="200" height="245" class="img-responsive" />
+				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="modal-footer">

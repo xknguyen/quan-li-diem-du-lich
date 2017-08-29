@@ -147,6 +147,7 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
+    <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
     <Content Include="Content\AdminTheme\js\delete-modal.js" />
