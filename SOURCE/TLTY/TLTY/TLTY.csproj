@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TickersController.cs" />
     <Compile Include="Areas\Admin\Models\Common.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1300,11 +1301,19 @@
     <Content Include="Areas\Admin\Views\Contents\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Contents\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Contents\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Areas\Admin\Views\Tickers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
+=======
     <Content Include="Areas\Admin\Views\Feedbacks\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Index.cshtml" />
+>>>>>>> c320878ff4d109e285d353f21a4f80a7161f592f
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
