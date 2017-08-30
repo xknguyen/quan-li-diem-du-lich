@@ -1,7 +1,7 @@
-﻿@model EntityModel.EF.Ticker
+﻿@model EntityModel.EF.Contact
 
 @{
-    ViewBag.Title = "Tạo mới bảng giá";
+    ViewBag.Title = "Tạo mới liên hệ";
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,8 +13,9 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title">Tạo mới bảng giá </h4>
+                <h4 class="modal-title">Tạo mới liên hệ </h4>
             </div>
+            <script src="~/Content/AdminTheme/js/editdetail-modal.js"></script>
             @using (Html.BeginForm())
             {
                 <div class="modal-body">
@@ -22,13 +23,6 @@
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="col-md-7">
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Tên:</label>
-                                <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Ngày tạo:</label>
                                 <div class="col-md-9">
@@ -39,7 +33,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Tài khoản:</label>
                                 <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tên tài khoản ở đây" })
+                                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tài khoản ở đây" })
                                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -51,31 +45,24 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Loại:</label>
+                                <label class="control-label col-md-3">Địa chỉ:</label>
                                 <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.Type, new { @class = "form-control", placeholder = "Nhập loại ở đây" })
-                                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây" })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Số lượng:</label>
+                                <label class="control-label col-md-3">Số điện thoại:</label>
                                 <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", placeholder = "Nhập số lượng ở đây" })
-                                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây" })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Giá:</label>
+                                <label class="control-label col-md-3">Email:</label>
                                 <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.Price, new { @class = "form-control", placeholder = "Nhập giá ở đây" })
-                                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Mô tả:</label>
-                                <div class="col-md-9">
-                                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
-                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email ở đây" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -92,3 +79,4 @@
         </div>
     </div>
 </div>
+

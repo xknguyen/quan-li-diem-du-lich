@@ -48,30 +48,41 @@ namespace TLTY.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,Name,CreateDate,UserName,Status,Type,Quantity,Price,Description")] Ticker ticker)
         {
-           if (ModelState.IsValid)
-			{
-				ticker.Status = false;
+            if (string.IsNullOrEmpty(ticker.Name))
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (ticker.Quantity < 0)
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số lượng trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (ticker.Price < 0)
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Giá trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (string.IsNullOrEmpty(ticker.Description))
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+            }
+            else
+            {
+                ticker.Status = false;
                 ticker.CreateDate = DateTime.Now.Date;
-				db.Tickers.Add(ticker);
-				db.SaveChanges();
-				if (ticker.ID > 0)
-				{
-					SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm bảng giá thành công!", "success");
-					
-					return RedirectToAction("Index");
-				}
-				else
-				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm bảng giá không thành công!", "error");
-					return RedirectToAction("Index");
-				}
-			}
-			else
-			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Vui lòng nhập đầy đủ thông tin!", "error");
-			}
-
-			return View(ticker);
+                ticker.UserName=Session["UserName"].ToString();
+                db.Tickers.Add(ticker);
+                db.SaveChanges();
+                if (ticker.ID > 0)
+                {
+                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm giá thành công!. Hãy kích hoạt giá vừa tạo.", "success");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm giá không thành công!", "error");
+                    return RedirectToAction("Index");
+                }
+            }
+            return RedirectToAction("Index");
         }
 
         // GET: /Admin/Tickers/Edit/5
@@ -96,24 +107,38 @@ namespace TLTY.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,Name,CreateDate,UserName,Status,Type,Quantity,Price,Description")] Ticker ticker)
         {
-            if (ModelState.IsValid)
+            if (string.IsNullOrEmpty(ticker.Name))
             {
-                ticker.Status = true;
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (ticker.Quantity < 0)
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số lượng trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (ticker.Price < 0)
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Giá trống xin hãy kiểm tra lại!", "error");
+            }
+            else if (string.IsNullOrEmpty(ticker.Description))
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+            }
+            else
+            {
                 db.Entry(ticker).State = EntityState.Modified;
                 db.SaveChanges();
-                if(ticker.ID>0)
+                if (ticker.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa bảng giá thành công!", "success");
+                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa giá thành công!", "success");
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa bảng giá không thành công!", "error");
+                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa giá không thành công!", "error");
                     return RedirectToAction("Index");
                 }
-                return RedirectToAction("Index");
             }
-            return View(ticker);
+            return RedirectToAction("Index");
         }
 
         // GET: /Admin/Tickers/Delete/5
@@ -141,12 +166,12 @@ namespace TLTY.Areas.Admin.Controllers
             db.SaveChanges();
             if (ticker.ID > 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa bảng giá thành công!", "success");
+                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa giá thành công!", "success");
                 return RedirectToAction("Index");
             }
             else
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa bảng giá không thành công!", "error");
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa giá không thành công!", "error");
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
@@ -159,6 +184,18 @@ namespace TLTY.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var user = db.Tickers.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return Json(new
+            {
+                status = user.Status
+            });
         }
     }
 }

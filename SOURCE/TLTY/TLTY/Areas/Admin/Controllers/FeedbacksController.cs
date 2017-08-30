@@ -10,17 +10,17 @@ using EntityModel.EF;
 
 namespace TLTY.Areas.Admin.Controllers
 {
-    public class FeedbacksController : Controller
+    public class FeedbacksController : BaseController
     {
         private TLTYDBContext db = new TLTYDBContext();
 
-        // GET: Admin/Feedbacks
+        // GET: /Admin/Feedbacks/
         public ActionResult Index()
         {
             return View(db.Feedbacks.ToList());
         }
 
-        // GET: Admin/Feedbacks/Details/5
+        // GET: /Admin/Feedbacks/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -35,61 +35,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(feedback);
         }
 
-        // GET: Admin/Feedbacks/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Admin/Feedbacks/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Email,Phone,CreateDate,Status,Description")] Feedback feedback)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Feedbacks.Add(feedback);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(feedback);
-        }
-
-        // GET: Admin/Feedbacks/Edit/5
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Feedback feedback = db.Feedbacks.Find(id);
-            if (feedback == null)
-            {
-                return HttpNotFound();
-            }
-            return View(feedback);
-        }
-
-        // POST: Admin/Feedbacks/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Email,Phone,CreateDate,Status,Description")] Feedback feedback)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(feedback).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(feedback);
-        }
-
-        // GET: Admin/Feedbacks/Delete/5
+        // GET: /Admin/Feedbacks/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -104,7 +50,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(feedback);
         }
 
-        // POST: Admin/Feedbacks/Delete/5
+        // POST: /Admin/Feedbacks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
@@ -112,6 +58,16 @@ namespace TLTY.Areas.Admin.Controllers
             Feedback feedback = db.Feedbacks.Find(id);
             db.Feedbacks.Remove(feedback);
             db.SaveChanges();
+            if (feedback.ID > 0)
+            {
+                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa phản hồi thành công!", "success");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa phản hồi không thành công!", "error");
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
 
@@ -122,6 +78,18 @@ namespace TLTY.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var user = db.Feedbacks.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return Json(new
+            {
+                status = user.Status
+            });
         }
     }
 }

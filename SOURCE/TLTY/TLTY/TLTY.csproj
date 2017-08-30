@@ -127,6 +127,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -150,6 +151,9 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
+    <Content Include="Content\AdminTheme\js\Controller\ContactController.js" />
+    <Content Include="Content\AdminTheme\js\Controller\FeedbackController.js" />
+    <Content Include="Content\AdminTheme\js\Controller\TickerController.js" />
     <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
@@ -1306,10 +1310,13 @@
     <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
