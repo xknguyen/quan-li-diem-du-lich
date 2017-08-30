@@ -151,9 +151,13 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
+<<<<<<< HEAD
     <Content Include="Content\AdminTheme\js\Controller\ContentController2.js" />
     <Content Include="Content\AdminTheme\js\Controller\ContentController.js" />
     <Content Include="Content\AdminTheme\js\Controller\RequestController.js" />
+=======
+    <Content Include="Content\AdminTheme\js\Controller\TickerController.js" />
+>>>>>>> b380e14b4d43121b347ad7840134ef549e4114f5
     <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
