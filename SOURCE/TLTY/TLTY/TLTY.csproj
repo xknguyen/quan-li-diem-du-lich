@@ -152,17 +152,11 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
-<<<<<<< HEAD
     <Content Include="Content\AdminTheme\js\Controller\AccountGroupController.js" />
-=======
-<<<<<<< HEAD
     <Content Include="Content\AdminTheme\js\Controller\ContentController2.js" />
     <Content Include="Content\AdminTheme\js\Controller\ContentController.js" />
     <Content Include="Content\AdminTheme\js\Controller\RequestController.js" />
-=======
     <Content Include="Content\AdminTheme\js\Controller\TickerController.js" />
->>>>>>> b380e14b4d43121b347ad7840134ef549e4114f5
->>>>>>> fc131f351d0922eb5d6f88db7b52d01091d75696
     <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
@@ -1319,7 +1313,6 @@
     <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Areas\Admin\Views\Feedbacks\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
@@ -1330,13 +1323,11 @@
     <Content Include="Areas\Admin\Views\AccountGroups\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AccountGroups\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AccountGroups\Index.cshtml" />
-=======
     <Content Include="Areas\Admin\Views\Requests\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Index.cshtml" />
->>>>>>> fc131f351d0922eb5d6f88db7b52d01091d75696
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
