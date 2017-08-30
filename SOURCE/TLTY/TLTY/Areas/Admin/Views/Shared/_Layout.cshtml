@@ -35,21 +35,6 @@
 				-webkit-border-radius: 10px;
 			}
 
-		.chat {
-			position: fixed;
-			width: 300px;
-			bottom: 10px;
-			z-index: 1000;
-			left: 0px;
-			margin-left: 20px;
-			background: #521a61 linear-gradient(55.93deg, purple 0%, #521a61 80%);
-			-ms-border-radius: 10px;
-			border-radius: 10px;
-			-webkit-box-shadow: 5px 5px 5px black;
-			-ms-box-shadow: 5px 5px 5px black;
-			box-shadow: 5px 5px 5px black;
-		}
-
 		.modal, .modal-dialog {
 			border-color: #337ab7;
 		}
@@ -68,6 +53,36 @@
 			-ms-border-top-right-radius: 5px;
 			border-top-right-radius: 5px;
 		}
+		#AlertBox {
+			background: #f8f8f8;
+		}
+		#closeelement {
+			position: fixed;
+			z-index: 9999999;
+			bottom: 0;
+			padding: 15px;
+			background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+			color: #fff;
+			width: 90%;
+			max-width: 90%;
+			font: 400 18px Roboto;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			letter-spacing: -.5px;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+
+			#closeelement a {
+				/*background: rgba(0,0,0,.1);*/
+				color: #fff;
+				padding: 15px 15px;
+				position: absolute;
+				right: -5px;
+				top: -10px;
+			}
 	</style>
 
 </head>
@@ -94,9 +109,11 @@
 	</div>
 	@if (TempData["AlertMessage"] != null)
 	{
-		<div id="AlertBox" class="alert @TempData["AlertType"] chat" hide>
-			<div style="margin: 10px 10px 10px 10px">
-				<strong style="font-weight: bold; color: #ffffff; font-size: 16px;">@Html.Raw(TempData["AlertMessage"])</strong>
+		<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
+			<div id='closeelement'>
+				<a href='javascript:closeelement();' title="Nhấn để tắt thông báo"><i class='fa fa-times'></i></a>
+				@Html.Raw(TempData["AlertMessage"])
+				<br />
 			</div>
 		</div>
 	}
@@ -112,6 +129,15 @@
 			});
 		});
 	</script>
+	<script>
+		function closeelement() {
+			var div = document.getElementById('closeelement');
+			div.style.display = 'none';
+		}
+		//setTimeout(closeelement, 5000).slideDown(1000);
+		$('closeelement').delay(9000).slideUp(1500);
+	</script>
+
 	<script>
 		var body;
 		$(document).ready(function () {
