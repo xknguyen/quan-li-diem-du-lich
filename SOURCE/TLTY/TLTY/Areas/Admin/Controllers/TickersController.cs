@@ -160,5 +160,18 @@ namespace TLTY.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+
+            var user = db.Tickers.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return Json(new
+            {
+                status = user.Status
+            });
+        }
     }
 }
