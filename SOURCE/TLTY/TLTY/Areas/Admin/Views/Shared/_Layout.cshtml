@@ -35,11 +35,44 @@
 				-webkit-border-radius: 10px;
 			}
 
+		.chat {
+			position: fixed;
+			width: 300px;
+			bottom: 10px;
+			z-index: 1000;
+			left: 0px;
+			margin-left: 20px;
+			background: #521a61 linear-gradient(55.93deg, purple 0%, #521a61 80%);
+			-ms-border-radius: 10px;
+			border-radius: 10px;
+			-webkit-box-shadow: 5px 5px 5px black;
+			-ms-box-shadow: 5px 5px 5px black;
+			box-shadow: 5px 5px 5px black;
+		}
+
+		.modal, .modal-dialog {
+			border-color: #337ab7;
+		}
+
+		.modal-header {
+			color: #fff;
+			padding: 9px 15px;
+			border-bottom: 1px solid #eee;
+			background-color: #428bca;
+			-webkit-border-top-left-radius: 5px;
+			-webkit-border-top-right-radius: 5px;
+			-moz-border-radius-topleft: 5px;
+			-moz-border-radius-topright: 5px;
+			-ms-border-top-left-radius: 5px;
+			border-top-left-radius: 5px;
+			-ms-border-top-right-radius: 5px;
+			border-top-right-radius: 5px;
+		}
 	</style>
+
 </head>
-<body id="wrapper" class="body-content">
+<body class="body-content">
 	<div id="wrapper">
-		<!-- Navigation -->
 		@Html.Partial("_Nav")
 		<div id="page-wrapper">
 			<div class="row">
@@ -53,24 +86,20 @@
 						<h1 class="page-header">Admin</h1>
 					}
 				</div>
-				<!-- /.col-lg-12 -->
 			</div>
-			@if (TempData["AlertMessage"] != null)
-			{
-				<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
-					@Html.Raw(TempData["AlertMessage"])
-				</div>
-			}
-			<!-- /.row -->
 			<div class="row">
 				@RenderBody()
-				<!-- /.col-lg-12 -->
 			</div>
-			<!-- /.row -->
-
 		</div>
-		<!-- /#page-wrapper -->
 	</div>
+	@if (TempData["AlertMessage"] != null)
+	{
+		<div id="AlertBox" class="alert @TempData["AlertType"] chat" hide>
+			<div style="margin: 10px 10px 10px 10px">
+				<strong style="font-weight: bold; color: #ffffff; font-size: 16px;">@Html.Raw(TempData["AlertMessage"])</strong>
+			</div>
+		</div>
+	}
 	<!-- jQuery -->
 	@Scripts.Render("~/bundles/Admin/jquery")
 	<script src="~/Content/AdminTheme/tool/ckeditor/ckeditor.js"></script>
@@ -81,39 +110,6 @@
 			$('#dataTables-example').DataTable({
 				responsive: true
 			});
-		});
-	</script>
-	<script>
-		function setModalMaxHeight(element) {
-			this.$element = $(element);
-			this.$content = this.$element.find('.modal-content');
-			var borderWidth = this.$content.outerHeight() - this.$content.innerHeight();
-			var dialogMargin = $(window).width() < 768 ? 20 : 60;
-			var contentHeight = $(window).height() - (dialogMargin + borderWidth);
-			var headerHeight = this.$element.find('.modal-header').outerHeight() || 0;
-			var footerHeight = this.$element.find('.modal-footer').outerHeight() || 0;
-			var maxHeight = contentHeight - (headerHeight + footerHeight);
-
-			this.$content.css({
-				'overflow': 'hidden'
-			});
-
-			this.$element
-			  .find('.modal-body').css({
-			  	'max-height': maxHeight,
-			  	'overflow-y': 'auto'
-			  });
-		}
-
-		$('.modal').on('show.bs.modal', function () {
-			$(this).show();
-			setModalMaxHeight(this);
-		});
-
-		$(window).resize(function () {
-			if ($('.modal.in').length != 0) {
-				setModalMaxHeight($('.modal.in'));
-			}
 		});
 	</script>
 	<script>
