@@ -125,6 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentsController.cs" />
@@ -150,6 +151,7 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
+    <Content Include="Content\AdminTheme\js\Controller\AccountGroupController.js" />
     <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
@@ -1311,6 +1313,11 @@
     <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountGroups\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountGroups\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountGroups\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountGroups\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountGroups\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>

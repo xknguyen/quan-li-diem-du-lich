@@ -11,6 +11,9 @@ namespace EntityModel.EF
     {
         public long ID { get; set; }
 
+		[StringLength(250)]
+		public string Name { get; set; }
+
         public long? GroupID { get; set; }
 
         public long? PathID { get; set; }

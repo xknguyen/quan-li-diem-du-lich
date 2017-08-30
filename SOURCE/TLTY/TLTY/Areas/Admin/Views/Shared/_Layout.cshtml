@@ -3,8 +3,6 @@
 	{
 		Response.Redirect("~/Admin/Login/Index");
 	}
-	EntityModel.EF.TLTYDBContext db = new EntityModel.EF.TLTYDBContext();
-	ViewBag.FeedbackFalse = db.Feedbacks.Count(x => x.Status == false);
 }
 <!DOCTYPE html>
 <html>
@@ -59,10 +57,8 @@
 			</div>
 			@if (TempData["AlertMessage"] != null)
 			{
-				<div class="col-lg-12" hide>
-					<div id="AlertBox" class="alert @TempData["AlertType"]">
-						@Html.Raw(TempData["AlertMessage"])
-					</div>
+				<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
+					@Html.Raw(TempData["AlertMessage"])
 				</div>
 			}
 			<!-- /.row -->
@@ -128,7 +124,6 @@
 			window.initScroll();
 		});
 	</script>
-
 	@RenderSection("scripts", required: false)
 </body>
 </html>

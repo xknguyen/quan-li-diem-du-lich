@@ -55,7 +55,7 @@ namespace TLTY
 					  "~/Content/AdminTheme/dist/js/sb-admin-2.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/Admin/bootstrap").Include(
-					  "~/Scripts/Alert.js",
+						"~/Scripts/Alert.js",
 						"~/Content/AdminTheme/js/create-modal.js",
 					  "~/Content/AdminTheme/js/detail-modal.js",
 					  "~/Content/AdminTheme/js/change-modal.js",

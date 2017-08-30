@@ -147,7 +147,6 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 				else
 				{
-					account.Status = true;
 					_db.Entry(account).State = EntityState.Modified;
 					_db.SaveChanges();
 					if (account.ID > 0)
@@ -273,7 +272,6 @@ namespace TLTY.Areas.Admin.Controllers
 								if (user.ID > 0)
 								{
 									SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thay đổi mật khẩu thành công!", "success");
-
 									return RedirectToAction("Index");
 								}
 								else
@@ -296,7 +294,6 @@ namespace TLTY.Areas.Admin.Controllers
 				else
 				{
 					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại.", "error");
-					//ModelState.AddModelError("", "Hãy nhập mật khẩu!");
 				}
 			}
 			return RedirectToAction("Index");
@@ -319,20 +316,19 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (id < 0)
 			{
-				return "Mã tài khoản không tồn tại";
+				return " Không tin thấy tài khoản!";
 			}
 			else
 			{
 				Account p = _db.Accounts.Find(id);
 				if (p == null)
 				{
-					return "Mã tài khoản không được tìm thấy";
+					return " Không tin thấy tài khoản!";
 				}
 				else
 				{
 					p.Avatar = picture;
 					_db.SaveChanges();
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại", "error");
 					return "";
 				}
 			}
