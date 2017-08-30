@@ -35,65 +35,6 @@ namespace TLTY.Areas.Admin.Controllers
             }
             return View(request);
         }
-
-        // GET: Admin/Requests/Create
-        public ActionResult Create()
-        {
-            ViewBag.ContentID = new SelectList(_db.Contents, "ID", "Name");
-            return View();
-        }
-
-        // POST: Admin/Requests/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Phone,Email,CreateDate,Status,MoreImage,ContentID,Detail")] Request request)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Requests.Add(request);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.ContentID = new SelectList(_db.Contents, "ID", "Name", request.ContentID);
-            return View(request);
-        }
-
-        // GET: Admin/Requests/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Request request = _db.Requests.Find(id);
-            if (request == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.ContentID = new SelectList(_db.Contents, "ID", "Name", request.ContentID);
-            return View(request);
-        }
-
-        // POST: Admin/Requests/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Phone,Email,CreateDate,Status,MoreImage,ContentID,Detail")] Request request)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Entry(request).State = EntityState.Modified;
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ContentID = new SelectList(_db.Contents, "ID", "Name", request.ContentID);
-            return View(request);
-        }
-
         // GET: Admin/Requests/Delete/5
         public ActionResult Delete(int? id)
         {
