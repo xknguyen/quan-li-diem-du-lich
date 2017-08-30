@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="@ViewBag.Keywords" />
+	<meta name="description" content="@ViewBag.Descriptions" />
+	<title>Thung lũng tình yêu</title>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	@Styles.Render("~/Content/css")
+	@Styles.Render("~/Content/css" + 2)
+	@Scripts.Render("~/bundles/modernizr")
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<style>
+		* {
+			font-family: 'Lobster', cursive;
+			font-size: 18px;
+		}
+
+		#page-loader {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 9999;
+			background: #ffffff;
+			display: none;
+			font: 0/0 a;
+			-ms-text-shadow: none;
+			text-shadow: none;
+			padding: 1em 1.2em;
+		}
+
+			#page-loader img {
+				display: block;
+				margin: 0 auto;
+			}
+	</style>
+</head>
+<body>
+	@Html.Partial("_header")
+	<div class="container-fuid top-slider">
+		<div class="container">
+			@Html.Partial("_slider")
+			<div class="row">
+				<div class="clearfix"></div>
+				@Html.Partial("_menu")
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+	<div id="page-loader">
+		<img src="~/image/giphy.gif" height="400" width="400" class="img-responsive" />
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-lg-12 footer">
+		@Html.Partial("_footer")
+	</div>
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+
+	<script type="text/javascript">
+		var index = 1;
+
+		function plusIndex(n) {
+			index = index + n;
+			showImage(index);
+		}
+
+		showImage(1);
+
+		function showImage(n) {
+			var i;
+			var x = document.getElementsByClassName("img-slider");
+			if (n > x.length) {
+				index = 1;
+			}
+			if (n < 1) {
+				index = x.length;
+			}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			x[index - 1].style.display = "block";
+
+		}
+
+		autoSlider();
+
+		function autoSlider() {
+			var i;
+			var x = document.getElementsByClassName("img-slider");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			if (index > x.length) {
+				index = 1;
+			}
+			x[index - 1].style.display = "block";
+			index++;
+			setTimeout(autoSlider, 3000);
+		}
+	</script>
+
+
+	<script type="text/javascript">
+		$('#menu li').click(function () {
+			$('#menu li.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	</script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".btn-top").hide();
+			if ($(".btn-top").length > 0) {
+				$(window).scroll(function () {
+					var e = $(window).scrollTop();
+					if (e > 300) {
+						$(".btn-top").show();
+					} else {
+						$(".btn-top").hide();
+					}
+				});
+				$(".btn-top").click(function () {
+					$('body,html').animate({
+						scrollTop: 0
+					});
+				});
+			}
+		});
+	</script>
+	<script type='text/javascript'>
+		jQuery(document).ready(function ($) {
+			$("#page-loader").hide();
+			$(window).on("beforeunload", function () {
+				$('#page-loader').show().fadeIn(1000).delay(8000).fadeOut(1000);
+			});
+		});
+	</script>
+
+	<script>
+		var body;
+		$(document).ready(function () {
+			var initScroll = function () { throw new Error("Not implemented"); };
+			body = document.getElementsByTagName("body")[0];
+			$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
+			initScroll();
+		});
+	</script>
+	@RenderSection("scripts", required: false)
+</body>
+</html>

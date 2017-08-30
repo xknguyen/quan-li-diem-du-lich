@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+	<h1 class="page-header">Tiêu đề trang:</h1>
+}
+<div class="col-lg-12">
+	<p class="fa fa-caret-right"></p> <a href="/Admin">Trang chủ</a> 
+</div>
+<div class="col-lg-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Bảng mẫu
+		</div>
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			
+			<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+				<thead>
+					<tr>
+						<th>Rendering engine</th>
+						<th>Browser</th>
+						<th>Platform(s)</th>
+						<th>Engine version</th>
+						<th>CSS grade</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="odd gradeX">
+						<td>Trident</td>
+						<td>Internet Explorer 4.0</td>
+						<td>Win 95+</td>
+						<td class="center">4</td>
+						<td class="center">X</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- /.table-responsive -->
+		</div>
+		<!-- /.panel-body -->
+	</div>
+	<!-- /.panel -->
+</div>
+
