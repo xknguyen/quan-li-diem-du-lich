@@ -1,0 +1,82 @@
+﻿@model IEnumerable<EntityModel.EF.Request>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <h1 class="page-header">Danh sách phản hồi:</h1>
+}
+<div class="col-lg-12">
+    <a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách phản hồi.
+</div>
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Bảng danh sách phản hồi
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Điện thoại</th>
+                        <th>Thể loại</th>
+                        <th>Trạng thái</th>
+                        <th>Tùy chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX" role="row" id="item_@item.ID">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @{
+                                    string a = "Dịch vụ";
+                                    if (item.Content.Category)
+                                    {
+                                        a = "Tin tức";
+                                    }
+                                }
+                                @a
+                            </td>
+
+                            <td class="center" style="text-align: center;">
+                                <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+                            </td>
+                            <td class="center" style="text-align: center;">
+                                
+                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
+                                    <p class="fa fa-folder"></p>
+                                </a>
+                                <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
+                                    <p class="fa fa-times"></p>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+@section scripts{
+    <script src="~/Content/AdminTheme/js/Controller/RequestController.js"></script>
+
+}
+
+

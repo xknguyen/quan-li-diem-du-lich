@@ -128,12 +128,13 @@
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RequestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TickersController.cs" />
     <Compile Include="Areas\Admin\Models\Common.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\StringHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -150,6 +151,9 @@
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
+    <Content Include="Content\AdminTheme\js\Controller\ContentController2.js" />
+    <Content Include="Content\AdminTheme\js\Controller\ContentController.js" />
+    <Content Include="Content\AdminTheme\js\Controller\RequestController.js" />
     <Content Include="Content\AdminTheme\js\editdetail-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController.js" />
     <Content Include="Content\AdminTheme\js\Controller\InstructionController2.js" />
@@ -1306,11 +1310,11 @@
     <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Feedbacks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Requests\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Requests\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Requests\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Requests\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Requests\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>

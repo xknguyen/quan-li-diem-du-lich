@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -68,6 +71,11 @@ namespace TLTY.Areas.Admin.Controllers
                     content.Status = false;
                     content.CreateDate = DateTime.Now.Date;
                     content.UserName = Session["UserName"].ToString();
+                    //Xử lý alias
+                    if (string.IsNullOrEmpty(content.MetaTitle))//Nếu metatitle k được nhập thì sẽ xử lý
+                    {
+                        content.MetaTitle = StringHelper.ToUnsignString(content.Name);
+                    }
                     if (string.IsNullOrEmpty(content.Images))
                     {
                         content.Images = "/DATA/images/Content/1.jpg";
@@ -191,6 +199,101 @@ namespace TLTY.Areas.Admin.Controllers
                 _db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+
+            var content = _db.Contents.Find(id);
+            content.Status = !content.Status;
+            _db.SaveChanges();
+            return Json(new
+            {
+                status = content.Status
+            });
+        }
+
+        public string ChangeImage(int id, string picture)
+        {
+            if (id < 0)
+            {
+                return "Mã tài khoản không tồn tại";
+            }
+            else
+            {
+                Content p = _db.Contents.Find(id);
+                if (p == null)
+                {
+                    return "Mã tài khoản không được tìm thấy";
+                }
+                else
+                {
+                    p.Images = picture;
+                    _db.SaveChanges();
+                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại", "error");
+                    return "";
+                }
+            }
+        }
+
+        public JsonResult LoadImages(long id)
+        {
+            var content = _db.Contents.Find(id);
+            var images = content.MoreImages;
+            XElement xImages = XElement.Parse(images);
+            List<string> listImageReturn = new List<string>();
+
+            foreach (XElement item in xImages.Elements())
+            {
+                listImageReturn.Add(item.Value);
+            }
+
+            return Json(new
+            {
+                data = listImageReturn
+            }, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        public JsonResult SaveImages(long id, string images)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            var listImages = serializer.Deserialize<List<string>>(images);
+            XElement xElement = new XElement("Images");
+            foreach (var item in listImages)
+            {
+                var subStringItem = item.Substring(22);
+                xElement.Add(new XElement("Image", subStringItem));
+            }
+
+
+            try
+            {
+                UpdateImages(id, xElement.ToString());
+                return Json(new
+                {
+                    status = true
+                });
+            }
+            catch (Exception)
+            {
+
+                return Json(new
+                {
+                    status = false
+                });
+            }
+
+        }
+
+
+        public void UpdateImages(long contentID, string images)
+        {
+            var content = _db.Contents.Find(contentID);
+            content.MoreImages = images;
+            _db.SaveChanges();
         }
     }
 }
