@@ -1,7 +1,7 @@
 ﻿@model EntityModel.EF.Ticker
 
 @{
-    ViewBag.Title = "Xóa bảng giá" + @Model.Name;
+    ViewBag.Title = "Xóa giá" + @Model.Name;
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,10 +13,10 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title">Xóa bảng giá @Model.Name</h4>
+                <h4 class="modal-title">Xóa giá @Model.Name</h4>
             </div>
             <div class="modal-body">
-                <h4>Bạn có muốn xóa bảng giá <strong style="color: red;">@Model.Name</strong> này không?</h4>
+                <h4>Bạn có muốn xóa giá <strong style="color: red;">@Model.Name</strong> này không?</h4>
                 <div class="clearfix"></div>
             </div>
             <div class="modal-footer">

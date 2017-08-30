@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using EntityModel.EF;
 using System.Web.Script.Serialization;
 using System.Xml.Linq;
+using EntityModel.EF;
 using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
@@ -289,9 +287,9 @@ namespace TLTY.Areas.Admin.Controllers
         }
 
 
-        public void UpdateImages(long contentID, string images)
+        public void UpdateImages(long contentId, string images)
         {
-            var content = _db.Contents.Find(contentID);
+            var content = _db.Contents.Find(contentId);
             content.MoreImages = images;
             _db.SaveChanges();
         }

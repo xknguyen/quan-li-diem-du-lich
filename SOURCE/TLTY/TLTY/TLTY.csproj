@@ -1317,10 +1317,8 @@
     <Content Include="Areas\Admin\Views\AccountGroups\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AccountGroups\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AccountGroups\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Requests\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Requests\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Contacts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Contacts\Delete.cshtml" />
