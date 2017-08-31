@@ -8,7 +8,7 @@
 			var btn = $(this);
 			var id = btn.data('id');
 			$.ajax({
-				url: "/Admin/Accounts/ChangeStatus",
+				url: "/Admin/Paths/ChangeStatus",
 				data: { id: id },
 				dataType: "json",
 				type: "POST",
@@ -16,10 +16,8 @@
 					console.log(response);
 					if (response.status == true) {
 						btn.text('Kích hoạt');
-						$('.abc').html(response.smg);
 					}
 					else {
-						$('.abc').html("<i class='fa fa-times'></i> Khóa thành công.");
 						btn.text('Khoá');
 					}
 				}

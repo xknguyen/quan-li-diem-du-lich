@@ -1,0 +1,56 @@
+﻿@model EntityModel.EF.Path
+
+@{
+	ViewBag.Title = "Xem chi tiết đường dẫn " + @Model.PathName;
+	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal fade" id="detailModal" style="display: block !important;">
+	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Xem chi tiết đường dẫn @Model.PathName</h4>
+			</div>
+			<div class="modal-body" style="height: 200px;overflow-y: auto;">
+					<dl class="dl-horizontal">
+						<dt>
+							Tên đường dẫn:
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.PathName)
+						</dd>
+
+						<dt>
+							Đường dẫn:
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.Link)
+						</dd>
+
+						<dt>
+							Mô tả:
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.Description)
+						</dd>
+					</dl>
+				<div class="clearfix"></div>
+			</div>
+			<div class="modal-footer">
+				<div class="form-actions no-color text-center">
+					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa đường dẫn @Model.PathName" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="~/Content/AdminTheme/js/edit-modal.js"></script>

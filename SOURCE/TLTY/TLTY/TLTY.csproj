@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PathsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RequestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TickersController.cs" />
     <Compile Include="Areas\Admin\Models\Common.cs" />
@@ -152,6 +153,7 @@
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
+    <Content Include="Content\AdminTheme\js\Controller\PathController.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountController.js" />
     <Content Include="Content\AdminTheme\js\change-modal.js" />
     <Content Include="Content\AdminTheme\js\Controller\AccountGroupController.js" />
@@ -1333,6 +1335,11 @@
     <Content Include="Areas\Admin\Views\Tickers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Tickers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Paths\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Paths\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Paths\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Paths\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Paths\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
