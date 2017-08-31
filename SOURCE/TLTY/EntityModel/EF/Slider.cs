@@ -16,14 +16,13 @@ namespace EntityModel.EF
 
         public int DisplayOrder { get; set; }
 
-        [StringLength(10)]
+        [StringLength(250)]
         public string Link { get; set; }
 
         public long ContentID { get; set; }
 
         public DateTime CreateDate { get; set; }
 
-        [Required]
         [StringLength(250)]
         public string UserName { get; set; }
 
