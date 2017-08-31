@@ -48,6 +48,7 @@ ul.nav li.active:hover {
 }
 
 .navbar-default {
+	background-color: #ffffff;
 	background-color: rgba(255,255,255,0.95);
 }
 
@@ -109,41 +110,6 @@ h1 {
 
 
 
-.slider {
-	height: 300px;
-	width: 100%;
-	margin: 0 auto;
-	margin-left: -15px;
-	position: relative;
-}
-
-	.slider img {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-	}
-
-	.slider button.btn {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		border: none;
-		-ms-border-radius: 25px;
-		border-radius: 25px;
-		top: 125px;
-		background: rgba(255,255,255,0.95);
-		font-size: 20px;
-	}
-
-#btnright {
-	position: relative;
-	float: right;
-}
-
-#btnleft {
-	margin-left: 30px;
-}
-
 .btn-top {
 	background-image: url('../image/to-top.png');
 	background-repeat: no-repeat;
@@ -159,6 +125,7 @@ h1 {
 	position: fixed;
 	z-index: 9980;
 	margin: 0 0 5px 5px;
+	-ms-opacity: 0.5;
 	opacity: 0.5;
 }
 
@@ -177,154 +144,37 @@ h1 {
 		position: fixed;
 		z-index: 9980;
 		margin: 0 0 5px 5px;
+		-ms-opacity: 1.5;
 		opacity: 1.5;
 	}
 
 * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-.row > .column {
-	padding: 0 8px;
-}
-
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.column {
-	float: left;
-	width: 25%;
-}
-
-/* The Modal (background) */
-.modal {
-	display: none;
-	position: fixed;
-	z-index: 9999;
-	padding-top: 100px;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
-	position: relative;
-	background-color: #fefefe;
-	margin: auto;
-	padding: 0;
-	width: 80%;
-	max-width: 1200px;
-}
-
-/* The Close Button */
-.close {
-	color: white;
-	position: absolute;
-	top: 10px;
-	right: 25px;
-	font-size: 35px;
-	font-weight: bold;
-}
-
-	.close:hover,
-	.close:focus {
-		color: #999;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-.mySlides {
-	display: none;
-}
-
-.cursor {
-	cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	width: auto;
-	padding: 16px;
-	margin-top: -50px;
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-	user-select: none;
-	-webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-	right: 0;
-	border-radius: 3px 0 0 3px;
-}
-
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover,
-	.next:hover {
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-
-/* Number text (1/3 etc) */
-.numbertext {
-	color: #f2f2f2;
-	font-size: 12px;
-	padding: 8px 12px;
-	position: absolute;
-	top: 0;
 }
 
 img {
 	margin-bottom: -4px;
 }
 
-.caption-container {
-	text-align: center;
-	background-color: black;
-	padding: 2px 16px;
-	color: white;
-}
-
-.demo {
-	opacity: 0.6;
-}
-
-	.active,
-	.demo:hover {
-		opacity: 1;
-	}
-
-img.hover-shadow {
-	transition: 0.3s;
-}
-
-.hover-shadow:hover {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .header-top {
-	padding: 0 20px 0 20px
+	padding: 0 20px 0 20px;
 }
 
 .menu {
-	padding-top: 15px; padding-bottom: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-.menu h1{
-	text-align: center;padding-top: 15px; padding-bottom: 15px;color: #981271; font-weight: bold;
-}
+
+	.menu h1 {
+		text-align: center;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: #981271;
+		font-weight: bold;
+	}
+
 .icon-menu:hover {
 	border-bottom: 3px solid #981271;
 }
@@ -350,20 +200,99 @@ img.hover-shadow {
 	border-bottom: 3px solid red;
 }
 
-.baiviet a{
-	text-decoration: none; color: black;
+.baiviet a {
+	text-decoration: none;
+	color: black;
 }
-.baiviet a i {
-	float: left; font-size: 80%; margin-top: 5px;
-}
-.baiviet a h5 {
+
+	.baiviet a i {
+		float: left;
+		font-size: 80%;
+		margin-top: 5px;
+	}
+
+	.baiviet a h5 {
+		font-weight: bold;
+	}
+
+.baiviet .chitiet h1 {
+	text-align: center;
+	color: #981271;
 	font-weight: bold;
 }
 
-.baiviet .chitiet h1{
-	text-align: center; color: #981271; font-weight: bold;
+.baiviet .chitiet img {
+	margin: auto;
+	display: block;
 }
 
-.baiviet .chitiet img{
-	margin: auto; display: block;
+
+.list-inline {
+	text-align: center;
+}
+
+	.list-inline > li {
+		margin: 10px 5px;
+		padding: 0;
+	}
+
+		.list-inline > li:hover {
+			cursor: pointer;
+		}
+
+	.list-inline .selected img {
+		opacity: 1;
+		border-radius: 15px;
+	}
+
+	.list-inline img {
+		opacity: 0.5;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
+	}
+
+		.list-inline img:hover {
+			opacity: 1;
+		}
+
+.item > img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.carousel-caption p {
+    margin-bottom: 0;
+}
+
+
+.carousel-caption {
+    /* position: absolute; */
+	position: static;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    /* background: #333; */
+    background: rgba(0,0,0,.75);
+}
+@media screen and (min-width: 768px) {
+	.carousel-caption {
+		right: 20%;
+		left: 20%;
+		/* padding-bottom: 30px; */
+	}
+
+	.carousel-caption {
+		position: static;
+		right: 15%;
+		bottom: 20px;
+		left: 15%;
+		z-index: 10;
+		/* padding-top: 20px; */
+		padding-bottom: 20px;
+		color: #fff;
+		text-align: center;
+		text-shadow: 0 1px 2px rgba(0,0,0,.6);
+	}
 }
