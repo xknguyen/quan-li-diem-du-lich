@@ -53,9 +53,11 @@
 			-ms-border-top-right-radius: 5px;
 			border-top-right-radius: 5px;
 		}
+
 		#AlertBox {
 			background: #f8f8f8;
 		}
+
 		#closeelement {
 			position: fixed;
 			z-index: 9999999;
@@ -83,71 +85,109 @@
 				right: -5px;
 				top: -10px;
 			}
+
+		div.guestwarn {
+			background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+			color: #fff;
+			width: 290px;
+			max-width: 290px;
+			min-height: 18px;
+			right: 2%;
+			bottom: 5%;
+			padding: 10px 15px;
+			position: fixed;
+			z-index: 10;
+			font-size: 16px;
+			-webkit-filter: alpha(opacity=88);
+			-moz-filter: alpha(opacity=88);
+			-o-filter: alpha(opacity=88);
+			filter: alpha(opacity=88);
+			-moz-opacity: .88;
+			-ms-opacity: .88;
+			opacity: .88;
+		}
+
+		.close {
+			float: right;
+			width: 22px;
+			height: 22px;
+		}
 	</style>
 
 </head>
 <body class="body-content">
-<div id="wrapper">
-	@Html.Partial("_Nav")
-	<div id="page-wrapper">
-		<div class="row">
-			<div class="col-lg-12">
-				@if (IsSectionDefined("header"))
-				{
-					@RenderSection("header", required: true)
-				}
-				else
-				{
-					<h1 class="page-header">Admin</h1>
-				}
-				<div class="abc"></div>
+	<div id="wrapper">
+		@Html.Partial("_Nav")
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					@if (IsSectionDefined("header"))
+					{
+						@RenderSection("header", required: true)
+					}
+					else
+					{
+						<h1 class="page-header">Admin</h1>
+					}
+				</div>
+			</div>
+			<div class="row">
+				@RenderBody()
 			</div>
 		</div>
-		<div class="row">
-			@RenderBody()
+	</div>
+	<div id="thongbao" style="display: none">
+		<div class="guestwarn">
+			<a class="close" onclick="closeBox('thongbao'); return false;" title="Đóng thông báo này"><i class="fa fa-times" style="color: #fff"></i></a>
+			<div class="abc"></div>
 		</div>
 	</div>
-</div>
-@if (TempData["AlertMessage"] != null)
-{
-	<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
-		<div id='closeelement'>
-			<a href='javascript:closeelement();' title="Nhấn để tắt thông báo"><i class='fa fa-times'></i></a>
-			@Html.Raw(TempData["AlertMessage"])
-			<br/>
+	@if (TempData["AlertMessage"] != null)
+	{
+		<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
+			<div id='closeelement'>
+				<a href='javascript:closeelement();' title="Nhấn để tắt thông báo"><i class='fa fa-times'></i></a>
+				@Html.Raw(TempData["AlertMessage"])
+				<br />
+			</div>
 		</div>
-	</div>
-}
-<!-- jQuery -->
-@Scripts.Render("~/bundles/Admin/jquery")
-<script src="~/Content/AdminTheme/tool/ckeditor/ckeditor.js"></script>
-<script src="~/Content/AdminTheme/tool/ckfinder/ckfinder.js"></script>
-@Scripts.Render("~/bundles/Admin/bootstrap")
-<script>
-	$(document).ready(function() {
-		$('#dataTables-example').DataTable({
-			responsive: true
-		});
-	});
-</script>
-<script>
-	function closeelement() {
-		var div = document.getElementById('closeelement');
-		div.style.display = 'none';
 	}
+	<!-- jQuery -->
+	@Scripts.Render("~/bundles/Admin/jquery")
+	<script src="~/Content/AdminTheme/tool/ckeditor/ckeditor.js"></script>
+	<script src="~/Content/AdminTheme/tool/ckfinder/ckfinder.js"></script>
+	@Scripts.Render("~/bundles/Admin/bootstrap")
+	<script>
+		$(document).ready(function () {
+			$('#dataTables-example').DataTable({
+				responsive: true
+			});
+		});
 
-//setTimeout(closeelement, 5000).slideDown(1000);
-	$('closeelement').delay(9000).slideUp(1500);
-</script>
+	</script>
+ 
+	<script>
+		function closeelement() {
+			var div = document.getElementById('closeelement');
+			div.style.display = 'none';
+		}
+		//setTimeout(closeelement, 5000).slideDown(1000);
+		$('#closeelement').delay(9000).slideUp(1500);
 
-<script>
-	var body;
-	$(document).ready(function() {
-		body = document.getElementsByTagName("body")[0];
-		$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
-		window.initScroll();
-	});
-</script>
-@RenderSection("scripts", required: false)
+		function closeBox() {
+			var div = document.getElementById('thongbao');
+			div.style.display = 'none';
+		}
+		setTimeout(closeBox, 9000);
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			var body = document.getElementsByTagName("body")[0];
+			$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
+			window.initScroll();
+		});
+	</script>
+	@RenderSection("scripts", required: false)
 </body>
 </html>
