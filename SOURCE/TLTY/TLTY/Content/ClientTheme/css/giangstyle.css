@@ -75,9 +75,8 @@ h1 {
 	width: 100px;
 	height: 100px;
 	display: block;
-	margin: 0 100px;
+	margin: 10px 100px;
 }
-
 
 .icon-menu .head h4 {
 	text-align: center;
@@ -90,7 +89,7 @@ h1 {
 }
 
 .slider {
-	height: 300px;
+	height: 350px;
 	width: 100%;
 	margin: 0 auto;
 	margin-left: -15px;
@@ -163,28 +162,21 @@ h1 {
 		opacity: 1.5;
 	}
 
-
-
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
 }
 
-
-
 img {
 	margin-bottom: -4px;
 }
-
-
 
 body {
 	/*background: url('/image/bg.jpg') no-repeat fixed;*/
 	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
 	color: #ffffff;
 }
-
 
 .baiviet a {
 	text-decoration: none;
@@ -194,11 +186,13 @@ body {
 	.baiviet a i {
 		float: left;
 		font-size: 80%;
-		margin-top: 5px;
+		margin-top: 15px;
 	}
 
 	.baiviet a h5 {
 		font-weight: bold;
+        margin: 20px;
+        font-size:15px;
 	}
 
 .baiviet .chitiet h1 {
