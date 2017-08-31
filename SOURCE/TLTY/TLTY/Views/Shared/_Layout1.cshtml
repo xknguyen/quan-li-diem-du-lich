@@ -8,7 +8,7 @@
 	<meta name="description" content="@ViewBag.Descriptions" />
 	<title>Thung lũng tình yêu</title>
 	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	
+
 	@Styles.Render("~/Content/css")
 	@Styles.Render("~/Content/css1")
 	@Scripts.Render("~/bundles/modernizr")
@@ -41,53 +41,41 @@
 	@Scripts.Render("~/bundles/bootstrap")
 
 	<script type="text/javascript">
-		var index = 1;
-
-		function plusIndex(n) {
-			index = index + n;
-			showImage(index);
-		}
-
-		showImage(1);
-
-		function showImage(n) {
-			var i;
-			var x = document.getElementsByClassName("img-slider");
-			if (n > x.length) {
-				index = 1;
-			}
-			if (n < 1) {
-				index = x.length;
-			}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			x[index - 1].style.display = "block";
-
-		}
-
-		autoSlider();
-
-		function autoSlider() {
-			var i;
-			var x = document.getElementsByClassName("img-slider");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			if (index > x.length) {
-				index = 1;
-			}
-			x[index - 1].style.display = "block";
-			index++;
-			setTimeout(autoSlider, 3000);
-		}
-	</script>
-	
-
-	<script type="text/javascript">
 		$('#menu li').click(function () {
 			$('#menu li.active').removeClass('active');
 			$(this).addClass('active');
+		});
+	</script>
+	<script>
+		$('#mySlider').carousel({
+			interval: 3500
+		});
+
+		// This event fires immediately when the slide instance method is invoked.
+		$('#mySlider').on('slide.bs.carousel', function (e) {
+			var id = $('.item.active').data('slide-number');
+
+			// Added a statement to make sure the carousel loops correct
+			if (e.direction == 'right') {
+				id = parseInt(id) - 1;
+				if (id == -1) id = 7;
+			} else {
+				id = parseInt(id) + 1;
+				if (id == $('[id^=carousel-thumb-]').length) id = 0;
+			}
+
+			$('[id^=carousel-thumb-]').removeClass('selected');
+			$('[id=carousel-thumb-' + id + ']').addClass('selected');
+		});
+
+		// Thumb control
+		$('[id^=carousel-thumb-]').click(function () {
+			var id_selector = $(this).attr("id");
+			var id = id_selector.substr(id_selector.length - 1);
+			id = parseInt(id);
+			$('#mySlider').carousel(id);
+			$('[id^=carousel-thumb-]').removeClass('selected');
+			$(this).addClass('selected');
 		});
 	</script>
 	<script type="text/javascript">
@@ -97,27 +85,25 @@
 				$(window).scroll(function () {
 					var e = $(window).scrollTop();
 					if (e > 300) {
-						$(".btn-top").show()
+						$(".btn-top").show();
 					} else {
-						$(".btn-top").hide()
+						$(".btn-top").hide();
 					}
 				});
 				$(".btn-top").click(function () {
 					$('body,html').animate({
 						scrollTop: 0
-					})
-				})
+					});
+				});
 			}
 		});
 	</script>
 	<script>
-	var body;
-	$(document).ready(function () {
-		var initScroll = function () { throw new Error("Not implemented"); };
-		body = document.getElementsByTagName("body")[0];
-		$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
-		initScroll();
-	});
+		var body;
+		$(document).ready(function () {
+			body = document.getElementsByTagName("body")[0];
+			$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
+		});
 	</script>
 
 	@RenderSection("scripts", required: false)
