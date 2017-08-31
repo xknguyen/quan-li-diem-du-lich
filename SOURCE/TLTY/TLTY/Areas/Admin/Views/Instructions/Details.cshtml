@@ -1,12 +1,12 @@
 ﻿@model EntityModel.EF.Instruction
-
+@using System.Xml.Linq
 @{
 	ViewBag.Title = "Xem chi tiết giới thiệu " + @Model.Name;
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="modal fade" id="detailModal" style="display: block !important;">
-	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+	<div class="modal-dialog modal-lg" style="overflow-y: initial !important; overflow-y: scroll; max-height: 85%; margin-top: 50px; margin-bottom: 50px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">
@@ -15,7 +15,7 @@
 				</button>
 				<h4 class="modal-title">Xem chi tiết giới thiệu @Model.Name</h4>
 			</div>
-			<div class="modal-body" style="height: 400px;overflow-y: auto;">
+			<div class="modal-body" style="height: 400px; overflow-y: auto;">
 				<div class="col-md-7">
 					<dl class="dl-horizontal">
 						<dt>
@@ -30,7 +30,7 @@
 						</dt>
 
 						<dd>
-							@Html.DisplayFor(model => model.Detail)
+							@Html.Raw(Model.Detail)
 						</dd>
 
 
@@ -46,15 +46,106 @@
 				</div>
 				<div class="col-md-5">
 					<img alt="" src="@Model.Images" width="200" height="245" class="img-responsive" />
+					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
+				<div class="col-md-12" style="border: 1px solid aqua; margin: 10px 10px 10px 10px">
+					<div class="row" style="margin: 10px 10px 10px 10px">
+						<div class="col-sm-5" id="slider-thumbs">
+							<label class="col-md-12">Danh sách ảnh</label>
+							<!-- Bottom switcher of slider -->
+							<ul class="hide-bullets">
+								@if (Model.MoreImages != null)
+								{
+									int i = 0;
+									foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+									{
+										<li class="col-sm-3">
+											<a class="thumbnail" id="carousel-selector-@i">
+												<img src="@item.Value">
+											</a>
+										</li>
+										i++;
+									}
+								}
+							</ul>
+						</div>
+						<div class="col-sm-7">
+							<div class="col-xs-12" id="slider">
+								<!-- Top part of the slider -->
+								<div class="row">
+									<div class="col-sm-12" id="carousel-bounding-box">
+										<div class="carousel slide" id="myCarousel">
+											<!-- Carousel items -->
+											<div class="carousel-inner">
+												@if (Model.MoreImages != null)
+												{
+													int i = 0;
+													foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+													{
+
+														string hiteam = "item";
+														if (i == 0)
+														{
+															hiteam = "active item";
+														}
+														<div class="@hiteam" data-slide-number="i">
+															<img src="@item.Value">
+														</div>
+														i++;
+
+													}
+												}
+											</div>
+											<!-- Carousel nav -->
+											<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+												<span class="fa fa-arrow-left" style="margin-top: 150px"></span>
+											</a>
+											<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+												<span class="fa fa-arrow-right" style="margin-top: 150px"></span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 			<div class="modal-footer">
 				<div class="form-actions no-color text-center">
-					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa  giới thiệu @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+					<a href="@Url.Action("Edit", new {@id = Model.ID})" title="Sửa  giới thiệu @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<script>
+	jQuery(document).ready(function ($) {
+
+		$('#myCarousel').carousel({
+			interval: 5000
+		});
+
+		//Handles the carousel thumbnails
+		$('[id^=carousel-selector-]').click(function () {
+			var id_selector = $(this).attr("id");
+			try {
+				var id = /-(\d+)$/.exec(id_selector)[1];
+				console.log(id_selector, id);
+				jQuery('#myCarousel').carousel(parseInt(id));
+			} catch (e) {
+				console.log('Regex failed!', e);
+			}
+		});
+		// When the carousel slides, auto update the text
+		$('#myCarousel').on('slid.bs.carousel', function (e) {
+			var id = $('.item.active').data('slide-number');
+			$('#carousel-text').html($('#slide-content-' + id).html());
+		});
+	});
+</script>
