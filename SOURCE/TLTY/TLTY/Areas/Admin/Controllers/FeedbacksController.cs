@@ -60,12 +60,12 @@ namespace TLTY.Areas.Admin.Controllers
             db.SaveChanges();
             if (feedback.ID > 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa phản hồi thành công!", "success");
+                SetAlert("<i class='fa fa-check'></i> Xóa phản hồi thành công!", "success");
                 return RedirectToAction("Index");
             }
             else
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa phản hồi không thành công!", "error");
+                SetAlert("<i class='fa fa-times'></i> Xóa phản hồi không thành công!", "error");
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
