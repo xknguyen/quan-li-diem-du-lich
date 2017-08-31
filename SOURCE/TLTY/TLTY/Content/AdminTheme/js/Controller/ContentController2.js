@@ -1,6 +1,6 @@
-﻿var product2 = {
+﻿var content = {
     init: function () {
-        product2.registerEvents2();
+        content.registerEvents2();
     },
     registerEvents2: function () {
 
@@ -8,7 +8,7 @@
             e.preventDefault();
             $('#imagesManage').modal('show');
             $('#contentID').val($(this).data('id'));
-            product2.LoadImages();
+            content.LoadImages();
         });
 
         $('#btnChooImages').off('click').on('click', function (e) {
@@ -82,4 +82,4 @@
         });
     }
 }
-product2.init();
+content.init();

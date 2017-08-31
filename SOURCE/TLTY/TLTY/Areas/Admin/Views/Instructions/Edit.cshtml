@@ -1,11 +1,11 @@
-﻿@model EntityModel.EF.Content
+﻿@model EntityModel.EF.Instruction
 
 @{
-	ViewBag.Title = "Tạo mới nội dung";
+	ViewBag.Title = "Sửa giới thiệu "+@Model.Name;
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="modal fade" id="createModal" style="display: block !important;">
+<div class="modal fade" id="editModal" style="display: block !important;">
 	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -13,12 +13,16 @@
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Tạo mới nội dung </h4>
+				<h4 class="modal-title">Sửa giới thiệu @Model.Name</h4>
 			</div>
 			@using (Html.BeginForm())
 			{
 				<div class="modal-body" style="height: 400px;overflow-y: auto;">
 					@Html.AntiForgeryToken()
+					@Html.HiddenFor(model=>model.MoreImages)
+					@Html.HiddenFor(model => model.Status)
+					@Html.HiddenFor(model => model.UserName)
+					@Html.HiddenFor(model => model.CreateDate)
 					<div class="form-horizontal">
 						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						<div class="col-md-12">
@@ -30,46 +34,19 @@
 										@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
 									</div>
 								</div>
-
-								<div class="form-group">
-									<label class="control-label col-md-3">Tên đường dẫn:</label>
-									<div class="col-md-9">
-										@Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", placeholder = "Nhập tên đường dẫn ở đây" })
-										@Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label col-md-3">Mô tả:</label>
-									<div class="col-md-9">
-										@Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
-										@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label col-md-3">Thể loại:</label>
-									<div class="col-md-9">
-										<select class="form-control" name="Category">
-											<option value="false">Dịch vụ</option>
-											<option value="true">Tin tức</option>
-										</select>
-									</div>
-								</div>
-
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label class="control-label col-md-2">Hình:</label>
-									<div class="col-md-12" style="margin-bottom: 10px;">
+									<label class="control-label col-md-3">Hình:</label>
+									<div class="col-md-9" style="margin-bottom: 10px;">
 										<img alt="" id="img" src="" width="200" height="245" class="img-responsive" />
 									</div>
 									<div class="clearfix"></div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										@Html.TextBoxFor(model => model.Images, new { @class = "form-control disabled", placeholder = "Đường dẫn hình" })
 										@Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
 									</div>
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
 										<script>
                                             $('#Browse').click(function () {
