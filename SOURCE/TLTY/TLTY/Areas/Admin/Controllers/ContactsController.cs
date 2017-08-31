@@ -50,15 +50,15 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(contact.Address))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Địa chỉ trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Địa chỉ trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(contact.Phone))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số điện thoại trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Số điện thoại trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(contact.Email))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Email trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -69,12 +69,12 @@ namespace TLTY.Areas.Admin.Controllers
                     db.SaveChanges();
                     if (contact.ID > 0)
                     {
-                        SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm liên hệ thành công!. Hãy kích hoạt liên hệ vừa tạo.", "success");
+                        SetAlert("<i class='fa fa-check'></i> Thêm liên hệ thành công!. Hãy kích hoạt liên hệ vừa tạo.", "success");
                         return RedirectToAction("Index");
                     }
                     else
                     {
-                        SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm liên hệ không thành công!", "error");
+                        SetAlert("<i class='fa fa-times'></i> Thêm liên hệ không thành công!", "error");
                         return RedirectToAction("Index");
                     }
                 }
@@ -105,15 +105,15 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(contact.Address))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Địa chỉ trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Địa chỉ trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(contact.Phone))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số điện thoại trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Số điện thoại trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(contact.Email))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Email trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -121,12 +121,12 @@ namespace TLTY.Areas.Admin.Controllers
                 db.SaveChanges();
                 if (contact.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa liên hệ thành công!", "success");
+                    SetAlert("<i class='fa fa-check'></i> Sửa liên hệ thành công!", "success");
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa liên hệ không thành công!", "error");
+                    SetAlert("<i class='fa fa-times'></i> Sửa liên hệ không thành công!", "error");
                     return RedirectToAction("Index");
                 }
             }
@@ -158,12 +158,12 @@ namespace TLTY.Areas.Admin.Controllers
             db.SaveChanges();
             if (contact.ID > 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa liên hệ thành công!", "success");
+                SetAlert("<i class='fa fa-check'></i> Xóa liên hệ thành công!", "success");
                 return RedirectToAction("Index");
             }
             else
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa liên hệ không thành công!", "error");
+                SetAlert("<i class='fa fa-times'></i> Xóa liên hệ không thành công!", "error");
                 return RedirectToAction("Index");
             }
         }

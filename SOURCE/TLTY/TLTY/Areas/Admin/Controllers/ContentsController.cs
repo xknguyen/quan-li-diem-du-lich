@@ -51,15 +51,15 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(content.Name))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(content.Description))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(content.Detail))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Nội dung trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Nội dung trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -82,18 +82,18 @@ namespace TLTY.Areas.Admin.Controllers
                     _db.SaveChanges();
                     if (content.ID > 0)
                     {
-                        SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm nội dung thành công!. Hãy kích hoạt nội dung vừa tạo.", "success");
+                        SetAlert("<i class='fa fa-check'></i> Thêm nội dung thành công!. Hãy kích hoạt nội dung vừa tạo.", "success");
                         return RedirectToAction("Index");
                     }
                     else
                     {
-                        SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm nội dung không thành công!", "error");
+                        SetAlert("<i class='fa fa-times'></i> Thêm nội dung không thành công!", "error");
                         return RedirectToAction("Index");
                     }
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Nội dung đã tồn tại!", "error");
+                    SetAlert("<i class='fa fa-times'></i> Nội dung đã tồn tại!", "error");
                 }
             }
             return RedirectToAction("Index");
@@ -123,15 +123,15 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(content.Name))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(content.Description))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(content.Detail))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Nội dung trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Nội dung trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -143,12 +143,12 @@ namespace TLTY.Areas.Admin.Controllers
                 _db.SaveChanges();
                 if (content.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa nội dung thành công!. Hãy kích hoạt nội dung vừa tạo.", "success");
+                    SetAlert("<i class='fa fa-check'></i> Sửa nội dung thành công!. Hãy kích hoạt nội dung vừa tạo.", "success");
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa nội dung không thành công!", "error");
+                    SetAlert("<i class='fa fa-times'></i> Sửa nội dung không thành công!", "error");
                     return RedirectToAction("Index");
                 }
             }
@@ -180,12 +180,12 @@ namespace TLTY.Areas.Admin.Controllers
             _db.SaveChanges();
             if (content.ID > 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa nội dung thành công!", "success");
+                SetAlert("<i class='fa fa-check'></i> Xóa nội dung thành công!", "success");
                 return RedirectToAction("Index");
             }
             else
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa nội dung không thành công!", "error");
+                SetAlert("<i class='fa fa-times'></i> Xóa nội dung không thành công!", "error");
                 return RedirectToAction("Index");
             }
         }
@@ -229,7 +229,7 @@ namespace TLTY.Areas.Admin.Controllers
                 {
                     p.Images = picture;
                     _db.SaveChanges();
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại", "error");
+                    SetAlert("<i class='fa fa-times'></i> Tài khoản không tồn tại", "error");
                     return "";
                 }
             }

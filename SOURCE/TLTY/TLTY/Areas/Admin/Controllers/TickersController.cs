@@ -50,19 +50,19 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(ticker.Name))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
             }
             else if (ticker.Quantity < 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số lượng trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Số lượng trống xin hãy kiểm tra lại!", "error");
             }
             else if (ticker.Price < 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Giá trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Giá trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(ticker.Description))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -73,12 +73,12 @@ namespace TLTY.Areas.Admin.Controllers
                 db.SaveChanges();
                 if (ticker.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm giá thành công!. Hãy kích hoạt giá vừa tạo.", "success");
+                    SetAlert("<i class='fa fa-check'></i> Thêm giá thành công!. Hãy kích hoạt giá vừa tạo.", "success");
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm giá không thành công!", "error");
+                    SetAlert("<i class='fa fa-times'></i> Thêm giá không thành công!", "error");
                     return RedirectToAction("Index");
                 }
             }
@@ -109,19 +109,19 @@ namespace TLTY.Areas.Admin.Controllers
         {
             if (string.IsNullOrEmpty(ticker.Name))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
             }
             else if (ticker.Quantity < 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Số lượng trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Số lượng trống xin hãy kiểm tra lại!", "error");
             }
             else if (ticker.Price < 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Giá trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Giá trống xin hãy kiểm tra lại!", "error");
             }
             else if (string.IsNullOrEmpty(ticker.Description))
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
+                SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
             }
             else
             {
@@ -129,12 +129,12 @@ namespace TLTY.Areas.Admin.Controllers
                 db.SaveChanges();
                 if (ticker.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa giá thành công!", "success");
+                    SetAlert("<i class='fa fa-check'></i> Sửa giá thành công!", "success");
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa giá không thành công!", "error");
+                    SetAlert("<i class='fa fa-times'></i> Sửa giá không thành công!", "error");
                     return RedirectToAction("Index");
                 }
             }
@@ -166,12 +166,12 @@ namespace TLTY.Areas.Admin.Controllers
             db.SaveChanges();
             if (ticker.ID > 0)
             {
-                SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa giá thành công!", "success");
+                SetAlert("<i class='fa fa-check'></i> Xóa giá thành công!", "success");
                 return RedirectToAction("Index");
             }
             else
             {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa giá không thành công!", "error");
+                SetAlert("<i class='fa fa-times'></i> Xóa giá không thành công!", "error");
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
