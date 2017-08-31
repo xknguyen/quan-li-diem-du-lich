@@ -52,7 +52,16 @@
 								<img id="img_@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Avatar" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
 							</td>
 							<td class="center" style="text-align: center;">
-								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+								@{
+									if (item.ID == Session["AccountID"].GetHashCode())
+									{
+										@(item.Status ? "Kích hoạt" : "Khóa")
+									}
+									else
+									{
+										<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+									}
+								}
 							</td>
 							<td class="center" style="text-align: center;">
 								<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa tài khoản @item.UserName" class="edit-link" style="text-decoration: none">
@@ -76,4 +85,5 @@
 </div>
 @section scripts{
 	<script src="~/Content/AdminTheme/js/Controller/AccountController.js"></script>
+
 }

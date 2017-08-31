@@ -302,14 +302,11 @@ namespace TLTY.Areas.Admin.Controllers
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
-			string smg = "";
 			var user = _db.Accounts.Find(id);
 			user.Status = !user.Status;
 			_db.SaveChanges();
-			smg = "<i class='fa fa-check'></i> Kích hoạt thành công!";
 			return Json(new
 			{
-				smg = smg,
 				status = user.Status
 			});
 		}
