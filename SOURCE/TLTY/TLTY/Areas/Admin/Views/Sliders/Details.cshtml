@@ -1,0 +1,180 @@
+﻿@model EntityModel.EF.Slider
+
+@{
+    ViewBag.Title = "Xem chi tiết trình ảnh" + @Model.Name;
+    Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal fade" id="detailModal" style="display: block !important;">
+    <div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Xem chi tiết trình ảnh @Model.Name</h4>
+            </div>
+            <div class="modal-body" style="height: 400px;overflow-y: auto;">
+                <div class="col-md-7">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Tên:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            Thứ tự:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DisplayOrder)
+                        </dd>
+
+                        <dt>
+                            Đường dẫn:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Link)
+                        </dd>
+
+                        <dt>
+                            Nội dung:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Content.Name)
+                        </dd>
+
+
+                        <dt>
+                            Thể loại:
+                        </dt>
+
+                        <dd>
+                            @{
+                                string a = "Tin tức";
+                                if (Model.Status)
+                                {
+                                    a = "Dịch vụ";
+                                }
+                            }@a
+                        </dd>
+                        <dt>
+                            Mô tả:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+
+                        <dt>
+                            Ngày tạo:
+                        </dt>
+
+                        <dd>
+                            @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.UserName)
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="col-md-5">
+                    <img alt="" src="@Model.Link" width="200" height="245" class="img-responsive" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions no-color text-center">
+                    <a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa nội dung @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/AdminTheme/js/edit-modal.js"></script>
+
+
+
+@*<h2>Details</h2>
+
+<div>
+    <h4>Slider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Content.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
