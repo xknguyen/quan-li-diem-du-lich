@@ -1,7 +1,7 @@
-﻿@model EntityModel.EF.Ticker
+﻿@model EntityModel.EF.Contact
 
 @{
-    ViewBag.Title = "Xem chi tiết bảng giá" + @Model.Name;
+    ViewBag.Title = "Xem chi tiết liên hệ" + @Model.ID;
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,23 +13,11 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title">Xem chi tiết bảng giá @Model.Name</h4>
+                <h4 class="modal-title">Xem chi tiết liên hệ @Model.ID</h4>
             </div>
             <div class="modal-body" style="height: 300px;overflow-y: auto;">
                 <div class="col-md-7">
                     <dl class="dl-horizontal">
-                        <dt>
-                            Tài khoản:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.UserName)
-                        </dd>
-                        <dt>
-                            Tên:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Name)
-                        </dd>
                         <dt>
                             Ngày tạo:
                         </dt>
@@ -37,23 +25,34 @@
                             @string.Format("{0:dd-MM-yyyy}", Model.CreateDate)
                         </dd>
                         <dt>
-                            Giá:
+                            Tài khoản:
                         </dt>
                         <dd>
-                            @Html.DisplayFor(model => model.Price)
+                            @Html.DisplayFor(model => model.UserName)
                         </dd>
-                        <dt>
-                            Số lượng:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Quantity)
-                        </dd>
-
                         <dt>
                             Trạng thái:
                         </dt>
                         <dd>
                             @Html.DisplayFor(model => model.Status)
+                        </dd>
+                        <dt>
+                            Địa chỉ:
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Address)
+                        </dd>
+                        <dt>
+                            Số điện thoại:
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Phone)
+                        </dd>
+                        <dt>
+                            Email:
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
                         </dd>
                     </dl>
                 </div>
@@ -61,7 +60,7 @@
             </div>
             <div class="modal-footer">
                 <div class="form-actions no-color text-center">
-                    <a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa bảng giá @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+                    <a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa liên hệ @Model.ID" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>

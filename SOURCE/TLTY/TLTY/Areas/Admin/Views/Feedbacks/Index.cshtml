@@ -1,22 +1,20 @@
-﻿@model IEnumerable<EntityModel.EF.Ticker>
+﻿@model IEnumerable<EntityModel.EF.Feedback>
 
 @{
-    ViewBag.Title = "Danh sách bảng giá";
+    ViewBag.Title = "Danh sách phản hồi";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
-    <h1 class="page-header">Danh sách bảng giá:</h1>
+    <h1 class="page-header">Danh sách phản hồi:</h1>
 }
 <div class="col-lg-12">
-    <a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách bảng giá.
+    <a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách phản hồi.
 </div>
 <div class="col-lg-12">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Bảng danh sách bảng giá
-            <p class="fa fa-caret-right"></p>
-            <p class="fa fa-caret-right"></p> <a href="@Url.Action("Create")" title="Tạo mới bảng giá" class="create-link" style="color: white; text-decoration: none">Tạo mới</a>
+            Bảng danh sách phản hồi
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -25,7 +23,9 @@
                     <tr>
                         <th>ID</th>
                         <th>Tên</th>
-                        <th>Giá</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Mô tả</th>
                         <th>Trạng thái</th>
                         <th>Tùy chọn</th>
                     </tr>
@@ -41,7 +41,13 @@
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Price)
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Status)
@@ -50,13 +56,10 @@
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
                             <td class="center" style="text-align: center;">
-                                <a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa bảng giá @item.UserName" class="edit-link" style="text-decoration: none">
-                                    <p class="fa fa-edit"></p>
-                                </a>
-                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.UserName" class="detail-link" style="text-decoration: none">
+                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
                                     <p class="fa fa-folder"></p>
                                 </a>
-                                <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.UserName" class="delete-link" style="text-decoration: none">
+                                <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.Name" class="delete-link" style="text-decoration: none">
                                     <p class="fa fa-times"></p>
                                 </a>
                             </td>
@@ -66,9 +69,10 @@
             </table>
         </div>
         <!-- /.panel-body -->
-    </div> 
+    </div>
     <!-- /.panel -->
 </div>
 @section scripts{
-    <script src="~/Content/AdminTheme/js/Controller/TickerController.js"></script>
+    <script src="~/Content/AdminTheme/js/Controller/FeedbackController.js"></script>
 }
+
