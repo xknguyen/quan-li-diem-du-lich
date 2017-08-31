@@ -49,11 +49,11 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (accountGroup.AccountID < 0)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản trống!", "error");
+				SetAlert("<i class='fa fa-times'></i> Tài khoản trống!", "error");
 			}
 			if (accountGroup.GroupPathID < 0)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Nhóm quyền trống!", "error");
+				SetAlert("<i class='fa fa-times'></i> Nhóm quyền trống!", "error");
 			}
 			else
 			{
@@ -63,12 +63,12 @@ namespace TLTY.Areas.Admin.Controllers
 
 				if (accountGroup.ID > 0)
 				{
-					SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Phân quyền cho tài khoản thành công.", "success");
+					SetAlert("<i class='fa fa-check'></i> Phân quyền cho tài khoản thành công.", "success");
 					return RedirectToAction("Index");
 				}
 				else
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Phân quyền cho tài khoản không thành công!", "error");
+					SetAlert("<i class='fa fa-times'></i> Phân quyền cho tài khoản không thành công!", "error");
 					return RedirectToAction("Index");
 				}
 			}
@@ -103,11 +103,11 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (accountGroup.AccountID < 0)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản trống!", "error");
+				SetAlert("<i class='fa fa-times'></i> Tài khoản trống!", "error");
 			}
 			if (accountGroup.GroupPathID < 0)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Nhóm quyền trống!", "error");
+				SetAlert("<i class='fa fa-times'></i> Nhóm quyền trống!", "error");
 			}
 			else
 			{
@@ -115,12 +115,12 @@ namespace TLTY.Areas.Admin.Controllers
 				_db.SaveChanges();
 				if (accountGroup.ID > 0)
 				{
-					SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa phân quyền cho tài khoản thành công.", "success");
+					SetAlert("<i class='fa fa-check'></i> Sửa phân quyền cho tài khoản thành công.", "success");
 					return RedirectToAction("Index");
 				}
 				else
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa phân quyền cho tài khoản không thành công!", "error");
+					SetAlert("<i class='fa fa-times'></i> Sửa phân quyền cho tài khoản không thành công!", "error");
 					return RedirectToAction("Index");
 				}
 			}
@@ -154,15 +154,14 @@ namespace TLTY.Areas.Admin.Controllers
 			_db.SaveChanges();
 			if (accountGroup.ID > 0)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa phân quyền cho tài khoản thành công.", "success");
+				SetAlert("<i class='fa fa-check'></i> Xóa phân quyền cho tài khoản thành công.", "success");
 				return RedirectToAction("Index");
 			}
 			else
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa phân quyền cho tài khoản không thành công!", "error");
+				SetAlert("<i class='fa fa-times'></i> Xóa phân quyền cho tài khoản không thành công!", "error");
 				return RedirectToAction("Index");
 			}
-			return RedirectToAction("Index");
 		}
 
 		protected override void Dispose(bool disposing)
@@ -177,7 +176,6 @@ namespace TLTY.Areas.Admin.Controllers
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
-
 			var user = _db.AccountGroups.Find(id);
 			user.status = !user.status;
 			_db.SaveChanges();
