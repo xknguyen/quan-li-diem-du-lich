@@ -1,7 +1,7 @@
-﻿@model EntityModel.EF.Content
+﻿@model EntityModel.EF.Instruction
 
 @{
-	ViewBag.Title = "Tạo mới nội dung";
+	ViewBag.Title = "Tạo mới giới thiệu";
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,7 +13,7 @@
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Tạo mới nội dung </h4>
+				<h4 class="modal-title">Tạo mới giới thiệu </h4>
 			</div>
 			@using (Html.BeginForm())
 			{
@@ -31,31 +31,6 @@
 									</div>
 								</div>
 
-								<div class="form-group">
-									<label class="control-label col-md-3">Tên đường dẫn:</label>
-									<div class="col-md-9">
-										@Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", placeholder = "Nhập tên đường dẫn ở đây" })
-										@Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label col-md-3">Mô tả:</label>
-									<div class="col-md-9">
-										@Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
-										@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label col-md-3">Thể loại:</label>
-									<div class="col-md-9">
-										<select class="form-control" name="Category">
-											<option value="false">Dịch vụ</option>
-											<option value="true">Tin tức</option>
-										</select>
-									</div>
-								</div>
 
 							</div>
 							<div class="col-md-4">
@@ -112,3 +87,4 @@
 		</div>
 	</div>
 </div>
+

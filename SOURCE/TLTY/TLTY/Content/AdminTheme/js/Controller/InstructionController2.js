@@ -1,14 +1,14 @@
-﻿var product2 = {
+﻿var instruction = {
 	init: function () {
-		product2.registerEvents2();
+		instruction.registerEvents2();
 	},
 	registerEvents2: function () {
 
 		$('.btn-images').off('click').on('click', function (e) {
 			e.preventDefault();
 			$('#imagesManage').modal('show');
-			$('#hidProductID').val($(this).data('id'));
-			product2.LoadImages();
+			$('#instructionID').val($(this).data('id'));
+			instruction.LoadImages();
 		});
 
 		$('#btnChooImages').off('click').on('click', function (e) {
@@ -29,7 +29,7 @@
 
 		$('#btnSaveImages').off('click').on('click', function () {
 			var images = [];
-			var id = $('#hidProductID').val();
+			var id = $('#instructionID').val();//hid
 			$.each($('#imageList img'), function (i, item) {
 				images.push($(item).prop('src'));
 			})
@@ -62,7 +62,7 @@
 			url: '/Admin/Instructions/LoadImages',
 			type: 'GET',
 			data: {
-				id: $('#hidProductID').val()
+				id: $('#instructionID').val()
 			},
 			dataType: 'json',
 			success: function (response) {
@@ -82,4 +82,4 @@
 		});
 	}
 }
-product2.init();
+instruction.init();
