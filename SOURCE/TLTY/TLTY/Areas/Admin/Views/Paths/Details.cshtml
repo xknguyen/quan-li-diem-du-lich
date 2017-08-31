@@ -1,7 +1,7 @@
-﻿@model EntityModel.EF.Feedback
+﻿@model EntityModel.EF.Path
 
 @{
-	ViewBag.Title = "Xem chi tiết phản hồi" + @Model.Name;
+	ViewBag.Title = "Xem chi tiết đường dẫn " + @Model.PathName;
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,52 +13,44 @@
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Xem chi tiết phản hồi @Model.Name</h4>
+				<h4 class="modal-title">Xem chi tiết đường dẫn @Model.PathName</h4>
 			</div>
-			<div class="modal-body" style="height: 300px;overflow-y: auto;">
-				<div class="col-md-7">
+			<div class="modal-body" style="height: 200px;overflow-y: auto;">
 					<dl class="dl-horizontal">
-                        <dt>
-                            Tên:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Name)
-                        </dd>
 						<dt>
-							Email:
+							Tên đường dẫn:
 						</dt>
+
 						<dd>
-							@Html.DisplayFor(model => model.Email)
+							@Html.DisplayFor(model => model.PathName)
 						</dd>
+
 						<dt>
-							Số điện thoại:
+							Đường dẫn:
 						</dt>
+
 						<dd>
-							@Html.DisplayFor(model => model.Phone)
+							@Html.DisplayFor(model => model.Link)
 						</dd>
+
 						<dt>
 							Mô tả:
 						</dt>
+
 						<dd>
 							@Html.DisplayFor(model => model.Description)
 						</dd>
-						<dt>
-							Ngày tạo:
-						</dt>
-						<dd>
-							@string.Format("{0:dd-MM-yyyy}", Model.CreateDate)
-						</dd>
 					</dl>
-				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="modal-footer">
 				<div class="form-actions no-color text-center">
-					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa phản hồi @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa đường dẫn @Model.PathName" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <script src="~/Content/AdminTheme/js/edit-modal.js"></script>

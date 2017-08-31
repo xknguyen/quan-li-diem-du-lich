@@ -48,15 +48,15 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (string.IsNullOrEmpty(account.UserName))
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản trống xin hãy kiểm tra lại!", "error");
+				SetAlert("<i class='fa fa-times'></i> Tài khoản trống xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(account.FirstName))
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tên trống xin hãy kiểm tra lại!", "error");
+				SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(account.Email))
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Email trống xin hãy kiểm tra lại!", "error");
+				SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
 			}
 			else
 			{
@@ -65,7 +65,7 @@ namespace TLTY.Areas.Admin.Controllers
 				{
 					if (account.Birthday > DateTime.Parse("1/1/2017") || account.Birthday < DateTime.Parse("1/1/1950"))
 					{
-						SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Ngày sinh không phù hợp, Xin hãy thử lại!", "error");
+						SetAlert("<i class='fa fa-times'></i> Ngày sinh không phù hợp, Xin hãy thử lại!", "error");
 					}
 					else
 					{
@@ -82,19 +82,19 @@ namespace TLTY.Areas.Admin.Controllers
 						_db.SaveChanges();
 						if (account.ID > 0)
 						{
-							SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thêm tài khoản thành công! Mật khẩu mặc định là <strong>" + password + "</strong>. Hãy kích hoạt tài khoản vừa tạo để đăng nhập.", "success");
+							SetAlert("<i class='fa fa-check'></i> Thêm tài khoản thành công! Mật khẩu mặc định là <strong>" + password + "</strong>. Hãy kích hoạt tài khoản vừa tạo để đăng nhập.", "success");
 							return RedirectToAction("Index");
 						}
 						else
 						{
-							SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thêm tài khoản không thành công!", "error");
+							SetAlert("<i class='fa fa-times'></i> Thêm tài khoản không thành công!", "error");
 							return RedirectToAction("Index");
 						}
 					}
 				}
 				else
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản đã tồn tại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Tài khoản đã tồn tại!", "error");
 				}
 			}
 			return RedirectToAction("Index");
@@ -124,26 +124,26 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (Session["AccountID"].GetHashCode() != 1 && account.ID == 1)
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Bạn không thể sửa tài khoản quyền cao nhất!", "error");
+				SetAlert("<i class='fa fa-times'></i> Bạn không thể sửa tài khoản quyền cao nhất!", "error");
 				return RedirectToAction("Index");
 			}
 			else
 			{
 				if (string.IsNullOrEmpty(account.UserName))
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản trống xin hãy kiểm tra lại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Tài khoản trống xin hãy kiểm tra lại!", "error");
 				}
 				else if (string.IsNullOrEmpty(account.FirstName))
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tên trống xin hãy kiểm tra lại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
 				}
 				else if (string.IsNullOrEmpty(account.Email))
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Email trống xin hãy kiểm tra lại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
 				}
 				else if (account.Birthday > DateTime.Parse("1/1/2017") || account.Birthday < DateTime.Parse("1/1/1950"))
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Ngày sinh không phù hợp, Xin hãy thử lại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Ngày sinh không phù hợp, Xin hãy thử lại!", "error");
 				}
 				else
 				{
@@ -151,12 +151,12 @@ namespace TLTY.Areas.Admin.Controllers
 					_db.SaveChanges();
 					if (account.ID > 0)
 					{
-						SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa tài khoản thành công!", "success");
+						SetAlert("<i class='fa fa-check'></i> Sửa tài khoản thành công!", "success");
 						return RedirectToAction("Index");
 					}
 					else
 					{
-						SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Sửa tài khoản không thành công!", "error");
+						SetAlert("<i class='fa fa-times'></i> Sửa tài khoản không thành công!", "error");
 						return RedirectToAction("Index");
 					}
 				}
@@ -188,14 +188,14 @@ namespace TLTY.Areas.Admin.Controllers
 			Account account = _db.Accounts.Find(id);
 			if (account.ID == 1 || account.UserName == "admin")
 			{
-				SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Đây là tài khoản admin quyền cao nhất, bạn không thể xóa!", "error");
+				SetAlert("<i class='fa fa-times'></i> Đây là tài khoản admin quyền cao nhất, bạn không thể xóa!", "error");
 				return RedirectToAction("Index");
 			}
 			else
 			{
 				if (account.ID == Session["AccountID"].GetHashCode())
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Bạn không thể xóa tài khoản đang đăng nhập!", "error");
+					SetAlert("<i class='fa fa-times'></i> Bạn không thể xóa tài khoản đang đăng nhập!", "error");
 					return RedirectToAction("Index");
 				}
 				else
@@ -204,12 +204,12 @@ namespace TLTY.Areas.Admin.Controllers
 					_db.SaveChanges();
 					if (account.ID > 0)
 					{
-						SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Xóa tài khoản thành công!", "success");
+						SetAlert("<i class='fa fa-check'></i> Xóa tài khoản thành công!", "success");
 						return RedirectToAction("Index");
 					}
 					else
 					{
-						SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Xóa tài khoản không thành công!", "error");
+						SetAlert("<i class='fa fa-times'></i> Xóa tài khoản không thành công!", "error");
 						return RedirectToAction("Index");
 					}
 				}
@@ -256,7 +256,7 @@ namespace TLTY.Areas.Admin.Controllers
 					var result = _db.Accounts.SingleOrDefault(x => x.UserName == username);
 					if (result == null)
 					{
-						SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại", "error");
+						SetAlert("<i class='fa fa-times'></i> Tài khoản không tồn tại", "error");
 					}
 					else
 					{
@@ -271,29 +271,29 @@ namespace TLTY.Areas.Admin.Controllers
 								_db.SaveChanges();
 								if (user.ID > 0)
 								{
-									SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Thay đổi mật khẩu thành công!", "success");
+									SetAlert("<i class='fa fa-check'></i> Thay đổi mật khẩu thành công!", "success");
 									return RedirectToAction("Index");
 								}
 								else
 								{
-									SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thay đổi mật khẩu không thành công!", "error");
+									SetAlert("<i class='fa fa-times'></i> Thay đổi mật khẩu không thành công!", "error");
 									return RedirectToAction("Index");
 								}
 							}
 							else
 							{
-								SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mật khẩu mới trống hoặc không khớp với xác nhận mật khẩu.", "error");
+								SetAlert("<i class='fa fa-times'></i> Mật khẩu mới trống hoặc không khớp với xác nhận mật khẩu.", "error");
 							}
 						}
 						else
 						{
-							SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mật khẩu không chính xác.", "error");
+							SetAlert("<i class='fa fa-times'></i> Mật khẩu không chính xác.", "error");
 						}
 					}
 				}
 				else
 				{
-					SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tài khoản không tồn tại.", "error");
+					SetAlert("<i class='fa fa-times'></i> Tài khoản không tồn tại.", "error");
 				}
 			}
 			return RedirectToAction("Index");
@@ -302,7 +302,6 @@ namespace TLTY.Areas.Admin.Controllers
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
-
 			var user = _db.Accounts.Find(id);
 			user.Status = !user.Status;
 			_db.SaveChanges();
