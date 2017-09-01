@@ -207,8 +207,6 @@ img {
 
 	.baiviet a i {
 		float: left;
-		font-size: 80%;
-		margin-top: 5px;
 	}
 
 	.baiviet a h5 {
@@ -262,18 +260,19 @@ img {
 }
 
 .carousel-caption p {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 
 .carousel-caption {
 	position: static;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 15px;
-    background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
 }
+
 @media screen and (min-width: 768px) {
 	.carousel-caption {
 		right: 20%;
@@ -294,20 +293,21 @@ img {
 }
 
 .hide-bullets {
-    list-style:none;
-    margin-left: -40px;
-    margin-top:20px;
+	list-style: none;
+	margin-left: -40px;
+	margin-top: 20px;
 }
 
 .thumbnail {
-    padding: 0;
-}
-.thumbnail img{
-	margin: 1px;
-	height: 98%;
-	width: 98%;
+	padding: 0;
 }
 
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    width: 100%;
+	.thumbnail img {
+		margin: 1px;
+		height: 98%;
+		width: 98%;
+	}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	width: 100%;
 }
