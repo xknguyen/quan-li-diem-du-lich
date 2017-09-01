@@ -54,7 +54,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Ngày sinh:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Birthday, new { @class = "form-control datepicker", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY" })
+									@Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", id = "datepicker", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY" })
 									@Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
 								</div>
 							</div>
@@ -126,3 +126,14 @@
 		</div>
 	</div>
 </div>
+<script src="~/Content/Date/js/bootstrap-datepicker.js"></script>
+<link href="~/Content/Date/css/bootstrap-datepicker.css" rel="stylesheet" />
+<script src="~/Content/Date/locales/bootstrap-datepicker.vi.min.js"></script>
+<script>
+	$(function () {
+		$('#datepicker').datepicker({
+			format: "mm/dd/yyyy",
+			language: "vi"
+		});
+	});
+</script>
