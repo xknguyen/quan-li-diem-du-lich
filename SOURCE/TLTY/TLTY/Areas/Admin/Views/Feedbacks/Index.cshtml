@@ -45,9 +45,6 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
                             <td class="center" style="text-align: center;">
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
