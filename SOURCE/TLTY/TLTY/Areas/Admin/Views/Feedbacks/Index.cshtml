@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<EntityModel.EF.Feedback>
 
 @{
-    ViewBag.Title = "Danh sách phản hồi";
+    ViewBag.Title = "Danh sách yêu cầu";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
-    <h1 class="page-header">Danh sách phản hồi:</h1>
+    <h1 class="page-header">Danh sách yêu cầu:</h1>
 }
 <div class="col-lg-12">
-    <a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách phản hồi.
+    <a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách yêu cầu.
 </div>
 <div class="col-lg-12">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Bảng danh sách phản hồi
+            Bảng danh sách yêu cầu
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -61,7 +61,10 @@
                 </tbody>
             </table>
         </div>
-        <!-- /.panel-body -->
+	    <!-- /.panel-body -->
+		<div class="panel-footer">
+			<h5>Hãy chọn hiển thị 100 để nhận đủ dữ liệu cho <a href="#" id="btnInThongKe">In bảng</a> </h5>
+		</div>
     </div>
     <!-- /.panel -->
 </div>

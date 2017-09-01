@@ -26,7 +26,8 @@ namespace TLTY
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
-					  "~/Content/ClientTheme/css/icon.css"));
+					  "~/Content/ClientTheme/css/icon.css",
+					  "~/fonts/font.css"));
 			bundles.Add(new StyleBundle("~/Content/css1").Include(
 					  "~/Content/ClientTheme/css/quanstyle.css"));
 			bundles.Add(new StyleBundle("~/Content/css2").Include(
@@ -36,9 +37,11 @@ namespace TLTY
 
 			bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
 					  "~/Content/AdminTheme/vendor/bootstrap/css/bootstrap.min.css",
+					  "~/Content/AdminTheme/dist/css/datepicker.css",
 					  "~/Content/AdminTheme/vendor/metisMenu/metisMenu.min.css",
 					  "~/Content/AdminTheme/vendor/datatables-plugins/dataTables.bootstrap.css",
 					  "~/Content/AdminTheme/vendor/datatables-responsive/dataTables.responsive.css",
+					  "~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css",
 					  "~/Content/AdminTheme/dist/css/sb-admin-2.css"
 					  ));
 
@@ -51,11 +54,13 @@ namespace TLTY
 					  "~/Content/AdminTheme/vendor/metisMenu/metisMenu.min.js",
 					  "~/Content/AdminTheme/vendor/datatables/js/jquery.dataTables.min.js",
 					  "~/Content/AdminTheme/vendor/datatables-plugins/dataTables.bootstrap.min.js",
+					  "~/Content/AdminTheme/dist/js/bootstrap-datepicker.js",
 					  "~/Content/AdminTheme/vendor/datatables-responsive/dataTables.responsive.js",
 					  "~/Content/AdminTheme/dist/js/sb-admin-2.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/Admin/bootstrap").Include(
 						"~/Scripts/Alert.js",
+						"~/Content/AdminTheme/js/Mayin.js",
 						"~/Content/AdminTheme/js/create-modal.js",
 					  "~/Content/AdminTheme/js/detail-modal.js",
 					  "~/Content/AdminTheme/js/change-modal.js",

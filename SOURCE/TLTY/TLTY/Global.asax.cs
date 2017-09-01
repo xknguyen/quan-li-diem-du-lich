@@ -12,6 +12,8 @@ namespace TLTY
 	{
 		protected void Application_Start()
 		{
+			BundleConfig.RegisterBundles(BundleTable.Bundles);
+			BundleTable.EnableOptimizations = true;
 			AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -54,7 +54,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Ngày sinh:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY" })
+									@Html.TextBoxFor(model => model.Birthday, new { @class = "form-control datepicker", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY" })
 									@Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
 								</div>
 							</div>
@@ -118,7 +118,7 @@
 				</div>
 				<div class="modal-footer">
 					<div class="form-actions no-color text-center">
-						<input type="submit" value="Chỉnh sửa" class="btn btn-success" />
+						<input type="submit" value="Thay đổi" class="btn btn-success" />
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 					</div>
 				</div>

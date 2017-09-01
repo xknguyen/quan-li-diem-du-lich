@@ -155,8 +155,10 @@
   <ItemGroup>
     <Content Include="Content\AdminTheme\data\flot-data.js" />
     <Content Include="Content\AdminTheme\data\morris-data.js" />
+    <Content Include="Content\AdminTheme\dist\css\datepicker.css" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.min.css" />
+    <Content Include="Content\AdminTheme\dist\js\bootstrap-datepicker.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
@@ -179,6 +181,7 @@
     <Content Include="Content\AdminTheme\js\edit-modal.js" />
     <Content Include="Content\AdminTheme\js\create-modal.js" />
     <Content Include="Content\AdminTheme\js\detail-modal.js" />
+    <Content Include="Content\AdminTheme\js\Mayin.js" />
     <Content Include="Content\AdminTheme\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\tool\ckeditor\adapters\jquery.js" />
     <Content Include="Content\AdminTheme\tool\ckeditor\build-config.js" />
@@ -1186,12 +1189,16 @@
     <Content Include="Content\ClientTheme\slider\2.jpg" />
     <Content Include="Content\ClientTheme\slider\3.jpg" />
     <Content Include="Content\ClientTheme\slider\4.jpg" />
+    <Content Include="Content\fonts\font.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="DATA\images\Avatar\10l.jpg" />
     <Content Include="DATA\images\Avatar\3sKVHO28.png" />
     <Content Include="DATA\images\ChucNang\del.png" />
     <Content Include="DATA\images\ChucNang\ok.png" />
     <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\font.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
@@ -1364,6 +1371,19 @@
     <Content Include="Areas\Admin\Views\GroupPaths\Details.cshtml" />
     <Content Include="Areas\Admin\Views\GroupPaths\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\GroupPaths\Index.cshtml" />
+    <Content Include="fonts\Lobster-Regular.ttf" />
+    <Content Include="Content\ClientTheme\font\fontawesome-webfont.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\Lobster-Regular.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />

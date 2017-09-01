@@ -1,7 +1,7 @@
 ﻿@model EntityModel.EF.Feedback
 
 @{
-	ViewBag.Title = "Xem chi tiết phản hồi" + @Model.Name;
+	ViewBag.Title = "Xem chi tiết yêu cầu" + @Model.Name;
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,7 +13,7 @@
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Xem chi tiết phản hồi @Model.Name</h4>
+				<h4 class="modal-title">Xem chi tiết yêu cầu @Model.Name</h4>
 			</div>
 			<div class="modal-body" style="height: 300px;overflow-y: auto;">
 				<div class="col-md-7">
@@ -54,7 +54,7 @@
 			</div>
 			<div class="modal-footer">
 				<div class="form-actions no-color text-center">
-					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa phản hồi @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+					<a href="@Url.Action("Edit", new { @id = Model.ID })" title="Sửa yêu cầu @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 			</div>

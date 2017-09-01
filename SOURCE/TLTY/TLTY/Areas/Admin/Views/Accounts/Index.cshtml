@@ -49,7 +49,7 @@
 								@Html.DisplayFor(modelItem => item.Email)
 							</td>
 							<td class="center">
-								<img id="img_@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Avatar" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
+								<img id="img_@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Avatar" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)"/>
 							</td>
 							<td class="center" style="text-align: center;">
 								@{
@@ -80,10 +80,20 @@
 			</table>
 		</div>
 		<!-- /.panel-body -->
+		<div class="panel-footer">
+			<h5>Hãy chọn hiển thị 100 để nhận đủ dữ liệu cho <a href="#" id="btnInThongKe">In bảng</a> </h5>
+		</div>
 	</div>
 	<!-- /.panel -->
 </div>
 @section scripts{
 	<script src="~/Content/AdminTheme/js/Controller/AccountController.js"></script>
-
+	<script>
+		//Ngày tháng
+		$(function () {
+			$('.datepicker').datepicker({ format: "dd//mm/yyyy" }).on('changeDate', function (ev) {
+				$(this).datepicker('hide');
+			});
+		});
+	</script>
 }
