@@ -37,7 +37,6 @@ namespace TLTY
 
 			bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
 					  "~/Content/AdminTheme/vendor/bootstrap/css/bootstrap.min.css",
-					  "~/Content/AdminTheme/dist/css/datepicker.css",
 					  "~/Content/AdminTheme/vendor/metisMenu/metisMenu.min.css",
 					  "~/Content/AdminTheme/vendor/datatables-plugins/dataTables.bootstrap.css",
 					  "~/Content/AdminTheme/vendor/datatables-responsive/dataTables.responsive.css",
@@ -54,7 +53,6 @@ namespace TLTY
 					  "~/Content/AdminTheme/vendor/metisMenu/metisMenu.min.js",
 					  "~/Content/AdminTheme/vendor/datatables/js/jquery.dataTables.min.js",
 					  "~/Content/AdminTheme/vendor/datatables-plugins/dataTables.bootstrap.min.js",
-					  "~/Content/AdminTheme/dist/js/bootstrap-datepicker.js",
 					  "~/Content/AdminTheme/vendor/datatables-responsive/dataTables.responsive.js",
 					  "~/Content/AdminTheme/dist/js/sb-admin-2.js"));
 

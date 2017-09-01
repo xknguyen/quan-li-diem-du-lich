@@ -155,10 +155,8 @@
   <ItemGroup>
     <Content Include="Content\AdminTheme\data\flot-data.js" />
     <Content Include="Content\AdminTheme\data\morris-data.js" />
-    <Content Include="Content\AdminTheme\dist\css\datepicker.css" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.min.css" />
-    <Content Include="Content\AdminTheme\dist\js\bootstrap-datepicker.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
@@ -1189,9 +1187,14 @@
     <Content Include="Content\ClientTheme\slider\2.jpg" />
     <Content Include="Content\ClientTheme\slider\3.jpg" />
     <Content Include="Content\ClientTheme\slider\4.jpg" />
+    <Content Include="Content\Date\css\bootstrap-datepicker.css" />
+    <Content Include="Content\Date\css\bootstrap-datepicker.min.css" />
     <Content Include="Content\fonts\font.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Date\js\bootstrap-datepicker.js" />
+    <Content Include="Content\Date\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\Date\locales\bootstrap-datepicker.vi.min.js" />
     <Content Include="DATA\images\Avatar\10l.jpg" />
     <Content Include="DATA\images\Avatar\3sKVHO28.png" />
     <Content Include="DATA\images\ChucNang\del.png" />
@@ -1384,6 +1387,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\Date\css\bootstrap-datepicker.css.map" />
+    <Content Include="Content\Date\css\bootstrap-datepicker.min.css.map" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
