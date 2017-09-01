@@ -161,7 +161,7 @@
 	</div>
 	@if (TempData["AlertMessage"] != null)
 	{
-		<div id="AlertBox" class="alert @TempData["AlertType"]" hide>
+		<div id="AlertBox" hide> <!-- class="alert TempData["AlertType"]"-->
 			<div id='closeelement'>
 				<a href='javascript:closeelement();' title="Nhấn để tắt thông báo"><i class='fa fa-times'></i></a>
 				@Html.Raw(TempData["AlertMessage"])
