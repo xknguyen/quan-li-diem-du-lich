@@ -1,8 +1,78 @@
-﻿<div class="col-md-12 slider">
-    <img src="/Content/ClientTheme/slider/1.jpg" class="img-responsive img-slider">
-	<img src="/Content/ClientTheme/slider/2.jpg" class="img-responsive img-slider">
-	<img src="/Content/ClientTheme/slider/3.jpg" class="img-responsive img-slider">
-	<img src="/Content/ClientTheme/slider/4.jpg" class="img-responsive img-slider">
-    <button class="btn" onclick="plusIndex(-1)" id="btnleft">&#10094</button>
-    <button class="btn" onclick="plusIndex(1)" id="btnright">&#10095</button>
+﻿<div class="container">
+
+	<div class="row" id="slider">
+		<div class="col-md-12">
+			<div id="mySlider" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="active item" data-slide-number="0">
+						<img src="/Content/ClientTheme/slider/1.jpg" style="width: 100%; height: 400px">
+						<div class="carousel-caption">
+							<h3>Headline</h3>
+							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+						</div>
+					</div>
+					<div class="item" data-slide-number="1">
+						<img src="/Content/ClientTheme/slider/2.jpg" style="width: 100%; height: 400px">
+						<div class="carousel-caption">
+							<h3>Headline</h3>
+							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+						</div>
+					</div>
+					<div class="item" data-slide-number="2">
+						<img src="/Content/ClientTheme/slider/3.jpg" style="width: 100%; height: 400px">
+						<div class="carousel-caption">
+							<h3>Headline</h3>
+							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+						</div>
+					</div>
+					<div class="item" data-slide-number="3">
+						<img src="/Content/ClientTheme/slider/4.jpg" style="width: 100%; height: 400px">
+						<div class="carousel-caption">
+							<h3>Headline</h3>
+							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls-->
+				<a class="left carousel-control" href="#mySlider" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#mySlider" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12" id="slider-thumbs">
+			<ul class="list-inline">
+				<li>
+					<a id="carousel-thumb-0" class="selected">
+						<img src="/Content/ClientTheme/slider/1.jpg" style="width: 70px;height: 50px">
+					</a>
+				</li>
+				<li>
+					<a id="carousel-thumb-1">
+						<img src="/Content/ClientTheme/slider/2.jpg" style="width: 70px;height: 50px">
+					</a>
+				</li>
+				<li>
+					<a id="carousel-thumb-2">
+						<img src="/Content/ClientTheme/slider/3.jpg" style="width: 70px;height: 50px">
+					</a>
+				</li>
+				<li>
+					<a id="carousel-thumb-3">
+						<img src="/Content/ClientTheme/slider/4.jpg" style="width: 70px;height: 50px">
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
 </div>
