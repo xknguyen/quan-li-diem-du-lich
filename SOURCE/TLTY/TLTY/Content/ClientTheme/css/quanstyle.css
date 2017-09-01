@@ -196,8 +196,8 @@ img {
 	text-align: center;
 }
 
-.baiviet .gach {
-	border-bottom: 3px solid red;
+.gach {
+	border-bottom: 3px solid #521a61;
 }
 
 .baiviet a {
@@ -267,20 +267,17 @@ img {
 
 
 .carousel-caption {
-    /* position: absolute; */
 	position: static;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 15px;
-    /* background: #333; */
-    background: rgba(0,0,0,.75);
+    background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
 }
 @media screen and (min-width: 768px) {
 	.carousel-caption {
 		right: 20%;
 		left: 20%;
-		/* padding-bottom: 30px; */
 	}
 
 	.carousel-caption {
@@ -289,10 +286,28 @@ img {
 		bottom: 20px;
 		left: 15%;
 		z-index: 10;
-		/* padding-top: 20px; */
 		padding-bottom: 20px;
 		color: #fff;
 		text-align: center;
 		text-shadow: 0 1px 2px rgba(0,0,0,.6);
 	}
+}
+
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+.thumbnail img{
+	margin: 1px;
+	height: 98%;
+	width: 98%;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
 }
