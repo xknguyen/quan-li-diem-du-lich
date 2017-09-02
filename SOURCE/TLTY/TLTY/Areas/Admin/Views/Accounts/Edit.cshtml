@@ -30,7 +30,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Tài khoản:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control", id = "disabledInput", placeholder = "Nhập tên tài khoản ở đây" })
+									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control disabled", placeholder = "Nhập tên tài khoản ở đây" })
 									@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
 								</div>
 							</div>
