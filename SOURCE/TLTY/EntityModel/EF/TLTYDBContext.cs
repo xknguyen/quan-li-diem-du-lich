@@ -26,19 +26,10 @@ namespace EntityModel.EF
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<AccountGroup>()
-				.HasMany(e => e.GroupPaths)
-				.WithOptional(e => e.AccountGroup)
-				.HasForeignKey(e => e.GroupID);
-
 			modelBuilder.Entity<Content>()
 				.HasMany(e => e.Sliders)
 				.WithRequired(e => e.Content)
 				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<Slider>()
-				.Property(e => e.Link)
-				.IsFixedLength();
 
 			modelBuilder.Entity<Ticker>()
 				.Property(e => e.Price)

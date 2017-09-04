@@ -9,26 +9,15 @@ namespace EntityModel.EF
     [Table("Path")]
     public partial class Path
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Path()
-        {
-            GroupPaths = new HashSet<GroupPath>();
-        }
-
-        public long ID { get; set; }
+        [StringLength(50)]
+        public string ID { get; set; }
 
         [StringLength(250)]
-        public string PathName { get; set; }
+        public string Name { get; set; }
 
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        [StringLength(150)]
-        public string Link { get; set; }
-
-        public bool status { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GroupPath> GroupPaths { get; set; }
+        public bool? status { get; set; }
     }
 }

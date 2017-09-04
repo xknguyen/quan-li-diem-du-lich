@@ -5,8 +5,8 @@
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="modal fade" id="createModal" style="display: block !important;">
-	<div class="modal-dialog modal-lg" style="overflow-y: initial !important; overflow-y: scroll; max-height: 85%; margin-top: 50px; margin-bottom: 50px;">
+<div class="modal fade" id="createModal">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">
@@ -17,64 +17,72 @@
 			</div>
 			@using (Html.BeginForm())
 			{
-				<div class="modal-body" style="height: 400px; overflow-y: auto;">
+				<div class="modal-body" style="max-height: 400px; overflow-y: auto;">
 					@Html.AntiForgeryToken()
 					<div class="form-horizontal">
-						@Html.ValidationSummary(true, "", new {@class = "text-danger"})
+						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						<div class="col-md-7">
 							<div class="form-group">
 								<label class="control-label col-md-3">Tài khoản:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.UserName, new {@class = "form-control", placeholder = "Nhập tên tài khoản ở đây"})
-									@Html.ValidationMessageFor(model => model.UserName, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tên tài khoản ở đây" })
+									@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-3">Nhóm:</label>
+								<div class="col-md-9">
+									@Html.DropDownList("AccountGroupID", null, new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.AccountGroupID, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Tên:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.FirstName, new {@class = "form-control", placeholder = "Nhập tên ở đây"})
-									@Html.ValidationMessageFor(model => model.FirstName, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
+									@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Họ:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.LastName, new {@class = "form-control", placeholder = "Nhập họ ở đây"})
-									@Html.ValidationMessageFor(model => model.LastName, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Nhập họ ở đây" })
+									@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Ngày sinh:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Birthday, new {@class = "form-control", id = "datepicker", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY"})
-									@Html.ValidationMessageFor(model => model.Birthday, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", id = "datepicker", placeholder = "Nhập ngày sinh ở đây, MM/DD/YYYY" })
+									@Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Email:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Email, new {@class = "form-control", placeholder = "Nhập email ở đây"})
-									@Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email ở đây" })
+									@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Số điện thoại:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Phone, new {@class = "form-control", placeholder = "Nhập số điện thoại ở đây"})
-									@Html.ValidationMessageFor(model => model.Phone, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây" })
+									@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3">Địa chỉ:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Address, new {@class = "form-control", placeholder = "Nhập địa chỉ ở đây"})
-									@Html.ValidationMessageFor(model => model.Address, "", new {@class = "text-danger"})
+									@Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây" })
+									@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
 								</div>
 							</div>
 						</div>
@@ -82,15 +90,15 @@
 							<div class="form-group">
 								<label class="control-label col-md-2">Hình:</label>
 								<div class="col-md-12" style="margin-bottom: 10px;">
-									<img alt="" id="img" src="" width="200" height="245" class="img-responsive"/>
+									<img alt="" id="img" src="" width="200" height="245" class="img-responsive" />
 								</div>
 								<div class="clearfix"></div>
 								<div class="col-md-8">
-									@Html.TextBoxFor(model => model.Avatar, new {@class = "form-control disabled", placeholder = "Đường dẫn hình"})
-									@Html.ValidationMessageFor(model => model.Avatar, "", new {@class = "text-danger"})
+									<input type="text" class="form-control" value="" id="Avatar" name="Avatar" disabled placeholder="Đường dẫn hình" />
+									@Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
 								</div>
 								<div class="col-md-4">
-									<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success"/>
+									<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
 									<script>
 										$('#Browse').click(function() {
 											var finder = new CKFinder();
@@ -110,7 +118,7 @@
 				</div>
 				<div class="modal-footer">
 					<div class="form-actions no-color text-center">
-						<input type="submit" value="Tạo mới" class="btn btn-success"/>
+						<input type="submit" value="Tạo mới" class="btn btn-success" />
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 					</div>
 				</div>

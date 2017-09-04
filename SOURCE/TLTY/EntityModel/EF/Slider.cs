@@ -23,6 +23,7 @@ namespace EntityModel.EF
 
         public DateTime CreateDate { get; set; }
 
+        [Required]
         [StringLength(250)]
         public string UserName { get; set; }
 

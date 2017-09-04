@@ -9,12 +9,6 @@ namespace EntityModel.EF
     [Table("Account")]
     public partial class Account
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
-        {
-            AccountGroups = new HashSet<AccountGroup>();
-        }
-
         public long ID { get; set; }
 
         [Required]
@@ -24,6 +18,9 @@ namespace EntityModel.EF
         [Required]
         [StringLength(250)]
         public string Password { get; set; }
+
+        [StringLength(50)]
+        public string AccountGroupID { get; set; }
 
         [Required]
         [StringLength(250)]
@@ -52,7 +49,6 @@ namespace EntityModel.EF
 
         public bool Status { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AccountGroup> AccountGroups { get; set; }
+        public virtual AccountGroup AccountGroup { get; set; }
     }
 }

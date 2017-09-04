@@ -6,7 +6,7 @@
 }
 
 <div class="modal fade" id="createModal" style="display: block !important;">
-	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height: 85%;  margin-top: 50px; margin-bottom:50px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">
@@ -59,12 +59,12 @@
 							<div class="form-group">
 								<label class="control-label col-md-2">Nội dung:</label>
 								<div class="col-md-10">
-									@Html.TextAreaFor(model => model.Detail, new {@class = "form-control"})
-									@Html.ValidationMessageFor(model => model.Detail, "", new {@class = "text-danger"})
+									@Html.TextAreaFor(model => model.Detail, new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
 								</div>
 								<script type="text/javascript">
 									CKEDITOR.replace("Detail");
-								</script><br/>
+								</script><br />
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-2">Hình:</label>
@@ -73,11 +73,11 @@
 									@Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
 								</div>
 								<div class="col-md-2">
-									<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success"/>
+									<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
 									<script>
-										$('#Browse').click(function() {
+										$('#Browse').click(function () {
 											var finder = new CKFinder();
-											finder.selectActionFunction = function(fileUrl) {
+											finder.selectActionFunction = function (fileUrl) {
 												//fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
 												$('#Images').val(fileUrl);
 												$('#img').attr('src', fileUrl);
@@ -88,7 +88,7 @@
 								</div>
 								<label class="control-label col-md-2">Xem hình:</label>
 								<div class="col-md-10" style="margin-bottom: 10px;">
-									<img alt="" id="img" src="" width="200" height="245" class="img-responsive" style="margin: 10px"/>
+									<img alt="" id="img" src="" width="200" height="245" class="img-responsive" style="margin: 10px" />
 								</div>
 							</div>
 						</div>
@@ -105,3 +105,11 @@
 		</div>
 	</div>
 </div>
+<script src="~/Scripts/jquery.nicescroll.min.js"></script>
+<script>
+	$(document).ready(function () {
+
+		$(".modal-body").niceScroll(".modal-body",{ cursorborder: "", cursorcolor: "#00F", boxzoom: true });
+
+	});
+</script>

@@ -1,51 +1,56 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
 using TLTY.Areas.Admin.Models;
-using System;
 
 namespace TLTY.Areas.Admin.Controllers
 {
-	public class AccountsController : BaseController
-	{
-		private TLTYDBContext _db = new TLTYDBContext();
+    public class AccountsController : BaseController
+    {
+        private TLTYDBContext _db = new TLTYDBContext();
 
-		// GET: Admin/Accounts
-		public ActionResult Index()
-		{
-			return View(_db.Accounts.ToList());
-		}
+        // GET: Admin/Accounts
+        public ActionResult Index()
+        {
+            var accounts = _db.Accounts.Include(a => a.AccountGroup);
+            return View(accounts.ToList());
+        }
 
-		// GET: Admin/Accounts/Details/5
-		public ActionResult Details(long? id)
-		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			Account account = _db.Accounts.Find(id);
-			if (account == null)
-			{
-				return HttpNotFound();
-			}
-			return View(account);
-		}
+        // GET: Admin/Accounts/Details/5
+        public ActionResult Details(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Account account = _db.Accounts.Find(id);
+            if (account == null)
+            {
+                return HttpNotFound();
+            }
+            return View(account);
+        }
 
-		// GET: Admin/Accounts/Create
-		public ActionResult Create()
-		{
-			return View();
-		}
+        // GET: Admin/Accounts/Create
+        public ActionResult Create()
+        {
+            ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name");
+            return View();
+        }
 
-		// POST: Admin/Accounts/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-		{
+        // POST: Admin/Accounts/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+        {
 			if (string.IsNullOrEmpty(account.UserName))
 			{
 				SetAlert("<i class='fa fa-times'></i> Tài khoản trống xin hãy kiểm tra lại!", "error");
@@ -97,31 +102,34 @@ namespace TLTY.Areas.Admin.Controllers
 					SetAlert("<i class='fa fa-times'></i> Tài khoản đã tồn tại!", "error");
 				}
 			}
+			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
-		}
 
-		// GET: Admin/Accounts/Edit/5
-		public ActionResult Edit(long? id)
-		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			Account account = _db.Accounts.Find(id);
-			if (account == null)
-			{
-				return HttpNotFound();
-			}
-			return View(account);
-		}
+        }
 
-		// POST: Admin/Accounts/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "ID,UserName,Password,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-		{
+        // GET: Admin/Accounts/Edit/5
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Account account = _db.Accounts.Find(id);
+            if (account == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
+            return View(account);
+        }
+
+        // POST: Admin/Accounts/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+        {
 			if (Session["AccountID"].GetHashCode() != 1 && account.ID == 1)
 			{
 				SetAlert("<i class='fa fa-times'></i> Bạn không thể sửa tài khoản quyền cao nhất!", "error");
@@ -161,30 +169,30 @@ namespace TLTY.Areas.Admin.Controllers
 					}
 				}
 			}
+			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
-		}
+        }
 
-		// GET: Admin/Accounts/Delete/5
-		public ActionResult Delete(long? id)
-		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			Account account = _db.Accounts.Find(id);
-			if (account == null)
-			{
-				return HttpNotFound();
-			}
-			return View(account);
+        // GET: Admin/Accounts/Delete/5
+        public ActionResult Delete(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Account account = _db.Accounts.Find(id);
+            if (account == null)
+            {
+                return HttpNotFound();
+            }
+            return View(account);
+        }
 
-		}
-
-		// POST: Admin/Accounts/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public ActionResult DeleteConfirmed(long id)
-		{
+        // POST: Admin/Accounts/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(long id)
+        {
 			Account account = _db.Accounts.Find(id);
 			if (account.ID == 1 || account.UserName == "admin")
 			{
@@ -215,16 +223,16 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 
 			}
-		}
+        }
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				_db.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
 		//Change password
 		public ActionResult ChangPassword(int? id)
@@ -332,5 +340,5 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 			}
 		}
-	}
+    }
 }

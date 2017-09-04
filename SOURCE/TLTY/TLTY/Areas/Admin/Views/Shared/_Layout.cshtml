@@ -15,7 +15,6 @@
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
-	<link href="~/Content/AdminTheme/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
 	<style>
 		td.center {
 			margin: 0 auto;
@@ -63,7 +62,7 @@
 			z-index: 9999999;
 			bottom: 0;
 			padding: 15px;
-			background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%);
+			background: #521a61 linear-gradient(55.93deg, purple 0, navy 100%);
 			color: #fff;
 			width: 90%;
 			max-width: 90%;
@@ -87,7 +86,7 @@
 			}
 
 		div.guestwarn {
-			background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%);
+			background: #521a61 linear-gradient(55.93deg, purple 0, navy 100%);
 			color: #fff;
 			width: 290px;
 			max-width: 290px;
@@ -200,9 +199,9 @@
 	</script>
 	<script>
 		$(document).ready(function () {
-			var body = document.getElementsByTagName("body")[0];
-			$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
-			//window.initScroll();
+
+			var nice = $("html").niceScroll();  // The document page (body)
+
 		});
 	</script>
 	@RenderSection("scripts", required: false)

@@ -9,17 +9,14 @@ namespace EntityModel.EF
     [Table("GroupPath")]
     public partial class GroupPath
     {
-        public long ID { get; set; }
+        [Key]
+        [Column(Order = 0)]
+        [StringLength(50)]
+        public string AccountGroupID { get; set; }
 
-		[StringLength(250)]
-		public string Name { get; set; }
-
-        public long? GroupID { get; set; }
-
-        public long? PathID { get; set; }
-
-        public virtual AccountGroup AccountGroup { get; set; }
-
-        public virtual Path Path { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        [StringLength(50)]
+        public string PathID { get; set; }
     }
 }

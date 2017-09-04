@@ -12,23 +12,21 @@ namespace EntityModel.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AccountGroup()
         {
-            GroupPaths = new HashSet<GroupPath>();
+            Accounts = new HashSet<Account>();
         }
 
-        public long ID { get; set; }
+        [StringLength(50)]
+        public string ID { get; set; }
 
-        public long? GroupPathID { get; set; }
-
-        public long? AccountID { get; set; }
+        [StringLength(250)]
+        public string Name { get; set; }
 
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        public bool status { get; set; }
-
-        public virtual Account Account { get; set; }
+        public bool? status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GroupPath> GroupPaths { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-
+﻿
 ul.nav li {
 	padding-top: 5px;
 	font-weight: bold;
@@ -251,32 +251,42 @@ body {
 		.list-inline img:hover {
 			opacity: 1;
 		}
+
+/*Slider*/
 .item > img {
 	max-width: 100%;
 	height: auto;
 	display: block;
 }
 
+.carousel-inner .item img {
+	width: 100%;
+	height: 400px;
+}
+
 .carousel-caption p {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 
 .carousel-caption {
-    /* position: absolute; */
 	position: static;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 15px;
-    /* background: #333; */
-    background: rgba(0,0,0,.75);
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
 }
+
+	.carousel-caption a {
+		text-decoration: none;
+		color: #00ffff;
+	}
+
 @media screen and (min-width: 768px) {
 	.carousel-caption {
 		right: 20%;
 		left: 20%;
-		/* padding-bottom: 30px; */
 	}
 
 	.carousel-caption {
@@ -285,7 +295,6 @@ body {
 		bottom: 20px;
 		left: 15%;
 		z-index: 10;
-		/* padding-top: 20px; */
 		padding-bottom: 20px;
 		color: #fff;
 		text-align: center;
@@ -294,20 +303,113 @@ body {
 }
 
 .hide-bullets {
-    list-style:none;
-    margin-left: -40px;
-    margin-top:20px;
+	list-style: none;
+	margin-left: -40px;
+	margin-top: 20px;
 }
 
 .thumbnail {
-    padding: 0;
-}
-.thumbnail img{
-	margin: 1px;
-	height: 98%;
-	width: 98%;
+	padding: 0;
 }
 
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    width: 100%;
+	.thumbnail img {
+		margin: 1px;
+		height: 98%;
+		width: 98%;
+	}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	width: 100%;
+}
+
+
+/*Dịch vụ*/
+.dichvu {
+	margin-bottom: 10px;
+}
+
+	.dichvu h1 {
+		text-align: center;
+		color: #981271;
+		font-weight: bold;
+	}
+
+	.dichvu img {
+		margin: auto;
+		display: block;
+	}
+
+	.dichvu .idichvu {
+		margin-bottom: 10px;
+	}
+
+		.dichvu .idichvu .itdichvu {
+			width: 95%;
+			height: 340px;
+			margin: 0px 0px auto;
+			display: block;
+			border: 1px solid aqua;
+			background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+		}
+
+			.dichvu .idichvu .itdichvu a img {
+				width: 100%;
+				height: 55%;
+			}
+
+			.dichvu .idichvu .itdichvu a.thea {
+				text-decoration: none;
+				color: #fff;
+				font-weight: bold;
+			}
+
+			.dichvu .idichvu .itdichvu h5 {
+				margin: 5px 10px 5px 10px;
+				color: #fff;
+			}
+
+			.dichvu .idichvu .itdichvu a.thea h4 {
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.dichvu .idichvu .itdichvu .icondichvu {
+				float: left;
+				width: 50%;
+				border-top: 1px solid #999;
+				bottom: 0;
+			}
+
+				.dichvu .idichvu .itdichvu .icondichvu i {
+					display: inline;
+					margin-left: 10px;
+					color: #999;
+					padding-top: 5px;
+				}
+
+				.dichvu .idichvu .itdichvu .icondichvu h6 {
+					color: #999;
+					display: inline;
+				}
+/*Liên hệ*/
+.lienhe .ilienhe .itlienhe {
+	margin-bottom: 10px;
+}
+.lienhe .ilienhe .itlienhe h1{
+	text-align: center;color: #981271; font-weight: bold;
+}
+.lienhe .ilienhe .itlienhe .itelienhe {
+	display: block; text-align: center;
+}
+.lienhe .ilienhe .itlienhe .itelienhe i{
+	color: #981271; font-size: 50px;
+}
+.lienhe .ilienhe .itlienhe .itelienhe h5{
+	margin-bottom: 20px; margin-top: 20px;
+}
+.lienhe .ilienhe .frmlienhe {
+	border: 1px solid aqua;background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%); padding-bottom: 10px; color: #fff
+}
+.lienhe .ilienhe .frmlienhe h1{
+	text-align: center;color: #fff; font-weight: bold;
 }
