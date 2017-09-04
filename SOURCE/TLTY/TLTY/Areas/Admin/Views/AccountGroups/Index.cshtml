@@ -1,31 +1,33 @@
-﻿@model IEnumerable<EntityModel.EF.AccountGroup>
+﻿@model IEnumerable<EntityModel.EF.Account>
 
 @{
-    ViewBag.Title = "Phân quyền";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Danh sách tài khoản";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
-	<h1 class="page-header">Phân quyền:</h1>
+	<h1 class="page-header">Danh sách tài khoản:</h1>
 }
 <div class="col-lg-12">
-	<a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Phân quyền.
+	<a href="/Admin">Trang chủ</a> <p class="fa fa-caret-right"></p> Danh sách tài khoản.
 </div>
 <div class="col-lg-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			Bảng danh sách phân quyền
+			Bảng danh sách tài khoản
 			<p class="fa fa-caret-right"></p>
 			<p class="fa fa-caret-right"></p> <a href="@Url.Action("Create")" title="Tạo mới tài khoản" class="create-link" style="color: white; text-decoration: none">Tạo mới</a>
 		</div>
 		<!-- /.panel-heading -->
 		<div class="panel-body">
-			<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+			<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 				<thead>
 					<tr>
 						<th>ID</th>
 						<th>Tài khoản</th>
-						<th>Nhóm</th>
+						<th>Tên</th>
+						<th>Email</th>
+						<th>Hình</th>
 						<th>Trạng thái</th>
 						<th>Tùy chọn</th>
 					</tr>
@@ -38,22 +40,37 @@
 								@Html.DisplayFor(modelItem => item.ID)
 							</td>
 							<td>
-								@Html.DisplayFor(modelItem => item.Account.UserName)
+								@Html.DisplayFor(modelItem => item.UserName)
 							</td>
 							<td>
-								@Html.DisplayFor(modelItem => item.GroupPathID)
+								@Html.DisplayFor(modelItem => item.FirstName)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.Email)
+							</td>
+							<td class="center">
+								<img id="img_@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Avatar" onclick="selectImage('/Admin/Accounts/ChangeImage/@item.ID',this.id)" />
 							</td>
 							<td class="center" style="text-align: center;">
-								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.status ? "Kích hoạt" : "Khóa")</a>
+								@{
+						if (item.ID == Session["AccountID"].GetHashCode())
+						{
+							@(item.Status ? "Kích hoạt" : "Khóa")
+						}
+						else
+						{
+							<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
+						}
+								}
 							</td>
 							<td class="center" style="text-align: center;">
-								<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa quyền tài khoản @item.Account.UserName" class="edit-link" style="text-decoration: none">
+								<a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa tài khoản @item.UserName" class="edit-link" style="text-decoration: none">
 									<p class="fa fa-edit"></p>
 								</a>
-								<a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Account.UserName" class="detail-link" style="text-decoration: none">
+								<a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.UserName" class="detail-link" style="text-decoration: none">
 									<p class="fa fa-folder"></p>
 								</a>
-								<a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.Account.UserName" class="delete-link" style="text-decoration: none">
+								<a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.UserName" class="delete-link" style="text-decoration: none">
 									<p class="fa fa-times"></p>
 								</a>
 							</td>
@@ -70,6 +87,13 @@
 	<!-- /.panel -->
 </div>
 @section scripts{
-	<script src="~/Content/AdminTheme/js/Controller/AccountGroupController.js"></script>
+	<script src="~/Content/AdminTheme/js/Controller/AccountController.js"></script>
+	<script>
+		//Ngày tháng
+		$(function () {
+			$('.datepicker').datepicker({ format: "dd//mm/yyyy" }).on('changeDate', function (ev) {
+				$(this).datepicker('hide');
+			});
+		});
+	</script>
 }
-

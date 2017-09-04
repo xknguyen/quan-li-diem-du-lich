@@ -68,7 +68,6 @@ namespace TLTY.Areas.Admin.Controllers
                 SetAlert("<i class='fa fa-times'></i> Xóa phản hồi không thành công!", "error");
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

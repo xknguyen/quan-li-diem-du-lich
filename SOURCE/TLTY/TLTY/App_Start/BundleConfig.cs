@@ -65,7 +65,7 @@ namespace TLTY
 					  "~/Content/AdminTheme/js/edit-modal.js",
 					  "~/Content/AdminTheme/js/delete-modal.js",
 					  "~/Content/AdminTheme/js/ChangeImages.js",
-					  "~/Scripts/jquery.nicescroll.js"
+					  "~/Scripts/jquery.nicescroll.min.js"
 				));
 
 			BundleTable.EnableOptimizations = true;
