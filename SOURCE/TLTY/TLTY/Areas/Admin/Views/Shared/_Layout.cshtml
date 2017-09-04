@@ -97,7 +97,6 @@
 			position: fixed;
 			z-index: 10;
 			font-size: 16px;
-			-webkit-filter: alpha(opacity=88);
 			-moz-filter: alpha(opacity=88);
 			-o-filter: alpha(opacity=88);
 			filter: alpha(opacity=88);
@@ -199,9 +198,7 @@
 	</script>
 	<script>
 		$(document).ready(function () {
-
-			var nice = $("html").niceScroll();  // The document page (body)
-
+			$("html").niceScroll();
 		});
 	</script>
 	@RenderSection("scripts", required: false)

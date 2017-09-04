@@ -99,13 +99,10 @@
 			}
 		});
 	</script>
-
 	<script>
-		var body;
-		$(document).ready(function () {
-			body = document.getElementsByTagName("body")[0];
-			$('body').niceScroll({ cursoropacitymax: 0.8, cursorwidth: 8 });
-		});
+	$(document).ready(function () {
+		$("html").niceScroll();
+	});
 	</script>
 	@RenderSection("scripts", required: false)
 </body>
