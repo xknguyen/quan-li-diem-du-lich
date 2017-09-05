@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 using EntityModel.EF;
 
 namespace TLTY.Areas.Admin.Models
@@ -12,337 +9,337 @@ namespace TLTY.Areas.Admin.Models
 		protected override void Seed(TLTYDBContext context)
 		{
 			//Thêm đường dẫn tài khoản
-			var CREATE_ACCOUNT = new Path()
+			var createAccount = new Path()
 			{
 				ID = "CREATE_ACCOUNT",
 				Name = "Thêm tài khoản"
 			};
-			context.Paths.Add(CREATE_ACCOUNT);
+			context.Paths.Add(createAccount);
 
-			var DELETE_ACCOUNT = new Path()
+			var deleteAccount = new Path()
 			{
 				ID = "DELETE_ACCOUNT",
 				Name = "Xóa tài khoản"
 			};
-			context.Paths.Add(DELETE_ACCOUNT);
+			context.Paths.Add(deleteAccount);
 
-			var EDIT_ACCOUNT = new Path()
+			var editAccount = new Path()
 			{
 				ID = "EDIT_ACCOUNT",
 				Name = "Sửa tài khoản"
 			};
-			context.Paths.Add(EDIT_ACCOUNT);
+			context.Paths.Add(editAccount);
 
-			var VIEW_ACCOUNT = new Path()
+			var viewAccount = new Path()
 			{
 				ID = "VIEW_ACCOUNT",
 				Name = "Xem tài khoản"
 			};
-			context.Paths.Add(VIEW_ACCOUNT);
+			context.Paths.Add(viewAccount);
 
-			var DETAILS_ACCOUNT = new Path()
+			var detailsAccount = new Path()
 			{
 				ID = "DETAILS_ACCOUNT",
 				Name = "Xem chi tiết tài khoản"
 			};
-			context.Paths.Add(DETAILS_ACCOUNT);
+			context.Paths.Add(detailsAccount);
 
-			var CHANGE_ACCOUNT = new Path()
+			var changeAccount = new Path()
 			{
 				ID = "CHANGE_ACCOUNT",
 				Name = "Thay đổi mật khẩu"
 			};
-			context.Paths.Add(CHANGE_ACCOUNT);
+			context.Paths.Add(changeAccount);
 
             //Thêm đường dẫn liên hệ
-            var CREATE_CONTACT = new Path()
+            var createContact = new Path()
             {
                 ID = "CREATE_CONTACT",
                 Name = "Thêm liên hệ"
             };
-            context.Paths.Add(CREATE_CONTACT);
+            context.Paths.Add(createContact);
 
-            var DELETE_CONTACT = new Path()
+            var deleteContact = new Path()
             {
                 ID = "DELETE_CONTACT",
                 Name = "Xóa liên hệ"
             };
-            context.Paths.Add(DELETE_CONTACT);
+            context.Paths.Add(deleteContact);
 
-            var EDIT_CONTACT = new Path()
+            var editContact = new Path()
             {
                 ID = "EDIT_CONTACT",
                 Name = "Sửa liên hệ"
             };
-            context.Paths.Add(EDIT_CONTACT);
+            context.Paths.Add(editContact);
 
-            var VIEW_CONTACT = new Path()
+            var viewContact = new Path()
             {
                 ID = "VIEW_CONTACT",
                 Name = "Xem liên hệ"
             };
-            context.Paths.Add(VIEW_CONTACT);
+            context.Paths.Add(viewContact);
 
-            var DETAILS_CONTACT = new Path()
+            var detailsContact = new Path()
             {
                 ID = "DETAILS_ACCOUNT",
                 Name = "Xem chi tiết liên hệ"
             };
-            context.Paths.Add(DETAILS_CONTACT);
+            context.Paths.Add(detailsContact);
 
             //Thêm đường dẫn bảng giá
-            var CREATE_TICKER = new Path()
+            var createTicker = new Path()
             {
                 ID = "CREATE_TICKER",
                 Name = "Thêm bảng giá"
             };
-            context.Paths.Add(CREATE_TICKER);
+            context.Paths.Add(createTicker);
 
-            var DELETE_TICKER = new Path()
+            var deleteTicker = new Path()
             {
                 ID = "DELETE_TICKER",
                 Name = "Xóa bảng giá"
             };
-            context.Paths.Add(DELETE_TICKER);
+            context.Paths.Add(deleteTicker);
 
-            var EDIT_TICKER = new Path()
+            var editTicker = new Path()
             {
                 ID = "EDIT_TICKER",
                 Name = "Sửa bảng giá"
             };
-            context.Paths.Add(EDIT_TICKER);
+            context.Paths.Add(editTicker);
 
-            var VIEW_TICKER = new Path()
+            var viewTicker = new Path()
             {
                 ID = "VIEW_TICKER",
                 Name = "Xem bảng giá"
             };
-            context.Paths.Add(VIEW_TICKER);
+            context.Paths.Add(viewTicker);
 
-            var DETAILS_TICKER = new Path()
+            var detailsTicker = new Path()
             {
                 ID = "DETAILS_TICKER",
                 Name = "Xem chi tiết bảng giá"
             };
-            context.Paths.Add(DETAILS_TICKER);
+            context.Paths.Add(detailsTicker);
 
             //Thêm đường dẫn trình ảnh
-            var CREATE_SLIDER = new Path()
+            var createSlider = new Path()
             {
                 ID = "CREATE_SLIDER",
                 Name = "Thêm trình ảnh"
             };
-            context.Paths.Add(CREATE_SLIDER);
+            context.Paths.Add(createSlider);
 
-            var DELETE_SLIDER = new Path()
+            var deleteSlider = new Path()
             {
                 ID = "DELETE_SLIDER",
                 Name = "Xóa trình ảnh"
             };
-            context.Paths.Add(DELETE_SLIDER);
+            context.Paths.Add(deleteSlider);
 
-            var EDIT_SLIDER = new Path()
+            var editSlider = new Path()
             {
                 ID = "EDIT_SLIDER",
                 Name = "Sửa trình ảnh"
             };
-            context.Paths.Add(EDIT_SLIDER);
+            context.Paths.Add(editSlider);
 
-            var VIEW_SLIDER = new Path()
+            var viewSlider = new Path()
             {
                 ID = "VIEW_SLIDER",
                 Name = "Xem trình ảnh"
             };
-            context.Paths.Add(VIEW_SLIDER);
+            context.Paths.Add(viewSlider);
 
-            var DETAILS_SLIDER = new Path()
+            var detailsSlider = new Path()
             {
                 ID = "DETAILS_SLIDER",
                 Name = "Xem chi tiết trình ảnh"
             };
-            context.Paths.Add(DETAILS_SLIDER);
+            context.Paths.Add(detailsSlider);
 
             //Thêm đường dẫn phản hồi
 
-            var DELETE_REQUEST = new Path()
+            var deleteRequest = new Path()
             {
                 ID = "DELETE_REQUEST",
                 Name = "Xóa phản hồi"
             };
-            context.Paths.Add(DELETE_SLIDER);
+			context.Paths.Add(deleteRequest);
 
 
-            var DETAILS_REQUEST = new Path()
+            var detailsRequest = new Path()
             {
                 ID = "DETAILS_REQUEST",
                 Name = "Xem chi tiết phản hồi"
             };
-            context.Paths.Add(DETAILS_REQUEST);
+            context.Paths.Add(detailsRequest);
 
             //Thêm đường dẫn giới thiệu
-            var CREATE_INTRUCTION = new Path()
+            var createIntruction = new Path()
             {
                 ID = "CREATE_INTRUCTION",
                 Name = "Thêm giới thiệu"
             };
-            context.Paths.Add(CREATE_INTRUCTION);
+            context.Paths.Add(createIntruction);
 
-            var DELETE_INTRUCTION = new Path()
+            var deleteIntruction = new Path()
             {
                 ID = "DELETE_INTRUCTION",
                 Name = "Xóa giới thiệu"
             };
-            context.Paths.Add(DELETE_INTRUCTION);
+            context.Paths.Add(deleteIntruction);
 
-            var EDIT_INTRUCTION = new Path()
+            var editIntruction = new Path()
             {
                 ID = "EDIT_INTRUCTION",
                 Name = "Sửa giới thiệu"
             };
-            context.Paths.Add(EDIT_INTRUCTION);
+            context.Paths.Add(editIntruction);
 
-            var VIEW_INTRUCTION = new Path()
+            var viewIntruction = new Path()
             {
                 ID = "VIEW_INTRUCTION",
                 Name = "Xem giới thiệu"
             };
-            context.Paths.Add(VIEW_INTRUCTION);
+            context.Paths.Add(viewIntruction);
 
-            var DETAILS_INTRUCTION = new Path()
+            var detailsIntruction = new Path()
             {
                 ID = "DETAILS_INTRUCTION",
                 Name = "Xem chi tiết giới thiệu"
             };
-            context.Paths.Add(DETAILS_INTRUCTION);
+            context.Paths.Add(detailsIntruction);
 
             //Thêm đường dẫn yêu cầu
 
-            var DELETE_FEEDBACK = new Path()
+            var deleteFeedback = new Path()
             {
                 ID = "DELETE_FEEDBACK",
                 Name = "Xóa yêu cầu"
             };
-            context.Paths.Add(DELETE_FEEDBACK);
+            context.Paths.Add(deleteFeedback);
 
-            var DETAILS_FEEDBACK = new Path()
+            var detailsFeedback = new Path()
             {
                 ID = "DELETE_FEEDBACK",
                 Name = "Xem chi tiết yêu cầu"
             };
-            context.Paths.Add(DELETE_FEEDBACK);
+			context.Paths.Add(detailsFeedback);
 
             //Thêm đường dẫn nội dung
-            var CREATE_CONTENT = new Path()
+            var createContent = new Path()
             {
                 ID = "CREATE_CONTENT",
                 Name = "Thêm nội dung"
             };
-            context.Paths.Add(CREATE_CONTENT);
+            context.Paths.Add(createContent);
 
-            var DELETE_CONTENT = new Path()
+            var deleteContent = new Path()
             {
                 ID = "DELETE_CONTENT",
                 Name = "Xóa nội dung"
             };
-            context.Paths.Add(DELETE_CONTENT);
+            context.Paths.Add(deleteContent);
 
-            var EDIT_CONTENT = new Path()
+            var editContent = new Path()
             {
                 ID = "EDIT_CONTENT",
                 Name = "Sửa nội dung"
             };
-            context.Paths.Add(EDIT_CONTENT);
+            context.Paths.Add(editContent);
 
-            var VIEW_CONTENT = new Path()
+            var viewContent = new Path()
             {
                 ID = "VIEW_CONTENT",
                 Name = "Xem nội dung"
             };
-            context.Paths.Add(VIEW_CONTENT);
+            context.Paths.Add(viewContent);
 
-            var DETAILS_CONTENT = new Path()
+            var detailsContent = new Path()
             {
                 ID = "DETAILS_CONTENT",
                 Name = "Xem chi tiết nội dung"
             };
-            context.Paths.Add(DETAILS_CONTENT);
+            context.Paths.Add(detailsContent);
 
 
 			//Thêm nhóm
 
-			var ADMIN = new AccountGroup()
+			var adminGroup = new AccountGroup()
 			{
 				ID = "ADMIN",
 				Name = "Quản trị"
 			};
 
-			context.AccountGroups.Add(ADMIN);
+			context.AccountGroups.Add(adminGroup);
 
-			var MEMBER = new AccountGroup()
+			var memberGroup = new AccountGroup()
 			{
 				ID = "MEMBER",
 				Name = "Thành viên"
 			};
 
-			context.AccountGroups.Add(MEMBER);
+			context.AccountGroups.Add(memberGroup);
 
-			var MOD = new AccountGroup()
+			var modGroup = new AccountGroup()
 			{
 				ID = "MOD",
 				Name = "Điều hành"
 			};
 
-			context.AccountGroups.Add(MOD);
+			context.AccountGroups.Add(modGroup);
 
 			//Thêm nối nhóm với đường dẫn
 
-			var ad_1 = new GroupPath()
+			var ad1 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "CREATE_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_1);
+			context.GroupPaths.Add(ad1);
 
-			var ad_2 = new GroupPath()
+			var ad2 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "DELETE_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_2);
+			context.GroupPaths.Add(ad2);
 
-			var ad_3 = new GroupPath()
+			var ad3 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "EDIT_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_3);
+			context.GroupPaths.Add(ad3);
 
-			var ad_4 = new GroupPath()
+			var ad4 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "VIEW_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_4);
+			context.GroupPaths.Add(ad4);
 
-			var ad_5 = new GroupPath()
+			var ad5 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "DETAILS_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_5);
+			context.GroupPaths.Add(ad5);
 
-			var ad_6 = new GroupPath()
+			var ad6 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
 				PathID = "CHANGE_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad_6);
+			context.GroupPaths.Add(ad6);
 
 			//Thêm tài khoản
 			var admin = new Account()
