@@ -7,6 +7,7 @@ using System;
 using System.Web.Script.Serialization;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -14,12 +15,14 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_INSTRUCTION")]
         // GET: Admin/Instructions
         public ActionResult Index()
         {
             return View(_db.Instructions.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_INSTRUCTION")]
         // GET: Admin/Instructions/Details/5
         public ActionResult Details(long? id)
         {
@@ -35,6 +38,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(instruction);
         }
 
+        [HasCredential(PathID = "CREATE_INSTRUCTION")]
         // GET: Admin/Instructions/Create
         public ActionResult Create()
         {
@@ -44,6 +48,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Instructions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "CREATE_INSTRUCTION")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,CreateDate,UserName,Status,Detail,Images,MoreImages")] Instruction instruction)
@@ -90,6 +95,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
         // GET: Admin/Instructions/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -108,7 +114,8 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Instructions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost, ValidateInput(false)]
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,CreateDate,UserName,Status,Detail,Images,MoreImages")] Instruction instruction)
         {
@@ -150,6 +157,7 @@ namespace TLTY.Areas.Admin.Controllers
 			return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "DELETE_INSTRUCTION")]
         // GET: Admin/Instructions/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -165,6 +173,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(instruction);
         }
 
+        [HasCredential(PathID = "DELETE_INSTRUCTION")]
         // POST: Admin/Instructions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -194,6 +203,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
@@ -207,6 +217,7 @@ namespace TLTY.Areas.Admin.Controllers
 			});
 		}
 
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
 		public string ChangeImage(int id, string picture)
 		{
 			if (id < 0)
@@ -230,6 +241,7 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 		}
 
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
 		public JsonResult LoadImages(long id)
 		{
 			var instruction = _db.Instructions.Find(id);
@@ -249,6 +261,7 @@ namespace TLTY.Areas.Admin.Controllers
 
 		}
 
+        [HasCredential(PathID = "EDIT_INSTRUCTION")]
 		[HttpPost]
 		public JsonResult SaveImages(long id, string images)
 		{

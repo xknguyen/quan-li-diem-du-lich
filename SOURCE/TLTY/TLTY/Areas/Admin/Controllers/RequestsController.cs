@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -14,6 +15,7 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_REQUEST")]
         // GET: Admin/Requests
         public ActionResult Index()
         {
@@ -21,6 +23,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(requests.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_REQUEST")]
         // GET: Admin/Requests/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,6 +38,8 @@ namespace TLTY.Areas.Admin.Controllers
             }
             return View(request);
         }
+
+        [HasCredential(PathID = "DELETE_REQUEST")]
         // GET: Admin/Requests/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -50,6 +55,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(request);
         }
 
+        [HasCredential(PathID = "DELETE_REQUEST")]
         // POST: Admin/Requests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -79,6 +85,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_REQUEST")]
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {

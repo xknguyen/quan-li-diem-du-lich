@@ -11,6 +11,7 @@ namespace TLTY.Areas.Admin.Controllers
     public class LoginController : Controller
     {
 		TLTYDBContext _db = new TLTYDBContext();
+
         // GET: Admin/Login
         public ActionResult Index()
         {
@@ -25,7 +26,6 @@ namespace TLTY.Areas.Admin.Controllers
 				var result = DangNhap(model.UserName, Common.MD5Hash(model.UserName + model.Password));
 				if (result == 1)
 				{
-					
 					//var account = dao.GetByID(model.accountName);
 					var account = _db.Accounts.SingleOrDefault(x => x.UserName == model.UserName);
 					if (account != null)

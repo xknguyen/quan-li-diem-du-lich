@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -14,6 +15,7 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_SLIDER")]
         // GET: Admin/Sliders
         public ActionResult Index()
         {
@@ -21,6 +23,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(sliders.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_SLIDER")]
         // GET: Admin/Sliders/Details/5
         public ActionResult Details(long? id)
         {
@@ -36,6 +39,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(slider);
         }
 
+        [HasCredential(PathID = "CREATE_SLIDER")]
         // GET: Admin/Sliders/Create
         public ActionResult Create()
         {
@@ -46,6 +50,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Sliders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "CREATE_SLIDER")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,DisplayOrder,Link,ContentID,CreateDate,UserName,Status,Description")] Slider slider)
@@ -90,6 +95,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "EDIT_SLIDER")]
         // GET: Admin/Sliders/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -109,6 +115,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Sliders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "EDIT_SLIDER")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,DisplayOrder,Link,ContentID,CreateDate,UserName,Status,Description")] Slider slider)
@@ -147,6 +154,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "DELETE_SLIDER")]
         // GET: Admin/Sliders/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -162,6 +170,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(slider);
         }
 
+        [HasCredential(PathID = "DELETE_SLIDER")]
         // POST: Admin/Sliders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -191,6 +200,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_SLIDER")]
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
@@ -204,6 +214,7 @@ namespace TLTY.Areas.Admin.Controllers
             });
         }
 
+        [HasCredential(PathID = "EDIT_SLIDER")]
         public string ChangeImage(int id, string picture)
         {
             if (id < 0)
