@@ -1138,7 +1138,6 @@
     <Content Include="Content\AdminTheme\vendor\flot\jquery.js" />
     <Content Include="Content\AdminTheme\vendor\font-awesome\css\font-awesome.css" />
     <Content Include="Content\AdminTheme\vendor\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\AdminTheme\vendor\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\AdminTheme\vendor\jquery\jquery.js" />
     <Content Include="Content\AdminTheme\vendor\jquery\jquery.min.js" />
     <Content Include="Content\AdminTheme\vendor\metisMenu\metisMenu.css" />
