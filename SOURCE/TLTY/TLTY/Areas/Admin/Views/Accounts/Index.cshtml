@@ -1,8 +1,10 @@
-﻿@model IEnumerable<EntityModel.EF.Account>
+﻿@using TLTY.Areas.Admin.Models
+@model IEnumerable<EntityModel.EF.Account>
 
 @{
 	ViewBag.Title = "Danh sách tài khoản";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var session = (UserLogin)HttpContext.Current.Session[Constants.USER_SESSION];
 }
 
 @section header{
@@ -53,7 +55,7 @@
 							</td>
 							<td class="center" style="text-align: center;">
 								@{
-						if (item.ID == Session["AccountID"].GetHashCode())
+						if (item.ID == session.AccountID)
 						{
 							@(item.Status ? "Kích hoạt" : "Khóa")
 						}

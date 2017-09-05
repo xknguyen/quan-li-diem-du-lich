@@ -15,6 +15,8 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
+
+		[HasCredential(PathID = "VIEW_ACCOUNT")]
         // GET: Admin/Accounts
         public ActionResult Index()
         {
@@ -22,6 +24,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(accounts.ToList());
         }
 
+		[HasCredential(PathID = "DETAILS_ACCOUNT")]
         // GET: Admin/Accounts/Details/5
         public ActionResult Details(long? id)
         {
@@ -37,6 +40,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(account);
         }
 
+		[HasCredential(PathID = "CREATE_ACCOUNT")]
         // GET: Admin/Accounts/Create
         public ActionResult Create()
         {
@@ -47,7 +51,8 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Accounts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+		[HasCredential(PathID = "CREATE_ACCOUNT")]
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
         {
@@ -107,6 +112,7 @@ namespace TLTY.Areas.Admin.Controllers
 
         }
 
+		[HasCredential(PathID = "EDIT_ACCOUNT")]
         // GET: Admin/Accounts/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -126,11 +132,13 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Accounts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+		[HasCredential(PathID = "EDIT_ACCOUNT")]
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
         {
-			if (Session["AccountID"].GetHashCode() != 1 && account.ID == 1)
+			var session = (UserLogin)Session[Constants.USER_SESSION];
+			if (session.AccountID != 1 && account.ID == 1)
 			{
 				SetAlert("<i class='fa fa-times'></i> Bạn không thể sửa tài khoản quyền cao nhất!", "error");
 				return RedirectToAction("Index");
@@ -173,6 +181,7 @@ namespace TLTY.Areas.Admin.Controllers
 			return RedirectToAction("Index");
         }
 
+		[HasCredential(PathID = "DELETE_ACCOUNT")]
         // GET: Admin/Accounts/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -188,6 +197,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(account);
         }
 
+		[HasCredential(PathID = "DELETE_ACCOUNT")]
         // POST: Admin/Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -201,7 +211,8 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 			else
 			{
-				if (account.ID == Session["AccountID"].GetHashCode())
+				var session = (UserLogin)Session[Constants.USER_SESSION];
+				if (account.ID == session.AccountID)
 				{
 					SetAlert("<i class='fa fa-times'></i> Bạn không thể xóa tài khoản đang đăng nhập!", "error");
 					return RedirectToAction("Index");
@@ -234,6 +245,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+		[HasCredential(PathID = "CHANGE_ACCOUNT")]
 		//Change password
 		public ActionResult ChangPassword(int? id)
 		{
@@ -249,15 +261,18 @@ namespace TLTY.Areas.Admin.Controllers
 			return View(account);
 		}
 
+		[HasCredential(PathID = "CHANGE_ACCOUNT")]
 		[HttpPost]
 		public ActionResult ChangPassword(string oldPass, string newPass1, string newPass2)
 		{
 			if (ModelState.IsValid)
 			{
+
 				if (!string.IsNullOrEmpty(oldPass))
 				{
-					string username = Session["UserName"].ToString();
-					int userid = Session["AccountID"].GetHashCode();
+					var session = (UserLogin)Session[Constants.USER_SESSION];
+					string username = session.UserName;
+					long userid = session.AccountID;
 					var entryptedMd5Pas = Common.MD5Hash(username + oldPass);
 					oldPass = entryptedMd5Pas;
 
@@ -307,6 +322,7 @@ namespace TLTY.Areas.Admin.Controllers
 			return RedirectToAction("Index");
 		}
 
+		[HasCredential(PathID = "EDIT_ACCOUNT")]
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
@@ -319,6 +335,7 @@ namespace TLTY.Areas.Admin.Controllers
 			});
 		}
 
+		[HasCredential(PathID = "EDIT_ACCOUNT")]
 		public string ChangeImage(int id, string picture)
 		{
 			if (id < 0)

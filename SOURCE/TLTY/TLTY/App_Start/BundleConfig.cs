@@ -22,7 +22,7 @@ namespace TLTY
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Content/ClientTheme/js/bootstrap.min.js",
 						"~/Scripts/Alert.js",
-						"~/Scripts/jquery.nicescroll.js"));
+						"~/Scripts/jquery.nicescroll.min.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",

@@ -1,4 +1,8 @@
-﻿<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+﻿@using TLTY.Areas.Admin.Models
+@{
+	var session = (UserLogin)Session[Constants.USER_SESSION];
+}
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			<span class="sr-only">Toggle navigation</span>
@@ -62,14 +66,22 @@
 		<!-- /.dropdown -->
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<i class="fa fa-user fa-fw"></i> Xin chào: <strong>@Session["LastName"] @Session["FristName"]</strong> <i class="fa fa-caret-down"></i>
+				<i class="fa fa-user fa-fw"></i> Xin chào: <strong>
+					@{ if (session != null)
+					 {@session.LastName @session.FristName}}
+				</strong> <i class="fa fa-caret-down"></i>
 			</a>
 			<ul class="dropdown-menu dropdown-user">
 				<li>
-					<a href="/Admin/xem-thong-tin/@Session["AccountID"]" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i> Thông tin tài khoản</a>
+					<a href="/Admin/xem-thong-tin/@{if (session != null){@session.AccountID }}" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</a>
 				</li>
 				<li>
-					<a href="/Admin/thay-mat-khau/@Session["UserName"]-@Session["AccountID"]" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i> Thay đổi mật khẩu</a>
+					@{
+						if (session != null)
+						{
+							<a href="/Admin/thay-mat-khau/@session.UserName-@session.AccountID" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i>Thay đổi mật khẩu</a>
+						}
+					}
 				</li>
 				<li class="divider"></li>
 				<li>
@@ -89,20 +101,6 @@
 				</li>
 				<li>
 					<a href="/Admin/Accounts/"><i class="fa fa-user fa-fw"></i> Quản lý tài khoản</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-table fa-fw"></i>Hệ thống phân quyền</a>
-					<ul class="nav nav-second-level">
-						<li>
-							<a href="/Admin/AccountGroups/">Phân quyền</a>
-						</li>
-						<li>
-							<a href="/Admin/GroupPaths/">Quản lý nhóm quyền</a>
-						</li>
-						<li>
-							<a href="/Admin/Paths/">Quản lý đường dẫn</a>
-						</li>
-					</ul>
 				</li>
 				<li>
 					<a href="/Admin/Instructions/"><i class="fa fa-newspaper-o fa-fw"></i> Quản lý giới thiệu</a>

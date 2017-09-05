@@ -25,18 +25,26 @@ namespace TLTY.Areas.Admin.Controllers
 				var result = DangNhap(model.UserName, Common.MD5Hash(model.UserName + model.Password));
 				if (result == 1)
 				{
+					
 					//var account = dao.GetByID(model.accountName);
 					var account = _db.Accounts.SingleOrDefault(x => x.UserName == model.UserName);
 					if (account != null)
 					{
-						Session["AccountID"] = account.ID;
-						Session["UserName"] = account.UserName;
-						Session["FristName"] = account.FirstName;
-						Session["LastName"] = account.LastName;
-						Session["Phone"] = account.Phone;
-						Session["Email"] = account.Email;
-						Session["Address"] = account.Address;
-						Session["Avatar"] = account.Avatar;
+						var userSession = new UserLogin();
+						userSession .AccountID= account.ID;
+						userSession.UserName = account.UserName;
+						userSession.FristName = account.FirstName;
+						userSession.LastName = account.LastName;
+						userSession.Phone = account.Phone;
+						userSession.Email = account.Email;
+						userSession.Address = account.Address;
+						userSession.Avatar = account.Avatar;
+						userSession.AccountGroupID = account.AccountGroupID;
+
+						var listCredentials = GetListCredential(model.UserName);
+
+						Session.Add(Constants.SESSION_CREDENTIALS,listCredentials);
+						Session.Add(Constants.USER_SESSION, userSession);
 					}
 
 					return RedirectToAction("Index", "Home");
@@ -90,16 +98,29 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 		}
 
+		public List<string> GetListCredential(string userName)
+		{
+			var user = _db.Accounts.Single(x => x.UserName == userName);
+			var data = (from a in _db.GroupPaths
+						join b in _db.AccountGroups on a.AccountGroupID equals b.ID
+						join c in _db.Paths on a.PathID equals c.ID
+						where b.ID == user.AccountGroupID
+						select new
+						{
+							PathID = a.PathID,
+							AccountGroupID = a.AccountGroupID
+						}).AsEnumerable().Select(x => new GroupPath()
+						{
+							PathID = x.PathID,
+							AccountGroupID = x.AccountGroupID
+						});
+			return data.Select(x => x.PathID).ToList();
+
+		}
+
 		public ActionResult Logout()
 		{
-			Session["AccountID"] = null;
-			Session["UserName"] = null;
-			Session["FristName"] = null;
-			Session["LastName"] = null;
-			Session["Phone"] = null;
-			Session["Email"] = null;
-			Session["Address"] = null;
-			Session["Avatar"] = null;
+			Session.RemoveAll();
 			return RedirectToAction("Index", "Home");
 		}
     }

@@ -5,7 +5,7 @@
 	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="modal fade" id="createModal" style="display: block !important;">
+<div class="modal fade" id="createModal">
 	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -17,7 +17,7 @@
 			</div>
 			@using (Html.BeginForm())
 			{
-				<div class="modal-body" style="height: 400px;overflow-y: auto;">
+				<div class="modal-body" style="max-height: 400px;overflow-y: auto;">
 					@Html.AntiForgeryToken()
 					<div class="form-horizontal">
 						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
