@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -14,12 +15,14 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_TICKER")]
         // GET: /Admin/Tickers/
         public ActionResult Index()
         {
             return View(db.Tickers.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_TICKER")]
         // GET: /Admin/Tickers/Details/5
         public ActionResult Details(long? id)
         {
@@ -35,6 +38,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(ticker);
         }
 
+        [HasCredential(PathID = "CREATE_TICKER")]
         // GET: /Admin/Tickers/Create
         public ActionResult Create()
         {
@@ -44,6 +48,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: /Admin/Tickers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "CREATE_TICKER")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,Name,CreateDate,UserName,Status,Type,Quantity,Price,Description")] Ticker ticker)
@@ -85,6 +90,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "EDIT_TICKER")]
         // GET: /Admin/Tickers/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -103,6 +109,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: /Admin/Tickers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "EDIT_TICKER")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,Name,CreateDate,UserName,Status,Type,Quantity,Price,Description")] Ticker ticker)
@@ -141,6 +148,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "DELETE_TICKER")]
         // GET: /Admin/Tickers/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -156,6 +164,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(ticker);
         }
 
+        [HasCredential(PathID = "DELETE_TICKER")]
         // POST: /Admin/Tickers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -185,6 +194,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_TICKER")]
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
