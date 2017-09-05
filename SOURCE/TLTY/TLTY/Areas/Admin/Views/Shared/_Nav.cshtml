@@ -1,10 +1,6 @@
 ﻿@using TLTY.Areas.Admin.Models
 @{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
-	if (session == null)
-	{
-		Response.Redirect("~/Admin/Login/Index");
-	}
 }
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 	<div class="navbar-header">
@@ -70,14 +66,22 @@
 		<!-- /.dropdown -->
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<i class="fa fa-user fa-fw"></i> Xin chào: <strong>@session.LastName @session.FristName</strong> <i class="fa fa-caret-down"></i>
+				<i class="fa fa-user fa-fw"></i> Xin chào: <strong>
+					@{ if (session != null)
+					 {@session.LastName @session.FristName}}
+				</strong> <i class="fa fa-caret-down"></i>
 			</a>
 			<ul class="dropdown-menu dropdown-user">
 				<li>
-					<a href="/Admin/xem-thong-tin/@session.AccountID" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i> Thông tin tài khoản</a>
+					<a href="/Admin/xem-thong-tin/@{if (session != null){@session.AccountID }}" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</a>
 				</li>
 				<li>
-					<a href="/Admin/thay-mat-khau/@session.UserName-@session.AccountID" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i> Thay đổi mật khẩu</a>
+					@{
+						if (session != null)
+						{
+							<a href="/Admin/thay-mat-khau/@session.UserName-@session.AccountID" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i>Thay đổi mật khẩu</a>
+						}
+					}
 				</li>
 				<li class="divider"></li>
 				<li>
