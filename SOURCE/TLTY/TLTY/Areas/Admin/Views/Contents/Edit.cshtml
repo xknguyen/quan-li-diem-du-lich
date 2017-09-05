@@ -4,8 +4,8 @@
     ViewBag.Title = "Sửa nội dung" + @Model.Name;
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<div class="modal fade" id="editModal" style="display: block !important;">
-    <div class="modal-dialog modal-lg" style="display: block !important;">
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
@@ -16,7 +16,7 @@
             </div>
             @using (Html.BeginForm())
             {
-                <div class="modal-body" style="height: 400px;overflow-y: auto;">
+                <div class="modal-body" style="max-height: 400px;overflow-y: auto;">
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.ID)
                     @Html.HiddenFor(model => model.CreateDate)
