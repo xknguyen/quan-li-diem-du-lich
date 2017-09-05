@@ -11,13 +11,13 @@ namespace TLTY.Areas.Admin.Models
 	{
 		protected override void Seed(TLTYDBContext context)
 		{
-			//Thêm đường dẫn
-			var ADD_ACCOUNT = new Path()
+			//Thêm đường dẫn tài khoản
+			var CREATE_ACCOUNT = new Path()
 			{
-				ID = "ADD_ACCOUNT",
+				ID = "CREATE_ACCOUNT",
 				Name = "Thêm tài khoản"
 			};
-			context.Paths.Add(ADD_ACCOUNT);
+			context.Paths.Add(CREATE_ACCOUNT);
 
 			var DELETE_ACCOUNT = new Path()
 			{
@@ -54,7 +54,219 @@ namespace TLTY.Areas.Admin.Models
 			};
 			context.Paths.Add(CHANGE_ACCOUNT);
 
-			
+            //Thêm đường dẫn liên hệ
+            var CREATE_CONTACT = new Path()
+            {
+                ID = "CREATE_CONTACT",
+                Name = "Thêm liên hệ"
+            };
+            context.Paths.Add(CREATE_CONTACT);
+
+            var DELETE_CONTACT = new Path()
+            {
+                ID = "DELETE_CONTACT",
+                Name = "Xóa liên hệ"
+            };
+            context.Paths.Add(DELETE_CONTACT);
+
+            var EDIT_CONTACT = new Path()
+            {
+                ID = "EDIT_CONTACT",
+                Name = "Sửa liên hệ"
+            };
+            context.Paths.Add(EDIT_CONTACT);
+
+            var VIEW_CONTACT = new Path()
+            {
+                ID = "VIEW_CONTACT",
+                Name = "Xem liên hệ"
+            };
+            context.Paths.Add(VIEW_CONTACT);
+
+            var DETAILS_CONTACT = new Path()
+            {
+                ID = "DETAILS_ACCOUNT",
+                Name = "Xem chi tiết liên hệ"
+            };
+            context.Paths.Add(DETAILS_CONTACT);
+
+            //Thêm đường dẫn bảng giá
+            var CREATE_TICKER = new Path()
+            {
+                ID = "CREATE_TICKER",
+                Name = "Thêm bảng giá"
+            };
+            context.Paths.Add(CREATE_TICKER);
+
+            var DELETE_TICKER = new Path()
+            {
+                ID = "DELETE_TICKER",
+                Name = "Xóa bảng giá"
+            };
+            context.Paths.Add(DELETE_TICKER);
+
+            var EDIT_TICKER = new Path()
+            {
+                ID = "EDIT_TICKER",
+                Name = "Sửa bảng giá"
+            };
+            context.Paths.Add(EDIT_TICKER);
+
+            var VIEW_TICKER = new Path()
+            {
+                ID = "VIEW_TICKER",
+                Name = "Xem bảng giá"
+            };
+            context.Paths.Add(VIEW_TICKER);
+
+            var DETAILS_TICKER = new Path()
+            {
+                ID = "DETAILS_TICKER",
+                Name = "Xem chi tiết bảng giá"
+            };
+            context.Paths.Add(DETAILS_TICKER);
+
+            //Thêm đường dẫn trình ảnh
+            var CREATE_SLIDER = new Path()
+            {
+                ID = "CREATE_SLIDER",
+                Name = "Thêm trình ảnh"
+            };
+            context.Paths.Add(CREATE_SLIDER);
+
+            var DELETE_SLIDER = new Path()
+            {
+                ID = "DELETE_SLIDER",
+                Name = "Xóa trình ảnh"
+            };
+            context.Paths.Add(DELETE_SLIDER);
+
+            var EDIT_SLIDER = new Path()
+            {
+                ID = "EDIT_SLIDER",
+                Name = "Sửa trình ảnh"
+            };
+            context.Paths.Add(EDIT_SLIDER);
+
+            var VIEW_SLIDER = new Path()
+            {
+                ID = "VIEW_SLIDER",
+                Name = "Xem trình ảnh"
+            };
+            context.Paths.Add(VIEW_SLIDER);
+
+            var DETAILS_SLIDER = new Path()
+            {
+                ID = "DETAILS_SLIDER",
+                Name = "Xem chi tiết trình ảnh"
+            };
+            context.Paths.Add(DETAILS_SLIDER);
+
+            //Thêm đường dẫn phản hồi
+
+            var DELETE_REQUEST = new Path()
+            {
+                ID = "DELETE_REQUEST",
+                Name = "Xóa phản hồi"
+            };
+            context.Paths.Add(DELETE_SLIDER);
+
+
+            var DETAILS_REQUEST = new Path()
+            {
+                ID = "DETAILS_REQUEST",
+                Name = "Xem chi tiết phản hồi"
+            };
+            context.Paths.Add(DETAILS_REQUEST);
+
+            //Thêm đường dẫn giới thiệu
+            var CREATE_INTRUCTION = new Path()
+            {
+                ID = "CREATE_INTRUCTION",
+                Name = "Thêm giới thiệu"
+            };
+            context.Paths.Add(CREATE_INTRUCTION);
+
+            var DELETE_INTRUCTION = new Path()
+            {
+                ID = "DELETE_INTRUCTION",
+                Name = "Xóa giới thiệu"
+            };
+            context.Paths.Add(DELETE_INTRUCTION);
+
+            var EDIT_INTRUCTION = new Path()
+            {
+                ID = "EDIT_INTRUCTION",
+                Name = "Sửa giới thiệu"
+            };
+            context.Paths.Add(EDIT_INTRUCTION);
+
+            var VIEW_INTRUCTION = new Path()
+            {
+                ID = "VIEW_INTRUCTION",
+                Name = "Xem giới thiệu"
+            };
+            context.Paths.Add(VIEW_INTRUCTION);
+
+            var DETAILS_INTRUCTION = new Path()
+            {
+                ID = "DETAILS_INTRUCTION",
+                Name = "Xem chi tiết giới thiệu"
+            };
+            context.Paths.Add(DETAILS_INTRUCTION);
+
+            //Thêm đường dẫn yêu cầu
+
+            var DELETE_FEEDBACK = new Path()
+            {
+                ID = "DELETE_FEEDBACK",
+                Name = "Xóa yêu cầu"
+            };
+            context.Paths.Add(DELETE_FEEDBACK);
+
+            var DETAILS_FEEDBACK = new Path()
+            {
+                ID = "DELETE_FEEDBACK",
+                Name = "Xem chi tiết yêu cầu"
+            };
+            context.Paths.Add(DELETE_FEEDBACK);
+
+            //Thêm đường dẫn nội dung
+            var CREATE_CONTENT = new Path()
+            {
+                ID = "CREATE_CONTENT",
+                Name = "Thêm nội dung"
+            };
+            context.Paths.Add(CREATE_CONTENT);
+
+            var DELETE_CONTENT = new Path()
+            {
+                ID = "DELETE_CONTENT",
+                Name = "Xóa nội dung"
+            };
+            context.Paths.Add(DELETE_CONTENT);
+
+            var EDIT_CONTENT = new Path()
+            {
+                ID = "EDIT_CONTENT",
+                Name = "Sửa nội dung"
+            };
+            context.Paths.Add(EDIT_CONTENT);
+
+            var VIEW_CONTENT = new Path()
+            {
+                ID = "VIEW_CONTENT",
+                Name = "Xem nội dung"
+            };
+            context.Paths.Add(VIEW_CONTENT);
+
+            var DETAILS_CONTENT = new Path()
+            {
+                ID = "DETAILS_CONTENT",
+                Name = "Xem chi tiết nội dung"
+            };
+            context.Paths.Add(DETAILS_CONTENT);
+
 
 			//Thêm nhóm
 
@@ -87,7 +299,7 @@ namespace TLTY.Areas.Admin.Models
 			var ad_1 = new GroupPath()
 			{
 				AccountGroupID = "ADMIN",
-				PathID = "ADD_ACCOUNT"
+				PathID = "CREATE_ACCOUNT"
 			};
 
 			context.GroupPaths.Add(ad_1);
