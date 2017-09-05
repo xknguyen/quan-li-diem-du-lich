@@ -1,5 +1,7 @@
-﻿@{
-	if (Session["AccountID"] == null)
+﻿@using TLTY.Areas.Admin.Models
+@{
+	var session = (UserLogin)Session[Constants.USER_SESSION];
+	if (session== null)
 	{
 		Response.Redirect("~/Admin/Login/Index");
 	}

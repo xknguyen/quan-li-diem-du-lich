@@ -1,0 +1,14 @@
+﻿@{
+	ViewBag.Title = "Cần quyền";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+	<h2 class="page-header">Thông báo từ quản trị:</h2>
+}
+<div class="col-lg-12">
+	<div class="alert alert-danger">Bạn không có quyền truy cập vào chức năng này! Hãy liên lạc với quản trị để được mở quyền!</div>
+	<div class="col-md-offset-5 col-md-5">
+		<button class="btn btn-lg btn-info" onclick="javascript:history.back()">Quay lại</button>
+	</div>
+</div>

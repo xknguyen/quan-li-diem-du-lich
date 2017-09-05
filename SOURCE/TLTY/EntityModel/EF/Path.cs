@@ -15,9 +15,6 @@ namespace EntityModel.EF
         [StringLength(250)]
         public string Name { get; set; }
 
-        [Column(TypeName = "ntext")]
-        public string Description { get; set; }
 
-        public bool? status { get; set; }
     }
 }

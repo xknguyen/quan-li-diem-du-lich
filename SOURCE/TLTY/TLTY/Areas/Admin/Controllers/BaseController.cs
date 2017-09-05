@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -7,9 +8,9 @@ namespace TLTY.Areas.Admin.Controllers
     {
 		protected override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-			//var session = (UserLogin)Session[Common.CommonConstants.USER_SESSION];
+			var session = (UserLogin)Session[Constants.USER_SESSION];
 
-			if (Session["AccountID"] == null)
+			if (session == null)
 			{
 				filterContext.Result = new RedirectToRouteResult(new
 					RouteValueDictionary(new { Controller = "Login", action = "Index", Area = "Admin" }));
