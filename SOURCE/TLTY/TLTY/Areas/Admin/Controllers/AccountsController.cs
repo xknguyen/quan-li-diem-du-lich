@@ -15,7 +15,6 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
-
 		[HasCredential(PathID = "VIEW_ACCOUNT")]
         // GET: Admin/Accounts
         public ActionResult Index()

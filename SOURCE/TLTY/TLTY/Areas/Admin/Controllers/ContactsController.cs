@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityModel.EF;
+using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
@@ -14,12 +15,14 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_CONTACT")]
         // GET: /Admin/Contacts/
         public ActionResult Index()
         {
             return View(db.Contacts.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_CONTACT")]
         // GET: /Admin/Contacts/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,6 +38,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(contact);
         }
 
+        [HasCredential(PathID = "CREATE_CONTACT")]
         // GET: /Admin/Contacts/Create
         public ActionResult Create()
         {
@@ -44,6 +48,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: /Admin/Contacts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "CREATE_CONTACT")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,CreateDate,UserName,Status,Address,Phone,Email")] Contact contact)
@@ -81,6 +86,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "EDIT_CONTACT")]
         // GET: /Admin/Contacts/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -99,6 +105,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: /Admin/Contacts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "EDIT_CONTACT")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,CreateDate,UserName,Status,Address,Phone,Email")] Contact contact)
@@ -133,6 +140,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "DELETE_CONTACT")]
         // GET: /Admin/Contacts/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -148,6 +156,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(contact);
         }
 
+        [HasCredential(PathID = "DELETE_CONTACT")]
         // POST: /Admin/Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -177,6 +186,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_CONTACT")]
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {

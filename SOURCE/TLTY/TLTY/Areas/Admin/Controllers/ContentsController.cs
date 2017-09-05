@@ -15,12 +15,14 @@ namespace TLTY.Areas.Admin.Controllers
     {
         private TLTYDBContext _db = new TLTYDBContext();
 
+        [HasCredential(PathID = "VIEW_CONTENT")]
         // GET: Admin/Contents
         public ActionResult Index()
         {
             return View(_db.Contents.ToList());
         }
 
+        [HasCredential(PathID = "DETAILS_CONTENT")]
         // GET: Admin/Contents/Details/5
         public ActionResult Details(long? id)
         {
@@ -36,6 +38,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(content);
         }
 
+        [HasCredential(PathID = "CREATE_CONTENT")]
         // GET: Admin/Contents/Create
         public ActionResult Create()
         {
@@ -45,6 +48,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Contents/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "CREATE_CONTENT")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,CreateDate,UserName,Status,ViewCount,Detail,Description,Images,MoreImages,Category")] Content content)
@@ -99,6 +103,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "EDIT_CONTENT")]
         // GET: Admin/Contents/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -117,6 +122,7 @@ namespace TLTY.Areas.Admin.Controllers
         // POST: Admin/Contents/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HasCredential(PathID = "EDIT_CONTENT")]
         [HttpPost,ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,CreateDate,UserName,Status,ViewCount,Detail,Description,Images,MoreImages,Category")] Content content)
@@ -155,6 +161,7 @@ namespace TLTY.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HasCredential(PathID = "DELETE_CONTENT")]
         // GET: Admin/Contents/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -170,6 +177,7 @@ namespace TLTY.Areas.Admin.Controllers
             return View(content);
         }
 
+        [HasCredential(PathID = "DELETE_CONTENT")]
         // POST: Admin/Contents/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -199,6 +207,7 @@ namespace TLTY.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
+        [HasCredential(PathID = "EDIT_CONTENT")]
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
@@ -212,6 +221,7 @@ namespace TLTY.Areas.Admin.Controllers
             });
         }
 
+        [HasCredential(PathID = "EDIT_CONTENT")]
         public string ChangeImage(int id, string picture)
         {
             if (id < 0)
@@ -235,6 +245,7 @@ namespace TLTY.Areas.Admin.Controllers
             }
         }
 
+        [HasCredential(PathID = "EDIT_CONTENT")]
         public JsonResult LoadImages(long id)
         {
             var content = _db.Contents.Find(id);
@@ -254,6 +265,7 @@ namespace TLTY.Areas.Admin.Controllers
 
         }
 
+        [HasCredential(PathID = "EDIT_CONTENT")]
         [HttpPost]
         public JsonResult SaveImages(long id, string images)
         {
@@ -285,7 +297,6 @@ namespace TLTY.Areas.Admin.Controllers
             }
 
         }
-
 
         public void UpdateImages(long contentId, string images)
         {
