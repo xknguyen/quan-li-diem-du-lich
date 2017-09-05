@@ -51,218 +51,247 @@ namespace TLTY.Areas.Admin.Models
 			};
 			context.Paths.Add(changeAccount);
 
-            //Thêm đường dẫn liên hệ
-            var createContact = new Path()
-            {
-                ID = "CREATE_CONTACT",
-                Name = "Thêm liên hệ"
-            };
-            context.Paths.Add(createContact);
+			//Thêm đường dẫn liên hệ
+			var createContact = new Path()
+			{
+				ID = "CREATE_CONTACT",
+				Name = "Thêm liên hệ"
+			};
+			context.Paths.Add(createContact);
 
-            var deleteContact = new Path()
-            {
-                ID = "DELETE_CONTACT",
-                Name = "Xóa liên hệ"
-            };
-            context.Paths.Add(deleteContact);
+			var deleteContact = new Path()
+			{
+				ID = "DELETE_CONTACT",
+				Name = "Xóa liên hệ"
+			};
+			context.Paths.Add(deleteContact);
 
-            var editContact = new Path()
-            {
-                ID = "EDIT_CONTACT",
-                Name = "Sửa liên hệ"
-            };
-            context.Paths.Add(editContact);
+			var editContact = new Path()
+			{
+				ID = "EDIT_CONTACT",
+				Name = "Sửa liên hệ"
+			};
+			context.Paths.Add(editContact);
 
-            var viewContact = new Path()
-            {
-                ID = "VIEW_CONTACT",
-                Name = "Xem liên hệ"
-            };
-            context.Paths.Add(viewContact);
+			var viewContact = new Path()
+			{
+				ID = "VIEW_CONTACT",
+				Name = "Xem liên hệ"
+			};
+			context.Paths.Add(viewContact);
 
-            var detailsContact = new Path()
-            {
-                ID = "DETAILS_CONTACT",
-                Name = "Xem chi tiết liên hệ"
-            };
-            context.Paths.Add(detailsContact);
+			var detailsContact = new Path()
+			{
+				ID = "DETAILS_CONTACT",
+				Name = "Xem chi tiết liên hệ"
+			};
+			context.Paths.Add(detailsContact);
 
-            //Thêm đường dẫn bảng giá
-            var createTicker = new Path()
-            {
-                ID = "CREATE_TICKER",
-                Name = "Thêm bảng giá"
-            };
-            context.Paths.Add(createTicker);
+			//Thêm đường dẫn bảng giá
+			var createTicker = new Path()
+			{
+				ID = "CREATE_TICKER",
+				Name = "Thêm bảng giá"
+			};
+			context.Paths.Add(createTicker);
 
-            var deleteTicker = new Path()
-            {
-                ID = "DELETE_TICKER",
-                Name = "Xóa bảng giá"
-            };
-            context.Paths.Add(deleteTicker);
+			var deleteTicker = new Path()
+			{
+				ID = "DELETE_TICKER",
+				Name = "Xóa bảng giá"
+			};
+			context.Paths.Add(deleteTicker);
 
-            var editTicker = new Path()
-            {
-                ID = "EDIT_TICKER",
-                Name = "Sửa bảng giá"
-            };
-            context.Paths.Add(editTicker);
+			var editTicker = new Path()
+			{
+				ID = "EDIT_TICKER",
+				Name = "Sửa bảng giá"
+			};
+			context.Paths.Add(editTicker);
 
-            var viewTicker = new Path()
-            {
-                ID = "VIEW_TICKER",
-                Name = "Xem bảng giá"
-            };
-            context.Paths.Add(viewTicker);
+			var viewTicker = new Path()
+			{
+				ID = "VIEW_TICKER",
+				Name = "Xem bảng giá"
+			};
+			context.Paths.Add(viewTicker);
 
-            var detailsTicker = new Path()
-            {
-                ID = "DETAILS_TICKER",
-                Name = "Xem chi tiết bảng giá"
-            };
-            context.Paths.Add(detailsTicker);
+			var detailsTicker = new Path()
+			{
+				ID = "DETAILS_TICKER",
+				Name = "Xem chi tiết bảng giá"
+			};
+			context.Paths.Add(detailsTicker);
 
-            //Thêm đường dẫn trình ảnh
-            var createSlider = new Path()
-            {
-                ID = "CREATE_SLIDER",
-                Name = "Thêm trình ảnh"
-            };
-            context.Paths.Add(createSlider);
+			//Thêm đường dẫn trình ảnh
+			var createSlider = new Path()
+			{
+				ID = "CREATE_SLIDER",
+				Name = "Thêm trình ảnh"
+			};
+			context.Paths.Add(createSlider);
 
-            var deleteSlider = new Path()
-            {
-                ID = "DELETE_SLIDER",
-                Name = "Xóa trình ảnh"
-            };
-            context.Paths.Add(deleteSlider);
+			var deleteSlider = new Path()
+			{
+				ID = "DELETE_SLIDER",
+				Name = "Xóa trình ảnh"
+			};
+			context.Paths.Add(deleteSlider);
 
-            var editSlider = new Path()
-            {
-                ID = "EDIT_SLIDER",
-                Name = "Sửa trình ảnh"
-            };
-            context.Paths.Add(editSlider);
+			var editSlider = new Path()
+			{
+				ID = "EDIT_SLIDER",
+				Name = "Sửa trình ảnh"
+			};
+			context.Paths.Add(editSlider);
 
-            var viewSlider = new Path()
-            {
-                ID = "VIEW_SLIDER",
-                Name = "Xem trình ảnh"
-            };
-            context.Paths.Add(viewSlider);
+			var viewSlider = new Path()
+			{
+				ID = "VIEW_SLIDER",
+				Name = "Xem trình ảnh"
+			};
+			context.Paths.Add(viewSlider);
 
-            var detailsSlider = new Path()
-            {
-                ID = "DETAILS_SLIDER",
-                Name = "Xem chi tiết trình ảnh"
-            };
-            context.Paths.Add(detailsSlider);
+			var detailsSlider = new Path()
+			{
+				ID = "DETAILS_SLIDER",
+				Name = "Xem chi tiết trình ảnh"
+			};
+			context.Paths.Add(detailsSlider);
 
-            //Thêm đường dẫn phản hồi
+			//Thêm đường dẫn phản hồi
 
-            var deleteRequest = new Path()
-            {
-                ID = "DELETE_REQUEST",
-                Name = "Xóa phản hồi"
-            };
+			var deleteRequest = new Path()
+			{
+				ID = "DELETE_REQUEST",
+				Name = "Xóa phản hồi"
+			};
 			context.Paths.Add(deleteRequest);
 
+			var editRequest = new Path()
+			{
+				ID = "EDIT_REQUEST",
+				Name = "Xóa phản hồi"
+			};
+			context.Paths.Add(editRequest);
 
-            var detailsRequest = new Path()
-            {
-                ID = "DETAILS_REQUEST",
-                Name = "Xem chi tiết phản hồi"
-            };
-            context.Paths.Add(detailsRequest);
 
-            //Thêm đường dẫn giới thiệu
-            var createIntruction = new Path()
-            {
-                ID = "CREATE_INTRUCTION",
-                Name = "Thêm giới thiệu"
-            };
-            context.Paths.Add(createIntruction);
+			var viewRequest = new Path()
+			{
+				ID = "VIEW_REQUEST",
+				Name = "Xem chi tiết phản hồi"
+			};
+			context.Paths.Add(viewRequest);
 
-            var deleteIntruction = new Path()
-            {
-                ID = "DELETE_INTRUCTION",
-                Name = "Xóa giới thiệu"
-            };
-            context.Paths.Add(deleteIntruction);
 
-            var editIntruction = new Path()
-            {
-                ID = "EDIT_INTRUCTION",
-                Name = "Sửa giới thiệu"
-            };
-            context.Paths.Add(editIntruction);
+			var detailsRequest = new Path()
+			{
+				ID = "DETAILS_REQUEST",
+				Name = "Xem chi tiết phản hồi"
+			};
+			context.Paths.Add(detailsRequest);
 
-            var viewIntruction = new Path()
-            {
-                ID = "VIEW_INTRUCTION",
-                Name = "Xem giới thiệu"
-            };
-            context.Paths.Add(viewIntruction);
+			//Thêm đường dẫn giới thiệu
+			var createIntruction = new Path()
+			{
+				ID = "CREATE_INTRUCTION",
+				Name = "Thêm giới thiệu"
+			};
+			context.Paths.Add(createIntruction);
 
-            var detailsIntruction = new Path()
-            {
-                ID = "DETAILS_INTRUCTION",
-                Name = "Xem chi tiết giới thiệu"
-            };
-            context.Paths.Add(detailsIntruction);
+			var deleteIntruction = new Path()
+			{
+				ID = "DELETE_INTRUCTION",
+				Name = "Xóa giới thiệu"
+			};
+			context.Paths.Add(deleteIntruction);
 
-            //Thêm đường dẫn yêu cầu
+			var editIntruction = new Path()
+			{
+				ID = "EDIT_INTRUCTION",
+				Name = "Sửa giới thiệu"
+			};
+			context.Paths.Add(editIntruction);
 
-            var deleteFeedback = new Path()
-            {
-                ID = "DELETE_FEEDBACK",
-                Name = "Xóa yêu cầu"
-            };
-            context.Paths.Add(deleteFeedback);
+			var viewIntruction = new Path()
+			{
+				ID = "VIEW_INTRUCTION",
+				Name = "Xem giới thiệu"
+			};
+			context.Paths.Add(viewIntruction);
 
-            var detailsFeedback = new Path()
-            {
-                ID = "DETAILS_FEEDBACK",
-                Name = "Xem chi tiết yêu cầu"
-            };
+			var detailsIntruction = new Path()
+			{
+				ID = "DETAILS_INTRUCTION",
+				Name = "Xem chi tiết giới thiệu"
+			};
+			context.Paths.Add(detailsIntruction);
+
+			//Thêm đường dẫn yêu cầu
+
+			var deleteFeedback = new Path()
+			{
+				ID = "DELETE_FEEDBACK",
+				Name = "Xóa yêu cầu"
+			};
+			context.Paths.Add(deleteFeedback);
+
+			var editFeedback = new Path()
+			{
+				ID = "EDIT_FEEDBACK",
+				Name = "Xem chi tiết yêu cầu"
+			};
+			context.Paths.Add(editFeedback);
+
+			var viewFeedback = new Path()
+			{
+				ID = "VIEW_FEEDBACK",
+				Name = "Xem chi tiết yêu cầu"
+			};
+			context.Paths.Add(viewFeedback);
+
+			var detailsFeedback = new Path()
+			{
+				ID = "DETAILS_FEEDBACK",
+				Name = "Xem chi tiết yêu cầu"
+			};
 			context.Paths.Add(detailsFeedback);
 
-            //Thêm đường dẫn nội dung
-            var createContent = new Path()
-            {
-                ID = "CREATE_CONTENT",
-                Name = "Thêm nội dung"
-            };
-            context.Paths.Add(createContent);
+			//Thêm đường dẫn nội dung
+			var createContent = new Path()
+			{
+				ID = "CREATE_CONTENT",
+				Name = "Thêm nội dung"
+			};
+			context.Paths.Add(createContent);
 
-            var deleteContent = new Path()
-            {
-                ID = "DELETE_CONTENT",
-                Name = "Xóa nội dung"
-            };
-            context.Paths.Add(deleteContent);
+			var deleteContent = new Path()
+			{
+				ID = "DELETE_CONTENT",
+				Name = "Xóa nội dung"
+			};
+			context.Paths.Add(deleteContent);
 
-            var editContent = new Path()
-            {
-                ID = "EDIT_CONTENT",
-                Name = "Sửa nội dung"
-            };
-            context.Paths.Add(editContent);
+			var editContent = new Path()
+			{
+				ID = "EDIT_CONTENT",
+				Name = "Sửa nội dung"
+			};
+			context.Paths.Add(editContent);
 
-            var viewContent = new Path()
-            {
-                ID = "VIEW_CONTENT",
-                Name = "Xem nội dung"
-            };
-            context.Paths.Add(viewContent);
+			var viewContent = new Path()
+			{
+				ID = "VIEW_CONTENT",
+				Name = "Xem nội dung"
+			};
+			context.Paths.Add(viewContent);
 
-            var detailsContent = new Path()
-            {
-                ID = "DETAILS_CONTENT",
-                Name = "Xem chi tiết nội dung"
-            };
-            context.Paths.Add(detailsContent);
+			var detailsContent = new Path()
+			{
+				ID = "DETAILS_CONTENT",
+				Name = "Xem chi tiết nội dung"
+			};
+			context.Paths.Add(detailsContent);
 
 
 			//Thêm nhóm
@@ -291,296 +320,304 @@ namespace TLTY.Areas.Admin.Models
 
 			context.AccountGroups.Add(modGroup);
 
-			//Thêm nối nhóm với đường dẫn
+			//Thêm nối nhóm với đường dẫn cho tài khoản
 
-			var ad1 = new GroupPath()
+			var mo3 = new GroupPath()
 			{
-				AccountGroupID = "ADMIN",
-				PathID = "CREATE_ACCOUNT"
-			};
-
-			context.GroupPaths.Add(ad1);
-
-			var ad2 = new GroupPath()
-			{
-				AccountGroupID = "ADMIN",
-				PathID = "DELETE_ACCOUNT"
-			};
-
-			context.GroupPaths.Add(ad2);
-
-			var ad3 = new GroupPath()
-			{
-				AccountGroupID = "ADMIN",
+				AccountGroupID = "MOD",
 				PathID = "EDIT_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad3);
+			context.GroupPaths.Add(mo3);
 
-			var ad4 = new GroupPath()
+			var mo4 = new GroupPath()
 			{
-				AccountGroupID = "ADMIN",
+				AccountGroupID = "MOD",
 				PathID = "VIEW_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad4);
+			context.GroupPaths.Add(mo4);
 
-			var ad5 = new GroupPath()
+			var mo5 = new GroupPath()
 			{
-				AccountGroupID = "ADMIN",
+				AccountGroupID = "MOD",
 				PathID = "DETAILS_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad5);
+			context.GroupPaths.Add(mo5);
 
-			var ad6 = new GroupPath()
+			var mo6 = new GroupPath()
 			{
-				AccountGroupID = "ADMIN",
+				AccountGroupID = "MOD",
 				PathID = "CHANGE_ACCOUNT"
 			};
 
-			context.GroupPaths.Add(ad6);
+			context.GroupPaths.Add(mo6);
+			//Thêm nối nhóm với đường dẫn cho lien hệ
+			var mo7 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "CREATE_CONTACT"
+			};
 
-            var ad_7 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "CREATE_CONTACT"
-            };
+			context.GroupPaths.Add(mo7);
 
-            context.GroupPaths.Add(ad_7);
+			var mo8 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_CONTACT"
+			};
 
-            var ad_8 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_CONTACT"
-            };
+			context.GroupPaths.Add(mo8);
 
-            context.GroupPaths.Add(ad_8);
+			var mo9 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_CONTACT"
+			};
 
-            var ad_9 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "EDIT_CONTACT"
-            };
-
-            context.GroupPaths.Add(ad_9);
+			context.GroupPaths.Add(mo9);
 
 
-            var ad_10 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "VIEW_CONTACT"
-            };
+			var mo10 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_CONTACT"
+			};
 
-            context.GroupPaths.Add(ad_10);
+			context.GroupPaths.Add(mo10);
 
-            var ad_11 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_CONTACT"
-            };
+			var mo11 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_CONTACT"
+			};
 
-            context.GroupPaths.Add(ad_11);
+			//Thêm nối nhóm với đường dẫn cho bảng giá
+			context.GroupPaths.Add(mo11);
 
-            var ad_12 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "CREATE_TICKER"
-            };
+			var mo12 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "CREATE_TICKER"
+			};
 
-            context.GroupPaths.Add(ad_12);
+			context.GroupPaths.Add(mo12);
 
-            var ad_13 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_TICKER"
-            };
+			var mo13 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_TICKER"
+			};
 
-            context.GroupPaths.Add(ad_13);
+			context.GroupPaths.Add(mo13);
 
-            var ad_14 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "EDIT_TICKER"
-            };
+			var mo14 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_TICKER"
+			};
 
-            context.GroupPaths.Add(ad_14);
+			context.GroupPaths.Add(mo14);
 
-            var ad_15 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "VIEW_TICKER"
-            };
+			var mo15 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_TICKER"
+			};
 
-            context.GroupPaths.Add(ad_15);
+			context.GroupPaths.Add(mo15);
 
-            var ad_16 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_TICKER"
-            };
+			var mo16 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_TICKER"
+			};
 
-            context.GroupPaths.Add(ad_16);
+			context.GroupPaths.Add(mo16);
 
-            var ad_17 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "CREATE_SLIDER"
-            };
+			var mo17 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "CREATE_SLIDER"
+			};
 
-            context.GroupPaths.Add(ad_17);
+			context.GroupPaths.Add(mo17);
 
-            var ad_18 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_SLIDER"
-            };
+			var mo18 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_SLIDER"
+			};
 
-            context.GroupPaths.Add(ad_18);
+			context.GroupPaths.Add(mo18);
 
-            var ad_19 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "EDIT_SLIDER"
-            };
+			var mo19 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_SLIDER"
+			};
 
-            context.GroupPaths.Add(ad_19);
+			context.GroupPaths.Add(mo19);
 
-            var ad_20 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "VIEW_SLIDER"
-            };
+			var mo20 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_SLIDER"
+			};
 
-            context.GroupPaths.Add(ad_20);
+			context.GroupPaths.Add(mo20);
 
-            var ad_21 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_SLIDER"
-            };
+			var mo21 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_SLIDER"
+			};
 
-            context.GroupPaths.Add(ad_21);
+			context.GroupPaths.Add(mo21);
 
-            var ad_22 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_REQUEST"
-            };
+			var mo22 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_REQUEST"
+			};
 
-            context.GroupPaths.Add(ad_22);
+			context.GroupPaths.Add(mo22);
+			var mo23 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_REQUEST"
+			};
 
-            var ad_23 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_REQUEST"
-            };
+			context.GroupPaths.Add(mo23);
+			var mo24 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_REQUEST"
+			};
 
-            context.GroupPaths.Add(ad_23);
+			context.GroupPaths.Add(mo24);
 
-            var ad_24 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "CREATE_INTRUCTION"
-            };
+			var mo25 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_REQUEST"
+			};
 
-            context.GroupPaths.Add(ad_24);
+			context.GroupPaths.Add(mo25);
 
-            var ad_25 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_INTRUCTION"
-            };
+			var mo26 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "CREATE_INTRUCTION"
+			};
 
-            context.GroupPaths.Add(ad_25);
+			context.GroupPaths.Add(mo26);
 
-            var ad_26 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "EDIT_INTRUCTION"
-            };
+			var mo27 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_INTRUCTION"
+			};
 
-            context.GroupPaths.Add(ad_26);
+			context.GroupPaths.Add(mo27);
 
-            var ad_27 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "VIEW_INTRUCTION"
-            };
+			var mo28 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_INTRUCTION"
+			};
 
-            context.GroupPaths.Add(ad_27);
+			context.GroupPaths.Add(mo28);
 
-            var ad_28 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_INTRUCTION"
-            };
+			var mo29 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_INTRUCTION"
+			};
 
-            context.GroupPaths.Add(ad_28);
+			context.GroupPaths.Add(mo29);
 
-            var ad_29 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_FEEDBACK"
-            };
+			var mo30 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_INTRUCTION"
+			};
 
-            context.GroupPaths.Add(ad_29);
+			context.GroupPaths.Add(mo30);
 
-            var ad_30 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_FEEDBACK"
-            };
+			var mo31 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_FEEDBACK"
+			};
 
-            context.GroupPaths.Add(ad_30);
+			context.GroupPaths.Add(mo31);
 
-            var ad_31 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_CONTACT"
-            };
+			var mo32 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_FEEDBACK"
+			};
 
-            context.GroupPaths.Add(ad_31);
+			context.GroupPaths.Add(mo32);
 
-            var ad_32 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "CREATE_CONTENT"
-            };
+			var mo33 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_FEEDBACK"
+			};
 
-            context.GroupPaths.Add(ad_32);
+			context.GroupPaths.Add(mo33);
 
-            var ad_33= new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DELETE_CONTENT"
-            };
+			var mo34 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_FEEDBACK"
+			};
 
-            context.GroupPaths.Add(ad_33);
+			context.GroupPaths.Add(mo34);
 
-            var ad_34 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "EDIT_CONTENT"
-            };
 
-            context.GroupPaths.Add(ad_34);
+			var mo35 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "CREATE_CONTENT"
+			};
 
-            var ad_35 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "VIEW_CONTENT"
-            };
+			context.GroupPaths.Add(mo35);
 
-            context.GroupPaths.Add(ad_35);
+			var mo36 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DELETE_CONTENT"
+			};
 
-            var ad_36 = new GroupPath()
-            {
-                AccountGroupID = "ADMIN",
-                PathID = "DETAILS_CONTENT"
-            };
+			context.GroupPaths.Add(mo36);
 
-            context.GroupPaths.Add(ad_36);
+			var mo37 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "EDIT_CONTENT"
+			};
+
+			context.GroupPaths.Add(mo37);
+
+			var mo38 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "VIEW_CONTENT"
+			};
+
+			context.GroupPaths.Add(mo38);
+
+			var mo39 = new GroupPath()
+			{
+				AccountGroupID = "MOD",
+				PathID = "DETAILS_CONTENT"
+			};
+
+			context.GroupPaths.Add(mo39);
 
 			//Thêm tài khoản
 			var admin = new Account()
