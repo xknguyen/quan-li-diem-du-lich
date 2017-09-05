@@ -136,6 +136,7 @@
     <Compile Include="Areas\Admin\Controllers\RequestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\TickersController.cs" />
+    <Compile Include="Areas\Admin\Models\AdminDatabaseInitializer.cs" />
     <Compile Include="Areas\Admin\Models\Common.cs" />
     <Compile Include="Areas\Admin\Models\Constants.cs" />
     <Compile Include="Areas\Admin\Models\HasCredentialAttribute.cs" />
