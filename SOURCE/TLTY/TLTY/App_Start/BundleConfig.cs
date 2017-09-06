@@ -67,7 +67,7 @@ namespace TLTY
 					  "~/Scripts/jquery.nicescroll.min.js"
 				));
 
-			BundleTable.EnableOptimizations = true;
+			//BundleTable.EnableOptimizations = true;
 		}
 	}
 }

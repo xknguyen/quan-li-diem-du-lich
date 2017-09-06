@@ -1303,11 +1303,11 @@
     <Content Include="Areas\Admin\Views\Requests\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Requests\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Contacts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Contacts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Contacts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Contacts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Contacts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Contacts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Contacts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Contacts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Contacts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Feedbacks\Index.cshtml" />
