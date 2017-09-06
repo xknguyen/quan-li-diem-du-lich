@@ -5,6 +5,7 @@ namespace EntityModel.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+	using System.Web.Mvc;
 
     [Table("Content")]
     public partial class Content
@@ -35,6 +36,7 @@ namespace EntityModel.EF
 
         public int? ViewCount { get; set; }
 
+		[AllowHtml]
         [Column(TypeName = "ntext")]
         [Required]
         public string Detail { get; set; }

@@ -28,28 +28,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 12:45:40</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Create.cshtml">
-      <publishTime>08/30/2017 17:57:26</publishTime>
+      <publishTime>09/06/2017 16:03:21</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Delete.cshtml">
-      <publishTime>09/05/2017 14:38:56</publishTime>
+      <publishTime>09/06/2017 16:01:57</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Details.cshtml">
-      <publishTime>09/05/2017 14:38:56</publishTime>
+      <publishTime>09/06/2017 16:01:03</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Edit.cshtml">
-      <publishTime>09/05/2017 14:38:56</publishTime>
+      <publishTime>09/06/2017 15:59:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Index.cshtml">
       <publishTime>09/06/2017 09:46:08</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Create.cshtml">
-      <publishTime>09/05/2017 14:38:56</publishTime>
+      <publishTime>09/06/2017 16:08:06</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Delete.cshtml">
-      <publishTime>08/30/2017 16:33:26</publishTime>
+      <publishTime>09/06/2017 16:06:51</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Details.cshtml">
-      <publishTime>09/05/2017 14:38:56</publishTime>
+      <publishTime>09/06/2017 16:05:59</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Edit.cshtml">
       <publishTime>09/06/2017 13:55:50</publishTime>
@@ -154,7 +154,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:35</publishTime>
     </File>
     <File Include="bin/EntityModel.dll">
-      <publishTime>09/06/2017 15:47:39</publishTime>
+      <publishTime>09/06/2017 16:32:44</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/28/2017 07:27:37</publishTime>
@@ -184,7 +184,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:37</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/06/2017 15:50:35</publishTime>
+      <publishTime>09/06/2017 17:58:42</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/28/2017 07:27:38</publishTime>
@@ -3607,7 +3607,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 15:56:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/06/2017 15:36:36</publishTime>
+      <publishTime>09/06/2017 17:51:33</publishTime>
     </File>
   </ItemGroup>
 </Project>

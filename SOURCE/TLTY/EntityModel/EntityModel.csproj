@@ -96,8 +96,6 @@
     <Compile Include="EF\Slider.cs" />
     <Compile Include="EF\Ticker.cs" />
     <Compile Include="EF\TLTYDBContext.cs" />
-    <Compile Include="Metadata\InstructionsMeta.cs" />
-    <Compile Include="Metadata\ContentsMeta.cs" />
     <Compile Include="Migrations\201709060830204_InitialCreate.cs" />
     <Compile Include="Migrations\201709060830204_InitialCreate.Designer.cs">
       <DependentUpon>201709060830204_InitialCreate.cs</DependentUpon>
