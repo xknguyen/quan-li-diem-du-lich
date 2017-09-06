@@ -70,9 +70,10 @@ namespace TLTY.Areas.Admin.Controllers
                 var checkcontent = _db.Contents.SingleOrDefault(x => x.Name == content.Name);
                 if (checkcontent == null)
                 {
+					var session = (UserLogin)Session[Constants.USER_SESSION];
                     content.Status = false;
                     content.CreateDate = DateTime.Now.Date;
-                    content.UserName = Session["UserName"].ToString();
+                    content.UserName = session.UserName;
                     //Xử lý alias
                     if (string.IsNullOrEmpty(content.MetaTitle))//Nếu metatitle k được nhập thì sẽ xử lý
                     {
@@ -306,3 +307,4 @@ namespace TLTY.Areas.Admin.Controllers
         }
     }
 }
+

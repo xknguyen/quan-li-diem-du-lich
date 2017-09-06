@@ -14,7 +14,5 @@ namespace EntityModel.EF
 
         [StringLength(250)]
         public string Name { get; set; }
-
-
     }
 }

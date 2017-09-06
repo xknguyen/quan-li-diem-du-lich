@@ -1,8 +1,9 @@
 ﻿@model EntityModel.EF.Account
-
+@using TLTY.Areas.Admin.Models
 @{
 	ViewBag.Title = "Chỉnh sửa tài khoản " + @Model.UserName;
 	Layout = null;//"~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var session = (UserLogin)Session[Constants.USER_SESSION];
 }
 
 <div class="modal fade" id="editModal">
@@ -29,18 +30,23 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Tài khoản:</label>
 								<div class="col-md-9">
-									<input type="text" class="form-control" value="@Model.UserName" name="UserName" disabled/>
-									@Html.ValidationMessageFor(model => model.UserName, "", new {@class = "text-danger"})
+									<input type="text" class="form-control" value="@Model.UserName" name="UserName" disabled />
+									@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
 								</div>
 							</div>
+							@{
+								if (Model.ID != session.AccountID)
+								{
+									<div class="form-group">
+										<label class="control-label col-md-3">Nhóm:</label>
+										<div class="col-md-9">
+											@Html.DropDownList("AccountGroupID", null, new { @class = "form-control" })
+											@Html.ValidationMessageFor(model => model.AccountGroupID, "", new { @class = "text-danger" })
+										</div>
+									</div>
+								}
+							}
 
-							<div class="form-group">
-								<label class="control-label col-md-3">Nhóm:</label>
-								<div class="col-md-9">
-									@Html.DropDownList("AccountGroupID", null, new { @class = "form-control" })
-									@Html.ValidationMessageFor(model => model.AccountGroupID, "", new { @class = "text-danger" })
-								</div>
-							</div>
 							<div class="form-group">
 								<label class="control-label col-md-3">Tên:</label>
 								<div class="col-md-9">

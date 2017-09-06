@@ -1191,11 +1191,8 @@
     <Content Include="Content\Date\locales\bootstrap-datepicker.vi.min.js" />
     <Content Include="DATA\images\Avatar\10l.jpg" />
     <Content Include="DATA\images\Avatar\3sKVHO28.png" />
-    <Content Include="DATA\images\ChucNang\del.png" />
-    <Content Include="DATA\images\ChucNang\ok.png" />
     <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\font.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="image\to-top.png" />
@@ -1329,7 +1326,6 @@
     <Content Include="Areas\Admin\Views\Instructions\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Instructions\Index.cshtml" />
-    <Content Include="fonts\Lobster-Regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -1358,6 +1354,7 @@
     <Content Include="Views\Express\Index.cshtml" />
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\Express\Details.cshtml" />
+    <None Include="Properties\PublishProfiles\TLTY.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">

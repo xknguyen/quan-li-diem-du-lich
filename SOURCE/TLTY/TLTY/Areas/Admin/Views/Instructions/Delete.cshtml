@@ -8,19 +8,16 @@
 <div class="modal fade" id="deleteModal">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-body" style="max-height: 300px;overflow-y: auto">
 				<button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Xóa giới thiệu @Model.Name</h4>
-			</div>
-			<div class="modal-body">
+				<h3 style="text-align: center">Xóa giới thiệu @Model.Name</h3>
+				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
 				<h4>Bạn có muốn xóa giới thiệu <strong style="color: red;">@Model.Name</strong> này không?</h4>
-				<div class="clearfix"></div>
-			</div>
-			<div class="modal-footer">
 				<div class="form-actions no-color text-center">
+					<hr />
 					@using (Html.BeginForm())
 					{
 						@Html.AntiForgeryToken()
@@ -29,6 +26,7 @@
 					}
 
 				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>

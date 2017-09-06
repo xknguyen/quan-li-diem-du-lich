@@ -19,7 +19,7 @@
 	var ngay = days[day] + " - Ngày: " + date + " / " + months[month] + " / " + year + " - " + h + ":" + m + ":" + s + " - " + ampm;
 	var bang = $('thead tr').html() + '<br/>';
 	var dulieu = $('tbody').html();// + '<br/>';
-	var name = '<h2 style="text-align:center;text-transform:uppercase">' + $(".panel-heading").html() + '</h2>';
+	var name = '<h2 style="text-align:center;text-transform:uppercase">' + $(".page-header").html() + '</h2>';
 	var content = name + "<div><h5 style='text-align:right'>" + ngay + "</h5>" + "<hr/><div><table>" + bang + dulieu + "<table></div><hr/></div>";
 
 	InThongKe(content);

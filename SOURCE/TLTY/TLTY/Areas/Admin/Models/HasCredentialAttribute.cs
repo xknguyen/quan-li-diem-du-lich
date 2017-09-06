@@ -20,7 +20,7 @@ namespace TLTY.Areas.Admin.Models
 
 			List<string> privilegeLevels = this.GetCredentialByLoggedInUser(session.UserName);
 
-			if (privilegeLevels.Contains(this.PathID))
+			if (privilegeLevels.Contains(this.PathID)||session.AccountGroupID == Constants.ADMIN_GROUP)
 			{
 				return true;
 			}
