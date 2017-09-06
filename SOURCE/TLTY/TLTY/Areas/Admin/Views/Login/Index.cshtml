@@ -1,9 +1,4 @@
-﻿@model TLTY.Areas.Admin.Models.LoginModel
-@{
-	if (Session["ClientID"] != null && Session["ClientID"] == null && Session["UserID"] != null)
-	{
-		Response.Redirect("~/Areas/Admin/Home");
-	}
+﻿@{
 	ViewBag.Title = "Đăng nhập";
 	Layout = null;
 }
@@ -34,7 +29,7 @@
 
 							if (ViewBag.Error != null)
 							{
-								<div class="alert alert-danger"><img src="/Data/images/ChucNang/del.png" height="25" width="25" /> @ViewBag.Error</div>
+								<div class="alert alert-danger"><i class="fa fa-times"></i> @ViewBag.Error</div>
 								<div class="clearfix "></div>
 							}
 							<fieldset>

@@ -92,17 +92,18 @@
 
                     </dl>
                 </div>
-                <div class="col-md-5">
-                    <img alt="" src="@Model.Avatar" width="200" height="245" class="img-responsive" />
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-12">
-                    <hr />
-                    <div class="form-actions no-color text-center">
-                        <a href="@Url.Action("Edit", new {@id = Model.ID})" title="Sửa tài khoản @Model.UserName" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
-                </div>
+	            <div class="col-md-5">
+		            <img alt="" src="@Model.Avatar" width="200" height="245" class="img-responsive"/>
+	            </div>
+
+	            <div class="col-md-12" style="margin-bottom: 10px">
+		            <hr/>
+		            <div class="form-actions no-color text-center">
+			            <a href="@Url.Action("Edit", new {@id = Model.ID})" title="Sửa tài khoản @Model.UserName" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
+			            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+		            </div>
+					<div class="clearfix"></div>
+	            </div>
             </div>
             
         </div>
