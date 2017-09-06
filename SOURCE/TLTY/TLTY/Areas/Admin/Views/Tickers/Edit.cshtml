@@ -5,72 +5,71 @@
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="modal fade" id="editModal" style="display: block !important;">
-    <div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <h4 class="modal-title">Chỉnh sửa bảng giá @Model.Name</h4>
-            </div>
             @using (Html.BeginForm())
             {
-                <div class="modal-body">
-                    @Html.AntiForgeryToken()
-                    <div class="form-horizontal">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.HiddenFor(model => model.ID)
-                        @Html.HiddenFor(model => model.UserName)
-                        @Html.HiddenFor(model => model.Status)
-                        @Html.HiddenFor(model => model.CreateDate)
-						<div class="form-group">
-							<label class="control-label col-md-3">Tên:</label>
-							<div class="col-md-9">
-								@Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
-								@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-							</div>
-						</div>
+	            <div class="modal-body" style="max-height: 500px; overflow-y: auto">
+		            <button type="button" class="close" data-dismiss="modal">
+			            <span aria-hidden="true">&times;</span>
+			            <span class="sr-only">Close</span>
+		            </button>
+					<h3 style="text-align: center">Chỉnh sửa giá @Model.Name</h3>
+					<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
+		            @Html.AntiForgeryToken()
+		            <div class="form-horizontal">
+			            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+			            @Html.HiddenFor(model => model.ID)
+			            @Html.HiddenFor(model => model.UserName)
+			            @Html.HiddenFor(model => model.Status)
+			            @Html.HiddenFor(model => model.CreateDate)
+			            <div class="form-group">
+				            <label class="control-label col-md-3">Tên:</label>
+				            <div class="col-md-9">
+					            @Html.TextBoxFor(model => model.Name, new {@class = "form-control", placeholder = "Nhập tên ở đây"})
+					            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+				            </div>
+			            </div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3">Loại:</label>
 							<div class="col-md-9">
-								@Html.TextBoxFor(model => model.Type, new { @class = "form-control", placeholder = "Nhập loại ở đây" })
-								@Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+								<select class="form-control" name="Type">
+									<option value="false">Người lớn</option>
+									<option value="true">Trẻ em</option>
+								</select>
 							</div>
 						</div>
-
-						<div class="form-group">
-							<label class="control-label col-md-3">Số lượng:</label>
-							<div class="col-md-9">
-								@Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", type = "number", placeholder = "Nhập số lượng ở đây" })
-								@Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-3">Giá</label>
-							<div class="col-md-9">
-								@Html.TextBoxFor(model => model.Price, new { @class = "form-control", type = "number", placeholder = "Nhập giá ở đây" })
-								@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-3">Mô tả</label>
-							<div class="col-md-9">
-								@Html.TextBoxFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
-								@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-							</div>
-						</div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-actions no-color text-center">
-                        <input type="submit" value="Thay đổi" class="btn btn-success" />
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
-                </div>
+			            <div class="form-group">
+				            <label class="control-label col-md-3">Số lượng:</label>
+				            <div class="col-md-3">
+					            @Html.TextBoxFor(model => model.Quantity, new {@class = "form-control", type = "number", placeholder = "Nhập số lượng ở đây"})
+					            @Html.ValidationMessageFor(model => model.Quantity, "", new {@class = "text-danger"})
+				            </div>
+				            <label class="control-label col-md-3">Giá:</label>
+				            <div class="col-md-3">
+					            @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", placeholder = "Nhập giá ở đây"})
+					            @Html.ValidationMessageFor(model => model.Price, "", new {@class = "text-danger"})
+				            </div>
+			            </div>
+			            <div class="form-group">
+				            <label class="control-label col-md-3">Mô tả:</label>
+				            <div class="col-md-9">
+					            @Html.TextAreaFor(model => model.Description, new {@class = "form-control", placeholder = "Nhập mô tả ở đây"})
+					            @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
+				            </div>
+			            </div>
+			            <div class="form-group">
+				            <hr/>
+				            <div class="form-actions no-color text-center">
+					            <input type="submit" value="Thay đổi" class="btn btn-success"/>
+					            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				            </div>
+			            </div>
+		            </div>
+		            <div class="clearfix"></div>
+	            </div>
             }
         </div>
     </div>

@@ -66,9 +66,10 @@ namespace TLTY.Areas.Admin.Controllers
 				var checkcontent = _db.Contents.SingleOrDefault(x => x.Name == instruction.Name);
                 if (checkcontent == null)
                 {
+					var session = (UserLogin)Session[Constants.USER_SESSION];
 					instruction.Status = false;
 					instruction.CreateDate = DateTime.Now.Date;
-					instruction.UserName = Session["UserName"].ToString();
+					instruction.UserName = session.UserName;
 
 					if (string.IsNullOrEmpty(instruction.Images))
                     {
