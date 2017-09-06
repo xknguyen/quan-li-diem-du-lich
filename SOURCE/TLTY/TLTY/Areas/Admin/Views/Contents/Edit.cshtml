@@ -7,16 +7,17 @@
 <div class="modal fade" id="editModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <h4 class="modal-title">Chỉnh sửa nội dung +@Model.Name </h4>
-            </div>
+
             @using (Html.BeginForm())
             {
-                <div class="modal-body" style="max-height: 400px;overflow-y: auto;">
+                <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h3 style="text-align: center">Chỉnh sửa nội dung @Model.Name</h3>
+                    <img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
+
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.ID)
                     @Html.HiddenFor(model => model.CreateDate)
@@ -26,86 +27,88 @@
                     @Html.HiddenFor(model => model.ViewCount)
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label col-md-2">Tiêu đề:</label>
-								<div class="col-md-10">
-									@Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tiêu đề ở đây" })
-									@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-								</div>
-							</div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Tiêu đề:</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tiêu đề ở đây" })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<label class="control-label col-md-2">Tên đường dẫn:</label>
-								<div class="col-md-10">
-									@Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", placeholder = "Nhập tên đường dẫn ở đây" })
-									@Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
-								</div>
-							</div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Tên đường dẫn:</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", placeholder = "Nhập tên đường dẫn ở đây" })
+                                    @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<label class="control-label col-md-2">Mô tả:</label>
-								<div class="col-md-10">
-									@Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
-									@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-								</div>
-							</div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Mô tả:</label>
+                                <div class="col-md-10">
+                                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<label class="control-label col-md-2">Thể loại:</label>
-								<div class="col-md-10">
-									<select class="form-control" name="Category">
-										<option value="false">Dịch vụ</option>
-										<option value="true">Tin tức</option>
-									</select>
-								</div>
-							</div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Thể loại:</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="Category">
+                                        <option value="false">Dịch vụ</option>
+                                        <option value="true">Tin tức</option>
+                                    </select>
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<label class="control-label col-md-2">Nội dung:</label>
-								<div class="col-md-10">
-									@Html.TextAreaFor(model => model.Detail, new { @class = "form-control" })
-									@Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
-								</div>
-								<script type="text/javascript">
-									CKEDITOR.replace("Detail");
-								</script><br />
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-2">Hình:</label>
-								<div class="col-md-8">
-									@Html.TextBoxFor(model => model.Images, new { @class = "form-control disabled", placeholder = "Đường dẫn hình" })
-									@Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
-								</div>
-								<div class="col-md-2">
-									<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success"/>
-									<script>
-										$('#Browse').click(function() {
-											var finder = new CKFinder();
-											finder.selectActionFunction = function(fileUrl) {
-												//fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
-												$('#Images').val(fileUrl);
-												$('#img').attr('src', fileUrl);
-											};
-											finder.popup();
-										});
-									</script>
-								</div>
-								<label class="control-label col-md-2">Xem hình:</label>
-								<div class="col-md-10" style="margin-bottom: 10px;">
-									<img alt="" id="img" src="@Model.Images" width="200" height="245" class="img-responsive" style="margin: 10px" />
-								</div>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Nội dung:</label>
+                                <div class="col-md-10">
+                                    @Html.TextAreaFor(model => model.Detail, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                                </div>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace("Detail");
+                                </script><br />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Hình:</label>
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(model => model.Images, new { @class = "form-control disabled", placeholder = "Đường dẫn hình" })
+                                    @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
+                                    <script>
+                                        $('#Browse').click(function () {
+                                            var finder = new CKFinder();
+                                            finder.selectActionFunction = function (fileUrl) {
+                                                //fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+                                                $('#Images').val(fileUrl);
+                                                $('#img').attr('src', fileUrl);
+                                            };
+                                            finder.popup();
+                                        });
+                                    </script>
+                                </div>
+                                <label class="control-label col-md-2">Xem hình:</label>
+                                <div class="col-md-10" style="margin-bottom: 10px;">
+                                    <img alt="" id="img" src="@Model.Images" width="200" height="245" class="img-responsive" style="margin: 10px" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-actions no-color text-center">
+                                    <input type="submit" value="Thay đổi" class="btn btn-success" />
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="modal-footer">
-                    <div class="form-actions no-color text-center">
-                        <input type="submit" value="Thay đổi" class="btn btn-success" />
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
-                </div>
+
             }
         </div>
     </div>

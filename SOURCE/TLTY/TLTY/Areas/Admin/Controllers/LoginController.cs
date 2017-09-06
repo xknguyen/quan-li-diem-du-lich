@@ -27,7 +27,7 @@ namespace TLTY.Areas.Admin.Controllers
 				if (result == 1)
 				{
 					//var account = dao.GetByID(model.accountName);
-					var account = _db.Accounts.SingleOrDefault(x => x.UserName == model.UserName);
+					var account = _db.Accounts.FirstOrDefault(x => x.UserName == model.UserName);
 					if (account != null)
 					{
 						var userSession = new UserLogin();

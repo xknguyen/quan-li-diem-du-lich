@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using EntityModel.EF;
 using TLTY.Areas.Admin.Models;
 
 namespace TLTY
@@ -20,8 +21,9 @@ namespace TLTY
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+			
 			Database.SetInitializer(new AdminDatabaseInitializer());
+
 		}
 	}
 }
