@@ -8,28 +8,25 @@
 <div class="modal fade" id="deleteModal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <h4 class="modal-title">Xóa nội dung @Model.Name</h4>
-            </div>
-            <div class="modal-body">
-                <h4>Bạn có muốn xóa nội dung <strong style="color: red;">@Model.Name</strong> này không?</h4>
-                <div class="clearfix"></div>
-            </div>
-            <div class="modal-footer">
-                <div class="form-actions no-color text-center">
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        <input type="submit" value="Xóa" class="btn btn-warning" />
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    }
-
-                </div>
-            </div>
+	        <div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 style="text-align: center">Xóa nội dung @Model.Name</h3>
+				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
+		        <h4>Bạn có muốn xóa nội dung <strong style="color: red;">@Model.Name</strong> này không?</h4>
+		        <div class="form-actions no-color text-center">
+			        <hr/>
+			        @using (Html.BeginForm())
+			        {
+				        @Html.AntiForgeryToken()
+				        <input type="submit" value="Xóa" class="btn btn-warning"/>
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+			        }
+		        </div>
+				<div class="clearfix"></div>
+	        </div>
         </div>
     </div>
 </div>

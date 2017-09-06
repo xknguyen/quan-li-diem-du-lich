@@ -98,13 +98,29 @@
     <Compile Include="EF\TLTYDBContext.cs" />
     <Compile Include="Metadata\InstructionsMeta.cs" />
     <Compile Include="Metadata\ContentsMeta.cs" />
+    <Compile Include="Migrations\201709060830204_InitialCreate.cs" />
+    <Compile Include="Migrations\201709060830204_InitialCreate.Designer.cs">
+      <DependentUpon>201709060830204_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709060838363_Updatedate.cs" />
+    <Compile Include="Migrations\201709060838363_Updatedate.Designer.cs">
+      <DependentUpon>201709060838363_Updatedate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709060830204_InitialCreate.resx">
+      <DependentUpon>201709060830204_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060838363_Updatedate.resx">
+      <DependentUpon>201709060838363_Updatedate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
