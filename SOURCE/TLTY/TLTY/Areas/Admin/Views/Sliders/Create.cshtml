@@ -6,19 +6,18 @@
 }
 
 <div class="modal fade" id="createModal">
-    <div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <h4 class="modal-title">Tạo mới trình ảnh </h4>
-            </div>
             @using (Html.BeginForm())
             {
-                <div class="modal-body" style="max-height: 400px;overflow-y: auto;">
-                    @Html.AntiForgeryToken()
+                <div class="modal-body" style="max-height: 500px;overflow-y: auto;">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h3 style="text-align: center">Bảng tạo hình mới</h3>
+					<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
+					@Html.AntiForgeryToken()
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="col-md-12">
@@ -56,43 +55,45 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Hình:</label>
-                                    <div class="col-md-12" style="margin-bottom: 10px;">
-                                        <img alt="" id="img" src="" width="200" height="245" class="img-responsive" />
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="col-md-8">
-                                        @Html.TextBoxFor(model => model.Link, new { @class = "form-control disabled", placeholder = "Đường dẫn hình" })
-                                        @Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
-                                        <script>
-                                            $('#Browse').click(function () {
-                                                var finder = new CKFinder();
-                                                finder.selectActionFunction = function (fileUrl) {
-                                                    //fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
-                                                    $('#Link').val(fileUrl);
-                                                    $('#img').attr('src', fileUrl);
-                                                };
-                                                finder.popup();
-                                            });
-                                        </script>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="col-md-9">
+										<input type="text" class="form-control" value="" id="Link" name="Avatar" disabled placeholder="Đường dẫn hình" />
+										@Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
+									</div>
+									<div class="col-md-3">
+										<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-primary" />
+										<script>
+											$('#Browse').click(function () {
+												var finder = new CKFinder();
+												finder.selectActionFunction = function (fileUrl) {
+													//fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+													$('#Link').val(fileUrl);
+													$('#img').attr('src', fileUrl);
+												};
+												finder.popup();
+											});
+										</script>
+									</div>
+									<div class="col-md-12" style="margin-top: 10px;">
+										<img alt="" id="img" src="" width="200" height="245" class="img-responsive" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+	                        <div class="col-md-12">
+		                        <hr/>
+		                        <div class="form-group">
+			                        <div class="form-actions no-color text-center">
+				                        <input type="submit" value="Tạo mới" class="btn btn-success"/>
+				                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+			                        </div>
+		                        </div>
+	                        </div>
                         </div>
 
                     </div>
                     <div class="clearfix"></div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-actions no-color text-center">
-                        <input type="submit" value="Tạo mới" class="btn btn-success" />
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
                 </div>
             }
         </div>
