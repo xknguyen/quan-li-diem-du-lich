@@ -73,9 +73,10 @@ namespace TLTY.Areas.Admin.Controllers
             }
             else
             {
+				var session = (UserLogin)Session[Constants.USER_SESSION];
                 slider.Status = false;
                 slider.CreateDate = DateTime.Now.Date;
-                slider.UserName = Session["UserName"].ToString();
+                slider.UserName = session.UserName;
                 _db.Sliders.Add(slider);
                 _db.SaveChanges();
                 if (slider.ID > 0)

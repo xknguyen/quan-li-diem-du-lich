@@ -67,9 +67,10 @@ namespace TLTY.Areas.Admin.Controllers
             }
             else
             {
+				var session = (UserLogin)Session[Constants.USER_SESSION];
                     contact.Status = false;
                     contact.CreateDate = DateTime.Now.Date;
-                    contact.UserName = Session["UserName"].ToString();
+                    contact.UserName = session.UserName;
                     db.Contacts.Add(contact);
                     db.SaveChanges();
                     if (contact.ID > 0)
