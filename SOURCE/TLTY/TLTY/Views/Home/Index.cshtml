@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<EntityModel.EF.Instruction>
+@using System.Xml.Linq
+@{
 	ViewBag.Title = "Giới thiệu";
 	Layout = "~/Views/Shared/_Layout" + 1 + ".cshtml";
 }
@@ -6,379 +8,132 @@
 <div class="col-lg-12 baiviet">
 	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a></p>
 </div>
-<div class="col-lg-12 baiviet">
-	<div class="col-md-8 col-md-offset-2 chitiet">
-		<h1>Đi Đà Lạt</h1>
-		<img src="~/Content/ClientTheme/image/1.png" class="img-responsive">
-		<p>Đà Lạt được nhiều người yêu thích bởi khí hậu mát mẻ, danh lam thắng cảnh thơ mộng và nghìn hoa đua sắc quanh năm. Du khách vẫn thường nói Đà Lạt là nơi chưa đi thì mong chờ, đến rồi thì lưu luyến và dù chưa rời khỏi đã muốn quay lại.</p>
-		<p>Du lịch Đà Lạt luôn là điểm đến thu hút nhiều du khách không chỉ bởi khí hậu mà còn là quang cảnh thiên nhiên tuyệt vời.Trong số các cảnh đẹp của Đà Lạt, Thung lũng Tình yêu là một trong những thắng cảnh Du lịch nổi tiếng đã đi vào tiềm thức của mỗi người dân cũng như các du khách từ mọi miền đất nước. Thung lũng tình yêu cách Trung tâm thành phố Đà Lạt khoảng 6 km về hướng Đông Bắc với tổng diện tích gần 140 ha.</p>
-	</div>
-	<div class="clearfix"></div>
-	<div class="container" style="border: 1px solid aqua;background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%); padding-bottom: 10px;">
-		<div class="row baiviet">
-			<div class="col-md-12 chitiet">
-				<h1 style="color: #fff">Hình ảnh về khu du lịch</h1>
+@if (Model != null)
+{
+	foreach (var item in Model)
+	{
+		<div class="col-lg-12 baiviet">
+			<div class="col-md-8 col-md-offset-2 chitiet">
+				<h1>@item.Name</h1>
+				<img src="@item.Images" class="img-responsive">
+				@Html.Raw(item.Detail)
 			</div>
-			<div class="col-sm-6" id="slider-thumbs">
-				<!-- Bottom switcher of slider -->
-				<ul class="hide-bullets">
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-0">
-							<img src="http://placehold.it/150x150&text=zero">
-						</a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-1"><img src="http://placehold.it/150x150&text=1"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-2"><img src="http://placehold.it/150x150&text=2"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-3"><img src="http://placehold.it/150x150&text=3"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-4"><img src="http://placehold.it/150x150&text=4"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-5"><img src="http://placehold.it/150x150&text=5"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-6"><img src="http://placehold.it/150x150&text=6"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-7"><img src="http://placehold.it/150x150&text=7"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-8"><img src="http://placehold.it/150x150&text=8"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-9"><img src="http://placehold.it/150x150&text=9"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-10"><img src="http://placehold.it/150x150&text=10"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-11"><img src="http://placehold.it/150x150&text=11"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-12"><img src="http://placehold.it/150x150&text=12"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-13"><img src="http://placehold.it/150x150&text=13"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-14"><img src="http://placehold.it/150x150&text=14"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-15"><img src="http://placehold.it/150x150&text=15"></a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-sm-6">
-				<div class="col-xs-12" id="slider">
-					<!-- Top part of the slider -->
-					<div class="row">
-						<div class="col-sm-12" id="carousel-bounding-box">
-							<div class="carousel slide" id="mySlider2">
-								<!-- Carousel items -->
-								<div class="carousel-inner">
-									<div class="active item" data-slide-number="0">
-										<img src="http://placehold.it/470x480&text=zero">
-									</div>
-									<div class="item" data-slide-number="1">
-										<img src="http://placehold.it/470x480&text=1">
-									</div>
-									<div class="item" data-slide-number="2">
-										<img src="http://placehold.it/470x480&text=2">
-									</div>
-									<div class="item" data-slide-number="3">
-										<img src="http://placehold.it/470x480&text=3">
-									</div>
-									<div class="item" data-slide-number="4">
-										<img src="http://placehold.it/470x480&text=4">
-									</div>
-									<div class="item" data-slide-number="5">
-										<img src="http://placehold.it/470x480&text=5">
-									</div>
-
-									<div class="item" data-slide-number="6">
-										<img src="http://placehold.it/470x480&text=6">
-									</div>
-
-									<div class="item" data-slide-number="7">
-										<img src="http://placehold.it/470x480&text=7">
-									</div>
-
-									<div class="item" data-slide-number="8">
-										<img src="http://placehold.it/470x480&text=8">
-									</div>
-
-									<div class="item" data-slide-number="9">
-										<img src="http://placehold.it/470x480&text=9">
-									</div>
-
-									<div class="item" data-slide-number="10">
-										<img src="http://placehold.it/470x480&text=10">
-									</div>
-
-									<div class="item" data-slide-number="11">
-										<img src="http://placehold.it/470x480&text=11">
-									</div>
-
-									<div class="item" data-slide-number="12">
-										<img src="http://placehold.it/470x480&text=12">
-									</div>
-									<div class="item" data-slide-number="13">
-										<img src="http://placehold.it/470x480&text=13">
-									</div>
-									<div class="item" data-slide-number="14">
-										<img src="http://placehold.it/470x480&text=14">
-									</div>
-									<div class="item" data-slide-number="15">
-										<img src="http://placehold.it/470x480&text=15">
+			<div class="clearfix"></div>
+			<div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
+				<div class="row baiviet">
+					<div class="col-md-12 chitiet">
+						<h1 style="color: #fff">Hình ảnh về khu du lịch</h1>
+					</div>
+					@if (item.MoreImages != null)
+					{
+						int i = 0;
+						<div class="col-sm-6" id="slider-thumbs">
+							<!-- Bottom switcher of slider -->
+							<ul class="hide-bullets">
+								@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+								{
+									<li class="col-sm-3">
+										<a class="thumbnail" id="@item.ID-hinh-@i"><img src="@itemimage.Value" alt="@itemimage.Name"></a>
+									</li>
+									i++;
+								}
+							</ul>
+						</div>
+					}
+					@if (item.MoreImages != null)
+					{
+						int i = 0;
+						<div class="col-sm-6">
+							<div class="col-xs-12" id="slider">
+								<!-- Top part of the slider -->
+								<div class="row">
+									<div class="col-sm-12" id="carousel-bounding-box">
+										<div class="carousel slide" id="mySlider-@item.ID">
+											<!-- Carousel items -->
+											<div class="carousel-inner">
+												@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+												{
+													string hiteam = "item";
+													if (i == 0)
+													{
+														hiteam = "active item";
+													}
+													<div class="@hiteam" data-slide-number="@i">
+														<img src="@itemimage.Value" alt="@itemimage.Name">
+													</div>
+													i++;
+												}
+											</div>
+											<!-- Carousel nav -->
+											<a class="left carousel-control" href="#mySlider-@item.ID" role="button" data-slide="prev">
+												<span class="glyphicon glyphicon-chevron-left"></span>
+											</a>
+											<a class="right carousel-control" href="#mySlider-@item.ID" role="button" data-slide="next">
+												<span class="glyphicon glyphicon-chevron-right"></span>
+											</a>
+										</div>
 									</div>
 								</div>
-								<!-- Carousel nav -->
-								<a class="left carousel-control" href="#mySlider2" role="button" data-slide="prev">
-									<span class="glyphicon glyphicon-chevron-left"></span>
-								</a>
-								<a class="right carousel-control" href="#mySlider2" role="button" data-slide="next">
-									<span class="glyphicon glyphicon-chevron-right"></span>
-								</a>
 							</div>
 						</div>
-					</div>
+
+					}
+					<!--/Slider-->
 				</div>
+
+
 			</div>
-			<!--/Slider-->
 		</div>
+	}
+	@section scripts{
+		@foreach (var itemcs in Model)
+		{
+			if (itemcs.MoreImages != null)
+			{
+				int i = 0;
+				foreach (XElement itemimage in XElement.Parse(itemcs.MoreImages).Elements())
+				{
+					i++;
+					<script>
+						jQuery(document).ready(function($) {
 
-	</div>
-</div>
+							$('#mySlider-' + @itemcs.ID).carousel({
+								interval: 5000
+							});
 
-<div class="col-lg-12 baiviet">
-	<div class="col-md-8 col-md-offset-2 chitiet">
-		<h1>Đến Thung Lũng Tình Yêu</h1>
-		<img src="~/Content/ClientTheme/image/3.png" class="img-responsive">
-		<p>Từ trung tâm thành phố Đà Lạt, Quý khách có thể đi xe hơi, xe máy khoảng 15 phút theo hướng đường Nguyễn Văn Trỗi – Bùi Thị Xuân ( hoặc Phan Bội Châu – Bùi Thị Xuân, hoặc Phan Bội Châu – Bùi Thị Xuân – Đinh Tiên Hoàng ) đến Ngã 5 Đại học rồi đi hết đường Phù Đổng Thiên Vương và rẽ phải theo đường Mai Anh Đào 500 mét sẽ tới Khu Du lịch.</p>
-	</div>
-	<div class="clearfix"></div>
-	<div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
-		<div class="row baiviet">
-			<div class="col-md-12 chitiet">
-				<h1 style="color: #fff">Hình ảnh về khu du lịch</h1>
-			</div>
-			<div class="col-sm-6" id="slider-thumbs">
-				<!-- Bottom switcher of slider -->
-				<ul class="hide-bullets">
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-0">
-							<img src="http://placehold.it/150x150&text=zero">
-						</a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-1"><img src="http://placehold.it/150x150&text=1"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-2"><img src="http://placehold.it/150x150&text=2"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-3"><img src="http://placehold.it/150x150&text=3"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-4"><img src="http://placehold.it/150x150&text=4"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-5"><img src="http://placehold.it/150x150&text=5"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-6"><img src="http://placehold.it/150x150&text=6"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-7"><img src="http://placehold.it/150x150&text=7"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-8"><img src="http://placehold.it/150x150&text=8"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-9"><img src="http://placehold.it/150x150&text=9"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-10"><img src="http://placehold.it/150x150&text=10"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-11"><img src="http://placehold.it/150x150&text=11"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-12"><img src="http://placehold.it/150x150&text=12"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-13"><img src="http://placehold.it/150x150&text=13"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-14"><img src="http://placehold.it/150x150&text=14"></a>
-					</li>
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s2name-15"><img src="http://placehold.it/150x150&text=15"></a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-sm-6">
-				<div class="col-xs-12" id="slider">
-					<!-- Top part of the slider -->
-					<div class="row">
-						<div class="col-sm-12" id="carousel-bounding-box">
-							<div class="carousel slide" id="mySlider3">
-								<!-- Carousel items -->
-								<div class="carousel-inner">
-									<div class="active item" data-slide-number="0">
-										<img src="http://placehold.it/470x480&text=zero">
-									</div>
-									<div class="item" data-slide-number="1">
-										<img src="http://placehold.it/470x480&text=1">
-									</div>
-									<div class="item" data-slide-number="2">
-										<img src="http://placehold.it/470x480&text=2">
-									</div>
-									<div class="item" data-slide-number="3">
-										<img src="http://placehold.it/470x480&text=3">
-									</div>
-									<div class="item" data-slide-number="4">
-										<img src="http://placehold.it/470x480&text=4">
-									</div>
-									<div class="item" data-slide-number="5">
-										<img src="http://placehold.it/470x480&text=5">
-									</div>
+							//Handles the carousel thumbnails
+							//
+							$('[id^='+@itemcs.ID+'-hinh-]').click(function() {
+								var idSelector = $(this).attr("id");
+								try {
+									var id = /-(\d+)$/.exec(idSelector)[1];
+									console.log(idSelector, id);
+									jQuery('#mySlider-' + @itemcs.ID).carousel(parseInt(id));
+								} catch (e) {
+									console.log('Regex failed!', e);
+								}
+							});
+							// When the carousel slides, auto update the text
+							$('#mySlider-' + @itemcs.ID).on('slid.bs.carousel', function(e) {
+								var id = $('.item.active').data('slide-number');
+								$('#carousel-text').html($('#slide-content-' + id).html());
+							});
+						});
+					</script>
+				}
+			}
 
-									<div class="item" data-slide-number="6">
-										<img src="http://placehold.it/470x480&text=6">
-									</div>
-
-									<div class="item" data-slide-number="7">
-										<img src="http://placehold.it/470x480&text=7">
-									</div>
-
-									<div class="item" data-slide-number="8">
-										<img src="http://placehold.it/470x480&text=8">
-									</div>
-
-									<div class="item" data-slide-number="9">
-										<img src="http://placehold.it/470x480&text=9">
-									</div>
-
-									<div class="item" data-slide-number="10">
-										<img src="http://placehold.it/470x480&text=10">
-									</div>
-
-									<div class="item" data-slide-number="11">
-										<img src="http://placehold.it/470x480&text=11">
-									</div>
-
-									<div class="item" data-slide-number="12">
-										<img src="http://placehold.it/470x480&text=12">
-									</div>
-									<div class="item" data-slide-number="13">
-										<img src="http://placehold.it/470x480&text=13">
-									</div>
-									<div class="item" data-slide-number="14">
-										<img src="http://placehold.it/470x480&text=14">
-									</div>
-									<div class="item" data-slide-number="15">
-										<img src="http://placehold.it/470x480&text=15">
-									</div>
-								</div>
-								<!-- Carousel nav -->
-								<a class="left carousel-control" href="#mySlider2" role="button" data-slide="prev">
-									<span class="glyphicon glyphicon-chevron-left"></span>
-								</a>
-								<a class="right carousel-control" href="#mySlider2" role="button" data-slide="next">
-									<span class="glyphicon glyphicon-chevron-right"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/Slider-->
+		}
+	}
+}
+else
+{
+	<div class="col-lg-12 baiviet">
+		<div class="col-md-8 col-md-offset-2 chitiet">
+			<h1>Thung lung tinh yêu</h1>
+			<img src="~/Content/ClientTheme/image/1.png" class="img-responsive">
+			<p>Đang cập nhật dữ liệu.</p>
 		</div>
-
-
+		<div class="clearfix"></div>
 	</div>
-</div>
-<div class="col-lg-12 baiviet">
-	<div class="col-md-8 col-md-offset-2 chitiet">
-		<h1>Lịch sử hình thành</h1>
-		<img src="~/Content/ClientTheme/image/3.png" class="img-responsive">
-		<p>Xưa kia, nơi đây là một thắng cảnh hoang sơ nhưng đầy thơ mộng, với những dòng suối nhỏ, những thảm cỏ xanh mướt và những đồi thông chập chùng .., đây chính là nơi hẹn hò lý tưởng cho những đôi tình nhân. Vì vậy người Pháp khi ngự trị tại Đà Lạt đã đặt tên bằng tiếng Pháp cho thắng cảnh này là Vallée D’ Amour. Năm 1953, Thị trưởng của Đà Lạt lúc bấy giờ đã quyết định lấy tên thắng cảnh này bằng tiếng Việt gọi là Thung lũng Tình yêu, tên gọi này tồn tại cho đến bây giờ.</p>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<div class="col-lg-12 baiviet">
-	<div class="col-md-8 col-md-offset-2 chitiet">
-		<h1>Ngày nay</h1>
-		<img src="~/Content/ClientTheme/image/3.png" class="img-responsive">
-		<p>Ngày nay, Thung lũng Tình yêu đã trở thành một trong những địa điểm Du lịch hấp dẫn và lý tưởng nhờ được bao quanh bởi hồ nước và đồi thông lộng gió tạo thành những mảng không gian thực thực hư hư. Sự hấp dẫn của vùng Thung lũng này vốn là nét lãng mạn tự nhiên của một không gian xanh, non nước hữu tình.</p>
-		<p>Tại đây, có hình ảnh đôi bàn tay cùng trao nhẫn, Đôi bướm hoa tình nhân, Vườn công khoe sắc thắm, Phố hoa, tiểu cảnh Adam & Eva độc đáo, ấn tượng. Thung lũng Tình Yêu còn là nơi tổ chức sự kiện ngày Tình Nhân (14/02) hàng năm. Ngày Tình Nhân được diễn ra tại cây cầu tình yêu nằm trên Hồ Đa thiện. Cây cầu còn là nơi dành cho những đôi tình nhân thề non, hẹn ước, gắn những chiếc ổ khóa tình yêu thể hiện sự gắn kết, bền chặt của các cặp đôi yêu nhau. Đặc biệt Quý khách có cơ hội chinh phục Mê Cung Tình Yêu với hình trái tim được xem là Mê Cung Sinh Thái lớn nhất Việt Nam.</p>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<div class="col-lg-12 baiviet">
-	<div class="col-md-8 col-md-offset-2 chitiet">
-		<h1>Điểm nhấn</h1>
-		<img src="~/Content/ClientTheme/image/3.png" class="img-responsive">
-		<p>Đến với Thung lũng tình yêu, ngoài việc thưởng ngoạn các thắng cảnh thiên nhiên thơ mộng hữu tình với muôn ngàn hoa khoe sắc. Quý khách còn được tham gia vui chơi, giải trí với nhiều loại hình đa dạng và hấp dẫn như: Đi Cano, Pedalo trên hồ, Cưỡi ngựa, hoạt động cắm trại, bắn súng sơn, trò chơi “Giữ thăng bằng trên dây cáp – Highwire”. Hiện tại, Thung lũng Tình Yêu có xe lửa, xe sân golf, xe sẽ đưa du khách tham quan hoàn toàn miễn phí tất cả những cảnh đẹp của Thung Lũng tình yêu, và lên ngọn đồi cao nhất là “Đồi Vọng cảnh – Từ đây du khách có thể phóng tầm mắt bao quát, ngắm toàn cảnh Thung lũng Tình Yêu tràn ngập hoa”.</p>
-	</div>
-	<div class="clearfix"></div>
-</div>
-@section scripts{
-<script>
-	jQuery(document).ready(function ($) {
-
-		$('#mySlider2').carousel({
-			interval: 5000
-		});
-
-		//Handles the carousel thumbnails
-		$('[id^=s1name-]').click(function () {
-			var idSelector = $(this).attr("id");
-			try {
-				var id = /-(\d+)$/.exec(idSelector)[1];
-				console.log(idSelector, id);
-				jQuery('#mySlider2').carousel(parseInt(id));
-			} catch (e) {
-				console.log('Regex failed!', e);
-			}
-		});
-		// When the carousel slides, auto update the text
-		$('#mySlider2').on('slid.bs.carousel', function (e) {
-			var id = $('.item.active').data('slide-number');
-			$('#carousel-text').html($('#slide-content-' + id).html());
-		});
-	});
-</script>
-<script>
-	jQuery(document).ready(function ($) {
-
-		$('#mySlider'+3+'').carousel({
-			interval: 5000
-		});
-
-		//Handles the carousel thumbnails
-		$('[id^=s2name-]').click(function () {
-			var idSelector = $(this).attr("id");
-			try {
-				var id = /-(\d+)$/.exec(idSelector)[1];
-				console.log(idSelector, id);
-				jQuery('#mySlider3').carousel(parseInt(id));
-			} catch (e) {
-				console.log('Regex failed!', e);
-			}
-		});
-		// When the carousel slides, auto update the text
-		$('#mySlider3').on('slid.bs.carousel', function (e) {
-			var id = $('.item.active').data('slide-number');
-			$('#carousel-text').html($('#slide-content-' + id).html());
-		});
-	});
-</script>
 }
