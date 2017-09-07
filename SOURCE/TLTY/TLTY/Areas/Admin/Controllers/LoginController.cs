@@ -69,7 +69,7 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				ViewBag.Error = "Vui lòng nhập đầy đủ thông tin!";
 			}
-			return View("Index");
+			return View("Index","Login");
 	    }
 
 		public int DangNhap(string userName, string pasword)
