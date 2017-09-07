@@ -192,40 +192,40 @@ namespace TLTY.Areas.Admin.Models
 			context.Paths.Add(detailsRequest);
 
 			//Thêm đường dẫn giới thiệu
-			var createIntruction = new Path()
+			var createinstruction = new Path()
 			{
-				ID = "CREATE_INTRUCTION",
+				ID = "CREATE_INSTRUCTION",
 				Name = "Thêm giới thiệu"
 			};
-			context.Paths.Add(createIntruction);
+			context.Paths.Add(createinstruction);
 
-			var deleteIntruction = new Path()
+			var deleteinstruction = new Path()
 			{
-				ID = "DELETE_INTRUCTION",
+				ID = "DELETE_INSTRUCTION",
 				Name = "Xóa giới thiệu"
 			};
-			context.Paths.Add(deleteIntruction);
+			context.Paths.Add(deleteinstruction);
 
-			var editIntruction = new Path()
+			var editinstruction = new Path()
 			{
-				ID = "EDIT_INTRUCTION",
+				ID = "EDIT_INSTRUCTION",
 				Name = "Sửa giới thiệu"
 			};
-			context.Paths.Add(editIntruction);
+			context.Paths.Add(editinstruction);
 
-			var viewIntruction = new Path()
+			var viewinstruction = new Path()
 			{
-				ID = "VIEW_INTRUCTION",
+				ID = "VIEW_INSTRUCTION",
 				Name = "Xem giới thiệu"
 			};
-			context.Paths.Add(viewIntruction);
+			context.Paths.Add(viewinstruction);
 
-			var detailsIntruction = new Path()
+			var detailsinstruction = new Path()
 			{
-				ID = "DETAILS_INTRUCTION",
+				ID = "DETAILS_INSTRUCTION",
 				Name = "Xem chi tiết giới thiệu"
 			};
-			context.Paths.Add(detailsIntruction);
+			context.Paths.Add(detailsinstruction);
 
 			//Thêm đường dẫn yêu cầu
 
@@ -509,7 +509,7 @@ namespace TLTY.Areas.Admin.Models
 			var mo26 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
-				PathID = "CREATE_INTRUCTION"
+				PathID = "CREATE_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(mo26);
@@ -517,7 +517,7 @@ namespace TLTY.Areas.Admin.Models
 			var mo27 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
-				PathID = "DELETE_INTRUCTION"
+				PathID = "DELETE_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(mo27);
@@ -525,7 +525,7 @@ namespace TLTY.Areas.Admin.Models
 			var mo28 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
-				PathID = "EDIT_INTRUCTION"
+				PathID = "EDIT_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(mo28);
@@ -533,7 +533,7 @@ namespace TLTY.Areas.Admin.Models
 			var mo29 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
-				PathID = "VIEW_INTRUCTION"
+				PathID = "VIEW_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(mo29);
@@ -541,7 +541,7 @@ namespace TLTY.Areas.Admin.Models
 			var mo30 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
-				PathID = "DETAILS_INTRUCTION"
+				PathID = "DETAILS_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(mo30);
@@ -754,7 +754,7 @@ namespace TLTY.Areas.Admin.Models
 			var me1 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
-				PathID = "CREATE_INTRUCTION"
+				PathID = "CREATE_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(me1);
@@ -762,7 +762,7 @@ namespace TLTY.Areas.Admin.Models
 			var me2 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
-				PathID = "DELETE_INTRUCTION"
+				PathID = "DELETE_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(me2);
@@ -770,7 +770,7 @@ namespace TLTY.Areas.Admin.Models
 			var me3 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
-				PathID = "EDIT_INTRUCTION"
+				PathID = "EDIT_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(me3);
@@ -778,7 +778,7 @@ namespace TLTY.Areas.Admin.Models
 			var me4 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
-				PathID = "VIEW_INTRUCTION"
+				PathID = "VIEW_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(me4);
@@ -786,7 +786,7 @@ namespace TLTY.Areas.Admin.Models
 			var me5 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
-				PathID = "DETAILS_INTRUCTION"
+				PathID = "DETAILS_INSTRUCTION"
 			};
 
 			context.GroupPaths.Add(me5);
