@@ -81,7 +81,7 @@ namespace TLTY.Areas.Admin.Controllers
                     }
                     if (string.IsNullOrEmpty(content.Images))
                     {
-                        content.Images = "/DATA/images/Content/1.jpg";
+						content.Images = "/DATA/images/Instruction/1.png";
                     }
                     _db.Contents.Add(content);
                     _db.SaveChanges();
@@ -144,13 +144,13 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 if (string.IsNullOrEmpty(content.Images))
                 {
-                    content.Images = "/DATA/images/Content/1.jpg";
+					content.Images = "/DATA/images/Instruction/1.png";
                 }
                 _db.Entry(content).State = EntityState.Modified;
                 _db.SaveChanges();
                 if (content.ID > 0)
                 {
-                    SetAlert("<i class='fa fa-check'></i> Sửa nội dung thành công!. Hãy kích hoạt nội dung vừa tạo.", "success");
+                    SetAlert("<i class='fa fa-check'></i> Sửa nội dung thành công!", "success");
                     return RedirectToAction("Index");
                 }
                 else

@@ -40,7 +40,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 16:09:31</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Index.cshtml">
-      <publishTime>09/07/2017 10:56:01</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Create.cshtml">
       <publishTime>09/06/2017 16:09:31</publishTime>
@@ -55,7 +55,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 10:38:42</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Index.cshtml">
-      <publishTime>09/07/2017 10:56:01</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Delete.cshtml">
       <publishTime>09/06/2017 13:36:12</publishTime>
@@ -64,7 +64,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 16:09:31</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Index.cshtml">
-      <publishTime>09/06/2017 10:02:28</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Home/Index.cshtml">
       <publishTime>09/07/2017 09:12:30</publishTime>
@@ -85,10 +85,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:36:12</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Index.cshtml">
-      <publishTime>09/07/2017 10:56:01</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Login/Index.cshtml">
-      <publishTime>09/06/2017 16:09:31</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Requests/Delete.cshtml">
       <publishTime>09/06/2017 13:36:12</publishTime>
@@ -97,7 +97,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:36:12</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Requests/Index.cshtml">
-      <publishTime>09/06/2017 10:02:28</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/Error.cshtml">
       <publishTime>09/05/2017 15:44:26</publishTime>
@@ -121,7 +121,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:36:12</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Index.cshtml">
-      <publishTime>09/07/2017 10:56:01</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Create.cshtml">
       <publishTime>09/06/2017 13:36:12</publishTime>
@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:36:13</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Index.cshtml">
-      <publishTime>09/07/2017 10:56:01</publishTime>
+      <publishTime>09/07/2017 14:27:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>08/29/2017 10:57:36</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2017 10:57:48</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/07/2017 14:10:54</publishTime>
+      <publishTime>09/07/2017 14:31:03</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/29/2017 10:57:49</publishTime>
