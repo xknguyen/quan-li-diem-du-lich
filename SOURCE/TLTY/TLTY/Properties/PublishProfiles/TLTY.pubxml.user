@@ -25,7 +25,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:55:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Index.cshtml">
-      <publishTime>09/06/2017 12:45:40</publishTime>
+      <publishTime>09/07/2017 10:37:09</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Create.cshtml">
       <publishTime>09/06/2017 16:03:21</publishTime>
@@ -40,7 +40,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 15:59:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Index.cshtml">
-      <publishTime>09/06/2017 09:46:08</publishTime>
+      <publishTime>09/07/2017 10:19:19</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Create.cshtml">
       <publishTime>09/06/2017 16:08:06</publishTime>
@@ -55,7 +55,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 13:55:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Index.cshtml">
-      <publishTime>09/06/2017 09:46:17</publishTime>
+      <publishTime>09/07/2017 10:21:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Delete.cshtml">
       <publishTime>09/06/2017 12:43:24</publishTime>
@@ -67,7 +67,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 09:44:00</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Home/Index.cshtml">
-      <publishTime>09/06/2017 12:57:49</publishTime>
+      <publishTime>09/06/2017 23:06:22</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Home/NotificationAuthorize.cshtml">
+      <publishTime>09/07/2017 09:51:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Create.cshtml">
       <publishTime>09/06/2017 12:40:53</publishTime>
@@ -82,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 12:41:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Index.cshtml">
-      <publishTime>09/06/2017 09:46:36</publishTime>
+      <publishTime>09/07/2017 10:20:49</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Login/Index.cshtml">
       <publishTime>09/06/2017 13:59:20</publishTime>
@@ -100,10 +103,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2017 15:33:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>09/05/2017 15:41:16</publishTime>
+      <publishTime>09/07/2017 09:05:24</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Nav.cshtml">
-      <publishTime>09/05/2017 10:59:40</publishTime>
+      <publishTime>09/07/2017 10:11:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Create.cshtml">
       <publishTime>09/06/2017 12:25:59</publishTime>
@@ -133,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 11:04:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Index.cshtml">
-      <publishTime>09/06/2017 14:28:58</publishTime>
+      <publishTime>09/07/2017 10:18:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>09/01/2017 21:11:04</publishTime>
@@ -154,7 +157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:35</publishTime>
     </File>
     <File Include="bin/EntityModel.dll">
-      <publishTime>09/06/2017 16:32:44</publishTime>
+      <publishTime>09/06/2017 18:22:18</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/28/2017 07:27:37</publishTime>
@@ -184,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:37</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/06/2017 17:58:42</publishTime>
+      <publishTime>09/07/2017 10:42:11</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/28/2017 07:27:38</publishTime>
@@ -3607,7 +3610,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 15:56:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/06/2017 17:51:33</publishTime>
+      <publishTime>09/07/2017 10:46:08</publishTime>
     </File>
   </ItemGroup>
 </Project>
