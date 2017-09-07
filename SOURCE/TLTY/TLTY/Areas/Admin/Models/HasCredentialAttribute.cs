@@ -10,7 +10,6 @@ namespace TLTY.Areas.Admin.Models
 	{
 		public string PathID { set; get; }
 		protected override bool AuthorizeCore(HttpContextBase httpContext)
-		
 		{
 			var session = (UserLogin)HttpContext.Current.Session[Constants.USER_SESSION];
 			if (session == null)
@@ -20,7 +19,7 @@ namespace TLTY.Areas.Admin.Models
 
 			List<string> privilegeLevels = this.GetCredentialByLoggedInUser(session.UserName);
 
-			if (privilegeLevels.Contains(this.PathID)||session.AccountGroupID == Constants.ADMIN_GROUP)
+			if (privilegeLevels.Contains(this.PathID) || session.AccountGroupID == Constants.ADMIN_GROUP)
 			{
 				return true;
 			}
@@ -31,10 +30,8 @@ namespace TLTY.Areas.Admin.Models
 		}
 		protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
 		{
-			filterContext.Result = new ViewResult
-			{
-				ViewName = "~/Areas/Admin/Views/Shared/Error.cshtml"
-			};
+			filterContext.Result = new RedirectResult("~/Admin/Home/NotificationAuthorize");
+			//filterContext.Redirect("~/Admin/Login");
 		}
 		private List<string> GetCredentialByLoggedInUser(string userName)
 		{

@@ -312,6 +312,14 @@ namespace TLTY.Areas.Admin.Models
 
 			context.AccountGroups.Add(memberGroup);
 
+			var servicesGroup = new AccountGroup()
+			{
+				ID = "SERVICES",
+				Name = "Chăm sóc khách hàng"
+			};
+
+			context.AccountGroups.Add(servicesGroup);
+
 			var modGroup = new AccountGroup()
 			{
 				ID = "MOD",
@@ -329,14 +337,6 @@ namespace TLTY.Areas.Admin.Models
 			};
 
 			context.GroupPaths.Add(mo3);
-
-			var mo4 = new GroupPath()
-			{
-				AccountGroupID = "MOD",
-				PathID = "VIEW_ACCOUNT"
-			};
-
-			context.GroupPaths.Add(mo4);
 
 			var mo5 = new GroupPath()
 			{
@@ -618,6 +618,323 @@ namespace TLTY.Areas.Admin.Models
 			};
 
 			context.GroupPaths.Add(mo39);
+
+
+			//Quyên cho nhóm SER
+			//Thêm nối nhóm với đường dẫn cho lien hệ
+			var se1 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "CREATE_CONTACT"
+			};
+
+			context.GroupPaths.Add(se1);
+
+			var se2 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DELETE_CONTACT"
+			};
+
+			context.GroupPaths.Add(se2);
+
+			var se3 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "EDIT_CONTACT"
+			};
+
+			context.GroupPaths.Add(se3);
+
+
+			var se4 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "VIEW_CONTACT"
+			};
+
+			context.GroupPaths.Add(se4);
+
+			var se5 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DETAILS_CONTACT"
+			};
+			context.GroupPaths.Add(se5);
+
+			//phan hoi
+			var se6 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DELETE_REQUEST"
+			};
+
+			context.GroupPaths.Add(se6);
+			var se7 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "EDIT_REQUEST"
+			};
+
+			context.GroupPaths.Add(se7);
+			var se8 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "VIEW_REQUEST"
+			};
+
+			context.GroupPaths.Add(se8);
+
+			var se9 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DETAILS_REQUEST"
+			};
+
+			context.GroupPaths.Add(se9);
+
+			//yeu cau
+			var se10 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DELETE_FEEDBACK"
+			};
+
+			context.GroupPaths.Add(se10);
+
+			var se11 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "EDIT_FEEDBACK"
+			};
+
+			context.GroupPaths.Add(se11);
+
+			var se12 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "VIEW_FEEDBACK"
+			};
+
+			context.GroupPaths.Add(se12);
+
+			var se13 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DETAILS_FEEDBACK"
+			};
+
+			context.GroupPaths.Add(se13);
+
+			var se14 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "EDIT_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(se14);
+
+			var se15 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "DETAILS_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(se15);
+
+			var se16 = new GroupPath()
+			{
+				AccountGroupID = "SERVICES",
+				PathID = "CHANGE_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(se16);
+
+			//Quyen cho nhan vien
+			var me1 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "CREATE_INTRUCTION"
+			};
+
+			context.GroupPaths.Add(me1);
+
+			var me2 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DELETE_INTRUCTION"
+			};
+
+			context.GroupPaths.Add(me2);
+
+			var me3 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "EDIT_INTRUCTION"
+			};
+
+			context.GroupPaths.Add(me3);
+
+			var me4 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "VIEW_INTRUCTION"
+			};
+
+			context.GroupPaths.Add(me4);
+
+			var me5 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DETAILS_INTRUCTION"
+			};
+
+			context.GroupPaths.Add(me5);
+
+			var me6 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "CREATE_CONTENT"
+			};
+
+			context.GroupPaths.Add(me6);
+
+			var me7 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DELETE_CONTENT"
+			};
+
+			context.GroupPaths.Add(me7);
+
+			var me8 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "EDIT_CONTENT"
+			};
+
+			context.GroupPaths.Add(me8);
+
+			var me9 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "VIEW_CONTENT"
+			};
+
+			context.GroupPaths.Add(me9);
+
+			var me10 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DETAILS_CONTENT"
+			};
+
+			context.GroupPaths.Add(me10);
+			//Thêm nối nhóm với đường dẫn cho bảng giá
+
+			var me11 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "CREATE_TICKER"
+			};
+
+			context.GroupPaths.Add(me11);
+
+			var me12 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DELETE_TICKER"
+			};
+
+			context.GroupPaths.Add(me12);
+
+			var me13 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "EDIT_TICKER"
+			};
+
+			context.GroupPaths.Add(me13);
+
+			var me14 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "VIEW_TICKER"
+			};
+
+			context.GroupPaths.Add(me14);
+
+			var me15 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DETAILS_TICKER"
+			};
+
+			context.GroupPaths.Add(me15);
+
+			var me16 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "CREATE_SLIDER"
+			};
+
+			context.GroupPaths.Add(me16);
+
+			var me17 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DELETE_SLIDER"
+			};
+
+			context.GroupPaths.Add(me17);
+
+			var me18 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "EDIT_SLIDER"
+			};
+
+			context.GroupPaths.Add(me18);
+
+			var me19 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "VIEW_SLIDER"
+			};
+
+			context.GroupPaths.Add(me19);
+
+			var me20 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DETAILS_SLIDER"
+			};
+
+			context.GroupPaths.Add(me20);
+
+			var me21 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "EDIT_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(me21);
+
+			var me22 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "DETAILS_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(me22);
+
+			var me23 = new GroupPath()
+			{
+				AccountGroupID = "MEMBER",
+				PathID = "CHANGE_ACCOUNT"
+			};
+
+			context.GroupPaths.Add(me23);
 
 			//Thêm tài khoản
 			var admin = new Account()
