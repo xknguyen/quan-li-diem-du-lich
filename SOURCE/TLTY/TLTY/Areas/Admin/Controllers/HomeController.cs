@@ -15,6 +15,11 @@ namespace TLTY.Areas.Admin.Controllers
         {
             return View();
         }
+
+		public ActionResult NotificationAuthorize()
+		{
+			return View();
+		}
     }
 
 }
