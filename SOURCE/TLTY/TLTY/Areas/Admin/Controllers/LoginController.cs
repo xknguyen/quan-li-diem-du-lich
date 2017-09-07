@@ -47,7 +47,7 @@ namespace TLTY.Areas.Admin.Controllers
 						Session.Add(Constants.USER_SESSION, userSession);
 					}
 
-					return RedirectToAction("Index", "Home");
+					return RedirectToAction("Index","Home");
 				}
 				else if (result == 0)
 				{
@@ -69,7 +69,7 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				ViewBag.Error = "Vui lòng nhập đầy đủ thông tin!";
 			}
-			return View("Index","Login");
+			return View("Index");
 	    }
 
 		public int DangNhap(string userName, string pasword)
