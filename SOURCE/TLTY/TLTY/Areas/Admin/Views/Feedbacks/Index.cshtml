@@ -42,7 +42,7 @@
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
                             <td class="center" style="text-align: center;">
-                                <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
+                                <a href="/Admin/Feedbacks/Details/@item.ID" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
                                     <p class="fa fa-folder"></p>
                                 </a>
                                 <a href="@Url.Action("Delete", new {@id = item.ID})" title="Xóa @item.Name" class="delete-link" style="text-decoration: none">

@@ -36,14 +36,7 @@
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </td>
                             <td>
-                                @{
-                                    string a = "Dịch vụ";
-                                    if (item.Content.Category)
-                                    {
-                                        a = "Tin tức";
-                                    }
-                                }
-                                @a
+                                @Html.DisplayFor(modelItem => item.ContentID)
                             </td>
 
                             <td class="center" style="text-align: center;">

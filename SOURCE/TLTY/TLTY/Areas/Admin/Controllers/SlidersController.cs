@@ -19,7 +19,7 @@ namespace TLTY.Areas.Admin.Controllers
         // GET: Admin/Sliders
         public ActionResult Index()
         {
-            var sliders = _db.Sliders.Include(s => s.Content);
+            var sliders = _db.Sliders;
             return View(sliders.ToList());
         }
 

@@ -5,7 +5,6 @@ namespace EntityModel.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-	using System.Web.Mvc;
 
     [Table("Instruction")]
     public partial class Instruction
@@ -24,7 +23,6 @@ namespace EntityModel.EF
 
         public bool Status { get; set; }
 
-		[AllowHtml]
         [Column(TypeName = "ntext")]
         [Required]
         public string Detail { get; set; }

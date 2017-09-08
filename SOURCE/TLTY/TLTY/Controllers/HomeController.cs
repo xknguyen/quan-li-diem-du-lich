@@ -18,9 +18,8 @@ namespace TLTY.Controllers
 			ViewBag.Title = ConfigurationManager.AppSettings["HomeTitle"];
 			ViewBag.Keywords = ConfigurationManager.AppSettings["HomeKeyword"];
 			ViewBag.Descriptions = ConfigurationManager.AppSettings["HomeDescription"];
-			var listInstruction =
-				_db.Instructions.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(8).ToList();
-			return View(listInstruction);
+			//ViewBag.Instructions = _db.Instructions.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(8).ToList();
+			return View();
 		}
 
 		[WebMethod]

@@ -1,7 +1,7 @@
 ﻿@using TLTY.Areas.Admin.Models
 @{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
-	if (session== null)
+	if (session == null)
 	{
 		Response.Redirect("~/Admin/Login");
 	}
@@ -136,7 +136,7 @@
 <body class="body-content">
 	<div id="wrapper">
 		@Html.Partial("_Nav")
-		<div id="page-wrapper">
+		<div id="page-wrapper" style="background:linear-gradient(45deg,rgba(0,244,255,1.00) 0%,rgba(17,55,173,1.00) 100%)">
 			<div class="row">
 				<div class="col-lg-12">
 					@if (IsSectionDefined("header"))
@@ -189,6 +189,7 @@
 			var div = document.getElementById('closeelement');
 			div.style.display = 'none';
 		}
+
 		//setTimeout(closeelement, 5000);
 		$('#closeelement').delay(9000).slideUp(1500);
 
@@ -196,8 +197,69 @@
 			var div = document.getElementById('thongbao');
 			div.style.display = 'none';
 		}
+
 		setTimeout(closeBox, 9000);
 	</script>
+<script>
+	setInterval(function() {
+		var request = {
+			init: function () {
+				request.loadrequest();
+			},
+			loadrequest: function () {
+				$.ajax({
+					url: '/Admin/Home/RequestMe',
+					type: 'GET',
+					dataType: 'json',
+					success: function (response) {
+						var datar = response.data;
+						var html = '';
+						$.each(datar, function (j, jtem) {
+							$('#soluongr').html(' ' + response.count + ' ');
+							html += '<li><a href="/Admin/Requests/Details/"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + jtem.Name + '</span></div></a></li>';
+						});
+						html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
+						$('#request').html(html);
+					}
+				});
+			}
+		}
+		request.init();
+	}, 1000);
+	
+
+</script>
+
+	<script>
+		setInterval(function () {
+			var feedback = {
+				init: function () {
+					feedback.loadfeedback();
+				},
+				loadfeedback: function () {
+					$.ajax({
+						url: '/Admin/Home/FeedbackMe',
+						type: 'GET',
+						dataType: 'json',
+						success: function (response) {
+							var data = response.data;
+							var html = '';
+							$.each(data, function (i, item) {
+								var d = item.CreateDate;
+								$('#soluongf').html(' ' + response.count + ' ');
+								html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + d + '</em></span></div><div>' + item.Description + '</div></a></li>';
+							});
+							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
+							$('#feedback').html(html);
+						}
+					});
+				}
+			}
+			feedback.init();
+		}, 1000);
+
+	</script>
+
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();

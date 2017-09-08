@@ -79,12 +79,12 @@ namespace TLTY.Areas.Admin.Controllers
 				db.SaveChanges();
 				if (ticker.ID > 0)
 				{
-					SetAlert("<i class='fa fa-check'></i> Thêm giá thành công!. Hãy kích hoạt giá vừa tạo.", "success");
+					SetAlert("<i class='fa fa-check'></i> Thêm bảng giá thành công!. Hãy kích hoạt bảng giá vừa tạo.", "success");
 					return RedirectToAction("Index");
 				}
 				else
 				{
-					SetAlert("<i class='fa fa-times'></i> Thêm giá không thành công!", "error");
+					SetAlert("<i class='fa fa-times'></i> Thêm bảng giá không thành công!", "error");
 					return RedirectToAction("Index");
 				}
 			}
@@ -137,12 +137,12 @@ namespace TLTY.Areas.Admin.Controllers
 				db.SaveChanges();
 				if (ticker.ID > 0)
 				{
-					SetAlert("<i class='fa fa-check'></i> Sửa giá thành công!", "success");
+					SetAlert("<i class='fa fa-check'></i> Sửa bảng giá thành công!", "success");
 					return RedirectToAction("Index");
 				}
 				else
 				{
-					SetAlert("<i class='fa fa-times'></i> Sửa giá không thành công!", "error");
+					SetAlert("<i class='fa fa-times'></i> Sửa bảng giá không thành công!", "error");
 					return RedirectToAction("Index");
 				}
 			}
@@ -176,12 +176,12 @@ namespace TLTY.Areas.Admin.Controllers
 			db.SaveChanges();
 			if (ticker.ID > 0)
 			{
-				SetAlert("<i class='fa fa-check'></i> Xóa giá thành công!", "success");
+				SetAlert("<i class='fa fa-check'></i> Xóa bảng giá thành công!", "success");
 				return RedirectToAction("Index");
 			}
 			else
 			{
-				SetAlert("<i class='fa fa-times'></i> Xóa giá không thành công!", "error");
+				SetAlert("<i class='fa fa-times'></i> Xóa bảng giá không thành công!", "error");
 				return RedirectToAction("Index");
 			}
 		}

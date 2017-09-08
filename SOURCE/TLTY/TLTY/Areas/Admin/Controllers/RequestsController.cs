@@ -19,7 +19,7 @@ namespace TLTY.Areas.Admin.Controllers
         // GET: Admin/Requests
         public ActionResult Index()
         {
-            var requests = _db.Requests.Include(r => r.Content);
+            var requests = _db.Requests;
             return View(requests.ToList());
         }
 
