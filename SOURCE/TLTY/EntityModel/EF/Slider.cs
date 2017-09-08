@@ -32,6 +32,5 @@ namespace EntityModel.EF
         [StringLength(50)]
         public string Description { get; set; }
 
-        public virtual Content Content { get; set; }
     }
 }

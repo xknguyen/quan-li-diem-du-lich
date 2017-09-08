@@ -200,12 +200,41 @@
 
 		setTimeout(closeBox, 9000);
 	</script>
+<script>
+	setInterval(function() {
+		var request = {
+			init: function () {
+				request.loadrequest();
+			},
+			loadrequest: function () {
+				$.ajax({
+					url: '/Admin/Home/RequestMe',
+					type: 'GET',
+					dataType: 'json',
+					success: function (response) {
+						var datar = response.data;
+						var html = '';
+						$.each(datar, function (j, jtem) {
+							$('#soluongr').html(' ' + response.count + ' ');
+							html += '<li><a href="/Admin/Requests/Details/"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + jtem.Name + '</span></div></a></li>';
+						});
+						html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
+						$('#request').html(html);
+					}
+				});
+			}
+		}
+		request.init();
+	}, 1000);
+	
+
+</script>
+
 	<script>
 		setInterval(function () {
 			var feedback = {
 				init: function () {
 					feedback.loadfeedback();
-					feedback.loadrequest();
 				},
 				loadfeedback: function () {
 					$.ajax({
@@ -217,28 +246,11 @@
 							var html = '';
 							$.each(data, function (i, item) {
 								var d = item.CreateDate;
-								$('#soluongf').html(' ' + data.count);
+								$('#soluongf').html(' ' + response.count + ' ');
 								html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + d + '</em></span></div><div>' + item.Description + '</div></a></li>';
 							});
 							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
 							$('#feedback').html(html);
-						}
-					});
-				},
-				loadrequest: function () {
-					$.ajax({
-						url: '/Admin/Home/RequestMe',
-						type: 'GET',
-						dataType: 'json',
-						success: function (response) {
-							var data = response.data;
-							var html = '';
-							$.each(data, function (i, item) {
-								$('#soluongr').html(' ' + data.count);
-								html += '<li><a href="/Admin/Requests/Details/"  title="Xem chi tiết " class="detail-link"><div><i class="fa fa-comment fa-fw"></i><span class="pull-right text-muted small">Giờ</span></div></a></li>';
-							});
-							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ</strong><i class="fa fa-angle-right"></i></a></li>';
-							$('#request').html(html);
 						}
 					});
 				}
@@ -247,6 +259,7 @@
 		}, 1000);
 
 	</script>
+
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();

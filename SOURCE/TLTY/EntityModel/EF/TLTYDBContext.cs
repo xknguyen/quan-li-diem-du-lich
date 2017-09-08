@@ -17,8 +17,8 @@ namespace EntityModel.EF
 		public virtual DbSet<Contact> Contacts { get; set; }
 		public virtual DbSet<Content> Contents { get; set; }
 		public virtual DbSet<Feedback> Feedbacks { get; set; }
-		public virtual DbSet<Instruction> Instructions { get; set; }
 		public virtual DbSet<GroupPath> GroupPaths { get; set; }
+		public virtual DbSet<Instruction> Instructions { get; set; }
 		public virtual DbSet<Path> Paths { get; set; }
 		public virtual DbSet<Request> Requests { get; set; }
 		public virtual DbSet<Slider> Sliders { get; set; }
@@ -26,10 +26,6 @@ namespace EntityModel.EF
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Content>()
-				.HasMany(e => e.Sliders)
-				.WithRequired(e => e.Content)
-				.WillCascadeOnDelete(false);
 
 			modelBuilder.Entity<Ticker>()
 				.Property(e => e.Price)

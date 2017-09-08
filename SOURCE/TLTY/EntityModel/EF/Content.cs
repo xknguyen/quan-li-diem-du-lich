@@ -5,18 +5,10 @@ namespace EntityModel.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-	using System.Web.Mvc;
 
     [Table("Content")]
     public partial class Content
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Content()
-        {
-            Requests = new HashSet<Request>();
-            Sliders = new HashSet<Slider>();
-        }
-
         public long ID { get; set; }
 
         [Required]
@@ -36,7 +28,6 @@ namespace EntityModel.EF
 
         public int? ViewCount { get; set; }
 
-		[AllowHtml]
         [Column(TypeName = "ntext")]
         [Required]
         public string Detail { get; set; }
@@ -53,10 +44,5 @@ namespace EntityModel.EF
 
         public bool Category { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Request> Requests { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Slider> Sliders { get; set; }
     }
 }

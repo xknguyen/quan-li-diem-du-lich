@@ -28,6 +28,7 @@ namespace TLTY.Areas.Admin.Controllers
 			var feedback = _db.Feedbacks.Where(x => x.Status == false).OrderByDescending(x => x.CreateDate).ToList();
 			return Json(new
 			{
+				count =feedback.Count,
 				data = feedback
 			}, JsonRequestBehavior.AllowGet);
 		}
@@ -37,6 +38,7 @@ namespace TLTY.Areas.Admin.Controllers
 			var request = _db.Requests.Where(x => x.Status == false).OrderByDescending(x => x.CreateDate).ToList();
 			return Json(new
 			{
+				count = request.Count,
 				data = request
 			}, JsonRequestBehavior.AllowGet);
 		}
