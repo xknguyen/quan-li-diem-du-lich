@@ -18,23 +18,26 @@
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
 	<style>
-		td.center {
-			margin: 0 auto;
-			position: relative;
+		.panel,.modal-body,.dropdown-menu {
+			background: #521a61 linear-gradient(55.93deg, #dafffe 0, #fff0f5 100%)
 		}
+		 td.center {
+			 margin: 0 auto;
+			 position: relative;
+		 }
 
-			td.center img {
-				width: 40px;
-				height: 40px;
-				margin: auto;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				-moz-border-radius: 10px;
-				-webkit-border-radius: 10px;
-			}
+		td.center img {
+			width: 40px;
+			height: 40px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
 
 		.modal, .modal-dialog {
 			border-color: #337ab7;
@@ -78,14 +81,14 @@
 			margin-right: 5%;
 		}
 
-			#closeelement a {
-				/*background: rgba(0,0,0,.1);*/
-				color: #fff;
-				padding: 15px 15px;
-				position: absolute;
-				right: -5px;
-				top: -10px;
-			}
+		#closeelement a {
+			/*background: rgba(0,0,0,.1);*/
+			color: #fff;
+			padding: 15px 15px;
+			position: absolute;
+			right: -5px;
+			top: -10px;
+		}
 
 		div.guestwarn {
 			background: #521a61 linear-gradient(55.93deg, purple 0, navy 100%);
@@ -123,9 +126,9 @@
 			padding: 0;
 		}
 
-			.thumbnail img {
-				height: 50px;
-			}
+		.thumbnail img {
+			height: 50px;
+		}
 
 		.carousel-inner > .item > img, .carousel-inner > .item > a > img {
 			width: 100%;
@@ -136,7 +139,7 @@
 <body class="body-content">
 	<div id="wrapper" style="background: #e280fc linear-gradient(55.93deg,#ffbeff 0%,#ddd 100%)">
 		@Html.Partial("_Nav")
-		<div id="page-wrapper" style="background:linear-gradient(45deg,rgba(0,244,255,1.00) 0%,rgba(17,55,173,1.00) 100%)">
+		<div id="page-wrapper" style="background:rgba(0, 0, 0, 0) linear-gradient(45deg, rgb(0, 244, 255) 0%, rgb(232, 171, 239) 100%) repeat scroll 0% 0%">
 			<div class="row">
 				<div class="col-lg-12">
 					@if (IsSectionDefined("header"))
