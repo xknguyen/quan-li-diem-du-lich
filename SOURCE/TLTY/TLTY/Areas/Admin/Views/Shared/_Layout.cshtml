@@ -205,6 +205,7 @@
 			var feedback = {
 				init: function () {
 					feedback.loadfeedback();
+					feedback.loadrequest();
 				},
 				loadfeedback: function () {
 					$.ajax({
@@ -216,11 +217,28 @@
 							var html = '';
 							$.each(data, function (i, item) {
 								var d = item.CreateDate;
-								$('#soluong').html(' ' + item.count);
-								html += '<li><a href="#"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + d + '</em></span></div><div>' + item.Description + '</div></a></li>';
+								$('#soluongf').html(' ' + data.count);
+								html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + d + '</em></span></div><div>' + item.Description + '</div></a></li>';
 							});
 							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
 							$('#feedback').html(html);
+						}
+					});
+				},
+				loadrequest: function () {
+					$.ajax({
+						url: '/Admin/Home/RequestMe',
+						type: 'GET',
+						dataType: 'json',
+						success: function (response) {
+							var data = response.data;
+							var html = '';
+							$.each(data, function (i, item) {
+								$('#soluongr').html(' ' + data.count);
+								html += '<li><a href="/Admin/Requests/Details/"  title="Xem chi tiết " class="detail-link"><div><i class="fa fa-comment fa-fw"></i><span class="pull-right text-muted small">Giờ</span></div></a></li>';
+							});
+							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ</strong><i class="fa fa-angle-right"></i></a></li>';
+							$('#request').html(html);
 						}
 					});
 				}
@@ -229,7 +247,6 @@
 		}, 1000);
 
 	</script>
-
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();

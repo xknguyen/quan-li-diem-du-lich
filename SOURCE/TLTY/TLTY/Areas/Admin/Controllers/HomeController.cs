@@ -31,6 +31,15 @@ namespace TLTY.Areas.Admin.Controllers
 				data = feedback
 			}, JsonRequestBehavior.AllowGet);
 		}
+
+		public JsonResult RequestMe()
+		{
+			var request = _db.Requests.Where(x => x.Status == false).OrderByDescending(x => x.CreateDate).ToList();
+			return Json(new
+			{
+				data = request
+			}, JsonRequestBehavior.AllowGet);
+		}
 	}
 
 }
