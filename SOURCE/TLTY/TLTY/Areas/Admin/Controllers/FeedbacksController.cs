@@ -35,6 +35,8 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            feedback.Status = true;
+            db.SaveChanges();
             return View(feedback);
         }
 
@@ -88,12 +90,12 @@ namespace TLTY.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
-            var user = db.Feedbacks.Find(id);
-            user.Status = !user.Status;
+            var feedback = db.Feedbacks.Find(id);
+            feedback.Status = !feedback.Status;
             db.SaveChanges();
             return Json(new
             {
-                status = user.Status
+                status = feedback.Status
             });
         }
     }

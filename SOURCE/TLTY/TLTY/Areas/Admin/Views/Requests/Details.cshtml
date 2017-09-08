@@ -45,13 +45,7 @@
                         </dt>
 
                         <dd>
-                            @{
-                                string a = "Dịch vụ";
-                                if (Model.Content.Category)
-                                {
-                                    a = "Tin tức";
-                                }
-                            }@a
+                            @Html.DisplayFor(model => model.ContentID)
                         </dd>
                         <dt>
                             Chi tiết:
@@ -70,7 +64,7 @@
 
                     </dl>
                 </div>
-				<div class="col-md-12">
+				<div class="col-md-12" style="margin-bottom:10px">
 					<hr />
 					<div class="form-actions no-color text-center">
 

@@ -36,6 +36,8 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            request.Status = true;
+            _db.SaveChanges();
             return View(request);
         }
 

@@ -77,7 +77,7 @@
 
 					});
 				} else {
-					html = '<div style="float:left;"><h3>Không có hình! Xin hãy thêm hình mới.</h3></div>';
+					html += '<div style="float:left;"><h3>Không có hình! Xin hãy thêm hình mới.</h3></div>';
 					$('#imageList').html(html);
 				}
 				

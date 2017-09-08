@@ -28,7 +28,7 @@ function InThongKe(content) {
 	var printWindow = window.open('', '', 'height = 900; width= 1000');
 	printWindow.document.write('<html><head><title>Danh sách</title>');
 	printWindow.document.write('<style>table{border-collapse: collapse;width:100%}table, th, td{border: 1px solid #999;}td{padding-left:5px}img{height:30px;width:30px; margin:5px;}</style>');
-	printWindow.document.write('</head><body style="height:900px;width:800px">');
+	printWindow.document.write('</head><body style="height:900px;width:800px;background: #521a61 linear-gradient(55.93deg, #dafffe 0, #fff0f5 100%)">');
 	printWindow.document.write(content);
 	printWindow.document.write('<h5 style="text-align:left ">Thung Lũng Tình Yêu - Khánh Vinh IT</h5');
 	printWindow.document.write('</body></html>');
