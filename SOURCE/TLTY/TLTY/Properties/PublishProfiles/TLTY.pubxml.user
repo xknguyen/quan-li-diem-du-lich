@@ -157,7 +157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:35</publishTime>
     </File>
     <File Include="bin/EntityModel.dll">
-      <publishTime>09/08/2017 21:27:00</publishTime>
+      <publishTime>09/08/2017 22:20:41</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/28/2017 07:27:37</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:37</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/08/2017 21:27:02</publishTime>
+      <publishTime>09/08/2017 22:20:43</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/28/2017 07:27:38</publishTime>
@@ -3616,7 +3616,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 15:56:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2017 21:37:22</publishTime>
+      <publishTime>09/08/2017 22:20:44</publishTime>
     </File>
   </ItemGroup>
 </Project>

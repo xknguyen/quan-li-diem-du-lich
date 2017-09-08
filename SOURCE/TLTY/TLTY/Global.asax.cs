@@ -19,8 +19,9 @@ namespace TLTY
 			BundleTable.EnableOptimizations = true;
 			AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			
-			Database.SetInitializer(new AdminDatabaseInitializer());
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            Database.SetInitializer(new AdminDatabaseInitializer());
 
 		}
 	}
