@@ -15,30 +15,8 @@
 	<!-- /.navbar-header -->
 	<ul class="nav navbar-top-links navbar-right">
 		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-			</a>
-			<ul class="dropdown-menu dropdown-messages">
-				<li>
-					<a href="#">
-						<div>
-							<strong>Anh Vinh</strong>
-							<span class="pull-right text-muted">
-								<em>Hôm qua</em>
-							</span>
-						</div>
-						<div>Phản hồi mới</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a class="text-center" href="?Admin/Requests">
-						<strong>Xem toàn bộ</strong>
-						<i class="fa fa-angle-right"></i>
-					</a>
-				</li>
-			</ul>
-			<!-- /.dropdown-messages -->
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-envelope fa-fw"></i><i id="soluong">  </i><i class="fa fa-caret-down"></i></a>
+			<ul class="dropdown-menu dropdown-messages" id="feedback"></ul>
 		</li>
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -67,19 +45,24 @@
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 				<i class="fa fa-user fa-fw"></i> Xin chào: <strong>
-					@{ if (session != null)
-					 {@session.LastName @session.FristName}}
+					@{
+						if (session != null)
+						{@session.LastName
+						@session.FristName
+						}}
 				</strong> <i class="fa fa-caret-down"></i>
 			</a>
 			<ul class="dropdown-menu dropdown-user">
 				<li>
-					<a href="/Admin/xem-thong-tin/@{if (session != null){@session.AccountID }}" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</a>
+					<a href="/Admin/xem-thong-tin/@{if (session != null)
+					                              {@session.AccountID
+					                              }}" title="Nhấn để xem thông tin tài khoản" class="detail-link" style="text-decoration: none"><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</a>
 				</li>
 				<li>
 					@{
 						if (session != null)
 						{
-							<a href="/Admin/thay-mat-khau/@session.UserName-@session.AccountID" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i>Thay đổi mật khẩu</a>
+					<a href="/Admin/thay-mat-khau/@session.UserName-@session.AccountID" title="Nhấn để thay đổi mật khẩu" class="change-link" style="text-decoration: none"><i class="fa fa-gear fa-fw"></i>Thay đổi mật khẩu</a>
 						}
 					}
 				</li>

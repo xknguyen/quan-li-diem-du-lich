@@ -1,7 +1,7 @@
 ﻿@using TLTY.Areas.Admin.Models
 @{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
-	if (session== null)
+	if (session == null)
 	{
 		Response.Redirect("~/Admin/Login");
 	}
@@ -189,6 +189,7 @@
 			var div = document.getElementById('closeelement');
 			div.style.display = 'none';
 		}
+
 		//setTimeout(closeelement, 5000);
 		$('#closeelement').delay(9000).slideUp(1500);
 
@@ -196,8 +197,39 @@
 			var div = document.getElementById('thongbao');
 			div.style.display = 'none';
 		}
+
 		setTimeout(closeBox, 9000);
 	</script>
+	<script>
+		setInterval(function () {
+			var feedback = {
+				init: function () {
+					feedback.loadfeedback();
+				},
+				loadfeedback: function () {
+					$.ajax({
+						url: '/Admin/Home/FeedbackMe',
+						type: 'GET',
+						dataType: 'json',
+						success: function (response) {
+							var data = response.data;
+							var html = '';
+							$.each(data, function (i, item) {
+								var d = item.CreateDate;
+								$('#soluong').html(' ' + item.count);
+								html += '<li><a href="#"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + d + '</em></span></div><div>' + item.Description + '</div></a></li>';
+							});
+							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
+							$('#feedback').html(html);
+						}
+					});
+				}
+			}
+			feedback.init();
+		}, 1000);
+
+	</script>
+
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();
