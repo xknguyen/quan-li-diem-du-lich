@@ -17,124 +17,6 @@
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
-	<style>
-		.panel,.modal-body,.dropdown-menu {
-			background: #521a61 linear-gradient(55.93deg, #dafffe 0, #fff0f5 100%)
-		}
-		 td.center {
-			 margin: 0 auto;
-			 position: relative;
-		 }
-
-		td.center img {
-			width: 40px;
-			height: 40px;
-			margin: auto;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			-moz-border-radius: 10px;
-			-webkit-border-radius: 10px;
-		}
-
-		.modal, .modal-dialog {
-			border-color: #337ab7;
-		}
-
-		.modal-header {
-			color: #fff;
-			padding: 9px 15px;
-			border-bottom: 1px solid #eee;
-			background-color: #428bca;
-			-webkit-border-top-left-radius: 5px;
-			-webkit-border-top-right-radius: 5px;
-			-moz-border-radius-topleft: 5px;
-			-moz-border-radius-topright: 5px;
-			-ms-border-top-left-radius: 5px;
-			border-top-left-radius: 5px;
-			-ms-border-top-right-radius: 5px;
-			border-top-right-radius: 5px;
-		}
-
-		#AlertBox {
-			background: #f8f8f8;
-		}
-
-		#closeelement {
-			position: fixed;
-			z-index: 9999999;
-			bottom: 0;
-			padding: 15px;
-			background: #521a61 linear-gradient(55.93deg, purple 0, navy 100%);
-			color: #fff;
-			width: 90%;
-			max-width: 90%;
-			font: 400 18px Roboto;
-			text-align: center;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			letter-spacing: -.5px;
-			margin-left: 5%;
-			margin-right: 5%;
-		}
-
-		#closeelement a {
-			/*background: rgba(0,0,0,.1);*/
-			color: #fff;
-			padding: 15px 15px;
-			position: absolute;
-			right: -5px;
-			top: -10px;
-		}
-
-		div.guestwarn {
-			background: #521a61 linear-gradient(55.93deg, purple 0, navy 100%);
-			color: #fff;
-			width: 290px;
-			max-width: 290px;
-			min-height: 18px;
-			right: 2%;
-			bottom: 55%;
-			padding: 10px 15px;
-			position: fixed;
-			z-index: 10;
-			font-size: 16px;
-			-moz-filter: alpha(opacity=88);
-			-o-filter: alpha(opacity=88);
-			filter: alpha(opacity=88);
-			-moz-opacity: .88;
-			-ms-opacity: .88;
-			opacity: .88;
-		}
-
-		.close {
-			float: right;
-			width: 22px;
-			height: 22px;
-		}
-
-		.hide-bullets {
-			list-style: none;
-			margin-left: -40px;
-			margin-top: 20px;
-		}
-
-		.thumbnail {
-			padding: 0;
-		}
-
-		.thumbnail img {
-			height: 50px;
-		}
-
-		.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-			width: 100%;
-			height: 300px;
-		}
-	</style>
 </head>
 <body class="body-content">
 	<div id="wrapper" style="background: #e280fc linear-gradient(55.93deg,#ffbeff 0%,#ddd 100%)">
@@ -203,44 +85,44 @@
 
 		setTimeout(closeBox, 9000);
 	</script>
-<script>
-	setInterval(function() {
-		var request = {
-			init: function () {
-				request.loadrequest();
-			},
-			loadrequest: function () {
-				$.ajax({
-					url: '/Admin/Home/RequestMe',
-					type: 'GET',
-					dataType: 'json',
-					success: function (response) {
-						var datar = response.data;
-						var html = '';
-						$.each(datar, function (j, jtem) {
-							var d = jtem.CreateDate;
-							var re = /-?\d+/;
-							var m = re.exec(d);
-							var date = new Date(parseInt(m[0]));
-							var formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-							var hours = (date.getHours() < 10) ? "0" + date.getHours() : date.getHours();
-							var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
-							var formattedTime = hours + ":" + minutes;
-							formattedDate = formattedTime + "-" + formattedDate;
+	<script>
+		setInterval(function () {
+			var request = {
+				init: function () {
+					request.loadrequest();
+				},
+				loadrequest: function () {
+					$.ajax({
+						url: '/Admin/Home/RequestMe',
+						type: 'GET',
+						dataType: 'json',
+						success: function (response) {
+							var datar = response.data;
+							var html = '';
 							$('#soluongr').html(' ' + response.count + ' ');
-							html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
-						});
-						html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
-						$('#request').html(html);
-					}
-				});
+							$.each(datar, function (j, jtem) {
+								var d = jtem.CreateDate;
+								var re = /-?\d+/;
+								var m = re.exec(d);
+								var date = new Date(parseInt(m[0]));
+								var formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+								var hours = (date.getHours() < 10) ? "0" + date.getHours() : date.getHours();
+								var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
+								var formattedTime = hours + ":" + minutes;
+								formattedDate = formattedTime + "-" + formattedDate;
+								html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
+							});
+							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
+							$('#request').html(html);
+						}
+					});
+				}
 			}
-		}
-		request.init();
-	}, 1000);
-	
+			request.init();
+		}, 1000);
 
-</script>
+
+	</script>
 
 	<script>
 		setInterval(function () {
@@ -256,6 +138,7 @@
 						success: function (response) {
 							var data = response.data;
 							var html = '';
+							$('#soluongf').html(' ' + response.count + ' ');
 							$.each(data, function (i, item) {
 								var d = item.CreateDate;
 								var re = /-?\d+/;
@@ -266,7 +149,6 @@
 								var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 								var formattedTime = hours + ":" + minutes;
 								formattedDate = formattedTime + "-" + formattedDate;
-								$('#soluongf').html(' ' + response.count + ' ');
 								html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + formattedDate + '</em></span></div><div>' + item.Description + '</div></a></li>';
 							});
 							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
@@ -274,12 +156,12 @@
 						}
 					});
 				}
+
 			}
 			feedback.init();
 		}, 1000);
 
 	</script>
-
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();

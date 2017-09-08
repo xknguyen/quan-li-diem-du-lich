@@ -31,5 +31,7 @@ namespace EntityModel.EF
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
 
+		[Column(TypeName = "xml")]
+		public string MoreImages { get; set; }
     }
 }

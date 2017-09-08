@@ -158,6 +158,7 @@
     <Content Include="Content\AdminTheme\data\morris-data.js" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.css" />
     <Content Include="Content\AdminTheme\dist\css\sb-admin-2.min.css" />
+    <Content Include="Content\AdminTheme\dist\css\vinhstyle.css" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
@@ -1269,7 +1270,9 @@
     <Content Include="Scripts\jquery.nicescroll.min.js" />
     <Content Include="Scripts\zoomico.png" />
     <Content Include="Views\Shared\_footer.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

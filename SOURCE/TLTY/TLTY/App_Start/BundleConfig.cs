@@ -40,7 +40,8 @@ namespace TLTY
 					  "~/Content/AdminTheme/vendor/datatables-plugins/dataTables.bootstrap.css",
 					  "~/Content/AdminTheme/vendor/datatables-responsive/dataTables.responsive.css",
 					  "~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css",
-					  "~/Content/AdminTheme/dist/css/sb-admin-2.css"
+					  "~/Content/AdminTheme/dist/css/sb-admin-2.css",
+					   "~/Content/AdminTheme/dist/css/vinhstyle.css"
 					  ));
 
 			bundles.Add(new ScriptBundle("~/bundles/Admin/modernizr").Include(
