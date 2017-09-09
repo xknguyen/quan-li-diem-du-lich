@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<EntityModel.EF.Instruction>
 
 @{
-    ViewBag.Title = "Danh sách giới thiệu";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Danh sách giới thiệu";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
@@ -57,7 +57,7 @@
 		</div>
 		<!-- /.panel-body -->
 		<div class="panel-footer">
-            <h5 style="text-align: right">Hãy chọn hiển thị 100 dữ liệu trên bảng để in đủ dữ liệu <a href="#" id="btnInThongKe"><button class="btn btn-primary"><i class="fa fa-print"></i></button></a> </h5>
+			<h5 style="text-align: right">Hãy chọn hiển thị 100 dữ liệu trên bảng để in đủ dữ liệu <a href="#" id="btnInThongKe"><button class="btn btn-primary"><i class="fa fa-print"></i></button></a> </h5>
 		</div>
 	</div>
 	<!-- /.panel -->
@@ -67,25 +67,18 @@
 	<div class="modal-dialog modal-lg">
 		<!-- Modal content-->
 		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">
-					Quản lý hình ảnh nội dung
-					<p class="fa fa-caret-right"></p>
-					<p class="fa fa-caret-right"></p> <a href="#" title="Thêm mới hình ảnh" style="text-decoration: none;color: #fff" id="btnChooImages">Thêm mới</a>
-				</h4>
-				<input type="hidden" id="instructionID" value="0" />
-			</div>
 			<div class="modal-body">
-				<div id="imageList" style="margin:5px;">
-				</div>
-				<div class="clear">
-				</div>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h3>Danh sách hình ảnh:</h3>
+				<input type="hidden" id="instructionID" value="0" />
+				<div id="imageList" style="margin: 5px;float: left"></div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-success" id="btnSaveImages">Lưu</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				<hr />
+				<div class="form-actions no-color text-center">
+					<a href="#" class="btn btn-info" title="Thêm mới hình ảnh" style="text-decoration: none" id="btnChooImages"><i class="fa fa-plus"></i> Thêm ảnh</a>
+					<button type="button" class="btn btn-success" id="btnSaveImages"><i class="fa fa-save"></i> Lưu</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
+				</div>
 			</div>
 		</div>
 	</div>

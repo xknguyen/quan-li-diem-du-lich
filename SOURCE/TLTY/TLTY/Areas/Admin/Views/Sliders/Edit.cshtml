@@ -68,7 +68,7 @@
 										@Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
 									</div>
 									<div class="col-md-3">
-										<input type="button" id="Browse" value="Chọn ảnh" class="btn btn-primary" />
+										<button type="button" id="Browse" class="btn btn-primary"><i class="fa fa-picture-o"></i> Thêm ảnh</button>
 										<script>
 											$('#Browse').click(function () {
 												var finder = new CKFinder();
@@ -91,8 +91,8 @@
 								<hr/>
 								<div class="form-group">
 									<div class="form-actions no-color text-center">
-										<input type="submit" value="Thay đổi" class="btn btn-success"/>
-										<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+										<button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Thay đổi</button>
+										<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
 									</div>
 								</div>
 							</div>

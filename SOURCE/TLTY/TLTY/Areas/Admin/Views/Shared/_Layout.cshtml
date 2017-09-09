@@ -115,7 +115,7 @@
 								var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 								var formattedTime = hours + ":" + minutes;
 								formattedDate = formattedTime + "-" + formattedDate;
-								html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
+								html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment-o fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
 							});
 							html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
 							$('#request').html(html);
