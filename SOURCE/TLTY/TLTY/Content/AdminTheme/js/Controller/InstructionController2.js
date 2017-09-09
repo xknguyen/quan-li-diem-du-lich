@@ -74,9 +74,8 @@
 					$('.btn-delImage').off('click').on('click', function (e) {
 						e.preventDefault();
 						$(this).parent().remove();
-
 					});
-				} else {
+				} else{
 					html += '<div style="float:left;"><h3>Không có hình! Xin hãy thêm hình mới.</h3></div>';
 					$('#imageList').html(html);
 				}

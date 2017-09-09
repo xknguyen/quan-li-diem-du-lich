@@ -18,18 +18,10 @@ namespace TLTY.Controllers
 			ViewBag.Title = ConfigurationManager.AppSettings["HomeTitle"];
 			ViewBag.Keywords = ConfigurationManager.AppSettings["HomeKeyword"];
 			ViewBag.Descriptions = ConfigurationManager.AppSettings["HomeDescription"];
-			//ViewBag.Instructions = _db.Instructions.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(8).ToList();
-			return View();
+			var intruction = _db.Instructions.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(8).ToList();
+			return View(intruction);
 		}
 
-		[WebMethod]
-		public static void ChangeTheme(string nameThemes)
-		{
-			HttpCookie themePage = new HttpCookie("themePage", nameThemes);
-			themePage.Expires = DateTime.Now.AddMonths(1);
-			//var response = HttpContext.Current.Response;
-			//response.Cookies.Add(themePage);
-		}
 
 	}
 }

@@ -17,6 +17,10 @@
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
+	<style>.panel {
+	 z-index: 1002;
+	 position: inherit;
+ }</style>
 </head>
 <body class="body-content">
 	<div id="wrapper" style="background: #e280fc linear-gradient(55.93deg,#ffbeff 0%,#ddd 100%)">
@@ -90,6 +94,7 @@
 			var request = {
 				init: function () {
 					request.loadrequest();
+					request.loadfeedback();
 				},
 				loadrequest: function () {
 					$.ajax({
@@ -116,19 +121,6 @@
 							$('#request').html(html);
 						}
 					});
-				}
-			}
-			request.init();
-		}, 1000);
-
-
-	</script>
-
-	<script>
-		setInterval(function () {
-			var feedback = {
-				init: function () {
-					feedback.loadfeedback();
 				},
 				loadfeedback: function () {
 					$.ajax({
@@ -156,15 +148,17 @@
 						}
 					});
 				}
-
 			}
-			feedback.init();
+			request.init();
 		}, 1000);
 
+
 	</script>
+
 	<script>
 		$(document).ready(function () {
 			$("html").niceScroll();
+			$(".panel-primary").niceScroll({ cursorborder: "", cursorcolor: "#00F", boxzoom: true });
 		});
 	</script>
 	@RenderSection("scripts", required: false)
