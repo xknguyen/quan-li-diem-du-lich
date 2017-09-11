@@ -11,6 +11,14 @@
 	@Styles.Render("~/Content/css")
 	@Styles.Render("~/Content/css" + 2)
 	@Scripts.Render("~/bundles/modernizr")
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<style>
+		* {
+			font-family: 'Lobster', cursive;
+			line-height: 1.65;
+		}
+	</style>
+
 </head>
 <body>
 	@Html.Partial("_header")
@@ -30,7 +38,25 @@
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")
 
-
+    <script type="text/javascript">
+        $(function () {
+            $('.aChangeTheme').click(function () {
+                var themeName = $(this).attr('title');
+                $.ajax({
+                    type: "POST",
+                    url: "Home/Index",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{'nameThemes': '" + themeName + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        alert('ok!');
+                        location.reload();
+                    }//,
+                    //error: function () { alert('False!'); }
+                });
+            });
+        });
+    </script>
 
 
 	<script type="text/javascript">
@@ -93,9 +119,9 @@
 		});
 	</script>
 	<script>
-	$(document).ready(function () {
-		$("html").niceScroll();
-	});
+		$(document).ready(function () {
+			$("html").niceScroll();
+		});
 	</script>
 	@RenderSection("scripts", required: false)
 </body>

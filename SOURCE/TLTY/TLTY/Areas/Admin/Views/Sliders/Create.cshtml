@@ -58,7 +58,7 @@
 							<div class="col-md-4">
 								<div class="form-group">
 									<div class="col-md-9">
-										<input type="text" class="form-control" value="" id="Link" name="Avatar" disabled placeholder="Đường dẫn hình" />
+										@Html.TextBoxFor(model => model.Link, new { @class = "form-control", placeholder = "Đường dẫn hình" })
 										@Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
 									</div>
 									<div class="col-md-3">

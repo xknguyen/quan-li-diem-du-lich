@@ -1,133 +1,149 @@
 ﻿@model List<EntityModel.EF.Instruction>
 @using System.Xml.Linq
 @{
-	ViewBag.Title = "Giới thiệu";
-	Layout = "~/Views/Shared/_Layout" + 1 + ".cshtml";
-	
+    if (ViewBag.Views !=null)
+    {
+        int view = ViewBag.Views;
+        if (view > 1)
+        {
+            Layout = "~/Views/Shared/_Layout" + 2 + ".cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout" + 1 + ".cshtml";
+        }
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout" + 1 + ".cshtml";
+    }
+
+    ViewBag.Title = "Giới thiệu";
+
+
 }
 @Html.Partial("_menu")
 <div class="col-lg-12 baiviet">
-	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a></p>
+    <p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a></p>
 </div>
 @if (Model != null)
 {
-	foreach (var item in Model)
-	{
-		<div class="col-lg-12 baiviet">
-			<div class="col-md-8 col-md-offset-2 chitiet">
-				<h1>@item.Name</h1>
-				<img src="@item.Images" class="img-responsive">
-				@Html.Raw(item.Detail)
-			</div>
-			<div class="clearfix"></div>
-			@if (item.MoreImages != null)
-			{
-				int i = 0;
-				int j = 0;
-				<div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
-					<div class="row baiviet">
-						<div class="col-md-12 chitiet">
-							<h1 style="color: #fff">Hình ảnh về khu du lịch</h1>
-						</div>
-						<div class="col-sm-6" id="slider-thumbs">
-							<!-- Bottom switcher of slider -->
-							<ul class="hide-bullets">
-								@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
-								{
-									<li class="col-sm-3">
-										<a class="thumbnail" id="@item.ID-hinh-@i"><img src="@itemimage.Value" alt="@itemimage.Name"></a>
-									</li>
-									i++;
-								}
-							</ul>
-						</div>
-						<div class="col-sm-6">
-							<div class="col-xs-12" id="slider">
-								<!-- Top part of the slider -->
-								<div class="row">
-									<div class="col-sm-12" id="carousel-bounding-box">
-										<div class="carousel slide" id="mySlider-@item.ID">
-											<!-- Carousel items -->
-											<div class="carousel-inner">
-												@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
-												{
-													string hiteam = "item";
-													if (j == 0)
-													{
-														hiteam = "active item";
-													}
-													<div class="@hiteam" data-slide-number="@j">
-														<img src="@itemimage.Value" alt="@itemimage.Name">
-													</div>
-													j++;
-												}
-											</div>
-											<!-- Carousel nav -->
-											<a class="left carousel-control" href="#mySlider-@item.ID" role="button" data-slide="prev">
-												<span class="glyphicon glyphicon-chevron-left"></span>
-											</a>
-											<a class="right carousel-control" href="#mySlider-@item.ID" role="button" data-slide="next">
-												<span class="glyphicon glyphicon-chevron-right"></span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			}
-		</div>
-	}
-	@section scripts{
-		@foreach (var itemcs in Model)
-		{
-			if (itemcs.MoreImages != null)
-			{
-				int i = 0;
-				foreach (XElement itemimage in XElement.Parse(itemcs.MoreImages).Elements())
-				{
-					i++;
-					<script>
-						jQuery(document).ready(function($) {
+    foreach (var item in Model)
+    {
+        <div class="col-lg-12 baiviet">
+            <div class="col-md-8 col-md-offset-2 chitiet">
+                <h1>@item.Name</h1>
+                <img src="@item.Images" class="img-responsive">
+                @Html.Raw(item.Detail)
+            </div>
+            <div class="clearfix"></div>
+            @if (item.MoreImages != null && item.MoreImages != "<Images />")
+            {
+                int i = 0;
+                int j = 0;
+                <div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
+                    <div class="row baiviet">
+                        <div class="col-md-12 chitiet">
+                            <h1 style="color: #fff">Hình ảnh về khu du lịch</h1>
+                        </div>
+                        <div class="col-sm-6" id="slider-thumbs">
+                            <!-- Bottom switcher of slider -->
+                            <ul class="hide-bullets">
+                                @foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+                                {
+                                    <li class="col-sm-3">
+                                        <a class="thumbnail" id="@item.ID-hinh-@i"><img src="@itemimage.Value" alt="@itemimage.Name"></a>
+                                    </li>
+                                    i++;
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col-xs-12" id="slider">
+                                <!-- Top part of the slider -->
+                                <div class="row">
+                                    <div class="col-sm-12" id="carousel-bounding-box">
+                                        <div class="carousel slide" id="mySlider-@item.ID">
+                                            <!-- Carousel items -->
+                                            <div class="carousel-inner">
+                                                @foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+                                                {
+                                                    string hiteam = "item";
+                                                    if (j == 0)
+                                                    {
+                                                        hiteam = "active item";
+                                                    }
+                                                    <div class="@hiteam" data-slide-number="@j">
+                                                        <img src="@itemimage.Value" alt="@itemimage.Name">
+                                                    </div>
+                                                    j++;
+                                                }
+                                            </div>
+                                            <!-- Carousel nav -->
+                                            <a class="left carousel-control" href="#mySlider-@item.ID" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#mySlider-@item.ID" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>}
+        </div>
+    }
+    @section scripts{
+        @foreach (var itemcs in Model)
+        {
+            if (itemcs.MoreImages != null)
+            {
+                int i = 0;
+                foreach (XElement itemimage in XElement.Parse(itemcs.MoreImages).Elements())
+                {
+                    i++;
+                    <script>
+                        jQuery(document).ready(function($) {
 
-							$('#mySlider-' + @itemcs.ID).carousel({
-								interval: 5000
-							});
+                            $('#mySlider-' + @itemcs.ID).carousel({
+                                interval: 5000
+                            });
 
-							//Handles the carousel thumbnails
-							//
-							$('[id^='+@itemcs.ID+'-hinh-]').click(function() {
-								var idSelector = $(this).attr("id");
-								try {
-									var id = /-(\d+)$/.exec(idSelector)[1];
-									console.log(idSelector, id);
-									jQuery('#mySlider-' + @itemcs.ID).carousel(parseInt(id));
-								} catch (e) {
-									console.log('Regex failed!', e);
-								}
-							});
-							// When the carousel slides, auto update the text
-							$('#mySlider-' + @itemcs.ID).on('slid.bs.carousel', function(e) {
-								var id = $('.item.active').data('slide-number');
-								$('#carousel-text').html($('#slide-content-' + id).html());
-							});
-						});
-					</script>
-				}
-			}
+                            //Handles the carousel thumbnails
+                            //
+                            $('[id^='+@itemcs.ID+'-hinh-]').click(function() {
+                                var idSelector = $(this).attr("id");
+                                try {
+                                    var id = /-(\d+)$/.exec(idSelector)[1];
+                                    console.log(idSelector, id);
+                                    jQuery('#mySlider-' + @itemcs.ID).carousel(parseInt(id));
+                                } catch (e) {
+                                    console.log('Regex failed!', e);
+                                }
+                            });
+                            // When the carousel slides, auto update the text
+                            $('#mySlider-' + @itemcs.ID).on('slid.bs.carousel', function(e) {
+                                var id = $('.item.active').data('slide-number');
+                                $('#carousel-text').html($('#slide-content-' + id).html());
+                            });
+                        });
+                    </script>
+                }
+            }
 
-		}
-	}
+        }
+    }
 }
 else
 {
-	<div class="col-lg-12 baiviet">
-		<div class="col-md-8 col-md-offset-2 chitiet">
-			<h1>Thung lung tinh yêu</h1>
-			<img src="~/DATA/images/Instruction/1.png" class="img-responsive">
-			<h2>Đang cập nhật dữ liệu.</h2>
-		</div>
-		<div class="clearfix"></div>
-	</div>
+    <div class="col-lg-12 baiviet">
+        <div class="col-md-8 col-md-offset-2 chitiet">
+            <h1>Thung lung tinh yêu</h1>
+            <img src="~/DATA/images/Instruction/1.png" class="img-responsive">
+            <h2>Đang cập nhật dữ liệu.</h2>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 }

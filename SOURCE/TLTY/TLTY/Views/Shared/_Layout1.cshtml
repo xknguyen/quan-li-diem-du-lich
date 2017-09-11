@@ -1,99 +1,127 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="@ViewBag.Keywords" />
-	<meta name="description" content="@ViewBag.Descriptions" />
-	<title>Thung lũng tình yêu</title>
-	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	@Styles.Render("~/Content/css")
-	@Styles.Render("~/Content/css1")
-	@Scripts.Render("~/bundles/modernizr")
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="description" content="@ViewBag.Descriptions" />
+    <title>Thung lũng tình yêu</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css1")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Lobster', cursive;
+            line-height: 1.65;
+        }
+    </style>
 </head>
 <body>
-	@Html.Partial("_header")
-	<div class="container-fuid top-slider">
-		<div class="container">
-			@Html.Partial("_slider")
-			<div class="row">
-				<div class="clearfix"></div>
-				@RenderBody()
-			</div>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-	<div class="col-lg-12 footer" style="margin-top: 10px;">
-		@Html.Partial("_footer")
-	</div>
-	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/bootstrap")
+    @Html.Partial("_header")
+    <div class="container-fuid top-slider">
+	    <div class="container">
+			@{ Html.RenderAction("Slider", "Home");}
+		   @* @Html.Partial("_slider")*@
+		    <div class="row">
+			    <div class="clearfix"></div>
+			    @RenderBody()
+		    </div>
+	    </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-lg-12 footer" style="margin-top: 10px;">
+        @Html.Partial("_footer")
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        $(function () {
+            $('.aChangeTheme').click(function () {
+                var themeName = $(this).attr('title');
+                $.ajax({
+                    type: "GET",
+                    url: "Home/Index",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{'nameThemes': '" + themeName + "'}",
+                    dataType: "json",
+                    success: function () {
+                        alert('ok!' + data);
+                        location.reload();
+                    }//,
+                    //error: function () { alert('False!'); }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('#menu li').click(function () {
+            $('#menu li.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+    <script>
+        $('#mySlider').carousel({
+            interval: 3500
+        });
 
-	<script type="text/javascript">
-		$('#menu li').click(function () {
-			$('#menu li.active').removeClass('active');
-			$(this).addClass('active');
-		});
-	</script>
-	<script>
-		$('#mySlider').carousel({
-			interval: 3500
-		});
+        // This event fires immediately when the slide instance method is invoked.
+        $('#mySlider').on('slide.bs.carousel', function (e) {
+            var id = $('.item.active').data('slide-number');
 
-		// This event fires immediately when the slide instance method is invoked.
-		$('#mySlider').on('slide.bs.carousel', function (e) {
-			var id = $('.item.active').data('slide-number');
+            // Added a statement to make sure the carousel loops correct
+            if (e.direction == 'right') {
+                id = parseInt(id) - 1;
+                if (id == -1) id = 7;
+            } else {
+                id = parseInt(id) + 1;
+                if (id == $('[id^=carousel-thumb-]').length) id = 0;
+            }
 
-			// Added a statement to make sure the carousel loops correct
-			if (e.direction == 'right') {
-				id = parseInt(id) - 1;
-				if (id == -1) id = 7;
-			} else {
-				id = parseInt(id) + 1;
-				if (id == $('[id^=carousel-thumb-]').length) id = 0;
-			}
+            $('[id^=carousel-thumb-]').removeClass('selected');
+            $('[id=carousel-thumb-' + id + ']').addClass('selected');
+        });
 
-			$('[id^=carousel-thumb-]').removeClass('selected');
-			$('[id=carousel-thumb-' + id + ']').addClass('selected');
-		});
+        // Thumb control
+        $('[id^=carousel-thumb-]').click(function () {
+            var id_selector = $(this).attr("id");
+            var id = id_selector.substr(id_selector.length - 1);
+            id = parseInt(id);
+            $('#mySlider').carousel(id);
+            $('[id^=carousel-thumb-]').removeClass('selected');
+            $(this).addClass('selected');
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".btn-top").hide();
+            if ($(".btn-top").length > 0) {
+                $(window).scroll(function () {
+                    var e = $(window).scrollTop();
+                    if (e > 300) {
+                        $(".btn-top").show();
+                    } else {
+                        $(".btn-top").hide();
+                    }
+                });
+                $(".btn-top").click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("html").niceScroll();
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuPom4WCed3eFjKiUqUuupJ0d_cihHenk&callback=initMap"></script>
 
-		// Thumb control
-		$('[id^=carousel-thumb-]').click(function () {
-			var id_selector = $(this).attr("id");
-			var id = id_selector.substr(id_selector.length - 1);
-			id = parseInt(id);
-			$('#mySlider').carousel(id);
-			$('[id^=carousel-thumb-]').removeClass('selected');
-			$(this).addClass('selected');
-		});
-	</script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".btn-top").hide();
-			if ($(".btn-top").length > 0) {
-				$(window).scroll(function () {
-					var e = $(window).scrollTop();
-					if (e > 300) {
-						$(".btn-top").show();
-					} else {
-						$(".btn-top").hide();
-					}
-				});
-				$(".btn-top").click(function () {
-					$('body,html').animate({
-						scrollTop: 0
-					});
-				});
-			}
-		});
-	</script>
-	<script>
-	$(document).ready(function () {
-		$("html").niceScroll();
-	});
-	</script>
-	@RenderSection("scripts", required: false)
+	
 </body>
 </html>
