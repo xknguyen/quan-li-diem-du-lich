@@ -1,0 +1,77 @@
+﻿@model List<EntityModel.EF.Contact>
+@using TLTY.Areas.Admin.Models
+@{
+	var session = (UserLogin)Session[Constants.USER_SESSION];
+}
+<div class="container">
+	<div class="col-md-12 footer-child">
+		<div class="col-md-6 footer-left">
+			<h4>Thông tin</h4>
+			@if (Model != null || Model.Count > 0)
+			{
+				foreach (var item in Model)
+				{
+					<i class="glyphicon glyphicon-ok"></i><h5>@(item.Address == null ? "03-05-07, Mai Anh Đào, Phường 8, TP.Đà Lạt" : "@item.Address")</h5>
+					<i class="glyphicon glyphicon-phone-alt"></i><h5>@(item.Phone == "" ? "0623.3821448 - 0623.3553737" : "@item.Phone")</h5>
+					<i class="glyphicon glyphicon-envelope"></i><h5>@(item.Email == "" ? "info@tinhyeumongmo.vn" : "@item.Email")</h5>
+					<i class="glyphicon glyphicon-globe"></i><h5>http://tinhyeumongmo.vn/</h5>
+					<i class="glyphicon glyphicon-user"></i>
+					<a href="/Admin" style="text-decoration: none; color: #fff"><h5><i class="fa fa-user fa-fw"></i>@(session != null ? "Xin chào: @session.LastName @session.FristName" : "Quản trị")</h5></a>
+				}
+			}
+			@if (Model == null || Model.Count == 0)
+			{
+				<i class="glyphicon glyphicon-ok"></i><h5>03-05-07, Mai Anh Đào, Phường 8, TP.Đà Lạt</h5>
+				<i class="glyphicon glyphicon-phone-alt"></i><h5>0623.3821448 - 0623.3553737</h5>
+				<i class="glyphicon glyphicon-envelope"></i><h5>info@tinhyeumongmo.vn</h5>
+				<i class="glyphicon glyphicon-globe"></i><h5>http://tinhyeumongmo.vn/</h5>
+				<i class="glyphicon glyphicon-user"></i>
+				<a href="/Admin" style="text-decoration: none; color: #fff"><h5><i class="fa fa-user fa-fw"></i>@(session != null ? "Xin chào: @session.LastName @session.FristName" : "Quản trị")</h5></a>
+
+			}
+			<div class="clearfix"></div>
+		</div>
+		<div class="col-md-6 footer-right">
+			<h4>Bản đồ</h4>
+			<div class="map" id="mapCanvas"></div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="container coppy">
+		<h5>Design by Nhóm 3</h5>
+		<a class="btn-top" href="javascript:void(0);" title="Nhấn để về đầu trang!" style="display: inline;"></a>
+	</div>
+</div>
+@section jsFooter{
+	<script>
+
+		// This example displays a marker at the center of Australia.
+		// When the user clicks the marker, an info window opens.
+		//21.046300, 105.793266
+		function initMap() {
+			var uluru = new google.maps.LatLng(11.952062, 108.4461263);
+			var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+				zoom: 17,
+				center: uluru
+			});
+
+			var contentString = 'Đà lạt';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+				title: 'Địa chỉ'
+			});
+			marker.addListener('click', function () {
+				infowindow.open(map, marker);
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+}
+

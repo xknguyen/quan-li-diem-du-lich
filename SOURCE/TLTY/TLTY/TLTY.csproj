@@ -163,6 +163,7 @@
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\dist\js\sb-admin-2.min.js" />
     <Content Include="Content\AdminTheme\js\ChangeImages.js" />
+    <Content Include="Content\AdminTheme\js\Controller\FeedbackMessenger.js" />
     <Content Include="Content\AdminTheme\js\Controller\GroupPathController.js" />
     <Content Include="Content\AdminTheme\js\Controller\SliderController.js" />
     <Content Include="Content\AdminTheme\js\Controller\PathController.js" />
@@ -183,6 +184,7 @@
     <Content Include="Content\AdminTheme\js\create-modal.js" />
     <Content Include="Content\AdminTheme\js\detail-modal.js" />
     <Content Include="Content\AdminTheme\js\Mayin.js" />
+    <Content Include="Content\AdminTheme\js\Messenger.js" />
     <Content Include="Content\AdminTheme\js\sb-admin-2.js" />
     <Content Include="Content\AdminTheme\tool\ckeditor\adapters\jquery.js" />
     <Content Include="Content\AdminTheme\tool\ckeditor\build-config.js" />
@@ -1359,6 +1361,7 @@
     <Content Include="Views\Express\Details.cshtml" />
     <None Include="Properties\PublishProfiles\TLTY.pubxml" />
     <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Home\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">

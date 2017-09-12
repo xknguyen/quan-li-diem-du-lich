@@ -60,13 +60,15 @@ namespace TLTY
 						"~/Scripts/Alert.js",
 						"~/Content/AdminTheme/js/Mayin.js",
 						"~/Content/AdminTheme/js/create-modal.js",
-					  "~/Content/AdminTheme/js/detail-modal.js",
-					  "~/Content/AdminTheme/js/change-modal.js",
-					  "~/Content/AdminTheme/js/edit-modal.js",
-					  "~/Content/AdminTheme/js/delete-modal.js",
-					  "~/Content/AdminTheme/js/ChangeImages.js",
-					  "~/Scripts/jquery.nicescroll.min.js"
-				));
+						"~/Content/AdminTheme/js/detail-modal.js",
+						"~/Content/AdminTheme/js/change-modal.js",
+						"~/Content/AdminTheme/js/edit-modal.js",
+						"~/Content/AdminTheme/js/delete-modal.js",
+						"~/Content/AdminTheme/js/ChangeImages.js",
+						"~/Content/AdminTheme/js/Messenger.js",
+						"~/Content/AdminTheme/js/Controller/FeedbackMessenger.js",
+							  "~/Scripts/jquery.nicescroll.min.js"
+						));
 
 			BundleTable.EnableOptimizations = true;
 		}

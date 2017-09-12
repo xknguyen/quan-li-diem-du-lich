@@ -66,5 +66,11 @@ namespace TLTY.Controllers
 			return PartialView(slider);
 		}
 
+		public PartialViewResult Footer()
+		{
+			var footer = _db.Contacts.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(1).ToList();
+			return PartialView(footer);
+		}
+
     }
 }

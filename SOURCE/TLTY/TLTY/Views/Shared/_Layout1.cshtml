@@ -24,7 +24,6 @@
     <div class="container-fuid top-slider">
 	    <div class="container">
 			@{ Html.RenderAction("Slider", "Home");}
-		   @* @Html.Partial("_slider")*@
 		    <div class="row">
 			    <div class="clearfix"></div>
 			    @RenderBody()
@@ -33,7 +32,7 @@
     </div>
     <div class="clearfix"></div>
     <div class="col-lg-12 footer" style="margin-top: 10px;">
-        @Html.Partial("_footer")
+        @{ Html.RenderAction("Footer", "Home");}
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -66,12 +65,8 @@
         $('#mySlider').carousel({
             interval: 3500
         });
-
-        // This event fires immediately when the slide instance method is invoked.
         $('#mySlider').on('slide.bs.carousel', function (e) {
             var id = $('.item.active').data('slide-number');
-
-            // Added a statement to make sure the carousel loops correct
             if (e.direction == 'right') {
                 id = parseInt(id) - 1;
                 if (id == -1) id = 7;
@@ -79,12 +74,10 @@
                 id = parseInt(id) + 1;
                 if (id == $('[id^=carousel-thumb-]').length) id = 0;
             }
-
             $('[id^=carousel-thumb-]').removeClass('selected');
             $('[id=carousel-thumb-' + id + ']').addClass('selected');
         });
 
-        // Thumb control
         $('[id^=carousel-thumb-]').click(function () {
             var id_selector = $(this).attr("id");
             var id = id_selector.substr(id_selector.length - 1);
@@ -121,7 +114,7 @@
     </script>
     @RenderSection("scripts", required: false)
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuPom4WCed3eFjKiUqUuupJ0d_cihHenk&callback=initMap"></script>
-
+	@RenderSection("jsFooter", required: false)
 	
 </body>
 </html>
