@@ -27,10 +27,10 @@ namespace TLTY
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
 					  "~/Content/ClientTheme/css/icon.css"));
-			bundles.Add(new StyleBundle("~/Content/css1").Include(
-					  "~/Content/ClientTheme/css/quanstyle.css"));
-			bundles.Add(new StyleBundle("~/Content/css2").Include(
-					  "~/Content/ClientTheme/css/giangstyle.css"));
+			//bundles.Add(new StyleBundle("~/Content/css1").Include(
+				//	  "~/Content/ClientTheme/css/quanstyle.css"));
+			//bundles.Add(new StyleBundle("~/Content/css2").Include(
+				//	  "~/Content/ClientTheme/css/giangstyle.css"));
 
 			//admin
 

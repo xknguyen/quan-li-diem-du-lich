@@ -9,8 +9,9 @@
 	<title>Thung lũng tình yêu</title>
 	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	@Styles.Render("~/Content/css")
-	@Styles.Render("~/Content/css" + 2)
 	@Scripts.Render("~/bundles/modernizr")
+	<link rel="stylesheet" type="text/css" title="theme1" href="~/Content/ClientTheme/css/theme1/main.css">
+	<link rel="alternate stylesheet" type="text/css" title="theme2" href="~/Content/ClientTheme/css/theme2/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<style>
 		* {
@@ -18,13 +19,12 @@
 			line-height: 1.65;
 		}
 	</style>
-
 </head>
-<body>
+<body onload="set_style_from_cookie()">
 	@Html.Partial("_header")
 	<div class="container-fuid top-slider">
 		<div class="container">
-			@Html.Partial("_slider")
+			@{ Html.RenderAction("Slider", "Home");}
 			<div class="row">
 				<div class="clearfix"></div>
 				@RenderBody()
@@ -32,49 +32,72 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<div class="col-lg-12 footer">
-		@Html.Partial("_footer")
+	<div class="col-lg-12 footer" style="margin-top: 10px;">
+		@{ Html.RenderAction("Footer", "Home");}
 	</div>
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")
 
-    <script type="text/javascript">
-        $(function () {
-            $('.aChangeTheme').click(function () {
-                var themeName = $(this).attr('title');
-                $.ajax({
-                    type: "POST",
-                    url: "Home/Index",
-                    contentType: "application/json; charset=utf-8",
-                    data: "{'nameThemes': '" + themeName + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                        alert('ok!');
-                        location.reload();
-                    }//,
-                    //error: function () { alert('False!'); }
-                });
-            });
-        });
-    </script>
+	<script>
+		var style_cookie_name = "style";
+		var style_cookie_duration = 30;
+		var style_domain = "thesitewizard.com";
 
-
+		function switch_style(css_title) {
+			var i, link_tag;
+			for (i = 0, link_tag = document.getElementsByTagName("link") ;
+			  i < link_tag.length ; i++) {
+				if ((link_tag[i].rel.indexOf("stylesheet") != -1) &&
+				  link_tag[i].title) {
+					link_tag[i].disabled = true;
+					if (link_tag[i].title == css_title) {
+						link_tag[i].disabled = false;
+					}
+				}
+				set_cookie(style_cookie_name, css_title,
+				  style_cookie_duration, style_domain);
+			}
+		}
+		function set_style_from_cookie() {
+			var css_title = get_cookie(style_cookie_name);
+			if (css_title.length) {
+				switch_style(css_title);
+			}
+		}
+		function set_cookie(cookie_name, cookie_value,
+			lifespan_in_days, valid_domain) {
+			var domain_string = valid_domain ?
+							   ("; domain=" + valid_domain) : '';
+			document.cookie = cookie_name +
+							   "=" + encodeURIComponent(cookie_value) +
+							   "; max-age=" + 60 * 60 *
+							   24 * lifespan_in_days +
+							   "; path=/" + domain_string;
+		}
+		function get_cookie(cookie_name) {
+			var cookie_string = document.cookie;
+			if (cookie_string.length != 0) {
+				var cookie_value = cookie_string.match(
+								'(^|;)[\s]*' +
+								cookie_name +
+								'=([^;]*)');
+				return decodeURIComponent(cookie_value[2]);
+			}
+			return '';
+		}
+	</script>
 	<script type="text/javascript">
 		$('#menu li').click(function () {
 			$('#menu li.active').removeClass('active');
 			$(this).addClass('active');
 		});
 	</script>
-	<script type="text/javascript">
+	<script>
 		$('#mySlider').carousel({
 			interval: 3500
 		});
-
-		// This event fires immediately when the slide instance method is invoked.
 		$('#mySlider').on('slide.bs.carousel', function (e) {
 			var id = $('.item.active').data('slide-number');
-
-			// Added a statement to make sure the carousel loops correct
 			if (e.direction == 'right') {
 				id = parseInt(id) - 1;
 				if (id == -1) id = 7;
@@ -82,12 +105,10 @@
 				id = parseInt(id) + 1;
 				if (id == $('[id^=carousel-thumb-]').length) id = 0;
 			}
-
 			$('[id^=carousel-thumb-]').removeClass('selected');
 			$('[id=carousel-thumb-' + id + ']').addClass('selected');
 		});
 
-		// Thumb control
 		$('[id^=carousel-thumb-]').click(function () {
 			var id_selector = $(this).attr("id");
 			var id = id_selector.substr(id_selector.length - 1);
@@ -97,7 +118,6 @@
 			$(this).addClass('selected');
 		});
 	</script>
-
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".btn-top").hide();
@@ -124,5 +144,6 @@
 		});
 	</script>
 	@RenderSection("scripts", required: false)
+
 </body>
 </html>

@@ -1158,10 +1158,10 @@
     <Content Include="Content\ClientTheme\css\bootstrap.css" />
     <Content Include="Content\ClientTheme\css\bootstrap.min.css" />
     <Content Include="Content\ClientTheme\css\font-awesome.min.css" />
-    <Content Include="Content\ClientTheme\css\giangstyle.css" />
+    <Content Include="Content\ClientTheme\css\theme2\main.css" />
     <Content Include="Content\ClientTheme\css\jgallery.css" />
     <Content Include="Content\ClientTheme\css\jgallery.min.css" />
-    <Content Include="Content\ClientTheme\css\quanstyle.css" />
+    <Content Include="Content\ClientTheme\css\theme1\main.css" />
     <Content Include="Content\ClientTheme\icon\contact.png" />
     <Content Include="Content\ClientTheme\icon\express.png" />
     <Content Include="Content\ClientTheme\icon\instruction.png" />
@@ -1196,10 +1196,14 @@
     <Content Include="DATA\images\Avatar\3sKVHO28.png" />
     <Content Include="DATA\images\Instruction\1.png" />
     <Content Include="DATA\images\Logo\logo.png" />
+    <Content Include="DATA\images\Slider\1.jpg" />
+    <Content Include="DATA\images\Slider\2.jpg" />
+    <Content Include="DATA\images\Slider\3.jpg" />
+    <Content Include="DATA\images\Slider\4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="image\to-top.png" />
+    <Content Include="Content\ClientTheme\css\image\to-top.png" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\AdminTheme\less\mixins.less" />
     <Content Include="Content\AdminTheme\less\sb-admin-2.less" />
@@ -1272,7 +1276,6 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.nicescroll.min.js" />
     <Content Include="Scripts\zoomico.png" />
-    <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1285,10 +1288,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
-    <Content Include="Views\Shared\_slider.cshtml" />
     <Content Include="Views\Shared\_menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -1352,7 +1354,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Areas\Admin\Views\Home\NotificationAuthorize.cshtml" />
-    <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
     <Content Include="Views\Tickers\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
