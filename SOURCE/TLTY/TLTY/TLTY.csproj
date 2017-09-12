@@ -1272,6 +1272,7 @@
     <Content Include="Content\ClientTheme\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\ClientTheme\css\bootstrap.css.map" />
     <Content Include="Content\ClientTheme\css\bootstrap.min.css.map" />
+    <Content Include="images\loader.gif" />
     <Content Include="Scripts\Alert.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.nicescroll.min.js" />

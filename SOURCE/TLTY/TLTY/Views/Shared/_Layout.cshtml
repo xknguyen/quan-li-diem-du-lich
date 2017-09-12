@@ -19,8 +19,35 @@
 			line-height: 1.65;
 		}
 	</style>
+	<script>
+		$(window).load(function () {
+			$('#dvLoading').fadeOut(2000);
+		});
+	</script>
+
 </head>
-<body onload="set_style_from_cookie()">
+<body onload=" set_style_from_cookie(); init();">
+	<div id="loading" style="position:absolute; width:100%; text-align:center; top:250px;">
+		Đang nạp trang. Vui lòng đợi giây lát!<br />
+		<img src="/images/loader.gif">
+	</div>
+	<script>
+		var ld = (document.all);
+		var ns4 = document.layers;
+		var ns6 = document.getElementById && !document.all;
+		var ie4 = document.all;
+		if (ns4)
+			ld = document.loading;
+		else if (ns6)
+			ld = document.getElementById("loading").style;
+		else if (ie4)
+			ld = document.all.loading.style;
+		function init() {
+			if (ns4) { ld.visibility = "hidden"; }
+			else if (ns6 || ie4) ld.display = "none";
+		}
+	</script>
+
 	@Html.Partial("_header")
 	<div class="container-fuid top-slider">
 		<div class="container">
@@ -39,49 +66,50 @@
 	@Scripts.Render("~/bundles/bootstrap")
 
 	<script>
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i].trim();
+				if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+			}
+			return "";
+		}
+
 		var style_cookie_name = "style";
 		var style_cookie_duration = 30;
-		var style_domain = "thesitewizard.com";
 
-		function switch_style(css_title) {
-			var i, link_tag;
-			for (i = 0, link_tag = document.getElementsByTagName("link") ;
-			  i < link_tag.length ; i++) {
-				if ((link_tag[i].rel.indexOf("stylesheet") != -1) &&
-				  link_tag[i].title) {
-					link_tag[i].disabled = true;
-					if (link_tag[i].title == css_title) {
-						link_tag[i].disabled = false;
+		function switch_style(cssTitle) {
+			var i, linkTag;
+			for (i = 0, linkTag = document.getElementsByTagName("link") ; i < linkTag.length; i++) {
+				if ((linkTag[i].rel.indexOf("stylesheet") !== -1) && linkTag[i].title) {
+					linkTag[i].disabled = true;
+					if (linkTag[i].title === cssTitle) {
+						linkTag[i].disabled = false;
 					}
 				}
-				set_cookie(style_cookie_name, css_title,
-				  style_cookie_duration, style_domain);
+				set_cookie(style_cookie_name, cssTitle, style_cookie_duration);
 			}
 		}
+
 		function set_style_from_cookie() {
-			var css_title = get_cookie(style_cookie_name);
-			if (css_title.length) {
-				switch_style(css_title);
+			var cssTitle = getCookie(style_cookie_name);
+			if (cssTitle.length) {
+				switch_style(cssTitle);
+				//alert('Đang chọn ' + cssTitle);
 			}
 		}
-		function set_cookie(cookie_name, cookie_value,
-			lifespan_in_days, valid_domain) {
-			var domain_string = valid_domain ?
-							   ("; domain=" + valid_domain) : '';
-			document.cookie = cookie_name +
-							   "=" + encodeURIComponent(cookie_value) +
-							   "; max-age=" + 60 * 60 *
-							   24 * lifespan_in_days +
-							   "; path=/" + domain_string;
+
+		function set_cookie(cookieName, cookieValue, lifespanInDays) {
+			document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + "; max-age=" + 60 * 60 * 24 * lifespanInDays + "; path=/";
 		}
-		function get_cookie(cookie_name) {
-			var cookie_string = document.cookie;
-			if (cookie_string.length != 0) {
-				var cookie_value = cookie_string.match(
-								'(^|;)[\s]*' +
-								cookie_name +
-								'=([^;]*)');
-				return decodeURIComponent(cookie_value[2]);
+
+		function get_cookie(cookieName) {
+			var cookieString = document.cookie;
+			var re = new RegExp("(^|;)[\s]*" + cookieName + "=([^;]*)");
+			if (cookieString.length !== 0) {
+				var cookieValue = cookieString.match(re);
+				return decodeURIComponent(cookieValue[2]);
 			}
 			return '';
 		}
@@ -98,20 +126,20 @@
 		});
 		$('#mySlider').on('slide.bs.carousel', function (e) {
 			var id = $('.item.active').data('slide-number');
-			if (e.direction == 'right') {
+			if (e.direction === 'right') {
 				id = parseInt(id) - 1;
-				if (id == -1) id = 7;
+				if (id === -1) id = 7;
 			} else {
 				id = parseInt(id) + 1;
-				if (id == $('[id^=carousel-thumb-]').length) id = 0;
+				if (id === $('[id^=carousel-thumb-]').length) id = 0;
 			}
 			$('[id^=carousel-thumb-]').removeClass('selected');
 			$('[id=carousel-thumb-' + id + ']').addClass('selected');
 		});
 
 		$('[id^=carousel-thumb-]').click(function () {
-			var id_selector = $(this).attr("id");
-			var id = id_selector.substr(id_selector.length - 1);
+			var idSelector = $(this).attr("id");
+			var id = idSelector.substr(idSelector.length - 1);
 			id = parseInt(id);
 			$('#mySlider').carousel(id);
 			$('[id^=carousel-thumb-]').removeClass('selected');
