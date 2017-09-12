@@ -6,7 +6,7 @@
 }
 
 @section header{
-    <h1 class="page-header">Danh sách trình ảnh: <a href="@Url.Action("Create")" title="Tạo mới tài khoản" class="create-link btn btn-primary" style="text-decoration: none; float: right"><i class="fa fa-picture-o"></i> Tạo mới</a></h1>
+    <h1 class="page-header">Danh sách trình ảnh: <a href="@Url.Action("Create")" title="Tạo mới trình ảnh" class="create-link btn btn-primary" style="text-decoration: none; float: right"><i class="fa fa-picture-o"></i> Tạo mới</a></h1>
 }
 <div class="col-lg-12">
     <div class="panel panel-primary">
@@ -48,7 +48,7 @@
                             </td>
                             <td class="center" style="text-align: center;">
 
-                                <a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa nội dung @item.Name" class="edit-link" style="text-decoration: none">
+                                <a href="@Url.Action("Edit", new {@id = item.ID})" title="Sửa trình ảnh @item.Name" class="edit-link" style="text-decoration: none">
                                     <p class="fa fa-edit"></p>
                                 </a>
                                 <a href="@Url.Action("Details", new {@id = item.ID})" title="Xem chi tiết @item.Name" class="detail-link" style="text-decoration: none">
