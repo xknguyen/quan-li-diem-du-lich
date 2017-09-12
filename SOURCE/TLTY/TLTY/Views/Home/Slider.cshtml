@@ -2,7 +2,7 @@
 @{
 	var content = ((List<EntityModel.EF.Content>)ViewBag.Content);
 }
-@if (@Model != null || @Model.Count > 0)
+@if (@Model != null || Model.Count > 0)
 {
 	int i = 0;
 	int j = 0;
@@ -13,28 +13,14 @@
 					<div class="carousel-inner">
 						@foreach (var item in Model)
 						{
-							string cb = "";
-							if (i == 0)
-							{
-								cb = "active";
-							}
-							<div class="@cb item" data-slide-number="@i">
+							<div class="@(i==0?"active":"") item" data-slide-number="@i">
 								<img src="@item.Link">
 								<div class="carousel-caption">
-									@foreach (var ct in content.Where(x => x.ID == @item.ContentID))
+									@foreach (var ct in content.Where(x => x.ID == item.ContentID))
 									{
-										if (ct.Category)
-										{
-											<a href="/tin-tuc/@ct.MetaTitle-@ct.ID">
-												<h3>@item.Name</h3>
-											</a>
-										}
-										else
-										{
-											<a href="/dich-vu/@ct.MetaTitle-@ct.ID">
-												<h3>@item.Name</h3>
-											</a>
-										}
+										<a href="/@(ct.Category ? "tin-tuc" : "dich-vu")/@ct.MetaTitle-@ct.ID">
+											<h3>@item.Name</h3>
+										</a>
 									}
 
 									<p>@item.Description</p>
@@ -62,13 +48,8 @@
 				<ul class="list-inline">
 					@foreach (var item in Model)
 					{
-						string sl = "";
-						if (j == 0)
-						{
-							sl = "selected";
-						}
 						<li>
-							<a id="carousel-thumb-@j" class="@sl">
+							<a id="carousel-thumb-@j" class="@(j == 0 ? "selected" : "")">
 								<img src="@item.Link" style="width: 70px; height: 50px">
 							</a>
 						</li>
