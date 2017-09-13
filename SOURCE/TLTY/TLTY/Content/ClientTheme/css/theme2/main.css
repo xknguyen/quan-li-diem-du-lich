@@ -10,7 +10,6 @@ ul.nav li {
 
 		ul.nav li a:hover {
 			font-size: 15px;
-			border-bottom: 3px solid #06ef2e;
 		}
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -25,7 +24,6 @@ ul.nav li {
 
 ul.nav li.active {
 	font-size: 20px;
-	border-bottom: 3px solid #06ef2e;
 }
 
 .navbar-default .navbar-nav > li.active > a {
@@ -78,9 +76,6 @@ p {
 	width: 100%;
 }
 
-.icon-menu:hover {
-	border-bottom: 3px solid #06ef2e;
-}
 
 .icon-menu img {
 	width: 100px;

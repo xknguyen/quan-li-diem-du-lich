@@ -1201,6 +1201,7 @@
     <Content Include="DATA\images\Slider\3.jpg" />
     <Content Include="DATA\images\Slider\4.jpg" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\ClientTheme\css\image\to-top.png" />
@@ -1361,6 +1362,11 @@
     <Content Include="Views\Express\Index.cshtml" />
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\Express\Details.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\TLTY.pubxml" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Home\Footer.cshtml" />
