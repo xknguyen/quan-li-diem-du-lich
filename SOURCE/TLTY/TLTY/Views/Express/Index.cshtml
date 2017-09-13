@@ -1,4 +1,4 @@
-﻿
+﻿@model List<EntityModel.EF.Content>
 @{
     ViewBag.Title = "Dịch vụ của khu du lịch";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,65 +8,36 @@
 </div>
 <div class="col-md-12 dichvu">
 	<h1>Dịch vụ trong khu du lịch</h1>
-	<img src="/Content/ClientTheme/image/1.png" class="img-responsive">
-	<div class="col-md-4 idichvu">
-		<div class="itdichvu">
-			<a href="/">
-				<img src="/Content/ClientTheme/image/3.png" class="img-responsive">
-			</a>
-			<a href="/" class="thea">
-				<h4>VẬN CHUYỂN TRONG KHU DU LỊCH</h4>
-			</a>
-			<h5>Du khách có thể du ngoạn bằng xe Lửa cổ, xe Jeep, xe Điện. Hành trình tham quan bắt đầu từ trung tâm, đi qua những con đường quanh co rợp bóng mát sẽ đưa du khách đến Cầu khóa Tình yêu, Vòi nước trên không, Phố hoa, tham quan Vườn Ươm, Thung lũng hoa Cẩm Tú Cầu.</h5>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-comment"></i>
-				<h6 style=""> 9</h6>
-			</div>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-user"></i>
-				<h6> Khánh vinh it</h6>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<div class="col-md-4 idichvu">
-		<div class="itdichvu">
-			<a href="/">
-				<img src="/Content/ClientTheme/image/3.png" class="img-responsive">
-			</a>
-			<a href="/" class="thea">
-				<h4>TRÒ CHƠI VẬN ĐỘNG</h4>
-			</a>
-			<h5>Highwire – trò chơi thể thao cảm giác mạnh đã xuất hiện lâu ở các nước châu Âu nhưng vẫn còn lạ lẫm tại Việt Nam.</h5>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-comment"></i>
-				<h6 style=""> 9</h6>
-			</div>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-user"></i>
-				<h6> Khánh vinh it</h6>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<div class="col-md-4 idichvu">
-		<div class="itdichvu">
-			<a href="/">
-				<img src="/Content/ClientTheme/image/3.png" class="img-responsive">
-			</a>
-			<a href="/" class="thea">
-				<h4>CANO – PEDALO</h4>
-			</a>
-			<h5>Đây là dịch vụ vui chơi giải trí hấp dẫn không thể bỏ qua tại Thung lũng Tình yêu. Với mặt hồ rộng thoáng, Quý khách sẽ trải qua những giây phút bồng bềnh trên Cano, Pedalo tham quan một vòng hồ Đa Thiện với khung cảnh thiên nhiên trữ tình, thơ mộng.</h5>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-comment"></i>
-				<h6 style=""> 9</h6>
-			</div>
-			<div class="icondichvu">
-				<i class="glyphicon glyphicon-user"></i>
-				<h6> Khánh vinh it</h6>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+    <img src="/Content/ClientTheme/image/1.png" class="img-responsive">
+    @if (Model != null || Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-md-4 idichvu">
+                <div class="itdichvu">
+                    <a href="/">
+                        <img src="@item.Images" class="img-responsive">
+                    </a>
+                    <a href="/" class="thea">
+                        <h4>@item.Name</h4>
+                    </a>
+                    <h5>@item.Description</h5>
+                    <div class="icondichvu">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        <h6 style=""> @item.ViewCount</h6>
+                    </div>
+                    <div class="icondichvu">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <h6> @item.UserName</h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h3>Đang cập nhật</h3>
+    }
+	
 </div>
