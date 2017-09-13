@@ -252,7 +252,7 @@ namespace TLTY.Areas.Admin.Controllers
 				XElement xImages = XElement.Parse(images);
 				List<string> listImageReturn = new List<string>();
 
-				foreach (XElement item in xImages.Elements())
+				foreach(XElement item in xImages.Elements())
 				{
 					listImageReturn.Add(item.Value);
 				}
@@ -277,8 +277,6 @@ namespace TLTY.Areas.Admin.Controllers
 				var subStringItem = item.Substring(22);
 				xElement.Add(new XElement("Image", subStringItem));
 			}
-
-
 			try
 			{
 				UpdateImages(id, xElement.ToString());
@@ -295,7 +293,6 @@ namespace TLTY.Areas.Admin.Controllers
 					status = false
 				});
 			}
-
 		}
 
 

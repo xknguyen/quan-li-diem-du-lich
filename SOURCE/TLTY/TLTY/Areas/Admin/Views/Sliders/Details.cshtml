@@ -46,7 +46,7 @@
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Content.Name)
+                            @Html.DisplayFor(model => model.ContentID)
                         </dd>
 
 
@@ -88,8 +88,8 @@
 				<div class="col-md-12">
 					<hr />
 					<div class="form-actions no-color text-center">
-						<a href="@Url.Action("Edit", new {@id = Model.ID})" title="Sửa nội dung @Model.Name" class="edit-link"><button class="btn btn-warning">Chỉnh sửa</button></a>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+						<a href="@Url.Action("Edit", new {@id = Model.ID})" title="Sửa trình ảnh @Model.Name" class="edit-link btn btn-warning"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
 					</div>
 				</div>
                 <div class="clearfix"></div>
@@ -101,81 +101,3 @@
 
 <script src="~/Content/AdminTheme/js/edit-modal.js"></script>
 
-
-
-@*<h2>Details</h2>
-
-<div>
-    <h4>Slider</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Content.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DisplayOrder)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DisplayOrder)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Link)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Link)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@

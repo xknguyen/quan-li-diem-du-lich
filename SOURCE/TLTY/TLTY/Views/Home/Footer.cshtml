@@ -1,0 +1,64 @@
+﻿@model List<EntityModel.EF.Contact>
+@using TLTY.Areas.Admin.Models
+@{
+	var session = (UserLogin)Session[Constants.USER_SESSION];
+}
+<div class="container">
+	<div class="col-md-12 footer-child">
+		<div class="col-md-3 footer-left">
+			<h4>Thông tin</h4>
+			@if (Model != null || Model.Count >= 0)
+			{
+				foreach (var item in Model)
+				{
+					<i class="glyphicon glyphicon-ok"></i>
+					<h5>@item.Address</h5>
+					<i class="glyphicon glyphicon-phone-alt"></i>
+					<h5>@item.Phone</h5>
+					<i class="glyphicon glyphicon-envelope"></i>
+					<h5>@item.Email</h5>
+				}
+			}
+			@if (Model == null || Model.Count == 0)
+			{
+				<i class="glyphicon glyphicon-ok"></i><h5>Đang cập nhật</h5>
+				<i class="glyphicon glyphicon-phone-alt"></i><h5>Đang cập nhật</h5>
+				<i class="glyphicon glyphicon-envelope"></i><h5>Đang cập nhật</h5>
+
+			}
+			<i class="glyphicon glyphicon-globe"></i>
+			<a href="/" title="Thung lũng tình yêu"><h5>http://tinhyeumongmo.vn/</h5></a>
+			<i class="glyphicon glyphicon-user"></i>
+			<a href="/Admin" style="text-decoration: none; color: #fff">
+				@if (session != null)
+				{
+					<h5>Xin chào: @session.LastName @session.FristName</h5>
+				}
+				else
+				{
+					<h5>Quản trị</h5>
+				}
+			</a>
+
+			<div class="clearfix"></div>
+		</div>
+		<div class="col-md-3 footer-left">
+			<h4>Menu</h4>
+			<i class="fa fa-caret-right"></i><a href="/" title="Trang giới thiệu"><h5>Giới thiệu</h5></a>
+			<i class="fa fa-caret-right"></i><a href="/dich-vu" title="Trang dịch vụ"><h5>Dịch vụ</h5></a>
+			<i class="fa fa-caret-right"></i><a href="/tin-tuc" title="Trang tin tức"><h5>Tin tức</h5></a>
+			<i class="fa fa-caret-right"></i><a href="/bang-gia" title="Trang bảng giá"><h5>Bảng giá</h5></a>
+			<i class="fa fa-caret-right"></i><a href="/lien-he" title="Trang Liên hệ"><h5>Liên hệ</h5></a>
+		</div>
+			<div class="col-md-6 footer-right">
+				<h4>Bản đồ</h4>
+				<div class="map" id="mapCanvas"></div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<div class="clearfix"></div>
+	<div class="container coppy">
+		<h5>Design by Nhóm 3</h5>
+		<a class="btn-top" href="javascript:void(0);" title="Nhấn để về đầu trang!" style="display: inline;"></a>
+	</div>
+</div>

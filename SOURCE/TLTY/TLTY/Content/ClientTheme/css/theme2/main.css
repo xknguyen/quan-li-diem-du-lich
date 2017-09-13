@@ -10,17 +10,20 @@ ul.nav li {
 
 		ul.nav li a:hover {
 			font-size: 15px;
-			border-bottom: 3px solid #06ef2e;
 		}
 
 .navbar-default .navbar-nav > li > a:hover {
 	color: #06ef2e;
 	font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 20px;
 }
 
 ul.nav li.active {
 	font-size: 20px;
-	border-bottom: 3px solid #06ef2e;
 }
 
 .navbar-default .navbar-nav > li.active > a {
@@ -58,7 +61,11 @@ ul.nav li.active:hover {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 32px;
+}
+
+p {
+    margin: 10px 0 10px;
 }
 
 .gach {
@@ -69,15 +76,12 @@ h1 {
 	width: 100%;
 }
 
-.icon-menu:hover {
-	border-bottom: 3px solid #06ef2e;
-}
 
 .icon-menu img {
 	width: 100px;
 	height: 100px;
 	display: block;
-	margin: 10px 100px;
+	margin: 15px 100px;
 }
 
 .icon-menu .head h4 {
@@ -322,7 +326,6 @@ body {
 	width: 100%;
 }
 
-
 /*Dịch vụ*/
 .dichvu {
 	margin-bottom: 10px;
@@ -391,6 +394,7 @@ body {
 					color: #999;
 					display: inline;
 				}
+
 /*Liên hệ*/
 .lienhe .ilienhe .itlienhe {
 	margin-bottom: 10px;

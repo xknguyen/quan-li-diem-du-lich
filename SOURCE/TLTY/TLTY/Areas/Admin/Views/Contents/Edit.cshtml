@@ -75,11 +75,11 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Hình:</label>
                                 <div class="col-md-8">
-									<input type="text" class="form-control" value="" id="Images" name="Images" disabled placeholder="Đường dẫn hình" />
+									@Html.TextBoxFor(model => model.Images, new { @class = "form-control", placeholder = "Đường dẫn hình" })
                                     @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="button" id="Browse" value="Chọn ảnh" class="btn btn-success" />
+									<button type="button" id="Browse" class="btn btn-primary"><i class="fa fa-picture-o"></i> Thêm ảnh</button>
                                     <script>
                                         $('#Browse').click(function () {
                                             var finder = new CKFinder();
@@ -99,8 +99,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-actions no-color text-center">
-                                    <input type="submit" value="Thay đổi" class="btn btn-success" />
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+									<button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Thay đổi</button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
                                 </div>
                             </div>
                         </div>

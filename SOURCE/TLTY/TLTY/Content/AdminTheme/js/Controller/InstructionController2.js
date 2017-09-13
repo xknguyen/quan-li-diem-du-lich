@@ -3,7 +3,6 @@
 		instruction.registerEvents2();
 	},
 	registerEvents2: function () {
-
 		$('.btn-images').off('click').on('click', function (e) {
 			e.preventDefault();
 			$('#imagesManage').modal('show');
@@ -16,17 +15,13 @@
 			var finder = new CKFinder();
 			finder.selectActionFunction = function (url) {
 				$('#imageList').append('<div class="xoahinh" style="float:left;"><img src="' + url + '" width="100" height="100" /><a href="#" class="btn-delImage" title="Xóa ảnh"><button type="button" class="close">X</button></a></div>');
-
 				$('.btn-delImage').off('click').on('click', function (e) {
 					e.preventDefault();
 					$(this).parent().remove();
-
 				});
-
 			};
 			finder.popup();
 		});
-
 		$('#btnSaveImages').off('click').on('click', function () {
 			var images = [];
 			var id = $('#instructionID').val();//hid
@@ -65,21 +60,16 @@
 			success: function (response) {
 				var data = response.data;
 				var html = '';
-				if (response.data != null) {
+				if (data != null) {
 					$.each(data, function (i, item) {
 						html += '<div style="float:left;"><img src="' + item + '" width="100" height="100" /><a href="#" class="btn-delImage" title="Xóa ảnh"><button type="button" class="close">X</button></a></div>';
 					});
 					$('#imageList').html(html);
-
 					$('.btn-delImage').off('click').on('click', function (e) {
 						e.preventDefault();
 						$(this).parent().remove();
 					});
-				} else{
-					html += '<div style="float:left;"><h3>Không có hình! Xin hãy thêm hình mới.</h3></div>';
-					$('#imageList').html(html);
 				}
-				
 			}
 		});
 	}

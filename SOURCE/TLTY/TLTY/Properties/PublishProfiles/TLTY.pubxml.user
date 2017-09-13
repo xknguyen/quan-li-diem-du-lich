@@ -10,130 +10,130 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/Admin/Views/Accounts/ChangPassword.cshtml">
-      <publishTime>09/06/2017 13:55:50</publishTime>
+      <publishTime>09/10/2017 00:07:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Create.cshtml">
-      <publishTime>09/08/2017 11:37:47</publishTime>
+      <publishTime>09/10/2017 00:29:30</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Delete.cshtml">
-      <publishTime>09/06/2017 13:55:50</publishTime>
+      <publishTime>09/10/2017 00:09:33</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Details.cshtml">
-      <publishTime>09/06/2017 14:04:16</publishTime>
+      <publishTime>09/10/2017 00:08:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Edit.cshtml">
-      <publishTime>09/06/2017 13:55:50</publishTime>
+      <publishTime>09/10/2017 00:31:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Accounts/Index.cshtml">
-      <publishTime>09/08/2017 19:48:08</publishTime>
+      <publishTime>09/08/2017 23:19:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Create.cshtml">
-      <publishTime>09/06/2017 16:03:21</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Delete.cshtml">
-      <publishTime>09/06/2017 16:01:57</publishTime>
+      <publishTime>09/10/2017 00:14:22</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Details.cshtml">
-      <publishTime>09/06/2017 16:01:03</publishTime>
+      <publishTime>09/10/2017 00:13:59</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Edit.cshtml">
-      <publishTime>09/06/2017 15:59:45</publishTime>
+      <publishTime>09/10/2017 00:13:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contacts/Index.cshtml">
       <publishTime>09/07/2017 14:26:10</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Create.cshtml">
-      <publishTime>09/07/2017 16:50:45</publishTime>
+      <publishTime>09/10/2017 00:31:31</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Delete.cshtml">
-      <publishTime>09/06/2017 16:06:51</publishTime>
+      <publishTime>09/10/2017 00:16:09</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Details.cshtml">
-      <publishTime>09/06/2017 16:05:59</publishTime>
+      <publishTime>09/10/2017 00:15:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Edit.cshtml">
-      <publishTime>09/07/2017 16:50:39</publishTime>
+      <publishTime>09/10/2017 00:31:16</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Contents/Index.cshtml">
-      <publishTime>09/07/2017 14:26:10</publishTime>
+      <publishTime>09/12/2017 09:04:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Delete.cshtml">
-      <publishTime>09/06/2017 12:43:24</publishTime>
+      <publishTime>09/10/2017 00:17:04</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Details.cshtml">
-      <publishTime>09/08/2017 09:04:39</publishTime>
+      <publishTime>09/10/2017 00:16:46</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Feedbacks/Index.cshtml">
       <publishTime>09/08/2017 09:20:34</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Home/Index.cshtml">
-      <publishTime>09/08/2017 19:30:01</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Home/NotificationAuthorize.cshtml">
       <publishTime>09/07/2017 15:16:48</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Create.cshtml">
-      <publishTime>09/07/2017 16:48:40</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Delete.cshtml">
-      <publishTime>09/06/2017 12:35:28</publishTime>
+      <publishTime>09/10/2017 00:18:46</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Details.cshtml">
-      <publishTime>09/06/2017 12:34:14</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Edit.cshtml">
-      <publishTime>09/07/2017 16:48:33</publishTime>
+      <publishTime>09/10/2017 00:30:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Instructions/Index.cshtml">
-      <publishTime>09/07/2017 14:26:10</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Login/Index.cshtml">
-      <publishTime>09/07/2017 15:11:18</publishTime>
+      <publishTime>09/09/2017 23:21:41</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Requests/Delete.cshtml">
-      <publishTime>09/06/2017 12:30:33</publishTime>
+      <publishTime>09/10/2017 00:23:05</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Requests/Details.cshtml">
-      <publishTime>09/08/2017 18:55:17</publishTime>
+      <publishTime>09/10/2017 00:22:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Requests/Index.cshtml">
-      <publishTime>09/08/2017 16:16:58</publishTime>
+      <publishTime>09/12/2017 09:04:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/Error.cshtml">
       <publishTime>09/05/2017 15:33:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>09/08/2017 20:55:19</publishTime>
+      <publishTime>09/12/2017 10:22:05</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Nav.cshtml">
-      <publishTime>09/08/2017 19:13:28</publishTime>
+      <publishTime>09/10/2017 00:33:19</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Create.cshtml">
-      <publishTime>09/06/2017 12:25:59</publishTime>
+      <publishTime>09/11/2017 15:44:00</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Delete.cshtml">
-      <publishTime>09/06/2017 12:25:36</publishTime>
+      <publishTime>09/12/2017 09:04:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Details.cshtml">
-      <publishTime>09/06/2017 12:27:35</publishTime>
+      <publishTime>09/12/2017 09:04:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Edit.cshtml">
-      <publishTime>09/06/2017 12:25:49</publishTime>
+      <publishTime>09/11/2017 15:43:48</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Sliders/Index.cshtml">
-      <publishTime>09/08/2017 16:19:04</publishTime>
+      <publishTime>09/12/2017 09:04:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Create.cshtml">
-      <publishTime>09/06/2017 11:04:53</publishTime>
+      <publishTime>09/10/2017 00:20:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Delete.cshtml">
-      <publishTime>09/06/2017 10:59:28</publishTime>
+      <publishTime>09/10/2017 00:20:34</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Details.cshtml">
-      <publishTime>09/06/2017 10:47:12</publishTime>
+      <publishTime>09/10/2017 00:20:10</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Edit.cshtml">
-      <publishTime>09/06/2017 11:04:43</publishTime>
+      <publishTime>09/10/2017 00:19:34</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Tickers/Index.cshtml">
       <publishTime>09/07/2017 14:26:10</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:37</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/08/2017 22:20:43</publishTime>
+      <publishTime>09/12/2017 15:41:28</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/28/2017 07:27:38</publishTime>
@@ -205,7 +205,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 12:55:44</publishTime>
     </File>
     <File Include="Content/AdminTheme/dist/css/vinhstyle.css">
-      <publishTime>09/08/2017 20:56:10</publishTime>
+      <publishTime>09/09/2017 20:03:50</publishTime>
     </File>
     <File Include="Content/AdminTheme/dist/js/sb-admin-2.js">
       <publishTime>08/28/2017 07:27:18</publishTime>
@@ -232,10 +232,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2017 15:43:42</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/Controller/ContentController2.js">
-      <publishTime>09/08/2017 20:29:23</publishTime>
+      <publishTime>09/09/2017 23:41:39</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/Controller/FeedbackController.js">
       <publishTime>09/01/2017 15:43:42</publishTime>
+    </File>
+    <File Include="Content/AdminTheme/js/Controller/FeedbackMessenger.js">
+      <publishTime>09/12/2017 10:19:12</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/Controller/GroupPathController.js">
       <publishTime>09/01/2017 15:43:42</publishTime>
@@ -244,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2017 15:43:42</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/Controller/InstructionController2.js">
-      <publishTime>09/08/2017 20:32:11</publishTime>
+      <publishTime>09/09/2017 23:42:32</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/Controller/PathController.js">
       <publishTime>09/01/2017 15:43:42</publishTime>
@@ -275,6 +278,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/AdminTheme/js/Mayin.js">
       <publishTime>09/08/2017 19:47:07</publishTime>
+    </File>
+    <File Include="Content/AdminTheme/js/Messenger.js">
+      <publishTime>09/12/2017 10:22:10</publishTime>
     </File>
     <File Include="Content/AdminTheme/js/sb-admin-2.js">
       <publishTime>08/28/2017 07:27:18</publishTime>
@@ -3343,7 +3349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:33</publishTime>
     </File>
     <File Include="Content/ClientTheme/css/bootstrap-theme.min.css">
-      <publishTime>08/28/2017 07:27:33</publishTime>
+      <publishTime>09/12/2017 14:24:06</publishTime>
     </File>
     <File Include="Content/ClientTheme/css/bootstrap-theme.min.css.map">
       <publishTime>08/28/2017 07:27:33</publishTime>
@@ -3369,6 +3375,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/ClientTheme/css/icon.css">
       <publishTime>08/28/2017 07:27:33</publishTime>
     </File>
+    <File Include="Content/ClientTheme/css/image/to-top.png">
+      <publishTime>08/28/2017 07:27:35</publishTime>
+    </File>
     <File Include="Content/ClientTheme/css/jgallery.css">
       <publishTime>08/28/2017 07:27:33</publishTime>
     </File>
@@ -3377,6 +3386,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/ClientTheme/css/quanstyle.css">
       <publishTime>09/01/2017 20:45:13</publishTime>
+    </File>
+    <File Include="Content/ClientTheme/css/theme1/main.css">
+      <publishTime>09/11/2017 09:30:36</publishTime>
+    </File>
+    <File Include="Content/ClientTheme/css/theme2/main.css">
+      <publishTime>09/02/2017 22:38:42</publishTime>
     </File>
     <File Include="Content/ClientTheme/icon/contact.png">
       <publishTime>08/28/2017 15:50:37</publishTime>
@@ -3520,10 +3535,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2017 16:46:52</publishTime>
     </File>
     <File Include="DATA/images/Logo/logo.png">
-      <publishTime>08/28/2017 07:27:34</publishTime>
+      <publishTime>09/10/2017 23:28:45</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/1.jpg">
+      <publishTime>09/11/2017 15:45:37</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/2.jpg">
+      <publishTime>09/11/2017 15:45:42</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/3.jpg">
+      <publishTime>09/11/2017 15:45:42</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/4.jpg">
+      <publishTime>09/11/2017 15:45:42</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>08/28/2017 07:27:35</publishTime>
+      <publishTime>09/10/2017 23:32:15</publishTime>
     </File>
     <File Include="fonts/font.css">
       <publishTime>09/01/2017 20:56:27</publishTime>
@@ -3562,43 +3589,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:34</publishTime>
     </File>
     <File Include="Scripts/jquery.nicescroll.min.js">
-      <publishTime>09/04/2017 18:22:02</publishTime>
+      <publishTime>09/10/2017 23:45:49</publishTime>
     </File>
     <File Include="Scripts/zoomico.png">
       <publishTime>09/04/2017 17:22:11</publishTime>
     </File>
     <File Include="Views/Contacts/Index.cshtml">
-      <publishTime>09/06/2017 08:43:04</publishTime>
+      <publishTime>09/12/2017 15:34:35</publishTime>
     </File>
     <File Include="Views/Express/Details.cshtml">
-      <publishTime>09/07/2017 14:36:35</publishTime>
+      <publishTime>09/12/2017 15:34:30</publishTime>
     </File>
     <File Include="Views/Express/Index.cshtml">
-      <publishTime>09/06/2017 08:43:05</publishTime>
+      <publishTime>09/12/2017 15:34:25</publishTime>
+    </File>
+    <File Include="Views/Home/Footer.cshtml">
+      <publishTime>09/12/2017 15:32:18</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/07/2017 16:57:04</publishTime>
+      <publishTime>09/12/2017 15:34:14</publishTime>
+    </File>
+    <File Include="Views/Home/Slider.cshtml">
+      <publishTime>09/12/2017 08:55:39</publishTime>
     </File>
     <File Include="Views/News/Details.cshtml">
-      <publishTime>09/01/2017 15:46:29</publishTime>
+      <publishTime>09/12/2017 15:33:39</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
-      <publishTime>09/06/2017 08:43:05</publishTime>
+      <publishTime>09/12/2017 15:33:33</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/28/2017 07:27:34</publishTime>
     </File>
     <File Include="Views/Shared/_footer.cshtml">
-      <publishTime>09/08/2017 19:27:06</publishTime>
+      <publishTime>09/12/2017 10:31:06</publishTime>
     </File>
     <File Include="Views/Shared/_header.cshtml">
-      <publishTime>09/01/2017 15:46:29</publishTime>
+      <publishTime>09/12/2017 14:52:04</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>09/12/2017 15:52:39</publishTime>
     </File>
     <File Include="Views/Shared/_Layout1.cshtml">
-      <publishTime>09/06/2017 08:47:16</publishTime>
+      <publishTime>09/12/2017 14:51:02</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
-      <publishTime>09/06/2017 08:47:30</publishTime>
+      <publishTime>09/11/2017 10:50:28</publishTime>
     </File>
     <File Include="Views/Shared/_menu.cshtml">
       <publishTime>09/01/2017 15:46:29</publishTime>
@@ -3607,16 +3643,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2017 20:15:21</publishTime>
     </File>
     <File Include="Views/Tickers/Index.cshtml">
-      <publishTime>09/06/2017 08:43:05</publishTime>
+      <publishTime>09/12/2017 15:33:26</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>09/02/2017 00:17:22</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>08/28/2017 15:56:30</publishTime>
+      <publishTime>09/12/2017 15:32:50</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2017 22:20:44</publishTime>
+      <publishTime>09/12/2017 20:23:58</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -26,12 +26,8 @@ namespace TLTY
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
-					  "~/Content/ClientTheme/css/icon.css"));
-			bundles.Add(new StyleBundle("~/Content/css1").Include(
-					  "~/Content/ClientTheme/css/quanstyle.css"));
-			bundles.Add(new StyleBundle("~/Content/css2").Include(
-					  "~/Content/ClientTheme/css/giangstyle.css"));
-
+					  "~/Content/ClientTheme/css/icon.css",
+					   "~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css"));
 			//admin
 
 			bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
@@ -60,13 +56,15 @@ namespace TLTY
 						"~/Scripts/Alert.js",
 						"~/Content/AdminTheme/js/Mayin.js",
 						"~/Content/AdminTheme/js/create-modal.js",
-					  "~/Content/AdminTheme/js/detail-modal.js",
-					  "~/Content/AdminTheme/js/change-modal.js",
-					  "~/Content/AdminTheme/js/edit-modal.js",
-					  "~/Content/AdminTheme/js/delete-modal.js",
-					  "~/Content/AdminTheme/js/ChangeImages.js",
-					  "~/Scripts/jquery.nicescroll.min.js"
-				));
+						"~/Content/AdminTheme/js/detail-modal.js",
+						"~/Content/AdminTheme/js/change-modal.js",
+						"~/Content/AdminTheme/js/edit-modal.js",
+						"~/Content/AdminTheme/js/delete-modal.js",
+						"~/Content/AdminTheme/js/ChangeImages.js",
+						"~/Content/AdminTheme/js/Messenger.js",
+						"~/Content/AdminTheme/js/Controller/FeedbackMessenger.js",
+							  "~/Scripts/jquery.nicescroll.min.js"
+						));
 
 			BundleTable.EnableOptimizations = true;
 		}
