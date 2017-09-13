@@ -22,7 +22,7 @@ namespace EntityModel.EF
 
         public bool Status { get; set; }
 
-        public bool? Type { get; set; }
+        public bool Type { get; set; }
 
         public long? Quantity { get; set; }
 
