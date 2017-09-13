@@ -58,7 +58,11 @@ ul.nav li.active:hover {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 32px;
+}
+
+p {
+    margin: 10px 0 10px;
 }
 
 .gach {
@@ -77,7 +81,7 @@ h1 {
 	width: 100px;
 	height: 100px;
 	display: block;
-	margin: 10px 100px;
+	margin: 15px 100px;
 }
 
 .icon-menu .head h4 {
@@ -322,7 +326,6 @@ body {
 	width: 100%;
 }
 
-
 /*Dịch vụ*/
 .dichvu {
 	margin-bottom: 10px;
@@ -391,6 +394,7 @@ body {
 					color: #999;
 					display: inline;
 				}
+
 /*Liên hệ*/
 .lienhe .ilienhe .itlienhe {
 	margin-bottom: 10px;
