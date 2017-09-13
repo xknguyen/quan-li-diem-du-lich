@@ -26,12 +26,8 @@ namespace TLTY
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
-					  "~/Content/ClientTheme/css/icon.css"));
-			//bundles.Add(new StyleBundle("~/Content/css1").Include(
-				//	  "~/Content/ClientTheme/css/quanstyle.css"));
-			//bundles.Add(new StyleBundle("~/Content/css2").Include(
-				//	  "~/Content/ClientTheme/css/giangstyle.css"));
-
+					  "~/Content/ClientTheme/css/icon.css",
+					   "~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css"));
 			//admin
 
 			bundles.Add(new StyleBundle("~/Content/Admin/css").Include(

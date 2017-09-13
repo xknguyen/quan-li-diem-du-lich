@@ -20,52 +20,6 @@
 		}
 	</style>
 	<script>
-		$(window).load(function () {
-			$('#dvLoading').fadeOut(2000);
-		});
-	</script>
-
-</head>
-<body onload=" set_style_from_cookie(); init();">
-	<div id="loading" style="position:absolute; width:100%; text-align:center; top:250px;">
-		Đang nạp trang. Vui lòng đợi giây lát!<br />
-		<img src="/images/loader.gif">
-	</div>
-	<script>
-		var ld = (document.all);
-		var ns4 = document.layers;
-		var ns6 = document.getElementById && !document.all;
-		var ie4 = document.all;
-		if (ns4)
-			ld = document.loading;
-		else if (ns6)
-			ld = document.getElementById("loading").style;
-		else if (ie4)
-			ld = document.all.loading.style;
-		function init() {
-			if (ns4) { ld.visibility = "hidden"; }
-			else if (ns6 || ie4) ld.display = "none";
-		}
-	</script>
-
-	@Html.Partial("_header")
-	<div class="container-fuid top-slider">
-		<div class="container">
-			@{ Html.RenderAction("Slider", "Home");}
-			<div class="row">
-				<div class="clearfix"></div>
-				@RenderBody()
-			</div>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-	<div class="col-lg-12 footer" style="margin-top: 10px;">
-		@{ Html.RenderAction("Footer", "Home");}
-	</div>
-	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/bootstrap")
-
-	<script>
 		function getCookie(cname) {
 			var name = cname + "=";
 			var ca = document.cookie.split(';');
@@ -114,6 +68,25 @@
 			return '';
 		}
 	</script>
+
+</head>
+<body onload=" set_style_from_cookie();">
+	@Html.Partial("_header")
+	<div class="container-fuid top-slider">
+		<div class="container">
+			@{ Html.RenderAction("Slider", "Home");}
+			<div class="row">
+				<div class="clearfix"></div>
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-lg-12 footer" style="margin-top: 10px;">
+		@{ Html.RenderAction("Footer", "Home");}
+	</div>
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
 	<script type="text/javascript">
 		$('#menu li').click(function () {
 			$('#menu li.active').removeClass('active');
