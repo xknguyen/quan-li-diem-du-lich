@@ -5,11 +5,44 @@
 }
 
 <div class="col-lg-12 baiviet">
-    <p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a></p>
+	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a>
+	</p>
 </div>
 <div class="col-md-12 dichvu">
+	@if (Model != null || Model.Count > 0)
+	{
+		foreach (var item in Model.Where(x=>x.ViewCount > 10))
+		{
+			<div class="col-md-6 idichvu">
+				<div class="itdichvu">
+					<a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">
+						<img src="@item.Images" class="img-responsive">
+					</a>
+					<a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID" class="thea">
+						<h4>@item.Name</h4>
+					</a>
+					<h5>@item.Description</h5>
+					<div class="icondichvu">
+						<i class="glyphicon glyphicon-comment"></i>
+						<h6 style="">@item.ViewCount</h6>
+					</div>
+					<div class="icondichvu">
+						<i class="glyphicon glyphicon-user"></i>
+						<h6>@item.UserName</h6>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		}
+	}
+	else
+	{
+		<h3>Đang cập nhật</h3>
+	}
+</div>
+
+<div class="col-md-12 dichvu">
     <h1>Tin tức về khu du lịch</h1>
-    <img src="~/DATA/images/Instruction/1.png" class="img-responsive" />
     @if (Model != null || Model.Count > 0)
     {
         foreach (var item in Model)
