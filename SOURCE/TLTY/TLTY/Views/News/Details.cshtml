@@ -1,8 +1,9 @@
 ﻿@model EntityModel.EF.Content
 @using System.Xml.Linq
+
 @{
     var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
-    ViewBag.Title = "Chi tiết: "+Model.Name;
+    ViewBag.Title = "Chi tiết: " + Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,7 +17,7 @@
         <h1 style="text-align: center; color: #981271; font-weight: bold;">@Model.Name</h1>
         <img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
         <strong>@Model.Description</strong>
-        <hr />
+        <hr/>
         <div style="line-height: 2; font-size: 16px; text-align: center; display: block" class="details">
             @Html.Raw(Model.Detail)
         </div>
@@ -24,7 +25,7 @@
     <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
-@if (Model.MoreImages != null && Model.MoreImages != "<Images />")
+@if (Model.MoreImages != null && Model.MoreImages != "<Images/>")
 {
     int i = 0;
     int j = 0;
@@ -45,7 +46,6 @@
                         </li>
                         i++;
                     }
-
                 </ul>
             </div>
             <div class="col-sm-6">
@@ -80,6 +80,7 @@
         </div>
     </div>
 }
+
 <div class="clearfix"></div>
 <div class="col-md-8 col-md-offset-2 chitiet" style="margin-top: 10px;">
     <div class="col-lg-12 binhluan">
@@ -114,7 +115,6 @@
             <div class="form-group col-md-12">
                 <button class="btn btn-success" type="button" id="btnSend" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
             </div>
-
         }
         <div class="clearfix"></div>
         @if (request != null)
@@ -141,14 +141,12 @@
                                     </div>
                                 </div>
                             }
-
                         </div>
                     </div>
                 }
                 <div class="clearfix"></div>
             </div>
         }
-
     </div>
     <div class="clearfix"></div>
 </div>
@@ -156,7 +154,6 @@
 @section scripts{
     <script>
 		jQuery(document).ready(function ($) {
-
 			$('#mySlider2').carousel({
 				interval: 5000
 			});
@@ -181,6 +178,7 @@
 		});
     </script>
 }
+
 @section jsFooter{
     <script>
         var request = {
