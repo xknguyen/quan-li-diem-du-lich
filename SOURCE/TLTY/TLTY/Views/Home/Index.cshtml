@@ -4,10 +4,21 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewBag.Title = "Giới thiệu";
 }
-
+@section slide{
+	@{ Html.RenderAction("Slider", "Home");}
+}
 @Html.Partial("_menu")
 <div class="col-lg-12 baiviet">
-	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a></p>
+	<p>
+		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>
+	</p>
+</div>
+<div class="col-md-12">
+	<div class="container lg">
+		<h1>Giới thiệu</h1>
+	</div>
+	<div class="container gach"></div>
+	<div class="clearfix"></div>
 </div>
 @if (Model != null)
 {

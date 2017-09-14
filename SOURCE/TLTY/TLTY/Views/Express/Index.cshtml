@@ -5,39 +5,45 @@
 }
 
 <div class="col-lg-12 baiviet">
-	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/dich-vu">Dịch vụ</a></p>
+	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/dich-vu">Dịch vụ</a>
+	</p>
+</div>
+<div class="col-md-12">
+	<div class="container lg">
+		<h1>Dịch vụ của khu du lịch</h1>
+	</div>
+	<div class="container gach"></div>
+	<div class="clearfix"></div>
 </div>
 <div class="col-md-12 dichvu">
-	<h1>Dịch vụ trong khu du lịch</h1>
-    <img src="/Content/ClientTheme/image/1.png" class="img-responsive">
-    @if (Model != null || Model.Count > 0)
-    {
-        foreach (var item in Model)
-        {
-            <div class="col-md-4 idichvu">
-                <div class="itdichvu">
-                    <a href="/dich-vu/chi-tiet/@item.MetaTitle-@item.ID">
-                        <img src="@item.Images" class="img-responsive">
-                    </a>
+	@if (Model != null || Model.Count > 0)
+	{
+		foreach (var item in Model)
+		{
+			<div class="col-md-4 col-sm-4 col-xs-12 idichvu">
+				<div class="itdichvu">
+					<a href="/dich-vu/chi-tiet/@item.MetaTitle-@item.ID">
+						<img src="@item.Images" class="img-responsive">
+					</a>
 					<a href="/dich-vu/chi-tiet/@item.MetaTitle-@item.ID" class="thea">
 						<h4>@item.Name</h4>
 					</a>
-                    <h5>@item.Description</h5>
-                    <div class="icondichvu">
-                        <i class="glyphicon glyphicon-comment"></i>
-                        <h6 style=""> @item.ViewCount</h6>
-                    </div>
-                    <div class="icondichvu">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <h6> @item.UserName</h6>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        }
-    }
-    else
-    {
-        <h3>Đang cập nhật</h3>
-    }
+					<h5>@item.Description</h5>
+					<div class="icondichvu">
+						<i class="glyphicon glyphicon-comment"></i>
+						<h6 style=""> @item.ViewCount</h6>
+					</div>
+					<div class="icondichvu">
+						<i class="glyphicon glyphicon-user"></i>
+						<h6> @item.UserName</h6>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		}
+	}
+	else
+	{
+		<h3>Đang cập nhật</h3>
+	}
 </div>
