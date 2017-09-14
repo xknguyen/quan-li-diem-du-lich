@@ -19,7 +19,7 @@
 								<div class="carousel-caption">
 									@foreach (var ct in content.Where(x => x.ID == item.ContentID))
 									{
-										<a href="/@(ct.Category ? "tin-tuc" : "dich-vu")/@ct.MetaTitle-@ct.ID">
+										<a href="/@(ct.Category ? "tin-tuc/chi-tiet/" : "dich-vu/chi-tiet/")/@ct.MetaTitle-@ct.ID">
 											<h3>@item.Name</h3>
 										</a>
 									}

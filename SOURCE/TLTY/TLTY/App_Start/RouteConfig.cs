@@ -27,6 +27,13 @@ namespace TLTY
 			namespaces: new[] { "TLTY.Controllers" }
 		  );
 
+            routes.MapRoute(
+            name: "Chi tiết tin tức",
+            url: "tin-tuc/chi-tiet/{metatitle}-{id}",
+            defaults: new { controller = "News", action = "Details", id = UrlParameter.Optional },
+            namespaces: new[] { "TLTY.Controllers" }
+          );
+
 			routes.MapRoute(
 			name: "Tin tức",
 			url: "tin-tuc",
