@@ -91,7 +91,6 @@ namespace TLTY.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
-
             var request = _db.Requests.Find(id);
             request.Status = !request.Status;
             _db.SaveChanges();

@@ -94,7 +94,6 @@ namespace TLTY.Areas.Admin.Controllers
 					else
 						return -2;
 				}
-
 			}
 		}
 
@@ -115,7 +114,6 @@ namespace TLTY.Areas.Admin.Controllers
 							AccountGroupID = x.AccountGroupID
 						});
 			return data.Select(x => x.PathID).ToList();
-
 		}
 
 		public ActionResult Logout()

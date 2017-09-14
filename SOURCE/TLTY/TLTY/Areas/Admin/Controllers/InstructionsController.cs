@@ -208,7 +208,6 @@ namespace TLTY.Areas.Admin.Controllers
 		[HttpPost]
 		public JsonResult ChangeStatus(long id)
 		{
-
 			var instruction = _db.Instructions.Find(id);
 			instruction.Status = !instruction.Status;
 			_db.SaveChanges();
@@ -287,14 +286,12 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 			catch (Exception)
 			{
-
 				return Json(new
 				{
 					status = false
 				});
 			}
 		}
-
 
 		public void UpdateImages(long contentId, string images)
 		{

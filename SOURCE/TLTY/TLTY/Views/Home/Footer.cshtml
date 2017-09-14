@@ -1,8 +1,10 @@
 ﻿@model List<EntityModel.EF.Contact>
 @using TLTY.Areas.Admin.Models
+
 @{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
 }
+
 <div class="container">
 	<div class="col-md-12 footer-child">
 		<div class="col-md-3 footer-left">
@@ -24,7 +26,6 @@
 				<i class="glyphicon glyphicon-ok"></i><h5>Đang cập nhật</h5>
 				<i class="glyphicon glyphicon-phone-alt"></i><h5>Đang cập nhật</h5>
 				<i class="glyphicon glyphicon-envelope"></i><h5>Đang cập nhật</h5>
-
 			}
 			<i class="glyphicon glyphicon-globe"></i>
 			<a href="/" title="Thung lũng tình yêu"><h5>http://tinhyeumongmo.vn/</h5></a>

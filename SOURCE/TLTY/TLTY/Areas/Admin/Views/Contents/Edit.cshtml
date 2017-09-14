@@ -17,7 +17,6 @@
                     </button>
                     <h3 style="text-align: center">Chỉnh sửa nội dung @Model.Name</h3>
                     <img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
-
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.ID)
                     @Html.HiddenFor(model => model.CreateDate)
@@ -35,7 +34,6 @@
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tên đường dẫn:</label>
                                 <div class="col-md-10">
@@ -43,7 +41,6 @@
                                     @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-md-2">Mô tả:</label>
                                 <div class="col-md-10">
@@ -51,7 +48,6 @@
                                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-md-2">Thể loại:</label>
                                 <div class="col-md-10">
@@ -61,7 +57,6 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-md-2">Nội dung:</label>
                                 <div class="col-md-10">
@@ -104,11 +99,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="clearfix"></div>
                 </div>
-
             }
         </div>
     </div>

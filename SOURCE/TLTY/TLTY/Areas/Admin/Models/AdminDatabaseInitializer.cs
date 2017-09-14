@@ -160,7 +160,6 @@ namespace TLTY.Areas.Admin.Models
 			context.Paths.Add(detailsSlider);
 
 			//Thêm đường dẫn phản hồi
-
 			var deleteRequest = new Path()
 			{
 				ID = "DELETE_REQUEST",
@@ -175,14 +174,12 @@ namespace TLTY.Areas.Admin.Models
 			};
 			context.Paths.Add(editRequest);
 
-
 			var viewRequest = new Path()
 			{
 				ID = "VIEW_REQUEST",
 				Name = "Xem chi tiết phản hồi"
 			};
 			context.Paths.Add(viewRequest);
-
 
 			var detailsRequest = new Path()
 			{
@@ -228,7 +225,6 @@ namespace TLTY.Areas.Admin.Models
 			context.Paths.Add(detailsinstruction);
 
 			//Thêm đường dẫn yêu cầu
-
 			var deleteFeedback = new Path()
 			{
 				ID = "DELETE_FEEDBACK",
@@ -293,15 +289,12 @@ namespace TLTY.Areas.Admin.Models
 			};
 			context.Paths.Add(detailsContent);
 
-
 			//Thêm nhóm
-
 			var adminGroup = new AccountGroup()
 			{
 				ID = "ADMIN",
 				Name = "Quản trị"
 			};
-
 			context.AccountGroups.Add(adminGroup);
 
 			var memberGroup = new AccountGroup()
@@ -309,7 +302,6 @@ namespace TLTY.Areas.Admin.Models
 				ID = "MEMBER",
 				Name = "Thành viên"
 			};
-
 			context.AccountGroups.Add(memberGroup);
 
 			var servicesGroup = new AccountGroup()
@@ -317,7 +309,6 @@ namespace TLTY.Areas.Admin.Models
 				ID = "SERVICES",
 				Name = "Chăm sóc khách hàng"
 			};
-
 			context.AccountGroups.Add(servicesGroup);
 
 			var modGroup = new AccountGroup()
@@ -325,17 +316,14 @@ namespace TLTY.Areas.Admin.Models
 				ID = "MOD",
 				Name = "Điều hành"
 			};
-
 			context.AccountGroups.Add(modGroup);
 
 			//Thêm nối nhóm với đường dẫn cho tài khoản
-
 			var mo3 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "EDIT_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(mo3);
 
 			var mo5 = new GroupPath()
@@ -343,7 +331,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(mo5);
 
 			var mo6 = new GroupPath()
@@ -351,15 +338,14 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "CHANGE_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(mo6);
+
 			//Thêm nối nhóm với đường dẫn cho lien hệ
 			var mo7 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "CREATE_CONTACT"
 			};
-
 			context.GroupPaths.Add(mo7);
 
 			var mo8 = new GroupPath()
@@ -367,7 +353,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_CONTACT"
 			};
-
 			context.GroupPaths.Add(mo8);
 
 			var mo9 = new GroupPath()
@@ -375,16 +360,13 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_CONTACT"
 			};
-
 			context.GroupPaths.Add(mo9);
-
 
 			var mo10 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "VIEW_CONTACT"
 			};
-
 			context.GroupPaths.Add(mo10);
 
 			var mo11 = new GroupPath()
@@ -401,7 +383,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "CREATE_TICKER"
 			};
-
 			context.GroupPaths.Add(mo12);
 
 			var mo13 = new GroupPath()
@@ -409,7 +390,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_TICKER"
 			};
-
 			context.GroupPaths.Add(mo13);
 
 			var mo14 = new GroupPath()
@@ -417,7 +397,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_TICKER"
 			};
-
 			context.GroupPaths.Add(mo14);
 
 			var mo15 = new GroupPath()
@@ -425,7 +404,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "VIEW_TICKER"
 			};
-
 			context.GroupPaths.Add(mo15);
 
 			var mo16 = new GroupPath()
@@ -433,7 +411,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_TICKER"
 			};
-
 			context.GroupPaths.Add(mo16);
 
 			var mo17 = new GroupPath()
@@ -441,7 +418,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "CREATE_SLIDER"
 			};
-
 			context.GroupPaths.Add(mo17);
 
 			var mo18 = new GroupPath()
@@ -449,7 +425,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_SLIDER"
 			};
-
 			context.GroupPaths.Add(mo18);
 
 			var mo19 = new GroupPath()
@@ -457,7 +432,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_SLIDER"
 			};
-
 			context.GroupPaths.Add(mo19);
 
 			var mo20 = new GroupPath()
@@ -465,7 +439,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "VIEW_SLIDER"
 			};
-
 			context.GroupPaths.Add(mo20);
 
 			var mo21 = new GroupPath()
@@ -473,7 +446,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_SLIDER"
 			};
-
 			context.GroupPaths.Add(mo21);
 
 			var mo22 = new GroupPath()
@@ -481,21 +453,20 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_REQUEST"
 			};
-
 			context.GroupPaths.Add(mo22);
+
 			var mo23 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "EDIT_REQUEST"
 			};
-
 			context.GroupPaths.Add(mo23);
+
 			var mo24 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "VIEW_REQUEST"
 			};
-
 			context.GroupPaths.Add(mo24);
 
 			var mo25 = new GroupPath()
@@ -503,7 +474,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_REQUEST"
 			};
-
 			context.GroupPaths.Add(mo25);
 
 			var mo26 = new GroupPath()
@@ -511,7 +481,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "CREATE_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(mo26);
 
 			var mo27 = new GroupPath()
@@ -519,7 +488,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(mo27);
 
 			var mo28 = new GroupPath()
@@ -527,7 +495,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(mo28);
 
 			var mo29 = new GroupPath()
@@ -535,7 +502,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "VIEW_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(mo29);
 
 			var mo30 = new GroupPath()
@@ -543,7 +509,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(mo30);
 
 			var mo31 = new GroupPath()
@@ -551,7 +516,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(mo31);
 
 			var mo32 = new GroupPath()
@@ -559,7 +523,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(mo32);
 
 			var mo33 = new GroupPath()
@@ -567,7 +530,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "VIEW_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(mo33);
 
 			var mo34 = new GroupPath()
@@ -575,16 +537,13 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(mo34);
-
 
 			var mo35 = new GroupPath()
 			{
 				AccountGroupID = "MOD",
 				PathID = "CREATE_CONTENT"
 			};
-
 			context.GroupPaths.Add(mo35);
 
 			var mo36 = new GroupPath()
@@ -592,7 +551,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DELETE_CONTENT"
 			};
-
 			context.GroupPaths.Add(mo36);
 
 			var mo37 = new GroupPath()
@@ -600,7 +558,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "EDIT_CONTENT"
 			};
-
 			context.GroupPaths.Add(mo37);
 
 			var mo38 = new GroupPath()
@@ -608,7 +565,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "VIEW_CONTENT"
 			};
-
 			context.GroupPaths.Add(mo38);
 
 			var mo39 = new GroupPath()
@@ -616,18 +572,15 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MOD",
 				PathID = "DETAILS_CONTENT"
 			};
-
 			context.GroupPaths.Add(mo39);
 
-
 			//Quyên cho nhóm SER
-			//Thêm nối nhóm với đường dẫn cho lien hệ
+			//Thêm nối nhóm với đường dẫn cho liên hệ
 			var se1 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "CREATE_CONTACT"
 			};
-
 			context.GroupPaths.Add(se1);
 
 			var se2 = new GroupPath()
@@ -635,7 +588,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "DELETE_CONTACT"
 			};
-
 			context.GroupPaths.Add(se2);
 
 			var se3 = new GroupPath()
@@ -643,16 +595,13 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "EDIT_CONTACT"
 			};
-
 			context.GroupPaths.Add(se3);
-
 
 			var se4 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "VIEW_CONTACT"
 			};
-
 			context.GroupPaths.Add(se4);
 
 			var se5 = new GroupPath()
@@ -662,27 +611,26 @@ namespace TLTY.Areas.Admin.Models
 			};
 			context.GroupPaths.Add(se5);
 
-			//phan hoi
+			//Phản hồi
 			var se6 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "DELETE_REQUEST"
 			};
-
 			context.GroupPaths.Add(se6);
+
 			var se7 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "EDIT_REQUEST"
 			};
-
 			context.GroupPaths.Add(se7);
+
 			var se8 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "VIEW_REQUEST"
 			};
-
 			context.GroupPaths.Add(se8);
 
 			var se9 = new GroupPath()
@@ -690,16 +638,14 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "DETAILS_REQUEST"
 			};
-
 			context.GroupPaths.Add(se9);
 
-			//yeu cau
+			//Yêu cầu
 			var se10 = new GroupPath()
 			{
 				AccountGroupID = "SERVICES",
 				PathID = "DELETE_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(se10);
 
 			var se11 = new GroupPath()
@@ -707,7 +653,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "EDIT_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(se11);
 
 			var se12 = new GroupPath()
@@ -715,7 +660,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "VIEW_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(se12);
 
 			var se13 = new GroupPath()
@@ -723,7 +667,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "DETAILS_FEEDBACK"
 			};
-
 			context.GroupPaths.Add(se13);
 
 			var se14 = new GroupPath()
@@ -731,7 +674,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "EDIT_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(se14);
 
 			var se15 = new GroupPath()
@@ -739,7 +681,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "DETAILS_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(se15);
 
 			var se16 = new GroupPath()
@@ -747,16 +688,14 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "SERVICES",
 				PathID = "CHANGE_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(se16);
 
-			//Quyen cho nhan vien
+			//Quyền cho nhân viên
 			var me1 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
 				PathID = "CREATE_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(me1);
 
 			var me2 = new GroupPath()
@@ -764,7 +703,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DELETE_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(me2);
 
 			var me3 = new GroupPath()
@@ -772,7 +710,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "EDIT_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(me3);
 
 			var me4 = new GroupPath()
@@ -780,7 +717,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "VIEW_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(me4);
 
 			var me5 = new GroupPath()
@@ -788,7 +724,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DETAILS_INSTRUCTION"
 			};
-
 			context.GroupPaths.Add(me5);
 
 			var me6 = new GroupPath()
@@ -796,7 +731,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "CREATE_CONTENT"
 			};
-
 			context.GroupPaths.Add(me6);
 
 			var me7 = new GroupPath()
@@ -804,7 +738,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DELETE_CONTENT"
 			};
-
 			context.GroupPaths.Add(me7);
 
 			var me8 = new GroupPath()
@@ -812,7 +745,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "EDIT_CONTENT"
 			};
-
 			context.GroupPaths.Add(me8);
 
 			var me9 = new GroupPath()
@@ -820,7 +752,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "VIEW_CONTENT"
 			};
-
 			context.GroupPaths.Add(me9);
 
 			var me10 = new GroupPath()
@@ -828,16 +759,14 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DETAILS_CONTENT"
 			};
-
 			context.GroupPaths.Add(me10);
-			//Thêm nối nhóm với đường dẫn cho bảng giá
 
+			//Thêm nối nhóm với đường dẫn cho bảng giá
 			var me11 = new GroupPath()
 			{
 				AccountGroupID = "MEMBER",
 				PathID = "CREATE_TICKER"
 			};
-
 			context.GroupPaths.Add(me11);
 
 			var me12 = new GroupPath()
@@ -845,7 +774,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DELETE_TICKER"
 			};
-
 			context.GroupPaths.Add(me12);
 
 			var me13 = new GroupPath()
@@ -853,7 +781,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "EDIT_TICKER"
 			};
-
 			context.GroupPaths.Add(me13);
 
 			var me14 = new GroupPath()
@@ -861,7 +788,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "VIEW_TICKER"
 			};
-
 			context.GroupPaths.Add(me14);
 
 			var me15 = new GroupPath()
@@ -869,7 +795,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DETAILS_TICKER"
 			};
-
 			context.GroupPaths.Add(me15);
 
 			var me16 = new GroupPath()
@@ -877,7 +802,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "CREATE_SLIDER"
 			};
-
 			context.GroupPaths.Add(me16);
 
 			var me17 = new GroupPath()
@@ -885,7 +809,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DELETE_SLIDER"
 			};
-
 			context.GroupPaths.Add(me17);
 
 			var me18 = new GroupPath()
@@ -893,7 +816,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "EDIT_SLIDER"
 			};
-
 			context.GroupPaths.Add(me18);
 
 			var me19 = new GroupPath()
@@ -901,7 +823,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "VIEW_SLIDER"
 			};
-
 			context.GroupPaths.Add(me19);
 
 			var me20 = new GroupPath()
@@ -909,7 +830,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "DETAILS_SLIDER"
 			};
-
 			context.GroupPaths.Add(me20);
 
 			var me21 = new GroupPath()
@@ -917,15 +837,13 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "EDIT_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(me21);
 
-			var me22 = new GroupPath()
-			{
-				AccountGroupID = "MEMBER",
-				PathID = "DETAILS_ACCOUNT"
-			};
-
+            var me22 = new GroupPath()
+            {
+                AccountGroupID = "MEMBER",
+                PathID = "DETAILS_ACCOUNT"
+            };
 			context.GroupPaths.Add(me22);
 
 			var me23 = new GroupPath()
@@ -933,7 +851,6 @@ namespace TLTY.Areas.Admin.Models
 				AccountGroupID = "MEMBER",
 				PathID = "CHANGE_ACCOUNT"
 			};
-
 			context.GroupPaths.Add(me23);
 
 			//Thêm tài khoản
@@ -951,10 +868,8 @@ namespace TLTY.Areas.Admin.Models
 				Address = "Đà Lạt",
 				Phone = "01634141300",
 				Status = true
-
 			};
 			context.Accounts.Add(admin);
-
 			context.SaveChanges();
 		}
 	}

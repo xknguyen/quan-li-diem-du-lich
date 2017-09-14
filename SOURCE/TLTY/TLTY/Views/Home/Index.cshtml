@@ -81,12 +81,21 @@
                 int i = 0;
                 foreach (XElement itemimage in XElement.Parse(itemcs.MoreImages).Elements())
                 {
+<<<<<<< HEAD
 	                <script>
                 		jQuery(document).ready(function($) {
 
                 			$('#mySlider-' + @itemcs.ID).carousel({
                 				interval: 5000
                 			});
+=======
+                    i++;
+                    <script>
+                        jQuery(document).ready(function($) {
+                            $('#mySlider-' + @itemcs.ID).carousel({
+                                interval: 5000
+                            });
+>>>>>>> c20e5e23f78198ff39a464023c56883087b58dee
 
                 			//Handles the carousel thumbnails
                 			$('[id^=' + @itemcs.ID + '-hinh-]').click(function() {
@@ -110,7 +119,6 @@
 					i++;
                 }
             }
-
         }
     }
 }

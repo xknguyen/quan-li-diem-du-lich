@@ -20,22 +20,18 @@
                         <dt>
                             Tiêu đề:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Name)
                         </dd>
-
                         <dt>
                             Đường dẫn:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.MetaTitle)
                         </dd>
                         <dt>
                             Thể loại:
                         </dt>
-
                         <dd>
                             @{
                                 string a = "Tin tức";
@@ -48,36 +44,27 @@
                         <dt>
                             Mô tả:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Description)
                         </dd>
-
                         <dt>
                             Nội dung:
                         </dt>
-
                         <dd>
                            @Html.Raw(Model.Detail)
                         </dd>
-
                         <dt>
                             Lượt xem:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.ViewCount)
                         </dd>
-
-
                         <dt>
                             Ngày tạo:
                         </dt>
-
                         <dd>
                             @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.UserName)
                         </dd>
-
                     </dl>
                 </div>
                 <div class="col-md-5">
@@ -118,7 +105,6 @@
 										            int i = 0;
 										            foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
 										            {
-
 											            string hiteam = "item";
 											            if (i == 0)
 											            {
@@ -128,7 +114,6 @@
 												            <img src="@item.Value">
 											            </div>
 											            i++;
-
 										            }
 									            }
 								            </div>
@@ -145,7 +130,6 @@
 				            </div>
 			            </div>
 		            </div>
-
 	            </div>
 	            <div class="col-md-12">
 		            <hr/>
@@ -157,7 +141,6 @@
 		            </div>
 	            </div>
             </div>
-            
         </div>
     </div>
 </div>
@@ -166,7 +149,6 @@
 
 <script>
     jQuery(document).ready(function ($) {
-
         $('#myCarousel').carousel({
             interval: 5000
         });
