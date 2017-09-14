@@ -20,40 +20,30 @@
                         <dt>
                             Tên:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Name)
                         </dd>
-
                         <dt>
                             Thứ tự:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.DisplayOrder)
                         </dd>
-
                         <dt>
                             Đường dẫn:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Link)
                         </dd>
-
                         <dt>
                             Nội dung:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.ContentID)
                         </dd>
-
-
                         <dt>
                             Thể loại:
                         </dt>
-
                         <dd>
                             @{
                                 string a = "Tin tức";
@@ -66,20 +56,15 @@
                         <dt>
                             Mô tả:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Description)
                         </dd>
-
-
                         <dt>
                             Ngày tạo:
                         </dt>
-
                         <dd>
                             @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.UserName)
                         </dd>
-
                     </dl>
                 </div>
 	            <div class="col-md-5">
@@ -94,7 +79,6 @@
 				</div>
                 <div class="clearfix"></div>
             </div>
-	        
         </div>
     </div>
 </div>

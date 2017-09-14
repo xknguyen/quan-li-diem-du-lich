@@ -33,7 +33,6 @@
 							</td>
 							<td class="center">
 								<img id="img_@item.ID" class="img-responsive" alt="@item.ID" title="Nhấn để chỉnh sửa hình ảnh" src="@item.Images" onclick="selectImage('/Admin/Instructions/ChangeImage/@item.ID',this.id)" />
-
 							</td>
 							<td class="center" style="text-align: center;">
 								<a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
@@ -62,6 +61,7 @@
 	</div>
 	<!-- /.panel -->
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="imagesManage" role="dialog">
 	<div class="modal-dialog modal-lg">

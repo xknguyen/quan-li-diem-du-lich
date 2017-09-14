@@ -191,7 +191,6 @@ namespace TLTY.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
-
             var user = db.Contacts.Find(id);
             user.Status = !user.Status;
             db.SaveChanges();

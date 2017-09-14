@@ -17,6 +17,7 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 			base.OnActionExecuting(filterContext);
 		}
+
 		protected void SetAlert(string message, string type)
 		{
 			TempData["AlertMessage"] = message;

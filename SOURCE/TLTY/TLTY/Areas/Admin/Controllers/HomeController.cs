@@ -43,5 +43,4 @@ namespace TLTY.Areas.Admin.Controllers
 			}, JsonRequestBehavior.AllowGet);
 		}
 	}
-
 }
