@@ -50,17 +50,12 @@
                                             <!-- Carousel items -->
                                             <div class="carousel-inner">
                                                 @foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
-                                                {
-                                                    string hiteam = "item";
-                                                    if (j == 0)
-                                                    {
-                                                        hiteam = "active item";
-                                                    }
-                                                    <div class="@hiteam" data-slide-number="@j">
-                                                        <img src="@itemimage.Value" alt="@itemimage.Name">
-                                                    </div>
-                                                    j++;
-                                                }
+												{
+													<div class="@(j==0?"active item":"item")" data-slide-number="@j">
+														<img src="@itemimage.Value" alt="@itemimage.Name">
+													</div>
+													j++;
+												}
                                             </div>
                                             <!-- Carousel nav -->
                                             <a class="left carousel-control" href="#mySlider-@item.ID" role="button" data-slide="prev">
@@ -86,33 +81,33 @@
                 int i = 0;
                 foreach (XElement itemimage in XElement.Parse(itemcs.MoreImages).Elements())
                 {
-                    i++;
-                    <script>
-                        jQuery(document).ready(function($) {
+	                <script>
+                		jQuery(document).ready(function($) {
 
-                            $('#mySlider-' + @itemcs.ID).carousel({
-                                interval: 5000
-                            });
+                			$('#mySlider-' + @itemcs.ID).carousel({
+                				interval: 5000
+                			});
 
-                            //Handles the carousel thumbnails
-                            $('[id^='+@itemcs.ID+'-hinh-]').click(function() {
-                                var idSelector = $(this).attr("id");
-                                try {
-                                    var id = /-(\d+)$/.exec(idSelector)[1];
-                                    console.log(idSelector, id);
-                                    jQuery('#mySlider-' + @itemcs.ID).carousel(parseInt(id));
-                                } catch (e) {
-                                    console.log('Regex failed!', e);
-                                }
-                            });
+                			//Handles the carousel thumbnails
+                			$('[id^=' + @itemcs.ID + '-hinh-]').click(function() {
+				                var idSelector = $(this).attr("id");
+				                try {
+					                var id = /-(\d+)$/.exec(idSelector)[1];
+					                console.log(idSelector, id);
+					                jQuery('#mySlider-' + @itemcs.ID).carousel(parseInt(id));
+                				} catch (e) {
+                					console.log('Regex failed!', e);
+                				}
+                			});
 
-                            // When the carousel slides, auto update the text
-                            $('#mySlider-' + @itemcs.ID).on('slid.bs.carousel', function(e) {
-                                var id = $('.item.active').data('slide-number');
-                                $('#carousel-text').html($('#slide-content-' + id).html());
-                            });
-                        });
-                    </script>
+                			// When the carousel slides, auto update the text
+                			$('#mySlider-' + @itemcs.ID).on('slid.bs.carousel', function(e) {
+                				var id = $('.item.active').data('slide-number');
+                				$('#carousel-text').html($('#slide-content-' + id).html());
+                			});
+                		});
+                	</script>
+					i++;
                 }
             }
 

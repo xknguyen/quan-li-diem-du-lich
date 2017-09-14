@@ -35,6 +35,13 @@ namespace TLTY
 		  );
 
 			routes.MapRoute(
+			name: "Chi tiết Dịch vụ",
+			url: "dich-vu/chi-tiet/{metatitle}-{id}",
+			defaults: new { controller = "Express", action = "Details", id = UrlParameter.Optional },
+			namespaces: new[] { "TLTY.Controllers" }
+		  );
+
+			routes.MapRoute(
 			name: "Dịch vụ",
 			url: "dich-vu",
 			defaults: new { controller = "Express", action = "Index", id = UrlParameter.Optional },
