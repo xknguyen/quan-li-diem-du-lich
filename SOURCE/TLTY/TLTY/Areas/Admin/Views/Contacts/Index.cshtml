@@ -38,9 +38,6 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Email)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
                             <td class="center" style="text-align: center;">
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
@@ -67,6 +64,7 @@
     </div>
     <!-- /.panel -->
 </div>
+
 @section scripts{
     <script src="~/Content/AdminTheme/js/Controller/ContactController.js"></script>
 }

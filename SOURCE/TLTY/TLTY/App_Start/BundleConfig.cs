@@ -28,8 +28,8 @@ namespace TLTY
 					  "~/Content/ClientTheme/css/bootstrap.css",
 					  "~/Content/ClientTheme/css/icon.css",
 					   "~/Content/AdminTheme/vendor/font-awesome/css/font-awesome.min.css"));
-			//admin
 
+			//admin
 			bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
 					  "~/Content/AdminTheme/vendor/bootstrap/css/bootstrap.min.css",
 					  "~/Content/AdminTheme/vendor/metisMenu/metisMenu.min.css",

@@ -91,7 +91,6 @@ namespace TLTY.Areas.Admin.Controllers
                 }
             }
 
-
             ViewBag.ContentID = new SelectList(_db.Contents, "ID", "Name", slider.ContentID);
             return RedirectToAction("Index");
         }
@@ -205,7 +204,6 @@ namespace TLTY.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
-
             var slider = _db.Sliders.Find(id);
             slider.Status = !slider.Status;
             _db.SaveChanges();

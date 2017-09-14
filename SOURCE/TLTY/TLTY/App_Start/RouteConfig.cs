@@ -27,10 +27,24 @@ namespace TLTY
 			namespaces: new[] { "TLTY.Controllers" }
 		  );
 
+            routes.MapRoute(
+            name: "Chi tiết tin tức",
+            url: "tin-tuc/chi-tiet/{metatitle}-{id}",
+            defaults: new { controller = "News", action = "Details", id = UrlParameter.Optional },
+            namespaces: new[] { "TLTY.Controllers" }
+          );
+
 			routes.MapRoute(
 			name: "Tin tức",
 			url: "tin-tuc",
 			defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional },
+			namespaces: new[] { "TLTY.Controllers" }
+		  );
+
+			routes.MapRoute(
+			name: "Chi tiết Dịch vụ",
+			url: "dich-vu/chi-tiet/{metatitle}-{id}",
+			defaults: new { controller = "Express", action = "Details", id = UrlParameter.Optional },
 			namespaces: new[] { "TLTY.Controllers" }
 		  );
 

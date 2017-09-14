@@ -212,7 +212,6 @@ namespace TLTY.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
-
             var content = _db.Contents.Find(id);
             content.Status = !content.Status;
             _db.SaveChanges();
@@ -279,7 +278,6 @@ namespace TLTY.Areas.Admin.Controllers
                 xElement.Add(new XElement("Image", subStringItem));
             }
 
-
             try
             {
                 UpdateImages(id, xElement.ToString());
@@ -290,13 +288,11 @@ namespace TLTY.Areas.Admin.Controllers
             }
             catch (Exception)
             {
-
                 return Json(new
                 {
                     status = false
                 });
             }
-
         }
 
         public void UpdateImages(long contentId, string images)

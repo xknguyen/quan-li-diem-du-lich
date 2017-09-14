@@ -9,6 +9,7 @@ namespace TLTY.Areas.Admin.Models
 	public class HasCredentialAttribute : AuthorizeAttribute
 	{
 		public string PathID { set; get; }
+
 		protected override bool AuthorizeCore(HttpContextBase httpContext)
 		{
 			var session = (UserLogin)HttpContext.Current.Session[Constants.USER_SESSION];
@@ -28,11 +29,13 @@ namespace TLTY.Areas.Admin.Models
 				return false;
 			}
 		}
+
 		protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
 		{
 			filterContext.Result = new RedirectResult("~/Admin/Home/NotificationAuthorize");
 			//filterContext.Redirect("~/Admin/Login");
 		}
+
 		private List<string> GetCredentialByLoggedInUser(string userName)
 		{
 			var credentials = (List<string>)HttpContext.Current.Session[Constants.SESSION_CREDENTIALS];

@@ -108,7 +108,6 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
-
         }
 
 		[HasCredential(PathID = "EDIT_ACCOUNT")]
@@ -231,7 +230,6 @@ namespace TLTY.Areas.Admin.Controllers
 						return RedirectToAction("Index");
 					}
 				}
-
 			}
         }
 
@@ -266,7 +264,6 @@ namespace TLTY.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-
 				if (!string.IsNullOrEmpty(oldPass))
 				{
 					var session = (UserLogin)Session[Constants.USER_SESSION];

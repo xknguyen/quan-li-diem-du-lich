@@ -1,8 +1,236 @@
-﻿
+﻿@model EntityModel.EF.Content
+@using System.Xml.Linq
 @{
-    ViewBag.Title = "Details";
+    var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
+    ViewBag.Title = "Chi tiết: "+Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+    .hinh {
+        margin: 0px auto;
+    }
+</style>
+<div class="col-md-8 col-md-offset-2 chitiet">
+    <div class="col-md-12">
+        <h1 style="text-align: center; color: #981271; font-weight: bold;">@Model.Name</h1>
+        <img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
+        <strong>@Model.Description</strong>
+        <hr />
+        <div style="line-height: 2; font-size: 16px; text-align: center; display: block" class="details">
+            @Html.Raw(Model.Detail)
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+@if (Model.MoreImages != null && Model.MoreImages != "<Images />")
+{
+    int i = 0;
+    int j = 0;
+    <div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
+        <div class="row baiviet">
+            <div class="col-md-12 chitiet">
+                <h1 style="color: #fff">Hình ảnh về dịch vụ</h1>
+            </div>
+            <div class="col-sm-6" id="slider-thumbs">
+                <!-- Bottom switcher of slider -->
+                <ul class="hide-bullets">
+                    @foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
+                    {
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="s1name-@i">
+                                <img src="@itemimage.Value" alt="@itemimage.Name">
+                            </a>
+                        </li>
+                        i++;
+                    }
 
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-xs-12" id="slider">
+                    <!-- Top part of the slider -->
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-bounding-box">
+                            <div class="carousel slide" id="mySlider2">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    @foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
+                                    {
+                                        <div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
+                                            <img src="@itemimage.Value" alt="@itemimage.Name">
+                                        </div>
+                                        j++;
+                                    }
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left carousel-control" href="#mySlider2" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#mySlider2" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/Slider-->
+            </div>
+        </div>
+    </div>
+}
+<div class="clearfix"></div>
+<div class="col-md-8 col-md-offset-2 chitiet" style="margin-top: 10px;">
+    <div class="col-lg-12 binhluan">
+        <h1>Để lời bình luận</h1>
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label class="control-label col-md-4"></label>
+                <div class="col-md-8 diii2">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Tên của bạn<a style="color:red"> *</a>:</label>
+                <input type="text" class="form-control" id="txtName" placeholder="Nhập họ tên của bạn.">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Số điện thoại:</label>
+                <input type="text" class="form-control" id="txtPhone" placeholder="Nhập số điện thoại của bạn">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-md-12">
+                <label>Email<a style="color:red"> *</a>:</label>
+                <input type="Email" class="form-control" id="txtEmail" placeholder="Nhập email của bạn">
+            </div>
+            <div class="form-group col-md-12">
+                <label>Phản hồi<a style="color:red"> *</a>:</label>
+                <textarea class="form-control" rows="5" id="txtDetail" placeholder="Phản hồi của bạn về dịch vụ"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-success" type="button" id="btnSend" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
+            </div>
+
+        }
+        <div class="clearfix"></div>
+        @if (request != null)
+        {
+            <div class="col-md-12 binhluanchitiet">
+                <h1>Lời bình luận</h1>
+                @foreach (var item in request)
+                {
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            <h5>@item.Name</h5>
+                            <p style="color: #999; font-size: 13px">@string.Format("{0:dd/MM/yyyy}", item.CreateDate)</p>
+                        </div>
+                        <div class="col-md-10" style="border-bottom: 1px solid #999">
+                            <p style="font-size: 15px">@item.Detail</p>
+                            @if (item.MoreImages != null && item.MoreImages != "<Images />")
+                            {
+                                <div class="row">
+                                    <div class="column">
+                                        @foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+                                        {
+                                            <img src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        }
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+@section scripts{
+    <script>
+		jQuery(document).ready(function ($) {
+
+			$('#mySlider2').carousel({
+				interval: 5000
+			});
+
+			//Handles the carousel thumbnails
+			$('[id^=s1name-]').click(function () {
+				var idSelector = $(this).attr("id");
+				try {
+					var id = /-(\d+)$/.exec(idSelector)[1];
+					console.log(idSelector, id);
+					jQuery('#mySlider2').carousel(parseInt(id));
+				} catch (e) {
+					console.log('Regex failed!', e);
+				}
+			});
+
+			// When the carousel slides, auto update the text
+			$('#mySlider2').on('slid.bs.carousel', function (e) {
+				var id = $('.item.active').data('slide-number');
+				$('#carousel-text').html($('#slide-content-' + id).html());
+			});
+		});
+    </script>
+}
+@section jsFooter{
+    <script>
+        var request = {
+            init: function () {
+                request.registerEvents();
+            }, registerEvents: function () {
+                $('#btnSend').off('click').on('click', function () {
+                    var name = $('#txtName').val();
+                    var phone = $('#txtPhone').val();
+                    var email = $('#txtEmail').val();
+                    var details = $('#txtDetail').val();
+                    var contentid = @Model.ID;
+                    var div = document.getElementById('thongbao');
+                    $.ajax({
+                        url: '/News/Request',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            detail: details,
+                            contentId: contentid
+                        },
+                        success: function (res) {
+                            div.style.display = 'block';
+                            if (res.status === true) {
+                                $('.abc').html("<i class='fa fa-check'></i>"+res.msg);
+                                request.resetForm();
+                            }
+                            if (res.status === false) {
+                                $('.abc').html("<i class='fa fa-times'></i>"+res.msg);
+                            }
+                        }
+                    });
+                });
+
+            }, resetForm: function () {
+                $('#txtName').val('');
+                $('#txtPhone').val('');
+                $('#txtEmail').val('');
+                $('#txtDetail').val('');
+            }
+        }
+        request.init();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.details img').addClass("img-responsive");
+            $('.details img').addClass("hinh");
+        });
+    </script>
+}

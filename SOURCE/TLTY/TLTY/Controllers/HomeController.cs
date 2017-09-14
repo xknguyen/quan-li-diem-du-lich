@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 using System.Web.Services;
 using EntityModel.EF;
 using System.Configuration;
@@ -71,6 +70,5 @@ namespace TLTY.Controllers
 			var footer = _db.Contacts.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(1).ToList();
 			return PartialView(footer);
 		}
-
     }
 }

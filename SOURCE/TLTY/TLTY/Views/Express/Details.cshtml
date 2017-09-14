@@ -1,231 +1,166 @@
-﻿@{
-	ViewBag.Title = "Chi tiết: ";
+﻿@model EntityModel.EF.Content
+@using System.Xml.Linq
+@{
+	var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
+	ViewBag.Title = "Chi tiết: "+ @Model.Name;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<style>
+	.hinh {
+		margin: 0px auto;
+	}
+</style>
 <div class="col-md-8 col-md-offset-2 chitiet">
-	<div class="col-md-12">
-		<h1 style="text-align: center; color: #981271; font-weight: bold;">Vận chuyển trong khu du lịch</h1>
-		<img src="/Content/ClientTheme/image/1.png" style="margin: auto; display: block;" class="img-responsive">
-		<p style="line-height: 2;">Trên Cao nguyên với độ cao hơn 1500m so với mặt nước biển, du khách vẫn có thể du ngoạn bằng xe Lửa cổ, xe Jeep, xe Điện. Hành trình tham quan bắt đầu từ Khu Trung tâm, đi qua những con đường quanh co rợp bóng mát sẽ đưa du khách đến Cầu khóa Tình yêu, Vòi nước trên không, Phố hoa, tham quan Vườn Ươm, Thung lũng hoa Cẩm Tú Cầu. Đặc biệt là tham quan “Đồi Vọng Cảnh” – nơi có vườn bon sai với nhiều cây kiểng quý hiếm, Vườn Tình nhân, Tiểu cảnh Adam & Eva… cùng với Linh vật Rồng – Công (được chế tác bằng đá quý, mạ vàng) với ước muốn người đến tham quan sẽ gặp được nhiều điều may mắn trong cuộc sống và thành đạt trong kinh doanh. Từ đây, du khách có thể phóng tầm mắt bao quát, ngắm toàn cảnh TTC World – Thung lũng Tình Yêu ngập tràn hoa. Du khách sẽ được tham quan trong khoảng thời gian kéo dài 30 phút, sau đó xe sẽ đón du khách về lại Khu Trung tâm – kết thúc cuộc hành trình.</p>
+	<div class="col-md-12 chitiet1">
+		<h1>@Model.Name</h1>
+		<img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
+		<strong>@Model.Description</strong>
+		<hr />
+		<div style="line-height: 2; font-size: 16px; text-align: center; display: block" class="details">
+			@Html.Raw(Model.Detail)
+		</div>
 	</div>
 	<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
-<div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
-	<div class="row baiviet">
-		<div class="col-md-12 chitiet">
-			<h1 style="color: #fff">Hình ảnh về dịch vụ</h1>
-		</div>
-		<div class="col-sm-6" id="slider-thumbs">
-			<!-- Bottom switcher of slider -->
-			<ul class="hide-bullets">
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-0">
-						<img src="http://placehold.it/150x150&text=zero">
-					</a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-1"><img src="http://placehold.it/150x150&text=1"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-2"><img src="http://placehold.it/150x150&text=2"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-3"><img src="http://placehold.it/150x150&text=3"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-4"><img src="http://placehold.it/150x150&text=4"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-5"><img src="http://placehold.it/150x150&text=5"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-6"><img src="http://placehold.it/150x150&text=6"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-7"><img src="http://placehold.it/150x150&text=7"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-8"><img src="http://placehold.it/150x150&text=8"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-9"><img src="http://placehold.it/150x150&text=9"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-10"><img src="http://placehold.it/150x150&text=10"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-11"><img src="http://placehold.it/150x150&text=11"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-12"><img src="http://placehold.it/150x150&text=12"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-13"><img src="http://placehold.it/150x150&text=13"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-14"><img src="http://placehold.it/150x150&text=14"></a>
-				</li>
-				<li class="col-sm-3">
-					<a class="thumbnail" id="s1name-15"><img src="http://placehold.it/150x150&text=15"></a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-sm-6">
-			<div class="col-xs-12" id="slider">
-				<!-- Top part of the slider -->
-				<div class="row">
-					<div class="col-sm-12" id="carousel-bounding-box">
-						<div class="carousel slide" id="mySlider2">
-							<!-- Carousel items -->
-							<div class="carousel-inner">
-								<div class="active item" data-slide-number="0">
-									<img src="http://placehold.it/470x480&text=zero">
-								</div>
-								<div class="item" data-slide-number="1">
-									<img src="http://placehold.it/470x480&text=1">
-								</div>
-								<div class="item" data-slide-number="2">
-									<img src="http://placehold.it/470x480&text=2">
-								</div>
-								<div class="item" data-slide-number="3">
-									<img src="http://placehold.it/470x480&text=3">
-								</div>
-								<div class="item" data-slide-number="4">
-									<img src="http://placehold.it/470x480&text=4">
-								</div>
-								<div class="item" data-slide-number="5">
-									<img src="http://placehold.it/470x480&text=5">
-								</div>
+@if (Model.MoreImages != null && Model.MoreImages != "<Images />")
+{
+	int i = 0;
+	int j = 0;
+	<div class="container albumhinh" >
+		<div class="row baiviet">
+			<div class="col-md-12 chitiet">
+				<h1>Hình ảnh về dịch vụ</h1>
+			</div>
+			<div class="col-sm-6" id="slider-thumbs">
+				<!-- Bottom switcher of slider -->
+				<ul class="hide-bullets">
+					@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
+					{
+					<li class="col-sm-3">
+						<a class="thumbnail" id="s1name-@i">
+							<img src="@itemimage.Value" alt="@itemimage.Name">
+						</a>
+					</li>
+						i++;
+					}
 
-								<div class="item" data-slide-number="6">
-									<img src="http://placehold.it/470x480&text=6">
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<div class="col-xs-12" id="slider">
+					<!-- Top part of the slider -->
+					<div class="row">
+						<div class="col-sm-12" id="carousel-bounding-box">
+							<div class="carousel slide" id="mySlider2">
+								<!-- Carousel items -->
+								<div class="carousel-inner">
+									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
+									{
+									<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
+										<img src="@itemimage.Value" alt="@itemimage.Name">
+									</div>
+										j++;
+									}
 								</div>
-
-								<div class="item" data-slide-number="7">
-									<img src="http://placehold.it/470x480&text=7">
-								</div>
-
-								<div class="item" data-slide-number="8">
-									<img src="http://placehold.it/470x480&text=8">
-								</div>
-
-								<div class="item" data-slide-number="9">
-									<img src="http://placehold.it/470x480&text=9">
-								</div>
-
-								<div class="item" data-slide-number="10">
-									<img src="http://placehold.it/470x480&text=10">
-								</div>
-
-								<div class="item" data-slide-number="11">
-									<img src="http://placehold.it/470x480&text=11">
-								</div>
-
-								<div class="item" data-slide-number="12">
-									<img src="http://placehold.it/470x480&text=12">
-								</div>
-								<div class="item" data-slide-number="13">
-									<img src="http://placehold.it/470x480&text=13">
-								</div>
-								<div class="item" data-slide-number="14">
-									<img src="http://placehold.it/470x480&text=14">
-								</div>
-								<div class="item" data-slide-number="15">
-									<img src="http://placehold.it/470x480&text=15">
-								</div>
+								<!-- Carousel nav -->
+								<a class="left carousel-control" href="#mySlider2" role="button" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left"></span>
+								</a>
+								<a class="right carousel-control" href="#mySlider2" role="button" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right"></span>
+								</a>
 							</div>
-							<!-- Carousel nav -->
-							<a class="left carousel-control" href="#mySlider2" role="button" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span>
-							</a>
-							<a class="right carousel-control" href="#mySlider2" role="button" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-							</a>
 						</div>
 					</div>
 				</div>
+				<!--/Slider-->
 			</div>
-		</div>
-		<!--/Slider-->
-	</div>
 
-</div>
+		</div>
+	</div>
+}
 <div class="clearfix"></div>
 <div class="col-md-8 col-md-offset-2 chitiet" style="margin-top: 10px;">
-	<div class="col-lg-12" style="border: 1px solid aqua;background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%); padding-bottom: 10px; color: #fff">
-		<h1 style="text-align: center;color: #fff; font-weight: bold;">Để lời bình luận</h1>
-		<form action="#" method="#">
-			<div class="form-group col-md-6">
-				<label for="usr">Tên của bạn:</label>
-				<input type="text" class="form-control" id="usr" placeholder="Nhập họ tên của bạn.">
+	<div class="col-lg-12 binhluan">
+		<h1>Để lời bình luận</h1>
+		@using (Html.BeginForm(FormMethod.Post))
+		{
+			@Html.AntiForgeryToken()
+			<div class="form-group">
+				<label class="control-label col-md-4"></label>
+				<div class="col-md-8">
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				</div>
+				<div class="clearfix"></div>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="usr">Số điện thoại:</label>
-				<input type="text" class="form-control" id="usr" placeholder="Nhập số điện thoại của bạn">
+				<label>Tên của bạn<a style="color:red"> *</a>:</label>
+				<input type="text" class="form-control" id="txtName" placeholder="Nhập họ tên của bạn.">
+			</div>
+			<div class="form-group col-md-6">
+				<label>Số điện thoại:</label>
+				<input type="text" class="form-control" id="txtPhone" placeholder="Nhập số điện thoại của bạn">
 			</div>
 			<div class="clearfix"></div>
 			<div class="form-group col-md-12">
-				<label for="usr">Email:</label>
-				<input type="Email" class="form-control" id="usr" placeholder="Nhập email của bạn">
+				<label>Email<a style="color:red"> *</a>:</label>
+				<input type="Email" class="form-control" id="txtEmail" placeholder="Nhập email của bạn">
 			</div>
 			<div class="form-group col-md-12">
-				<label for="usr">Chọn hình:</label>
-				<div style="position:relative;">
+				<label>Chọn hình:</label>
+				<div style="position: relative;">
 					<a class='btn btn-primary' href='javascript:;'>
 						Chọn hình...
-						<input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+						<input type="file" style='position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity: 0; background-color: transparent; color: transparent;' name="file_source" size="40" onchange=' $("#upload-file-info").html($(this).val()); '>
 					</a>
 					&nbsp;
 					<span class='label label-info' id="upload-file-info"></span>
 				</div>
 			</div>
+			<div class="form-group col-md-12">
+				<label>Phản hồi<a style="color:red"> *</a>:</label>
+				<textarea class="form-control" rows="5" id="txtDetail" placeholder="Phản hồi của bạn về dịch vụ"></textarea>
+			</div>
+			<div class="form-group col-md-12">
+				<button class="btn btn-success" type="button" id="btnSend" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
+			</div>
 
-			<div class="form-group col-md-12">
-				<label for="comment">Phản hồi:</label>
-				<textarea class="form-control" rows="5" id="comment" placeholder="Phản hồi của bạn về dịch vụ"></textarea>
-			</div>
-			<div class="form-group col-md-12">
-				<button class="btn btn-success" type="sumit" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
-			</div>
-		</form>
+		}
 		<div class="clearfix"></div>
-		<div class="col-md-12">
-			<h1 style="text-align: center;color: #981271; font-weight: bold;">Lời bình luận</h1>
-			<div class="col-md-12">
-				<div class="col-md-2">
-					<h5>Khánh Vinh</h5>
-					<p style="color: #999; font-size: 13px">17/08/2017</p>
-				</div>
-				<div class="col-md-10" style="border-bottom: 1px solid #999">
-					<p style="font-size: 15px">Ngày nay sinh viên sư phạm đầy rẫy và chẳng biết đâu mà lần. Việc miễn học phí không còn là động lực để các HS ưu tú quan tâm, vâng miễn 4 năm đại học nhưng khi học xong 2/3 cuộc đời của bạn sẽ đi về đâu. Bon chen 1 suất trường công ư. ? Dễ gì.</p>
-					<div class="row">
-						<div class="column">
-							<img src="/Content/ClientTheme/image/express/switch/XE-DIEN.jpg" alt="Ahihi" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+		@if (request != null)
+		{
+			<div class="col-md-12 binhluanchitiet">
+				<h1>Lời bình luận</h1>
+				@foreach (var item in request)
+				{
+					<div class="col-md-12">
+						<div class="col-md-2">
+							<h5>@item.Name</h5>
+							<p style="color: #999; font-size: 13px">@string.Format("{0:dd/MM/yyyy}", item.CreateDate)</p>
+						</div>
+						<div class="col-md-10" style="border-bottom: 1px solid #999">
+							<p style="font-size: 15px">@item.Detail</p>
+							@if (item.MoreImages != null && item.MoreImages != "<Images />")
+							{
+								<div class="row">
+									<div class="column">
+										@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
+										{
+											<img src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+										}
+									</div>
+								</div>
+							}
 
-							<img src="/Content/ClientTheme/image/express/switch/XE-LUA.jpg" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
 						</div>
 					</div>
-				</div>
+				}
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-md-12">
-				<div class="col-md-2">
-					<h5>Khánh Vinh</h5>
-					<p style="color: #999; font-size: 13px">17/08/2017</p>
-				</div>
-				<div class="col-md-10" style="border-bottom: 1px solid #999">
-					<p style="font-size: 15px">Theo cá nhân mình thì cần phải quy hoạch lại đào tạo giáo viên. Đầu tiên phải điều tra dự thảo nguồn giáo viên từng năm một sau đó có tính toán hợp lí để thu hút HS ưu tú, như năm này 2018 ta khảo sát GV cả nước theo từng địa phương... Về hưu, nghĩ hưu non (cho đăng kí trước 4 năm) , ... + bên dân số điều tra tỉ lệ trẻ cùng độ tuổi... Để có phương án đào tạo hơp lí sát thực tế. Bên cạnh đó cần có cuộc khảo thí chất lượng GV trước khi ra trường theo từng cấp dạy để đảm bảo chất lượng. Haha ... Ý kiến của riêng mình. Đừng ném gạch đá chi nhé...</p>
-					<div class="row">
-						<div class="column">
-							<img src="/Content/ClientTheme/image/2.jpg" alt="Ahihi" width="50" height="50"  style="margin: 5px 5px 5px 5px; float: left;">
+		}
 
-							<img src="/Content/ClientTheme/image/4.jpg" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
 	</div>
 	<div class="clearfix"></div>
 </div>
@@ -249,6 +184,7 @@
 					console.log('Regex failed!', e);
 				}
 			});
+
 			// When the carousel slides, auto update the text
 			$('#mySlider2').on('slid.bs.carousel', function (e) {
 				var id = $('.item.active').data('slide-number');
@@ -256,4 +192,57 @@
 			});
 		});
 	</script>
+}
+@section jsFooter{
+    <script>
+        var request = {
+            init: function () {
+                request.registerEvents();
+            }, registerEvents: function () {
+                $('#btnSend').off('click').on('click', function () {
+                    var name = $('#txtName').val();
+                    var phone = $('#txtPhone').val();
+                    var email = $('#txtEmail').val();
+                    var details = $('#txtDetail').val();
+                    var contentid = @Model.ID;
+                    var div = document.getElementById('thongbao');
+                    $.ajax({
+                        url: '/Express/Request',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            detail: details,
+                            contentId: contentid
+                        },
+                        success: function (res) {
+                            div.style.display = 'block';
+                            if (res.status === true) {
+                                $('.abc').html("<i class='fa fa-check'></i>"+res.msg);
+                                request.resetForm();
+                            }
+                            if (res.status === false) {
+                                $('.abc').html("<i class='fa fa-times'></i>"+res.msg);
+                            }
+                        }
+                    });
+                });
+
+            }, resetForm: function () {
+                $('#txtName').val('');
+                $('#txtPhone').val('');
+                $('#txtEmail').val('');
+                $('#txtDetail').val('');
+            }
+        }
+        request.init();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.details img').addClass("img-responsive");
+            $('.details img').addClass("hinh");
+        });
+    </script>
 }

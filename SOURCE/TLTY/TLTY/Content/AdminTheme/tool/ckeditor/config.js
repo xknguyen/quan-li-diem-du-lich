@@ -39,12 +39,12 @@ CKEDITOR.editorConfig = function( config ) {
 	config.syntaxhighlight_lang = 'csharp';
 	config.syntaxhighlight_hideControls = true;
 	config.language = 'vi';
-	config.filebrowserBrowseUrl = '/Areas/Admin/Content/ckfinder/ckfinder.html';
-	config.filebrowserImageBrowseUrl = '/Areas/Admin/Content/ckfinder/ckfinder.html?Type=Images';
-	config.filebrowserFlashBrowseUrl = '/Areas/Admin/Content/ckfinder/ckfinder.html?Type=Flash';
-	config.filebrowserUploadUrl = '/Areas/Admin/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files';
+	config.filebrowserBrowseUrl = '/Content/ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseUrl = '/Content/ckfinder/ckfinder.html?Type=Images';
+	config.filebrowserFlashBrowseUrl = '/Content/ckfinder/ckfinder.html?Type=Flash';
+	config.filebrowserUploadUrl = '/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files';
 	config.filebrowserImageUploadUrl = '/Data/';
-	config.filebrowserFlashUploadUrl = '/Areas/Admin/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash';
+	config.filebrowserFlashUploadUrl = '/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash';
 	
-	CKFinder.setupCKEditor(null, '/Areas/Admin/Content/ckfinder/');
+	CKFinder.setupCKEditor(null, '/Content/ckfinder/');
 };
