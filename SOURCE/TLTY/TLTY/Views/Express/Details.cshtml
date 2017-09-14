@@ -2,7 +2,7 @@
 @using System.Xml.Linq
 @{
 	var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
-	ViewBag.Title = "Chi tiết: "+ @Model.Name;
+	ViewBag.Title = "Chi tiết: " + @Model.Name;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,6 +11,18 @@
 		margin: 0px auto;
 	}
 </style>
+<div class="col-lg-12 baiviet">
+	<p>
+		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/dich-vu">Dịch vụ</a>/ <a href="/dich-vu/chi-tiet/@Model.MetaTitle-@Model.ID">@Model.Name</a>
+	</p>
+</div>
+<div class="col-md-12">
+	<div class="container lg">
+		<h1>Dịch vụ của khu du lịch</h1>
+	</div>
+	<div class="container gach"></div>
+	<div class="clearfix"></div>
+</div>
 <div class="col-md-8 col-md-offset-2 chitiet">
 	<div class="col-md-12 chitiet1">
 		<h1>@Model.Name</h1>
@@ -28,7 +40,7 @@
 {
 	int i = 0;
 	int j = 0;
-	<div class="container albumhinh" >
+	<div class="container albumhinh">
 		<div class="row baiviet">
 			<div class="col-md-12 chitiet">
 				<h1>Hình ảnh về dịch vụ</h1>
@@ -38,11 +50,11 @@
 				<ul class="hide-bullets">
 					@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 					{
-					<li class="col-sm-3">
-						<a class="thumbnail" id="s1name-@i">
-							<img src="@itemimage.Value" alt="@itemimage.Name">
-						</a>
-					</li>
+						<li class="col-sm-3">
+							<a class="thumbnail" id="s1name-@i">
+								<img src="@itemimage.Value" alt="@itemimage.Name">
+							</a>
+						</li>
 						i++;
 					}
 				</ul>
@@ -57,9 +69,9 @@
 								<div class="carousel-inner">
 									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 									{
-									<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
-										<img src="@itemimage.Value" alt="@itemimage.Name">
-									</div>
+										<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
+											<img src="@itemimage.Value" alt="@itemimage.Name">
+										</div>
 										j++;
 									}
 								</div>
@@ -191,55 +203,55 @@
 }
 
 @section jsFooter{
-    <script>
-        var request = {
-            init: function () {
-                request.registerEvents();
-            }, registerEvents: function () {
-                $('#btnSend').off('click').on('click', function () {
-                    var name = $('#txtName').val();
-                    var phone = $('#txtPhone').val();
-                    var email = $('#txtEmail').val();
-                    var details = $('#txtDetail').val();
-                    var contentid = @Model.ID;
-                    var div = document.getElementById('thongbao');
-                    $.ajax({
-                        url: '/Express/Request',
-                        type: 'POST',
-                        dataType: 'json',
-                        data: {
-                            name: name,
-                            phone: phone,
-                            email: email,
-                            detail: details,
-                            contentId: contentid
-                        },
-                        success: function (res) {
-                            div.style.display = 'block';
-                            if (res.status === true) {
-                                $('.abc').html("<i class='fa fa-check'></i>"+res.msg);
-                                request.resetForm();
-                            }
-                            if (res.status === false) {
-                                $('.abc').html("<i class='fa fa-times'></i>"+res.msg);
-                            }
-                        }
-                    });
-                });
+	<script>
+		var request = {
+			init: function () {
+				request.registerEvents();
+			}, registerEvents: function () {
+				$('#btnSend').off('click').on('click', function () {
+					var name = $('#txtName').val();
+					var phone = $('#txtPhone').val();
+					var email = $('#txtEmail').val();
+					var details = $('#txtDetail').val();
+					var contentid = @Model.ID;
+					var div = document.getElementById('thongbao');
+					$.ajax({
+						url: '/Express/Request',
+						type: 'POST',
+						dataType: 'json',
+						data: {
+							name: name,
+							phone: phone,
+							email: email,
+							detail: details,
+							contentId: contentid
+						},
+						success: function (res) {
+							div.style.display = 'block';
+							if (res.status === true) {
+								$('.abc').html("<i class='fa fa-check'></i>"+res.msg);
+								request.resetForm();
+							}
+							if (res.status === false) {
+								$('.abc').html("<i class='fa fa-times'></i>"+res.msg);
+							}
+						}
+					});
+				});
 
-            }, resetForm: function () {
-                $('#txtName').val('');
-                $('#txtPhone').val('');
-                $('#txtEmail').val('');
-                $('#txtDetail').val('');
-            }
-        }
-        request.init();
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.details img').addClass("img-responsive");
-            $('.details img').addClass("hinh");
-        });
-    </script>
+			}, resetForm: function () {
+				$('#txtName').val('');
+				$('#txtPhone').val('');
+				$('#txtEmail').val('');
+				$('#txtDetail').val('');
+			}
+		}
+		request.init();
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('.details img').addClass("img-responsive");
+			$('.details img').addClass("hinh");
+		});
+	</script>
 }

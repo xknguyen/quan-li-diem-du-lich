@@ -4,14 +4,25 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="col-lg-12 baiviet">
-	<p><i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/bang-gia">Bảng giá</a></p>
+	<p>
+		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/bang-gia">Bảng giá</a>
+	</p>
+</div>
+<div class="col-md-12">
+	<div class="container lg">
+		<h1>Bảng giá khu du lịch</h1>
+	</div>
+	<div class="container gach"></div>
+	<div class="clearfix"></div>
 </div>
 <div class="col-md-12 baiviet">
+	<div class="col-md-8 col-md-offset-2">
+		<img src="~/Content/ClientTheme/image/1.png" class="img-responsive">
+	</div>
+
 	@if (Model != null || Model.Count > 0)
 	{
 		<div class="col-md-8 col-md-offset-2 chitiet" style="background: #521a61 linear-gradient(55.93deg, azure 0%, aquamarine 100%); color: #521a61">
-			<h1>Bảng giá các dịch vụ trong khu du lịch</h1>
-			<img src="~/Content/ClientTheme/image/1.png" class="img-responsive">
 			<ol>
 				@foreach (var item in Model)
 				{
@@ -25,7 +36,7 @@
 								<i class="fa fa-sticky-note" style="color: red"></i> @item.Description
 							</p>
 						</div>
-						
+
 					</li>
 				}
 			</ol>
@@ -36,7 +47,7 @@
 	{
 		<h3>Đang cập nhật</h3>
 	}
-	
+
 	<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
