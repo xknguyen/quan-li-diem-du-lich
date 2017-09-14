@@ -20,8 +20,7 @@ namespace TLTY.Controllers
         [HttpPost]
         public JsonResult Feedback(string name, string phone, string email, string detail)
         {
-            string msg = "";
-            if (string.IsNullOrEmpty(name))
+	        if (string.IsNullOrEmpty(name))
             {
                 return Json(new
                 {

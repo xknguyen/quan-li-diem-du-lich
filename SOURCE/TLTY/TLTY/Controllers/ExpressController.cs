@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
 using EntityModel.EF;
+using Path = System.IO.Path;
 
 namespace TLTY.Controllers
 {
@@ -29,14 +33,13 @@ namespace TLTY.Controllers
 		}
 
 		[HttpPost]
-		public JsonResult Request(string name, string phone, string email, string detail, long contentId)
+		public JsonResult Requests(string name, string phone, string email, string detail, long contentId)
 		{
-			string msg = "";
 			if (string.IsNullOrEmpty(name))
 			{
 				return Json(new
 				{
-					msg=" Tên trống.",
+					msg = " Tên trống.",
 					status = false
 				});
 			}
@@ -76,6 +79,7 @@ namespace TLTY.Controllers
 						{
 							return Json(new
 							{
+								id = request.ID,
 								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
 								status = true
 							});
@@ -95,5 +99,54 @@ namespace TLTY.Controllers
 
 			}
 		}
+
+		[HttpPost]
+		public JsonResult Upload()
+		{
+			for (int i = 0; i < Request.Files.Count; i++)
+			{
+				var file = Request.Files[i];
+
+				var fileName = Path.GetFileName(file.FileName);
+
+				var path = Path.Combine(Server.MapPath("~/DATA/UPLOAD/"), fileName);
+				file.SaveAs(path);
+				JavaScriptSerializer serializer = new JavaScriptSerializer();
+				var listImages = serializer.Deserialize<List<string>>("~/DATA/UPLOAD/" + fileName);
+				XElement xElement = new XElement("Images");
+				foreach (var item in listImages)
+				{
+					var subStringItem = item.Substring(22);
+					xElement.Add(new XElement("Image", subStringItem));
+				}
+				try
+				{
+					//UpdateImages(id, xElement.ToString());
+					return Json(new
+					{
+						status = true
+					});
+				}
+				catch (Exception)
+				{
+					return Json(new
+					{
+						status = false
+					});
+				}
+			}
+			return Json(new
+			{
+				status = false
+			});
+		}
+
+		public void UpdateImages(long iD, string images)
+		{
+			var request = _db.Requests.Find(iD);
+			request.MoreImages = images;
+			_db.SaveChanges();
+		}
+
 	}
 }

@@ -28,9 +28,8 @@ namespace TLTY.Controllers
         }
 
         [HttpPost]
-        public JsonResult Request(string name, string phone, string email, string detail, long contentId)
+        public JsonResult Requests(string name, string phone, string email, string detail, long contentId)
         {
-            string msg = "";
             if (string.IsNullOrEmpty(name))
             {
                 return Json(new

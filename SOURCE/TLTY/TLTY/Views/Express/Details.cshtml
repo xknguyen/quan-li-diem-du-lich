@@ -116,19 +116,12 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="form-group col-md-12">
-				<label>Email<a style="color:red"> *</a>:</label>
+				<label>Email<a style="color: red"> *</a>:</label>
 				<input type="Email" class="form-control" id="txtEmail" placeholder="Nhập email của bạn">
 			</div>
 			<div class="form-group col-md-12">
 				<label>Chọn hình:</label>
-				<div style="position: relative;">
-					<a class='btn btn-primary' href='javascript:;'>
-						Chọn hình...
-						<input type="file" style='position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity: 0; background-color: transparent; color: transparent;' name="file_source" size="40" onchange=' $("#upload-file-info").html($(this).val()); '>
-					</a>
-					&nbsp;
-					<span class='label label-info' id="upload-file-info"></span>
-				</div>
+				<input id="imageUploadForm" multiple="multiple" type="file" />
 			</div>
 			<div class="form-group col-md-12">
 				<label>Phản hồi<a style="color:red"> *</a>:</label>
@@ -205,10 +198,11 @@
 @section jsFooter{
 	<script>
 		var request = {
-			init: function () {
+			init: function() {
 				request.registerEvents();
-			}, registerEvents: function () {
-				$('#btnSend').off('click').on('click', function () {
+			},
+			registerEvents: function() {
+				$('#btnSend').off('click').on('click', function() {
 					var name = $('#txtName').val();
 					var phone = $('#txtPhone').val();
 					var email = $('#txtEmail').val();
@@ -216,7 +210,7 @@
 					var contentid = @Model.ID;
 					var div = document.getElementById('thongbao');
 					$.ajax({
-						url: '/Express/Request',
+						url: '/Express/Requests',
 						type: 'POST',
 						dataType: 'json',
 						data: {
@@ -226,30 +220,52 @@
 							detail: details,
 							contentId: contentid
 						},
-						success: function (res) {
+						success: function(res) {
 							div.style.display = 'block';
 							if (res.status === true) {
-								$('.abc').html("<i class='fa fa-check'></i>"+res.msg);
+								request.upload();
+								$('.abc').html("<i class='fa fa-check'></i>" + res.msg);
 								request.resetForm();
 							}
 							if (res.status === false) {
-								$('.abc').html("<i class='fa fa-times'></i>"+res.msg);
+								$('.abc').html("<i class='fa fa-times'></i>" + res.msg);
 							}
 						}
 					});
 				});
 
-			}, resetForm: function () {
+			},
+			resetForm: function() {
 				$('#txtName').val('');
 				$('#txtPhone').val('');
 				$('#txtEmail').val('');
 				$('#txtDetail').val('');
+			},
+			upload: function() {
+				var formData = new FormData();
+				var totalFiles = document.getElementById("imageUploadForm").files.length;
+				for (var i = 0; i < totalFiles; i++) {
+					var file = document.getElementById("imageUploadForm").files[i];
+					formData.append("imageUploadForm", file);
+				}
+				$.ajax({
+					type: "POST",
+					url: '/Express/Upload',
+					data: formData,
+					dataType: 'json',
+					success: function(response) {
+						alert('succes!!');
+					},
+					error: function(error) {
+						alert("errror");
+					}
+				});
 			}
 		}
 		request.init();
 	</script>
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('.details img').addClass("img-responsive");
 			$('.details img').addClass("hinh");
 		});
