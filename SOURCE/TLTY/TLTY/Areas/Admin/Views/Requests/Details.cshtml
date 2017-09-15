@@ -1,5 +1,5 @@
 ﻿@model EntityModel.EF.Request
-
+@using System.Xml.Linq
 @{
     ViewBag.Title = "Xem chi tiết phản hồi " + @Model.Name;
     Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -15,47 +15,109 @@
 				</button>
 				<h3 style="text-align: center">Xem chi tiết phản hồi @Model.Name</h3>
 				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
-				<div class="col-md-7">
-                    <dl class="dl-horizontal">
-                        <dt>
-                            Tên:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Name)
-                        </dd>
-                        <dt>
-                            Email:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Email)
-                        </dd>
-                        <dt>
-                            Điện thoại:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Phone)
-                        </dd>
-                        <dt>
-                            Thể loại:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.ContentID)
-                        </dd>
-                        <dt>
-                            Chi tiết:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Detail)
-                        </dd>
-                        <dt>
-                            Ngày tạo:
-                        </dt>
+	            <div class="col-md-7">
+		            <dl class="dl-horizontal">
+			            <dt>
+				            Tên:
+			            </dt>
+			            <dd>
+				            @Html.DisplayFor(model => model.Name)
+			            </dd>
+			            <dt>
+				            Email:
+			            </dt>
+			            <dd>
+				            @Html.DisplayFor(model => model.Email)
+			            </dd>
+			            <dt>
+				            Điện thoại:
+			            </dt>
+			            <dd>
+				            @Html.DisplayFor(model => model.Phone)
+			            </dd>
+			            <dt>
+				            Thể loại:
+			            </dt>
+			            <dd>
+				            @Html.DisplayFor(model => model.ContentID)
+			            </dd>
+			            <dt>
+				            Chi tiết:
+			            </dt>
+			            <dd>
+				            @Html.DisplayFor(model => model.Detail)
+			            </dd>
+			            <dt>
+				            Ngày tạo:
+			            </dt>
 
-                        <dd>
-                            @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.Name)
-                        </dd>
-                    </dl>
-                </div>
+			            <dd>
+				            @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.Name)
+			            </dd>
+		            </dl>
+	            </div>
+				<div class="clearfix"></div>
+				<div class="col-md-12" style="border: 1px solid aqua; margin: 10px 10px 10px 10px">
+					<div class="row" style="margin: 10px 10px 10px 10px">
+						<div class="col-sm-5" id="slider-thumbs">
+							<label class="col-md-12">Danh sách hình ảnh</label>
+							<!-- Bottom switcher of slider -->
+							<ul class="hide-bullets">
+								@if (Model.MoreImages != null)
+								{
+									int i = 0;
+									foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+									{
+										<li class="col-sm-3">
+											<a class="thumbnail" id="carousel-selector-@i">
+												<img src="@item.Value">
+											</a>
+										</li>
+										i++;
+									}
+								}
+							</ul>
+						</div>
+						<div class="col-sm-7">
+							<div class="col-xs-12" id="slider">
+								<!-- Top part of the slider -->
+								<div class="row">
+									<div class="col-sm-12" id="carousel-bounding-box">
+										<div class="carousel slide" id="myCarousel">
+											<!-- Carousel items -->
+											<div class="carousel-inner">
+												@if (Model.MoreImages != null)
+												{
+													int i = 0;
+													foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+													{
+
+														string hiteam = "item";
+														if (i == 0)
+														{
+															hiteam = "active item";
+														}
+														<div class="@hiteam" data-slide-number="i">
+															<img src="@item.Value">
+														</div>
+														i++;
+													}
+												}
+											</div>
+											<!-- Carousel nav -->
+											<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+												<span class="fa fa-arrow-left" style="margin-top: 150px"></span>
+											</a>
+											<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+												<span class="fa fa-arrow-right" style="margin-top: 150px"></span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="col-md-12" style="margin-bottom:10px">
 					<hr />
 					<div class="form-actions no-color text-center">
@@ -67,6 +129,29 @@
         </div>
     </div>
 </div>
+<script>
+	jQuery(document).ready(function ($) {
+		$('#myCarousel').carousel({
+			interval: 5000
+		});
 
+		//Handles the carousel thumbnails
+		$('[id^=carousel-selector-]').click(function () {
+			var id_selector = $(this).attr("id");
+			try {
+				var id = /-(\d+)$/.exec(id_selector)[1];
+				console.log(id_selector, id);
+				jQuery('#myCarousel').carousel(parseInt(id));
+			} catch (e) {
+				console.log('Regex failed!', e);
+			}
+		});
+		// When the carousel slides, auto update the text
+		$('#myCarousel').on('slid.bs.carousel', function (e) {
+			var id = $('.item.active').data('slide-number');
+			$('#carousel-text').html($('#slide-content-' + id).html());
+		});
+	});
+</script>
 <script src="~/Content/AdminTheme/js/edit-modal.js"></script>
 

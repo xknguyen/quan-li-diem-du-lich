@@ -3,6 +3,18 @@
 
 @{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
+	var diachi = "";
+	if (Model != null || Model.Count > 0)
+	{
+		foreach (var item in Model.Where(x => x.ID == 1))
+		{
+			diachi = item.Address;
+		}
+	}
+	else
+	{
+		diachi = "Thung Lũng Tình Yêu";
+	}
 }
 
 <div class="container">
@@ -51,12 +63,41 @@
 			<i class="fa fa-caret-right"></i><a href="/bang-gia" title="Trang bảng giá"><h5>Bảng giá</h5></a>
 			<i class="fa fa-caret-right"></i><a href="/lien-he" title="Trang Liên hệ"><h5>Liên hệ</h5></a>
 		</div>
-			<div class="col-md-6 footer-right">
-				<h4>Bản đồ</h4>
-				<div class="map" id="mapCanvas"></div>
-				<div class="clearfix"></div>
-			</div>
+		<div class="col-md-6 footer-right">
+			<h4>Bản đồ</h4>
+			<div class="map" id="map"></div>
+			<script>
+				//11.977928, 108.451090
+				function initMap() {
+					var uluru = { lat: 11.977928, lng: 108.451090 };
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 17,
+						center: uluru
+					});
+
+					var contentString = '@Html.Raw(diachi)';
+
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+
+					var marker = new google.maps.Marker({
+						position: uluru,
+						map: map,
+						title: 'Địa chỉ'
+					});
+
+					marker.addListener('click', function () {
+						infowindow.open(map, marker);
+					});
+				}
+			</script>
+			<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8RH3lg0gCkgI5Kl6uPdKxFaXZVZBtUpA&callback=initMap">
+			</script>
+			<div class="clearfix"></div>
 		</div>
+	</div>
 	<div class="clearfix"></div>
 	<div class="container coppy">
 		<h5>Design by Nhóm 3</h5>
