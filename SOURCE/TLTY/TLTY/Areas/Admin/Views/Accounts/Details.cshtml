@@ -13,7 +13,6 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-
                 <h3 style="text-align: center">Xem chi tiết @Model.UserName </h3>
                 <img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
                 <div class="col-md-7">
@@ -21,75 +20,57 @@
                         <dt>
                             Tài khoản:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.UserName)
                         </dd>
                         <dt>
                             Nhóm:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.AccountGroup.Name)
                         </dd>
-
                         <dt>
                             Tên:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.FirstName)
                         </dd>
-
                         <dt>
                             Họ:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.LastName)
                         </dd>
-
                         <dt>
                             Ngày sinh:
                         </dt>
-
                         <dd>
                             @string.Format("{0:dd-MM-yyyy}", Model.Birthday)
                         </dd>
-
                         <dt>
                             Email:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Email)
                         </dd>
-
                         <dt>
                             Số điện thoại:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Phone)
                         </dd>
-
-
                         <dt>
                             Địa chỉ:
                         </dt>
-
                         <dd>
                             @Html.DisplayFor(model => model.Address)
                         </dd>
-
                         <dt>
                             Ngày tạo:
                         </dt>
-
                         <dd>
                             @string.Format("{0:dd-MM-yyyy}", Model.CreateDate)
                         </dd>
-
                     </dl>
                 </div>
 	            <div class="col-md-5">
@@ -105,7 +86,6 @@
 					<div class="clearfix"></div>
 	            </div>
             </div>
-            
         </div>
     </div>
 </div>

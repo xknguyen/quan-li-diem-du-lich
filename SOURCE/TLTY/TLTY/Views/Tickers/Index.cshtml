@@ -3,6 +3,7 @@
 	ViewBag.Title = "Bảng giá khu du lịch";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="col-lg-12 baiviet">
 	<p>
 		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/bang-gia">Bảng giá</a>
@@ -19,7 +20,6 @@
 	<div class="col-md-8 col-md-offset-2">
 		<img src="~/Content/ClientTheme/image/1.png" class="img-responsive">
 	</div>
-
 	@if (Model != null || Model.Count > 0)
 	{
 		<div class="col-md-8 col-md-offset-2 chitiet" style="background: #521a61 linear-gradient(55.93deg, azure 0%, aquamarine 100%); color: #521a61">
@@ -36,7 +36,6 @@
 								<i class="fa fa-sticky-note" style="color: red"></i> @item.Description
 							</p>
 						</div>
-
 					</li>
 				}
 			</ol>

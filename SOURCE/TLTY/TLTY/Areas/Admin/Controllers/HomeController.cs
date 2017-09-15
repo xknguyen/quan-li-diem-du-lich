@@ -12,6 +12,7 @@ namespace TLTY.Areas.Admin.Controllers
 	public class HomeController : BaseController
 	{
 		TLTYDBContext _db = new TLTYDBContext();
+
 		// GET: Admin/Home
 		public ActionResult Index()
 		{

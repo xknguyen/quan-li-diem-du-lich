@@ -28,6 +28,7 @@
 									@Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-md-2">Tên đường dẫn:</label>
 								<div class="col-md-10">
@@ -35,6 +36,7 @@
 									@Html.ValidationMessageFor(model => model.MetaTitle, "", new {@class = "text-danger"})
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-md-2">Mô tả:</label>
 								<div class="col-md-10">
@@ -42,6 +44,7 @@
 									@Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-md-2">Thể loại:</label>
 								<div class="col-md-10">
@@ -51,6 +54,7 @@
 									</select>
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-md-2">Nội dung:</label>
 								<div class="col-md-10">
@@ -61,6 +65,7 @@
 									CKEDITOR.replace("Detail");
 								</script><br/>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-md-2">Hình:</label>
 								<div class="col-md-8">
@@ -103,6 +108,7 @@
 		</div>
 	</div>
 </div>
+
 <script src="~/Scripts/jquery.nicescroll.min.js"></script>
 <script>
 	$(document).ready(function () {
