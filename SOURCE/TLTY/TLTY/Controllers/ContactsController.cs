@@ -10,6 +10,7 @@ namespace TLTY.Controllers
     public class ContactsController : Controller
     {
 		TLTYDBContext _db = new TLTYDBContext();
+
         // GET: Contacts
         public ActionResult Index()
         {
@@ -20,8 +21,7 @@ namespace TLTY.Controllers
         [HttpPost]
         public JsonResult Feedback(string name, string phone, string email, string detail)
         {
-            string msg = "";
-            if (string.IsNullOrEmpty(name))
+	        if (string.IsNullOrEmpty(name))
             {
                 return Json(new
                 {
@@ -56,7 +56,6 @@ namespace TLTY.Controllers
                         feedback.Email = email;
                         feedback.Phone = phone;
                         feedback.Description = detail;
-
                         feedback.Status = false;
                         feedback.CreateDate = DateTime.Now.Date;
                         _db.Feedbacks.Add(feedback);
@@ -65,23 +64,21 @@ namespace TLTY.Controllers
                         {
                             return Json(new
                             {
-                                msg = " Gửi yêu cầu thành công, chúng tôi sẽ liên lạc sớm nhất.",
+                                msg = " Gửi yêu cầu thành công, chúng tôi sẽ liên lạc sớm nhất!.",
                                 status = true
                             });
-                            //send mail
-
+                            //Send mail
                         }
                         else
                         {
                             return Json(new
                             {
-                                msg = " Gửi yêu cầu không thành công.",
+                                msg = " Gửi yêu cầu không thành công!.",
                                 status = false
                             });
                         }
                     }
                 }
-
             }
         }
     }

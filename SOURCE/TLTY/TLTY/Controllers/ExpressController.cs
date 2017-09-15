@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
 using EntityModel.EF;
+using Path = System.IO.Path;
 
 namespace TLTY.Controllers
 {
@@ -29,14 +33,13 @@ namespace TLTY.Controllers
 		}
 
 		[HttpPost]
-		public JsonResult Request(string name, string phone, string email, string detail, long contentId)
+		public JsonResult Requests(string name, string phone, string email, string details, long contentid)
 		{
-			string msg = "";
 			if (string.IsNullOrEmpty(name))
 			{
 				return Json(new
 				{
-					msg=" Tên trống.",
+					msg = " Tên trống.",
 					status = false
 				});
 			}
@@ -52,7 +55,7 @@ namespace TLTY.Controllers
 				}
 				else
 				{
-					if (string.IsNullOrEmpty(detail))
+					if (string.IsNullOrEmpty(details))
 					{
 						return Json(new
 						{
@@ -66,8 +69,8 @@ namespace TLTY.Controllers
 						request.Name = name;
 						request.Email = email;
 						request.Phone = phone;
-						request.Detail = detail;
-						request.ContentID = contentId;
+						request.Detail = details;
+						request.ContentID = contentid;
 						request.Status = false;
 						request.CreateDate = DateTime.Now.Date;
 						_db.Requests.Add(request);
@@ -76,24 +79,56 @@ namespace TLTY.Controllers
 						{
 							return Json(new
 							{
+								requestid = request.ID,
 								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
 								status = true
 							});
-							//send mail
 
 						}
 						else
 						{
 							return Json(new
 							{
-								msg = " Gửi phản hồi không thành công.",
+								msg = " Gửi phản hồi không thành công!.",
 								status = false
 							});
 						}
 					}
 				}
-
 			}
+		}
+
+		[HttpPost]
+		public void Upload(long requestid)
+		{
+			List<string> listIM = new List<string>();
+			for (int i = 0; i < Request.Files.Count; i++)
+			{
+				var file = Request.Files[i];
+
+				var fileName = Path.GetFileName(file.FileName);
+				string filename = string.Format("{0}-{1}",requestid, fileName);
+				var path = Path.Combine(Server.MapPath("~/DATA/Upload/"), filename);
+				file.SaveAs(path);
+				listIM.Add(filename);
+			}
+			if (listIM != null)
+			{
+				XElement xElement = new XElement("Images");
+				foreach (var item in listIM)
+				{
+					xElement.Add(new XElement("Image", ("/DATA/Upload/" + item)));
+				}
+				UpdateImages(requestid, xElement.ToString());
+			}
+
+		}
+
+		public void UpdateImages(long iD, string images)
+		{
+			var request = _db.Requests.Find(iD);
+			request.MoreImages = images;
+			_db.SaveChanges();
 		}
 	}
 }

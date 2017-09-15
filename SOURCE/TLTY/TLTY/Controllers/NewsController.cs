@@ -28,9 +28,8 @@ namespace TLTY.Controllers
         }
 
         [HttpPost]
-        public JsonResult Request(string name, string phone, string email, string detail, long contentId)
+        public JsonResult Requests(string name, string phone, string email, string detail, long contentId)
         {
-            string msg = "";
             if (string.IsNullOrEmpty(name))
             {
                 return Json(new
@@ -75,23 +74,21 @@ namespace TLTY.Controllers
                         {
                             return Json(new
                             {
-                                msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
+                                msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai!.",
                                 status = true
                             });
-                            //send mail
-
+                            //Send mail
                         }
                         else
                         {
                             return Json(new
                             {
-                                msg = " Gửi phản hồi không thành công.",
+                                msg = " Gửi phản hồi không thành công!.",
                                 status = false
                             });
                         }
                     }
                 }
-
             }
         }
     }

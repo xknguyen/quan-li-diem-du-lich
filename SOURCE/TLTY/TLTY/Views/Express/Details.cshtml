@@ -102,12 +102,12 @@
 			<div class="form-group">
 				<label class="control-label col-md-4"></label>
 				<div class="col-md-8">
-					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					@Html.ValidationSummary(true, "", new {@class = "text-danger"})
 				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="form-group col-md-6">
-				<label>Tên của bạn<a style="color:red"> *</a>:</label>
+				<label>Tên của bạn<a style="color: red"> *</a>:</label>
 				<input type="text" class="form-control" id="txtName" placeholder="Nhập họ tên của bạn.">
 			</div>
 			<div class="form-group col-md-6">
@@ -116,26 +116,19 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="form-group col-md-12">
-				<label>Email<a style="color:red"> *</a>:</label>
+				<label>Email<a style="color: red"> *</a>:</label>
 				<input type="Email" class="form-control" id="txtEmail" placeholder="Nhập email của bạn">
 			</div>
 			<div class="form-group col-md-12">
-				<label>Chọn hình:</label>
-				<div style="position: relative;">
-					<a class='btn btn-primary' href='javascript:;'>
-						Chọn hình...
-						<input type="file" style='position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity: 0; background-color: transparent; color: transparent;' name="file_source" size="40" onchange=' $("#upload-file-info").html($(this).val()); '>
-					</a>
-					&nbsp;
-					<span class='label label-info' id="upload-file-info"></span>
-				</div>
-			</div>
-			<div class="form-group col-md-12">
-				<label>Phản hồi<a style="color:red"> *</a>:</label>
+				<label>Phản hồi<a style="color: red"> *</a>:</label>
 				<textarea class="form-control" rows="5" id="txtDetail" placeholder="Phản hồi của bạn về dịch vụ"></textarea>
 			</div>
 			<div class="form-group col-md-12">
 				<button class="btn btn-success" type="button" id="btnSend" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
+			</div>
+			<div class="form-group col-md-12" id="uphinh" style="display: none">
+				<label>Bạn có muốn thêm hình không:</label>
+				<input type="file" id="imageUploadForm" name="image" multiple="multiple"/>
 			</div>
 		}
 		<div class="clearfix"></div>
@@ -154,11 +147,13 @@
 							<p style="font-size: 15px">@item.Detail</p>
 							@if (item.MoreImages != null && item.MoreImages != "<Images />")
 							{
+								int i = 0;
 								<div class="row">
 									<div class="column">
 										@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
 										{
-											<img src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+											<img id="@i" data-toggle="modal" data-target="#myModalImages" src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+											i++;
 										}
 									</div>
 								</div>
@@ -172,17 +167,22 @@
 	</div>
 	<div class="clearfix"></div>
 </div>
-
+<div id="myModalImages" class="modal fade" role="dialog">
+	<button type="button" class="close" data-dismiss="modal" style="margin-right: 50px;margin-top: 40px">
+		<span aria-hidden="true" style="font-size: 50px;">&times;</span>
+		<span class="sr-only">Close</span>
+	</button>
+	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 550px; height: 550px;margin-top: 70px"/>
+</div>
 @section scripts{
 	<script>
-		jQuery(document).ready(function ($) {
-
+		jQuery(document).ready(function($) {
 			$('#mySlider2').carousel({
 				interval: 5000
 			});
 
 			//Handles the carousel thumbnails
-			$('[id^=s1name-]').click(function () {
+			$('[id^=s1name-]').click(function() {
 				var idSelector = $(this).attr("id");
 				try {
 					var id = /-(\d+)$/.exec(idSelector)[1];
@@ -194,9 +194,19 @@
 			});
 
 			// When the carousel slides, auto update the text
-			$('#mySlider2').on('slid.bs.carousel', function (e) {
+			$('#mySlider2').on('slid.bs.carousel', function(e) {
 				var id = $('.item.active').data('slide-number');
 				$('#carousel-text').html($('#slide-content-' + id).html());
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('img').on('click', function () {
+				var image = $(this).attr('src');
+				$('#myModalImages').on('show.bs.modal', function () {
+					$("#Myid").attr("src", image);
+				});
 			});
 		});
 	</script>
@@ -205,41 +215,70 @@
 @section jsFooter{
 	<script>
 		var request = {
-			init: function () {
+			init: function() {
 				request.registerEvents();
-			}, registerEvents: function () {
-				$('#btnSend').off('click').on('click', function () {
+			},
+			registerEvents: function() {
+				$('#btnSend').off('click').on('click', function() {
 					var name = $('#txtName').val();
 					var phone = $('#txtPhone').val();
 					var email = $('#txtEmail').val();
 					var details = $('#txtDetail').val();
 					var contentid = @Model.ID;
+
+
 					var div = document.getElementById('thongbao');
+					var div2 = document.getElementById('uphinh');
 					$.ajax({
-						url: '/Express/Request',
+						url: '/Express/Requests',
 						type: 'POST',
 						dataType: 'json',
 						data: {
 							name: name,
 							phone: phone,
 							email: email,
-							detail: details,
-							contentId: contentid
+							details: details,
+							contentid: contentid
 						},
-						success: function (res) {
+						success: function(res) {
 							div.style.display = 'block';
 							if (res.status === true) {
-								$('.abc').html("<i class='fa fa-check'></i>"+res.msg);
+								div2.style.display = 'block';
+								request.upload(parseInt(res.requestid));
+								$('.abc').html("<i class='fa fa-check'></i>" + res.msg);
 								request.resetForm();
 							}
 							if (res.status === false) {
-								$('.abc').html("<i class='fa fa-times'></i>"+res.msg);
+								$('.abc').html("<i class='fa fa-times'></i>" + res.msg);
 							}
 						}
 					});
 				});
+			},
+			upload: function(id) {
+				var div = document.getElementById('thongbao');
+				$("#imageUploadForm").change(function() {
+					var formData = new FormData();
+					var totalFiles = document.getElementById("imageUploadForm").files.length;
+					for (var i = 0; i < totalFiles; i++) {
+						var file = document.getElementById("imageUploadForm").files[i];
 
-			}, resetForm: function () {
+						formData.append("imageUploadForm", file);
+					}
+					formData.append("requestid", id);
+					$.ajax({
+						type: "POST",
+						url: '/Express/Upload',
+						data: formData,
+						dataType: 'json',
+						contentType: false,
+						processData: false
+					});
+					div.style.display = 'block';
+					$('.abc').html("<i class='fa fa-check'></i> Thêm hình thành công! chúng tôi sẽ xác nhận sau!");
+				});
+			},
+			resetForm: function() {
 				$('#txtName').val('');
 				$('#txtPhone').val('');
 				$('#txtEmail').val('');
@@ -248,8 +287,9 @@
 		}
 		request.init();
 	</script>
+
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('.details img').addClass("img-responsive");
 			$('.details img').addClass("hinh");
 		});

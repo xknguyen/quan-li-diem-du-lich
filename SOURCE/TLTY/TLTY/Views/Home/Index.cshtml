@@ -1,9 +1,11 @@
 ﻿@model List<EntityModel.EF.Instruction>
 @using System.Xml.Linq
+
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewBag.Title = "Giới thiệu";
 }
+
 @section slide{
 	@{ Html.RenderAction("Slider", "Home");}
 }
@@ -84,6 +86,7 @@
 				</div>}
 		</div>
 	}
+    
 	@section scripts{
 		@foreach (var itemcs in Model)
 		{
@@ -94,10 +97,10 @@
 				{
 					<script>
 						jQuery(document).ready(function($) {
-
 							$('#mySlider-' + @itemcs.ID).carousel({
 								interval: 5000
 							});
+
 							//Handles the carousel thumbnails
 							$('[id^=' + @itemcs.ID + '-hinh-]').click(function() {
 								var idSelector = $(this).attr("id");

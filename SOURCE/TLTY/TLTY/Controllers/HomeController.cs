@@ -38,7 +38,6 @@ namespace TLTY.Controllers
 			return View(intruction);
 		}
 
-
         public JsonResult ChangeTheme(string nameThemes)
         {
             HttpCookie themePage = new HttpCookie("themePage", nameThemes);
