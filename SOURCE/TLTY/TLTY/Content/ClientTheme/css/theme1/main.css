@@ -13,7 +13,7 @@
 		}
 
 .navbar-default .navbar-nav > li > a:hover {
-	color: #981271;
+	color: #78b43d;
 	font-weight: bold;
 }
 
@@ -23,7 +23,7 @@ ul.nav li.active {
 }
 
 .navbar-default .navbar-nav > li.active > a {
-	color: #981271;
+	color: #78b43d;
 	font-weight: bold;
 }
 
@@ -37,13 +37,13 @@ ul.nav li.active:hover {
 }
 
 .navbar-default .navbar-nav > li.active > a {
-	color: #981271;
+	color: #78b43d;
 	font-weight: bold;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
 	background-color: transparent;
-	color: #981271;
+	color: #78b43d;
 }
 
 .navbar-default {
@@ -56,13 +56,13 @@ ul.nav li.active:hover {
 }
 
 h1 {
-	color: black;
+	color: red;
 }
 
 .footer {
 	bottom: 0;
 	width: 100%;
-	background: #060c17;
+	background: #eaf8d2;
 }
 
 .container {
@@ -78,19 +78,19 @@ h1 {
 	}
 
 		.footer-child .footer-left h4, .footer-child .footer-right h4 {
-			color: #fff;
+			color: #378b36;
 			font-weight: bold;
 			margin-bottom: 20px;
 		}
 
 		.footer-child .footer-left i {
-			color: #981271;
+			color: #378b36;
 			float: left;
 			margin-right: 10px;
 		}
 
 		.footer-child .footer-left h5 {
-			color: #fff;
+			color: #378b36;
 			margin-bottom: 20px;
 		}
 
@@ -170,7 +170,7 @@ img {
 		text-align: center;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		color: #981271;
+		color: #78b43d;
 		font-weight: bold;
 	}
 
@@ -193,7 +193,7 @@ img {
 }
 
 .gach {
-	border-bottom: 3px solid #521a61;
+	border-bottom: 3px solid #ffffff;
 }
 
 .baiviet a {
@@ -211,7 +211,7 @@ img {
 
 .baiviet .chitiet h1 {
 	text-align: center;
-	color: #981271;
+	color: #78b43d;
 	font-weight: bold;
 }
 
@@ -284,7 +284,7 @@ img {
 	bottom: 0;
 	left: 0;
 	padding: 15px;
-	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+	background: #521a61 linear-gradient(55.93deg,#78b43d 0%,navy 100%);
 }
 
 	.carousel-caption a {
@@ -490,15 +490,25 @@ div.guestwarn {
 }
 
 .lg {
-	background-image: url('../../image/bg.jpg');
+	background:#000 url('../../image/bg.jpg');
 	background-repeat: repeat;
 	background-position: top left;
 	background-attachment: scroll;
 	min-height: 110px;
+    z-index: 1000;
+    opacity: 0.5;
 }
 
 	.lg h1 {
 		text-align: center;
-		color: #000;
+		color: #ffffff;
 		font-weight: bold;
 	}
+    .dark-layer {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%; 
+    z-index: 900;
+    background: rgba(0,0,0,0.4);
+}
