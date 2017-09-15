@@ -2,6 +2,18 @@
 @{
     ViewBag.Title = "Liên hệ tới ban quản trị";
     Layout = "~/Views/Shared/_Layout.cshtml";
+	var diachi = "";
+	if (Model != null || Model.Count > 0)
+	{
+		foreach (var item in Model.Where(x => x.ID == 1))
+		{
+			diachi = item.Address;
+		}
+	}
+	else
+	{
+		diachi = "Thung Lũng Tình Yêu";
+	}
 }
 
 <div class="col-lg-12 baiviet">
@@ -52,6 +64,41 @@
 				</div>
 			}
 
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<div class=" col-md-12 itlienhe">
+			<h1>Bản đồ</h1>
+			<div class="map2" id="map2"></div>
+			<script>
+				//11.977928, 108.451090
+				function initMap() {
+					var uluru = { lat: 11.977928, lng: 108.451090 };
+					var map = new google.maps.Map(document.getElementById('map2'), {
+						zoom: 17,
+						center: uluru
+					});
+
+					var contentString = '@Html.Raw(diachi)';
+
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+
+					var marker = new google.maps.Marker({
+						position: uluru,
+						map: map,
+						title: 'Địa chỉ'
+					});
+
+					marker.addListener('click', function () {
+						infowindow.open(map, marker);
+					});
+				} google.maps.event.addDomListener(window, 'load', initMap);
+			</script>
+			<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8RH3lg0gCkgI5Kl6uPdKxFaXZVZBtUpA&callback=initMap">
+			</script>
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>

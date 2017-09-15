@@ -11,12 +11,12 @@ namespace EntityModel.EF
     {
         public long ID { get; set; }
 
-        [StringLength(250)]
+        [StringLength(500)]
         public string Name { get; set; }
 
         public int DisplayOrder { get; set; }
 
-        [StringLength(250)]
+        [StringLength(500)]
         public string Link { get; set; }
 
         public long ContentID { get; set; }
@@ -29,7 +29,7 @@ namespace EntityModel.EF
 
         public bool Status { get; set; }
 
-        [StringLength(50)]
+        [StringLength(500)]
         public string Description { get; set; }
 
     }

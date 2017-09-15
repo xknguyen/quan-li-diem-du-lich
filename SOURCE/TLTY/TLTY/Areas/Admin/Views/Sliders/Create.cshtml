@@ -19,7 +19,7 @@
 					<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
 					@Html.AntiForgeryToken()
                     <div class="form-horizontal">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                         <div class="col-md-12">
                             <div class="col-md-7">
                                 <div class="form-group">
@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3">Thứ tự:</label>
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", placeholder = "Nhập thứ tự ở đây" })
+                                        @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", placeholder = "Nhập thứ tự ở đây", Type="number" })
                                         @Html.ValidationMessageFor(model => model.DisplayOrder, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
