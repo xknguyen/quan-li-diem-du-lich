@@ -3,6 +3,7 @@
 		init: function () {
 			request.loadrequest();
 			request.loadfeedback();
+			request.open();
 		},
 		loadrequest: function () {
 			$.ajax({
@@ -23,7 +24,7 @@
 						var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 						var formattedTime = hours + ":" + minutes;
 						formattedDate = formattedTime + "-" + formattedDate;
-						html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link"><div><i class="fa fa-comment-o fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
+						html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link-mes"><div><i class="fa fa-comment-o fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
 					});
 					html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
 					$('#request').html(html);
@@ -49,11 +50,26 @@
 						var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 						var formattedTime = hours + ":" + minutes;
 						formattedDate = formattedTime + "-" + formattedDate;
-						html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + formattedDate + '</em></span></div><div>' + item.Description + '</div></a></li>';
+						html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link-mes"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + formattedDate + '</em></span></div><div>' + item.Description + '</div></a></li>';
 					});
 					html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
 					$('#feedback').html(html);
 				}
+			});
+		},
+		open: function() {
+			$('.detail-link-mes').click(function (e) {
+				var a_href = $(this).attr('href');
+				e.preventDefault();
+				$.ajax({
+					url: a_href,
+					type: 'GET',
+					contentType: 'application/json; charset=utf-8',
+					success: function (data) {
+						$('.body-content').prepend(data);
+						$('#detailModal').modal('show');
+					}
+				});
 			});
 		}
 	}

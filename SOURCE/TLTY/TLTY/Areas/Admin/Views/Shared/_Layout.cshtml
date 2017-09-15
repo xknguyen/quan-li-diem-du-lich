@@ -17,15 +17,17 @@
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/Admin/css")
 	@Scripts.Render("~/bundles/Admin/modernizr")
-	<style>.panel {
-	 z-index: 1002;
-	 position: inherit;
- }</style>
+	<style>
+		.panel {
+			z-index: 1002;
+			position: inherit;
+		}
+	</style>
 </head>
 <body class="body-content">
-	<div id="wrapper" style="background: #e280fc linear-gradient(55.93deg,#ffbeff 0%,#ddd 100%)">
+	<div id="wrapper" style="background: #e280fc linear-gradient(55.93deg, #ffbeff 0, #ddd 100%)">
 		@Html.Partial("_Nav")
-		<div id="page-wrapper" style="background:rgba(0, 0, 0, 0) linear-gradient(45deg, rgb(0, 244, 255) 0%, rgb(232, 171, 239) 100%) repeat scroll 0% 0%">
+		<div id="page-wrapper" style="background: #e280fc linear-gradient(45deg, rgb(0, 244, 255) 0, rgb(232, 171, 239) 100%) repeat scroll 0 0">
 			<div class="row">
 				<div class="col-lg-12">
 					@if (IsSectionDefined("header"))
@@ -81,5 +83,6 @@
 		});
 	</script>
 	@RenderSection("scripts", required: false)
+
 </body>
 </html>
