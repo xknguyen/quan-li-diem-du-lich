@@ -106,6 +106,7 @@ namespace TLTY.Areas.Admin.Controllers
 					SetAlert("<i class='fa fa-times'></i> Tài khoản đã tồn tại!", "error");
 				}
 			}
+
 			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
         }
@@ -175,6 +176,7 @@ namespace TLTY.Areas.Admin.Controllers
 					}
 				}
 			}
+
 			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
         }

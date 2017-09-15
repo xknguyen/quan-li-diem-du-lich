@@ -80,23 +80,21 @@ namespace TLTY.Controllers
 							return Json(new
 							{
 								id = request.ID,
-								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
+								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai!.",
 								status = true
 							});
-							//send mail
-
+							//Send mail
 						}
 						else
 						{
 							return Json(new
 							{
-								msg = " Gửi phản hồi không thành công.",
+								msg = " Gửi phản hồi không thành công!.",
 								status = false
 							});
 						}
 					}
 				}
-
 			}
 		}
 
@@ -147,6 +145,5 @@ namespace TLTY.Controllers
 			request.MoreImages = images;
 			_db.SaveChanges();
 		}
-
 	}
 }

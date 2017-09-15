@@ -61,7 +61,7 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 				else if (result == -2)
 				{
-					ViewBag.Error = "Sai mật khẩu.";
+					ViewBag.Error = "Sai mật khẩu!";
 					//ModelState.AddModelError("", "Sai mật khẩu.");
 				}
 			}
