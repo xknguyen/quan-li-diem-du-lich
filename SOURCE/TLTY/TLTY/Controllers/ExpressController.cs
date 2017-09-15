@@ -79,21 +79,11 @@ namespace TLTY.Controllers
 						{
 							return Json(new
 							{
-<<<<<<< HEAD
 								requestid = request.ID,
 								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
 								status = true
 							});
 
-							//send mail
-
-=======
-								id = request.ID,
-								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai!.",
-								status = true
-							});
-							//Send mail
->>>>>>> ab5702a2b6e039144856dbc6969af65f065f0ef0
 						}
 						else
 						{
