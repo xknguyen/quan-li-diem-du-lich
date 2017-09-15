@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="@ViewBag.Keywords" />
 	<meta name="description" content="@ViewBag.Descriptions" />
-	<title>Thung lũng tình yêu</title>
+	<title>@ViewBag.Title</title>
 	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
@@ -98,6 +98,7 @@
 		@{ Html.RenderAction("Footer", "Home");}
 	</div>
 	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/jqueryval")
 	@Scripts.Render("~/bundles/bootstrap")
 	<script type="text/javascript">
 		$('#menu li').click(function () {

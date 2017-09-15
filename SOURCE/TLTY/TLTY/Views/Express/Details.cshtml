@@ -3,6 +3,8 @@
 @{
 	var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
 	ViewBag.Title = "Chi tiết: " + @Model.Name;
+	ViewBag.Keywords = "Thung lũng tình yêu - " + @Model.Name;
+	ViewBag.Descriptions = @Model.Description;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
