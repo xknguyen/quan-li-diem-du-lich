@@ -42,6 +42,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CKFinder, Version=2.5.0.2768, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\AdminTheme\tool\ckfinder\bin\Release\CKFinder.dll</HintPath>
@@ -52,6 +56,10 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jQuery.Validation.Unobtrusive.Native, Version=1.1.5809.17463, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jQuery.Validation.Unobtrusive.Native.MVC5.1.3.0\lib\net45\jQuery.Validation.Unobtrusive.Native.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -112,13 +120,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease">
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1202,7 +1206,6 @@
     <Content Include="DATA\images\Slider\4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\ClientTheme\css\image\to-top.png" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -1275,8 +1278,21 @@
     <Content Include="Content\ClientTheme\css\bootstrap.min.css.map" />
     <Content Include="images\loader.gif" />
     <Content Include="Scripts\Alert.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.nicescroll.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\zoomico.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1303,9 +1319,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\Views\Contents\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Contents\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Contents\Details.cshtml" />
@@ -1371,6 +1384,8 @@
     <None Include="Properties\PublishProfiles\TLTY.pubxml" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Home\Footer.cshtml" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">
