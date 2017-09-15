@@ -57,9 +57,17 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (content.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (string.IsNullOrEmpty(content.Description))
 			{
 				SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (content.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(content.Detail))
 			{
@@ -133,9 +141,17 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (content.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (string.IsNullOrEmpty(content.Description))
 			{
 				SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (content.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(content.Detail))
 			{

@@ -57,14 +57,26 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 SetAlert("<i class='fa fa-times'></i> Địa chỉ trống xin hãy kiểm tra lại!", "error");
             }
+			else if (contact.Address.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Địa chỉ quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
             else if (string.IsNullOrEmpty(contact.Phone))
             {
                 SetAlert("<i class='fa fa-times'></i> Số điện thoại trống xin hãy kiểm tra lại!", "error");
-            }
+			}
+			else if (contact.Phone.Length > 50)
+			{
+				SetAlert("<i class='fa fa-times'></i> Số điện thoái quá 50 ký tự xin hãy kiểm tra lại!", "error");
+			}
             else if (string.IsNullOrEmpty(contact.Email))
             {
                 SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
             }
+			else if (contact.Email.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Email quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
             else
             {
 				var session = (UserLogin)Session[Constants.USER_SESSION];
@@ -111,20 +123,32 @@ namespace TLTY.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,CreateDate,UserName,Status,Address,Phone,Email")] Contact contact)
         {
-            if (string.IsNullOrEmpty(contact.Address))
-            {
-                SetAlert("<i class='fa fa-times'></i> Địa chỉ trống xin hãy kiểm tra lại!", "error");
-            }
-            else if (string.IsNullOrEmpty(contact.Phone))
-            {
-                SetAlert("<i class='fa fa-times'></i> Số điện thoại trống xin hãy kiểm tra lại!", "error");
-            }
-            else if (string.IsNullOrEmpty(contact.Email))
-            {
-                SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
-            }
-            else
-            {
+			if (string.IsNullOrEmpty(contact.Address))
+			{
+				SetAlert("<i class='fa fa-times'></i> Địa chỉ trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (contact.Address.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Địa chỉ quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else if (string.IsNullOrEmpty(contact.Phone))
+			{
+				SetAlert("<i class='fa fa-times'></i> Số điện thoại trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (contact.Phone.Length > 50)
+			{
+				SetAlert("<i class='fa fa-times'></i> Số điện thoái quá 50 ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else if (string.IsNullOrEmpty(contact.Email))
+			{
+				SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (contact.Email.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Email quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else
+			{
                 db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();
                 if (contact.ID > 0)

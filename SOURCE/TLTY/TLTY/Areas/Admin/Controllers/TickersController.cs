@@ -57,6 +57,10 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (ticker.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (ticker.Quantity < 0)
 			{
 				SetAlert("<i class='fa fa-times'></i> Số lượng trống xin hãy kiểm tra lại!", "error");
@@ -68,6 +72,10 @@ namespace TLTY.Areas.Admin.Controllers
 			else if (string.IsNullOrEmpty(ticker.Description))
 			{
 				SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (ticker.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else
 			{
@@ -119,6 +127,10 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (ticker.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (ticker.Quantity < 0)
 			{
 				SetAlert("<i class='fa fa-times'></i> Số lượng trống xin hãy kiểm tra lại!", "error");
@@ -130,6 +142,10 @@ namespace TLTY.Areas.Admin.Controllers
 			else if (string.IsNullOrEmpty(ticker.Description))
 			{
 				SetAlert("<i class='fa fa-times'></i> Mô tả trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (ticker.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else
 			{

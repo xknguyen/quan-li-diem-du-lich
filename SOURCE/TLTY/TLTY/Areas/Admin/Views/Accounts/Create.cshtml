@@ -22,7 +22,7 @@
 						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						<div class="col-md-7">
 							<div class="form-group">
-								<label class="control-label col-md-3">Tài khoản:</label>
+								<label class="control-label col-md-3">Tài khoản: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tên tài khoản ở đây" })
 									@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
@@ -36,14 +36,14 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Tên:</label>
+								<label class="control-label col-md-3">Tên: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
 									@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Họ:</label>
+								<label class="control-label col-md-3">Họ: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Nhập họ ở đây" })
 									@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
@@ -57,21 +57,21 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Email:</label>
+								<label class="control-label col-md-3">Email: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email ở đây" })
 									@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Điện thoại:</label>
+								<label class="control-label col-md-3">Điện thoại: <i style="font-size: 70%;color: red">(Không quá 15 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây" })
 									@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Địa chỉ:</label>
+								<label class="control-label col-md-3">Địa chỉ: <i style="font-size: 70%;color: red">(Không quá 500 ký tự)</i></label>
 								<div class="col-md-9">
 									@Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây" })
 									@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
