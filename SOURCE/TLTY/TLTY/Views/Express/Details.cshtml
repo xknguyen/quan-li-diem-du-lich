@@ -120,15 +120,15 @@
 				<input type="Email" class="form-control" id="txtEmail" placeholder="Nhập email của bạn">
 			</div>
 			<div class="form-group col-md-12">
-				<label>Chọn hình:</label>
-				<input id="imageUploadForm" multiple="multiple" type="file" />
-			</div>
-			<div class="form-group col-md-12">
 				<label>Phản hồi<a style="color:red"> *</a>:</label>
 				<textarea class="form-control" rows="5" id="txtDetail" placeholder="Phản hồi của bạn về dịch vụ"></textarea>
 			</div>
 			<div class="form-group col-md-12">
 				<button class="btn btn-success" type="button" id="btnSend" title="Nhấn để phản hồi." style="width: 100px">Phản hồi</button>
+			</div>
+			<div class="form-group col-md-12" id="uphinh" style="display: none">
+				<label>Bạn có muốn thêm hình không:</label>
+				<input type="file" id="imageUploadForm" name="image" multiple="multiple" />
 			</div>
 		}
 		<div class="clearfix"></div>
@@ -208,7 +208,10 @@
 					var email = $('#txtEmail').val();
 					var details = $('#txtDetail').val();
 					var contentid = @Model.ID;
+
+
 					var div = document.getElementById('thongbao');
+					var div2 = document.getElementById('uphinh');
 					$.ajax({
 						url: '/Express/Requests',
 						type: 'POST',
@@ -217,13 +220,14 @@
 							name: name,
 							phone: phone,
 							email: email,
-							detail: details,
-							contentId: contentid
+							details: details,
+							contentid: contentid
 						},
 						success: function(res) {
 							div.style.display = 'block';
 							if (res.status === true) {
-								request.upload();
+								div2.style.display = 'block';
+								request.upload(parseInt(res.requestid));
 								$('.abc').html("<i class='fa fa-check'></i>" + res.msg);
 								request.resetForm();
 							}
@@ -235,31 +239,34 @@
 				});
 
 			},
+			upload: function(id) {
+				$("#imageUploadForm").change(function() {
+					var formData = new FormData();
+					var totalFiles = document.getElementById("imageUploadForm").files.length;
+					for (var i = 0; i < totalFiles; i++) {
+						var file = document.getElementById("imageUploadForm").files[i];
+
+						formData.append("imageUploadForm", file);
+					}
+					formData.append("requestid", id);
+					$.ajax({
+						type: "POST",
+						url: '/Express/Upload',
+						data: formData,
+						dataType: 'json',
+						contentType: false,
+						processData: false,
+						success: function(response) {
+							alert('succes!!');
+						}
+					});
+				});
+			},
 			resetForm: function() {
 				$('#txtName').val('');
 				$('#txtPhone').val('');
 				$('#txtEmail').val('');
 				$('#txtDetail').val('');
-			},
-			upload: function() {
-				var formData = new FormData();
-				var totalFiles = document.getElementById("imageUploadForm").files.length;
-				for (var i = 0; i < totalFiles; i++) {
-					var file = document.getElementById("imageUploadForm").files[i];
-					formData.append("imageUploadForm", file);
-				}
-				$.ajax({
-					type: "POST",
-					url: '/Express/Upload',
-					data: formData,
-					dataType: 'json',
-					success: function(response) {
-						alert('succes!!');
-					},
-					error: function(error) {
-						alert("errror");
-					}
-				});
 			}
 		}
 		request.init();

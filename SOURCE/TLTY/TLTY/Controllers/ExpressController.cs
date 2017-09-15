@@ -33,7 +33,7 @@ namespace TLTY.Controllers
 		}
 
 		[HttpPost]
-		public JsonResult Requests(string name, string phone, string email, string detail, long contentId)
+		public JsonResult Requests(string name, string phone, string email, string details, long contentid)
 		{
 			if (string.IsNullOrEmpty(name))
 			{
@@ -55,7 +55,7 @@ namespace TLTY.Controllers
 				}
 				else
 				{
-					if (string.IsNullOrEmpty(detail))
+					if (string.IsNullOrEmpty(details))
 					{
 						return Json(new
 						{
@@ -69,8 +69,8 @@ namespace TLTY.Controllers
 						request.Name = name;
 						request.Email = email;
 						request.Phone = phone;
-						request.Detail = detail;
-						request.ContentID = contentId;
+						request.Detail = details;
+						request.ContentID = contentid;
 						request.Status = false;
 						request.CreateDate = DateTime.Now.Date;
 						_db.Requests.Add(request);
@@ -79,10 +79,11 @@ namespace TLTY.Controllers
 						{
 							return Json(new
 							{
-								id = request.ID,
+								requestid = request.ID,
 								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
 								status = true
 							});
+
 							//send mail
 
 						}
@@ -101,44 +102,29 @@ namespace TLTY.Controllers
 		}
 
 		[HttpPost]
-		public JsonResult Upload()
+		public void Upload(long requestid)
 		{
+			List<string> listIM = new List<string>();
 			for (int i = 0; i < Request.Files.Count; i++)
 			{
 				var file = Request.Files[i];
 
 				var fileName = Path.GetFileName(file.FileName);
-
-				var path = Path.Combine(Server.MapPath("~/DATA/UPLOAD/"), fileName);
+				string filename = string.Format("{0}-{1}",requestid, fileName);
+				var path = Path.Combine(Server.MapPath("~/DATA/Upload/"), filename);
 				file.SaveAs(path);
-				JavaScriptSerializer serializer = new JavaScriptSerializer();
-				var listImages = serializer.Deserialize<List<string>>("~/DATA/UPLOAD/" + fileName);
-				XElement xElement = new XElement("Images");
-				foreach (var item in listImages)
-				{
-					var subStringItem = item.Substring(22);
-					xElement.Add(new XElement("Image", subStringItem));
-				}
-				try
-				{
-					//UpdateImages(id, xElement.ToString());
-					return Json(new
-					{
-						status = true
-					});
-				}
-				catch (Exception)
-				{
-					return Json(new
-					{
-						status = false
-					});
-				}
+				listIM.Add(filename);
 			}
-			return Json(new
+			if (listIM != null)
 			{
-				status = false
-			});
+				XElement xElement = new XElement("Images");
+				foreach (var item in listIM)
+				{
+					xElement.Add(new XElement("Image", ("/DATA/Upload/" + item)));
+				}
+				UpdateImages(requestid, xElement.ToString());
+			}
+
 		}
 
 		public void UpdateImages(long iD, string images)
