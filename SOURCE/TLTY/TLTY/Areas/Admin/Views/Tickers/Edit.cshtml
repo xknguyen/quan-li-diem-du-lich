@@ -25,7 +25,7 @@
 			            @Html.HiddenFor(model => model.Status)
 			            @Html.HiddenFor(model => model.CreateDate)
 			            <div class="form-group">
-				            <label class="control-label col-md-3">Tên:</label>
+				            <label class="control-label col-md-3">Tên: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 				            <div class="col-md-9">
 					            @Html.TextBoxFor(model => model.Name, new {@class = "form-control", placeholder = "Nhập tên ở đây"})
 					            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
@@ -53,7 +53,7 @@
 				            </div>
 			            </div>
 			            <div class="form-group">
-				            <label class="control-label col-md-3">Mô tả:</label>
+				            <label class="control-label col-md-3">Mô tả: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
 				            <div class="col-md-9">
 					            @Html.TextAreaFor(model => model.Description, new {@class = "form-control", placeholder = "Nhập mô tả ở đây"})
 					            @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})

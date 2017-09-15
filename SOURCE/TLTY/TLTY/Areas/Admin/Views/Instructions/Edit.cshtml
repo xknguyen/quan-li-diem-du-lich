@@ -26,7 +26,7 @@
 						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						<div class="col-md-12">
 							<div class="form-group">
-								<label class="control-label col-md-2">Tiêu đề:</label>
+								<label class="control-label col-md-2">Tiêu đề<i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i>:</label>
 								<div class="col-md-10">
 									@Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tiêu đề ở đây" })
 									@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })

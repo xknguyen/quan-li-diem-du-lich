@@ -57,6 +57,10 @@ namespace TLTY.Areas.Admin.Controllers
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (instruction.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (string.IsNullOrEmpty(instruction.Detail))
 			{
 				SetAlert("<i class='fa fa-times'></i> Nội dung trống xin hãy kiểm tra lại!", "error");
@@ -123,6 +127,10 @@ namespace TLTY.Areas.Admin.Controllers
 			if (string.IsNullOrEmpty(instruction.Name))
 			{
 				SetAlert("<i class='fa fa-times'></i> Tiêu đề trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (instruction.Name.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tiêu đề quá 250 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(instruction.Detail))
 			{

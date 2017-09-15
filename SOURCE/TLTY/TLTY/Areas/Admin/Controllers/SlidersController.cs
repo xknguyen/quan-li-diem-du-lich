@@ -59,6 +59,10 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
             }
+			else if (slider.Name.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tên quá 500 Ký tự xin hãy kiểm tra lại!", "error");
+			}
             else if (slider.DisplayOrder < 0)
             {
                 SetAlert("<i class='fa fa-times'></i> Thứ tự không được trống và nhỏ hơn 0!", "error");
@@ -71,6 +75,10 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 SetAlert("<i class='fa fa-times'></i> Đường dẫn trống xin hãy kiểm tra lại!", "error");
             }
+			else if (slider.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 Ký tự xin hãy kiểm tra lại!", "error");
+			}
             else
             {
 				var session = (UserLogin)Session[Constants.USER_SESSION];
@@ -120,20 +128,32 @@ namespace TLTY.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,DisplayOrder,Link,ContentID,CreateDate,UserName,Status,Description")] Slider slider)
         {
-            if (string.IsNullOrEmpty(slider.Name))
-            {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Tên xin trống hãy kiểm tra lại!", "error");
-            }
-            else if (string.IsNullOrEmpty(slider.Description))
-            {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Mô tả trống xin hãy kiểm tra lại!", "error");
-            }
-            else if (slider.DisplayOrder < 0)
-            {
-                SetAlert("<img src='/Data/images/ChucNang/del.png' height='20' width='20' /> Thứ tự không được nhỏ hơn không hoặc trống xin hãy kiểm tra lại!", "error");
-            }
-            else
-            {
+			if (string.IsNullOrEmpty(slider.Name))
+			{
+				SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (slider.Name.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tên quá 500 Ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else if (slider.DisplayOrder < 0)
+			{
+				SetAlert("<i class='fa fa-times'></i> Thứ tự không được trống và nhỏ hơn 0!", "error");
+			}
+			else if (slider.ContentID < 0)
+			{
+				SetAlert("<i class='fa fa-times'></i> Nội dung trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (string.IsNullOrEmpty(slider.Link))
+			{
+				SetAlert("<i class='fa fa-times'></i> Đường dẫn trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (slider.Description.Length > 500)
+			{
+				SetAlert("<i class='fa fa-times'></i> Mô tả quá 500 Ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else
+			{
                 if (string.IsNullOrEmpty(slider.Link))
                 {
                     slider.Link = "/DATA/images/Slider/1.jpg";

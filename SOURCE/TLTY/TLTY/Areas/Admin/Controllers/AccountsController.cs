@@ -11,61 +11,81 @@ using TLTY.Areas.Admin.Models;
 
 namespace TLTY.Areas.Admin.Controllers
 {
-    public class AccountsController : BaseController
-    {
-        private TLTYDBContext _db = new TLTYDBContext();
+	public class AccountsController : BaseController
+	{
+		private TLTYDBContext _db = new TLTYDBContext();
 
 		[HasCredential(PathID = "VIEW_ACCOUNT")]
-        // GET: Admin/Accounts
-        public ActionResult Index()
-        {
-            var accounts = _db.Accounts.Include(a => a.AccountGroup);
-            return View(accounts.ToList());
-        }
+		// GET: Admin/Accounts
+		public ActionResult Index()
+		{
+			var accounts = _db.Accounts.Include(a => a.AccountGroup);
+			return View(accounts.ToList());
+		}
 
 		[HasCredential(PathID = "DETAILS_ACCOUNT")]
-        // GET: Admin/Accounts/Details/5
-        public ActionResult Details(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-                return HttpNotFound();
-            }
-            return View(account);
-        }
+		// GET: Admin/Accounts/Details/5
+		public ActionResult Details(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			return View(account);
+		}
 
 		[HasCredential(PathID = "CREATE_ACCOUNT")]
-        // GET: Admin/Accounts/Create
-        public ActionResult Create()
-        {
-            ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name");
-            return View();
-        }
+		// GET: Admin/Accounts/Create
+		public ActionResult Create()
+		{
+			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name");
+			return View();
+		}
 
-        // POST: Admin/Accounts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		// POST: Admin/Accounts/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HasCredential(PathID = "CREATE_ACCOUNT")]
 		[HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-        {
+		[ValidateAntiForgeryToken]
+		public ActionResult Create([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+		{
 			if (string.IsNullOrEmpty(account.UserName))
 			{
 				SetAlert("<i class='fa fa-times'></i> Tài khoản trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (account.UserName.Length > 250 || account.UserName.Length < 4)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tài khoản quá 250 ký tự hoặc thấp hơn 4 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else if (string.IsNullOrEmpty(account.FirstName))
 			{
 				SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
 			}
+			else if (account.FirstName.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Tên quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else if (account.LastName.Length > 250)
+			{
+				SetAlert("<i class='fa fa-times'></i> Họ quá 250 ký tự xin hãy kiểm tra lại!", "error");
+			}
 			else if (string.IsNullOrEmpty(account.Email))
 			{
 				SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
+			}
+			else if (account.Email.Length > 250 || account.Email.Length < 4)
+			{
+				SetAlert("<i class='fa fa-times'></i> Email quá 250 ký tự hoặc thấp hơn 4 ký tự xin hãy kiểm tra lại!", "error");
+			}
+			else if (account.Phone.Length > 15 || account.UserName.Length < 10)
+			{
+				SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự hoặc thấp hơn 10 ký tự xin hãy kiểm tra lại!", "error");
 			}
 			else
 			{
@@ -109,33 +129,33 @@ namespace TLTY.Areas.Admin.Controllers
 
 			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
-        }
+		}
 
 		[HasCredential(PathID = "EDIT_ACCOUNT")]
-        // GET: Admin/Accounts/Edit/5
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
-            return View(account);
-        }
+		// GET: Admin/Accounts/Edit/5
+		public ActionResult Edit(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
+			return View(account);
+		}
 
-        // POST: Admin/Accounts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		// POST: Admin/Accounts/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HasCredential(PathID = "EDIT_ACCOUNT")]
 		[HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
-        {
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "ID,UserName,Password,AccountGroupID,FirstName,LastName,Birthday,Email,Phone,Avatar,Address,CreateDate,Status")] Account account)
+		{
 			var session = (UserLogin)Session[Constants.USER_SESSION];
 			if (session.AccountID != 1 && account.ID == 1)
 			{
@@ -148,13 +168,33 @@ namespace TLTY.Areas.Admin.Controllers
 				{
 					SetAlert("<i class='fa fa-times'></i> Tài khoản trống xin hãy kiểm tra lại!", "error");
 				}
+				else if (account.UserName.Length > 250 || account.UserName.Length < 4)
+				{
+					SetAlert("<i class='fa fa-times'></i> Tài khoản quá 250 ký tự hoặc thấp hơn 4 ký tự xin hãy kiểm tra lại!", "error");
+				}
 				else if (string.IsNullOrEmpty(account.FirstName))
 				{
 					SetAlert("<i class='fa fa-times'></i> Tên trống xin hãy kiểm tra lại!", "error");
 				}
+				else if (account.FirstName.Length > 250)
+				{
+					SetAlert("<i class='fa fa-times'></i> Tên quá 250 ký tự xin hãy kiểm tra lại!", "error");
+				}
+				else if (account.LastName.Length > 250)
+				{
+					SetAlert("<i class='fa fa-times'></i> Họ quá 250 ký tự xin hãy kiểm tra lại!", "error");
+				}
 				else if (string.IsNullOrEmpty(account.Email))
 				{
 					SetAlert("<i class='fa fa-times'></i> Email trống xin hãy kiểm tra lại!", "error");
+				}
+				else if (account.Email.Length > 250 || account.Email.Length < 4)
+				{
+					SetAlert("<i class='fa fa-times'></i> Email quá 250 ký tự hoặc thấp hơn 4 ký tự xin hãy kiểm tra lại!", "error");
+				}
+				else if (account.Phone.Length > 15 || account.UserName.Length < 10)
+				{
+					SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự hoặc thấp hơn 10 ký tự xin hãy kiểm tra lại!", "error");
 				}
 				else if (account.Birthday > DateTime.Parse("1/1/2017") || account.Birthday < DateTime.Parse("1/1/1950"))
 				{
@@ -179,30 +219,30 @@ namespace TLTY.Areas.Admin.Controllers
 
 			ViewBag.AccountGroupID = new SelectList(_db.AccountGroups, "ID", "Name", account.AccountGroupID);
 			return RedirectToAction("Index");
-        }
+		}
 
 		[HasCredential(PathID = "DELETE_ACCOUNT")]
-        // GET: Admin/Accounts/Delete/5
-        public ActionResult Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Account account = _db.Accounts.Find(id);
-            if (account == null)
-            {
-                return HttpNotFound();
-            }
-            return View(account);
-        }
+		// GET: Admin/Accounts/Delete/5
+		public ActionResult Delete(long? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Account account = _db.Accounts.Find(id);
+			if (account == null)
+			{
+				return HttpNotFound();
+			}
+			return View(account);
+		}
 
 		[HasCredential(PathID = "DELETE_ACCOUNT")]
-        // POST: Admin/Accounts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
-        {
+		// POST: Admin/Accounts/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(long id)
+		{
 			Account account = _db.Accounts.Find(id);
 			if (account.ID == 1 || account.UserName == "admin")
 			{
@@ -233,16 +273,16 @@ namespace TLTY.Areas.Admin.Controllers
 					}
 				}
 			}
-        }
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				_db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
 		[HasCredential(PathID = "CHANGE_ACCOUNT")]
 		//Change password
@@ -278,6 +318,10 @@ namespace TLTY.Areas.Admin.Controllers
 					if (result == null)
 					{
 						SetAlert("<i class='fa fa-times'></i> Tài khoản không tồn tại", "error");
+					}
+					else if (newPass1.Length > 250 || newPass1.Length < 6 || newPass2.Length > 250 || newPass2.Length < 6)
+					{
+						SetAlert("<i class='fa fa-times'></i> Mật khẩu quá 250 ký tự hoặc thấp hơn 6 ký tự xin hãy kiểm tra lại!", "error");
 					}
 					else
 					{
@@ -355,5 +399,5 @@ namespace TLTY.Areas.Admin.Controllers
 				}
 			}
 		}
-    }
+	}
 }
