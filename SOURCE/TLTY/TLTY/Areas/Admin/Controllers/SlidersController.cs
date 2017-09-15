@@ -142,7 +142,7 @@ namespace TLTY.Areas.Admin.Controllers
                 _db.SaveChanges();
                 if (slider.ID > 0)
                 {
-                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa trình ảnh thành công!. Hãy kích hoạt trình ảnh vừa tạo.", "success");
+                    SetAlert("<img src='/Data/images/ChucNang/ok.png' /> Sửa trình ảnh thành công!", "success");
                     return RedirectToAction("Index");
                 }
                 else
