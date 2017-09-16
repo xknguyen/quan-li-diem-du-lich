@@ -3,7 +3,7 @@
 	var session = (UserLogin)Session[Constants.USER_SESSION];
 	if (session == null)
 	{
-		Response.Redirect("~/Admin/Login");
+		Response.RedirectToRoute("~/Admin/Login/Index");
 	}
 }
 <!DOCTYPE html>

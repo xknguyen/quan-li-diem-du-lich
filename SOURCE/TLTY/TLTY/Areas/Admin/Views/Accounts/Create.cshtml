@@ -16,15 +16,15 @@
 						<span class="sr-only">Close</span>
 					</button>
 					<h3 style="text-align: center">Bảng tạo mới tài khoản</h3>
-					<img src="~/Content/ClientTheme/image/1.png" class="img-responsive"/>
+					<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
 					@Html.AntiForgeryToken()
 					<div class="form-horizontal">
 						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						<div class="col-md-7">
 							<div class="form-group">
-								<label class="control-label col-md-3">Tài khoản: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+								<label class="control-label col-md-3">Tài khoản:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tên tài khoản ở đây" })
+									@Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Nhập tên tài khoản ở đây. Không quá 250 ký tự.", max = "250", min = "6" })
 									@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
 								</div>
 							</div>
@@ -36,16 +36,16 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Tên: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+								<label class="control-label col-md-3">Tên:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
+									@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Nhập tên ở đây. Không quá 250 ký tự." })
 									@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Họ: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+								<label class="control-label col-md-3">Họ:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Nhập họ ở đây" })
+									@Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Nhập họ ở đây. Không quá 250 ký tự." })
 									@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
 								</div>
 							</div>
@@ -57,23 +57,23 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Email: <i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+								<label class="control-label col-md-3">Email:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email ở đây" })
+									@Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email ở đây. Không quá 250 ký tự." })
 									@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Điện thoại: <i style="font-size: 70%;color: red">(Không quá 15 ký tự)</i></label>
+								<label class="control-label col-md-3">Điện thoại:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây" })
+									@Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây. Không quá 15 ký tự." })
 									@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3">Địa chỉ: <i style="font-size: 70%;color: red">(Không quá 500 ký tự)</i></label>
+								<label class="control-label col-md-3">Địa chỉ:</label>
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây" })
+									@Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây. Không quá 500 ký tự." })
 									@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
 								</div>
 							</div>
@@ -81,7 +81,7 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<div class="col-md-9">
-									@Html.TextBoxFor(model => model.Avatar, new { @class = "form-control", placeholder = "Đường dẫn hình" })
+									@Html.TextBoxFor(model => model.Avatar, new { @class = "form-control", placeholder = "Đường dẫn hình." })
 									@Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
 								</div>
 								<div class="col-md-3">
@@ -99,13 +99,13 @@
 									</script>
 								</div>
 								<div class="col-md-12" style="margin-top: 10px;">
-									<img alt="" id="img" src="" width="200" height="245" class="img-responsive"/>
+									<img alt="" id="img" src="" width="200" height="245" class="img-responsive" />
 								</div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
 						<div class="col-md-12">
-							<hr/>
+							<hr />
 							<div class="form-group">
 								<div class="form-actions no-color text-center">
 									<button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tạo mới</button>
