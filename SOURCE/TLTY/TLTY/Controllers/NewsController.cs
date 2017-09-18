@@ -76,6 +76,7 @@ namespace TLTY.Controllers
 			news.ViewCount++;
 			_db.SaveChanges();
 			ViewBag.Request = _db.Requests.Where(x => x.ContentID == id && x.Status == true).OrderByDescending(x => x.CreateDate).ToList();
+			ViewBag.Seen = _db.Contents.Where(x => x.Status && x.Category).ToList();
 			return View(news);
 		}
 
