@@ -27,7 +27,7 @@ namespace TLTY.Controllers
 			ViewBag.Last = totalPage + 1;//
 			ViewBag.Next = page + 1;
 			ViewBag.Prev = page - 1;
-
+			ViewBag.SliderNews = _db.Contents.Where(x => x.Status && x.Category&&x.ViewCount > 20).OrderByDescending(x=>x.ViewCount).ToList();
 			return View(news);
 		}
 
