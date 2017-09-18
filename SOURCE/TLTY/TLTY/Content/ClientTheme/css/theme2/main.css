@@ -2,7 +2,7 @@
 	font-size: 16px;
 	line-height: 1.42857143;
 	color: #fff;
-	background-color: #221e1d;
+	background-color: #fb41a0;
 }
 
 ul.nav li {
@@ -16,21 +16,21 @@ ul.nav li {
 
 		ul.nav li a:hover {
 			font-size: 20px;
-			/*border-bottom: 3px solid #E9633B;*/
+			/*border-bottom: 3px solid #fff;*/
 		}
 
 .navbar-default .navbar-nav > li > a:hover {
-	color: #E9633B;
+	color: #78b43d;
 	font-weight: bold;
 }
 
 ul.nav li.active {
 	font-size: 20px;
-	/*border-bottom: 3px solid #E9633B;*/
+	/*border-bottom: 3px solid #fff;*/
 }
 
 .navbar-default .navbar-nav > li.active > a {
-	color: #E9633B;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -44,13 +44,13 @@ ul.nav li.active:hover {
 }
 
 .navbar-default .navbar-nav > li.active > a {
-	color: #E9633B;
+	color: #d2577e;
 	font-weight: bold;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
 	background-color: transparent;
-	color: #E9633B;
+	color: #d2577e;
 }
 
 .navbar-default {
@@ -85,13 +85,13 @@ h1 {
 	}
 
 		.footer-child .footer-left h4, .footer-child .footer-right h4 {
-			color: #E9633B;
+			color: #fff;
 			font-weight: bold;
 			margin-bottom: 20px;
 		}
 
 		.footer-child .footer-left i {
-			color: #E9633B;
+			color: #fff;
 			float: left;
 			margin-right: 10px;
 		}
@@ -113,8 +113,6 @@ h1 {
 	.coppy h5 {
 		text-align: center;
 	}
-
-
 
 .btn-top {
 	background-image: url('../image/to-top.png');
@@ -177,7 +175,7 @@ img {
 		text-align: center;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 	}
 
@@ -200,12 +198,12 @@ img {
 }
 
 .gach {
-	border-bottom: 3px solid #E9633B;
+	border-bottom: 3px solid #fff;
 }
 
 .baiviet a {
 	text-decoration: none;
-	color: #E9633B;
+	color: #fff;
 }
 
 	.baiviet a i {
@@ -218,7 +216,7 @@ img {
 
 .baiviet .chitiet h1 {
 	text-align: center;
-	color: #E9633B;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -232,12 +230,12 @@ img {
 }
 
 .albumhinh .baiviet .chitiet h1 {
-	color: #E9633B;
+	color: #fff;
 }
 
 .chitiet .chitiet1 h1 {
 	text-align: center;
-	color: #E9633B;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -346,7 +344,7 @@ img {
 
 	.dichvu h1 {
 		text-align: center;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 	}
 
@@ -358,6 +356,7 @@ img {
 	.dichvu .idichvu {
 		margin-top: 10px;
 		margin-bottom: 10px;
+        min-height: 360px;
 	}
 
 		.dichvu .idichvu .itdichvu {
@@ -376,13 +375,13 @@ img {
 
 			.dichvu .idichvu .itdichvu a.thea {
 				text-decoration: none;
-				color: #E9633B;
+				color: #fff;
 				font-weight: bold;
 			}
 
 			.dichvu .idichvu .itdichvu h5 {
 				margin: 5px 10px 5px 10px;
-				color: #E9633B;
+				color: #fff;
 			}
 
 			.dichvu .idichvu .itdichvu a.thea h4 {
@@ -399,12 +398,12 @@ img {
 				.dichvu .idichvu .itdichvu .icondichvu i {
 					display: inline;
 					margin-left: 10px;
-					color: #E9633F;
+					color: #fff;
 					padding-top: 5px;
 				}
 
 				.dichvu .idichvu .itdichvu .icondichvu h6 {
-					color: #E9633F;
+					color: #fff;
 					display: inline;
 				}
 /*Liên hệ*/
@@ -415,7 +414,7 @@ img {
 
 	.lienhe .ilienhe .itlienhe h1 {
 		text-align: center;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 	}
 
@@ -425,7 +424,7 @@ img {
 	}
 
 		.lienhe .ilienhe .itlienhe .itelienhe i {
-			color: #E9633B;
+			color: #fff;
 			font-size: 50px;
 		}
 
@@ -438,12 +437,12 @@ img {
 	border: 1px solid aqua;
 	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
 	padding-bottom: 10px;
-	color: #E9633B;
+	color: #fff;
 }
 
 	.lienhe .ilienhe .frmlienhe h1 {
 		text-align: center;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 	}
 
@@ -456,19 +455,19 @@ img {
 
 	.chitiet .binhluan h1, .binhluan h1 {
 		text-align: center;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 	}
 
 .binhluanchitiet h1 {
 	text-align: center;
-	color: #E9633B;
+	color: #fff;
 	font-weight: bold;
 }
 
 .albumhinh {
 	border: 1px solid aqua;
-	background: #521a61 linear-gradient(55.93deg, #E9633B 0%, #521a61 100%);
+	background: #521a61 linear-gradient(55.93deg, #fff 0%, #521a61 100%);
 	padding-bottom: 10px;
 }
 
@@ -508,7 +507,7 @@ div.guestwarn {
 
 	.lg h1 {
 		text-align: center;
-		color: #E9633B;
+		color: #fff;
 		font-weight: bold;
 		text-shadow: 0 2px 2px rgba(0,0,0,.6);
 	}
