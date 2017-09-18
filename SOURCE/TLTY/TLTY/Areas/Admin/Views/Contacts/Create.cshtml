@@ -21,25 +21,25 @@
 		            <div class="form-horizontal">
 			            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
 			            <div class="form-group">
-				            <label class="control-label col-md-3">Địa chỉ:<i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+				            <label class="control-label col-md-3">Địa chỉ:</label>
 				            <div class="col-md-9">
-					            @Html.TextBoxFor(model => model.Address, new {@class = "form-control", placeholder = "Nhập địa chỉ ở đây"})
+					            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Nhập địa chỉ ở đây. Không quá 250 ký tự.", max ="250" })
 					            @Html.ValidationMessageFor(model => model.Address, "", new {@class = "text-danger"})
 				            </div>
 			            </div>
 
 			            <div class="form-group">
-				            <label class="control-label col-md-3">Số điện thoại:<i style="font-size: 70%;color: red">(Không quá 50 ký tự)</i></label>
+				            <label class="control-label col-md-3">Số điện thoại:</label>
 				            <div class="col-md-9">
-					            @Html.TextBoxFor(model => model.Phone, new {@class = "form-control", placeholder = "Nhập số điện thoại ở đây"})
+					            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại ở đây. Không quá 50 ký tự.", max="50" })
 					            @Html.ValidationMessageFor(model => model.Phone, "", new {@class = "text-danger"})
 				            </div>
 			            </div>
 
 			            <div class="form-group">
-				            <label class="control-label col-md-3">Email:<i style="font-size: 70%;color: red">(Không quá 250 ký tự)</i></label>
+				            <label class="control-label col-md-3">Email:</label>
 				            <div class="col-md-9">
-					            @Html.TextBoxFor(model => model.Email, new {@class = "form-control", placeholder = "Nhập email ở đây"})
+					            @Html.TextBoxFor(model => model.Email, new {@class = "form-control", placeholder = "Nhập email ở đây. Không quá 250 ký tự.", max="250" })
 					            @Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"})
 				            </div>
 			            </div>
