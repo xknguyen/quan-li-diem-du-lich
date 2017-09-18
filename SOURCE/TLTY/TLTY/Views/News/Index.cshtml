@@ -3,12 +3,95 @@
 	ViewBag.Title = "Tin tức về khu du lịch";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section jsFooter
+{
+	<script>
+		$(document).ready(function () {
+			var clickEvent = false;
+			$('#myCarousel').carousel({
+				interval: 4000
+			}).on('click', '.list-group li', function () {
+				clickEvent = true;
+				$('.list-group li').removeClass('active');
+				$(this).addClass('active');
+			}).on('slid.bs.carousel', function (e) {
+				if (!clickEvent) {
+					var count = $('.list-group').children().length - 1;
+					var current = $('.list-group li.active');
+					current.removeClass('active').next().addClass('active');
+					var id = parseInt(current.data('slide-to'));
+					if (count == id) {
+						$('.list-group li').first().addClass('active');
+					}
+				}
+				clickEvent = false;
+			});
+		});
 
+		$(window).load(function () {
+			var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+			var itemlength = $('#myCarousel .item').length;
+			var triggerheight = Math.round(boxheight / itemlength + 1);
+			$('#myCarousel .list-group-item').outerHeight(triggerheight);
+		});
+	</script>
+}
+@section slide
+{
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						@if (Model != null || Model.Count > 0)
+						{
+							int i = 0;
+							foreach (var item in Model.Take(4))
+							{
+								<div class="@(i == 0 ? "item active" : "item")">
+									<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
+									<div class="carousel-caption">
+										<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
+										<p>@item.Description</p>
+									</div>
+								</div>
+								i++;
+							}
+						}
+
+					</div>
+					@if (Model != null || Model.Count > 0)
+					{
+						int i = 0;
+						<ul class="list-group col-sm-4" style="height: 100%">
+							@foreach (var item in Model.Take(4))
+							{
+								<li data-target="#myCarousel" data-slide-to="@i" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
+								i++;
+							}
+						</ul>
+					}
+					<div class="carousel-controls">
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div><!-- End Carousel -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+}
 <div class="col-lg-12 baiviet">
 	<p>
 		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a>
 	</p>
 </div>
+
 <div class="col-md-12">
 	<div class="container lg">
 		<h1>Tin tức về khu du lịch</h1>

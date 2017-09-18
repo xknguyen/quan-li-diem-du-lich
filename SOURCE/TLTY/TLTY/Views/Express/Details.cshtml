@@ -28,6 +28,7 @@
 <div class="col-md-8 col-md-offset-2 chitiet">
 	<div class="col-md-12 chitiet1">
 		<h1>@Model.Name</h1>
+		<p><i class="glyphicon glyphicon-calendar" title="Ngày đăng"></i> <span>@string.Format("{0:dd/MM/yyyy}", Model.CreateDate)</span> - <i class="glyphicon glyphicon-comment" title="Lượt xem"></i> <span>@Model.ViewCount</span> - <i class="glyphicon glyphicon-user" title="Người đăng"></i> <span>@Model.UserName</span></p>
 		<img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
 		<strong>@Model.Description</strong>
 		<hr />
@@ -143,7 +144,7 @@
 					<div class="col-md-12">
 						<div class="col-md-2">
 							<h5>@item.Name</h5>
-							<p style="color: #999; font-size: 13px">@string.Format("{0:dd/MM/yyyy}", item.CreateDate)</p>
+							<p style="color: blue; font-size: 13px">@string.Format("{0:dd/MM/yyyy}", item.CreateDate)</p>
 						</div>
 						<div class="col-md-10" style="border-bottom: 1px solid #999">
 							<p style="font-size: 15px">@item.Detail</p>
@@ -154,7 +155,7 @@
 									<div class="column">
 										@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
 										{
-											<img id="@i" data-toggle="modal" data-target="#myModalImages" src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;">
+											<img id="@i" data-toggle="modal" data-target="#myModalImages" src="@itemimage.Value" alt="@itemimage.Name" width="50" height="50" style="margin: 5px 5px 5px 5px; float: left;" title="Nhấn để xem ảnh lớn.">
 											i++;
 										}
 									</div>

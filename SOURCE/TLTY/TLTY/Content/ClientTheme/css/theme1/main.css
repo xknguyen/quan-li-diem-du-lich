@@ -507,3 +507,35 @@ div.guestwarn {
 		font-weight: bold;
 		text-shadow: 0 2px 2px rgba(0,0,0,.6);
 	}
+
+	#myCarousel .carousel-caption {
+    left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:#521a61 linear-gradient(55.93deg,#78b43d 0%,navy 100%);
+	text-shadow:none;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0;
+}
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+#myCarousel .list-group .active {
+	background:#521a61 linear-gradient(55.93deg,#78b43d 0%,navy 100%);	
+}
+
+@media (min-width: 992px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}
