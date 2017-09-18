@@ -442,7 +442,7 @@ img {
 
 .chitiet .binhluan, .binhluan {
 	border: 1px solid aqua;
-	background: #521a61 linear-gradient(55.93deg,#78b43d 0%,navy 100%);
+	background: #521a61 linear-gradient(55.93deg,#78b43d 0%,#00783C 100%);
 	padding-bottom: 10px;
 	color: #fff;
 }
