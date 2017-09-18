@@ -83,7 +83,6 @@ namespace TLTY.Controllers
 								msg = " Gửi phản hồi thành công, sau khi chúng tôi xác nhận, phản hồi sẽ được đăng công khai.",
 								status = true
 							});
-
 						}
 						else
 						{
@@ -121,7 +120,6 @@ namespace TLTY.Controllers
 				}
 				UpdateImages(requestid, xElement.ToString());
 			}
-
 		}
 
 		public void UpdateImages(long iD, string images)
