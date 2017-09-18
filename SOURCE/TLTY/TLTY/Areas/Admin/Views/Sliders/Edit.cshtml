@@ -27,9 +27,9 @@
 						<div class="col-md-12">
 							<div class="col-md-7">
 								<div class="form-group">
-									<label class="control-label col-md-3">Tên: <i style="font-size: 70%;color: red">(Không quá 500 ký tự)</i></label>
+									<label class="control-label col-md-3">Tên:</label>
 									<div class="col-md-9">
-										@Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tên ở đây" })
+										@Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nhập tên ở đây. Không quá 500 ký tự.", max="500" })
 										@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
 									</div>
 								</div>
@@ -48,9 +48,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="control-label col-md-3">Mô tả:<i style="font-size: 70%;color: red">(Không quá 500 ký tự)</i></label>
+									<label class="control-label col-md-3">Mô tả:</label>
 									<div class="col-md-9">
-										@Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây" })
+										@Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Nhập mô tả ở đây. Không quá 500 ký tự.", max="500" })
 										@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
 									</div>
 								</div>

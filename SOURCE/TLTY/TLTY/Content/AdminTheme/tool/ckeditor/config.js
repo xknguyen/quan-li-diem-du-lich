@@ -39,12 +39,12 @@ CKEDITOR.editorConfig = function( config ) {
 	config.syntaxhighlight_lang = 'csharp';
 	config.syntaxhighlight_hideControls = true;
 	config.language = 'vi';
-	config.filebrowserBrowseUrl = '/Content/ckfinder/ckfinder.html';
-	config.filebrowserImageBrowseUrl = '/Content/ckfinder/ckfinder.html?Type=Images';
-	config.filebrowserFlashBrowseUrl = '/Content/ckfinder/ckfinder.html?Type=Flash';
-	config.filebrowserUploadUrl = '/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files';
-	config.filebrowserImageUploadUrl = '/Data/';
-	config.filebrowserFlashUploadUrl = '/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash';
+	config.filebrowserBrowseUrl = '/Content/AdminTheme/tool/ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseUrl = '/Content/AdminTheme/tool/ckfinder/ckfinder.html?Type=Images';
+	config.filebrowserFlashBrowseUrl = '/Content/AdminTheme/tool/ckfinder/ckfinder.html?Type=Flash';
+	config.filebrowserUploadUrl = '/Content/AdminTheme/tool/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files';
+	config.filebrowserImageUploadUrl = '/DATA/';
+	config.filebrowserFlashUploadUrl = '/Content/AdminTheme/tool/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash';
 	
-	CKFinder.setupCKEditor(null, '/Content/ckfinder/');
+	CKFinder.setupCKEditor(null, '/Content/AdminTheme/tool/ckfinder/');
 };

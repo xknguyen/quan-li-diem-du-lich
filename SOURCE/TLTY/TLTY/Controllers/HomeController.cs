@@ -34,7 +34,7 @@ namespace TLTY.Controllers
             }
             ViewBag.Views = response;
 
-            var intruction = _db.Instructions.Where(x => x.Status == true).OrderByDescending(x => x.CreateDate).Take(8).ToList();
+            var intruction = _db.Instructions.Where(x => x.Status == true).ToList();
 			return View(intruction);
 		}
 
