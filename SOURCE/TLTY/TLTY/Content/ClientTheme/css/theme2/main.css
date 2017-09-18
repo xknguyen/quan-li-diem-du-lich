@@ -20,7 +20,7 @@ ul.nav li {
 		}
 
 .navbar-default .navbar-nav > li > a:hover {
-	color: #78b43d;
+	color: #d2577e;
 	font-weight: bold;
 }
 
@@ -69,7 +69,7 @@ h1 {
 .footer {
 	bottom: 0;
 	width: 100%;
-	background: #000000;
+	background: #fddbfa;
 }
 
 .container {
@@ -85,19 +85,19 @@ h1 {
 	}
 
 		.footer-child .footer-left h4, .footer-child .footer-right h4 {
-			color: #fff;
+			color: #d2577e;
 			font-weight: bold;
 			margin-bottom: 20px;
 		}
 
 		.footer-child .footer-left i {
-			color: #fff;
+			color: #d2577e;
 			float: left;
 			margin-right: 10px;
 		}
 
 		.footer-child .footer-left h5 {
-			color: #fff;
+			color: #d2577e;
 			margin-bottom: 20px;
 		}
 
@@ -435,7 +435,7 @@ img {
 
 .lienhe .ilienhe .frmlienhe {
 	border: 1px solid aqua;
-	background: #521a61 linear-gradient(55.93deg,purple 0%,navy 100%);
+	background: #521a61 linear-gradient(55.93deg,red 0%,yellow 100%);
 	padding-bottom: 10px;
 	color: #fff;
 }
@@ -448,7 +448,7 @@ img {
 
 .chitiet .binhluan, .binhluan {
 	border: 1px solid aqua;
-	background: #521a61 linear-gradient(55.93deg,#412219  0,#521a61 100%);
+	background: #521a61 linear-gradient(55.93deg,#fb41a0  0,pink 100%);
 	padding-bottom: 10px;
 	color: #fff;
 }
