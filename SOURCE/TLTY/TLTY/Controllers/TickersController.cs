@@ -13,7 +13,7 @@ namespace TLTY.Controllers
         // GET: Tickers
         public ActionResult Index()
         {
-	        var ticker = _db.Tickers.Where(x => x.Status).OrderByDescending(x => x.CreateDate).ToList();
+	        var ticker = _db.Tickers.Where(x => x.Status).OrderBy(x => x.CreateDate).ToList();
 			return View(ticker);
         }
     }

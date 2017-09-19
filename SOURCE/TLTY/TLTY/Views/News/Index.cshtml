@@ -1,5 +1,6 @@
 ﻿@model List<EntityModel.EF.Content>
 @{
+	var slider = ((List<EntityModel.EF.Content>)ViewBag.SliderNews);
 	ViewBag.Title = "Tin tức về khu du lịch";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -36,56 +37,51 @@
 		});
 	</script>
 }
-@section slide
+@if (slider != null || slider.Count > 0)
 {
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						@if (Model != null || Model.Count > 0)
-						{
-							int i = 0;
-							foreach (var item in Model.Take(4))
+	int i = 0, j = 0;
+	@section slide
+	{
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" style="height: 400px">
+							@foreach (var item in slider.Take(4))
 							{
-								<div class="@(i == 0 ? "item active" : "item")">
-									<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
-									<div class="carousel-caption">
-										<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
-										<p>@item.Description</p>
-									</div>
+							<div class="@(i == 0 ? "item active" : "item")">
+								<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
+								<div class="carousel-caption" style="height: 100px">
+									<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
+									<p>@item.Description</p>
 								</div>
+							</div>
 								i++;
 							}
-						}
-
-					</div>
-					@if (Model != null || Model.Count > 0)
-					{
-						int i = 0;
+						</div>
 						<ul class="list-group col-sm-4" style="height: 100%">
-							@foreach (var item in Model.Take(4))
+							@foreach (var item in slider.Take(4))
 							{
-								<li data-target="#myCarousel" data-slide-to="@i" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
-								i++;
+							<li data-target="#myCarousel" data-slide-to="@j" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
+								j++;
 							}
 						</ul>
-					}
-					<div class="carousel-controls">
-						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#myCarousel" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
+						<div class="carousel-controls">
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>
 					</div>
-				</div><!-- End Carousel -->
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div class="clearfix"></div>
+		<div class="clearfix"></div>
+	}
 }
+<div id="tin"></div>
 <div class="col-lg-12 baiviet">
 	<p>
 		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a>
@@ -105,7 +101,7 @@
 	{
 		foreach (var item in Model)
 		{
-			<div class="col-md-4  col-xs-12 col-sm-6  idichvu">
+			<div class="col-md-4  col-xs-12 col-sm-6  idichvu" style="height: 400px">
 				<div class="itdichvu">
 					<a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">
 						<img src="@item.Images" class="img-responsive">
@@ -145,9 +141,9 @@
 				<ul class="pagination">
 					@if (currentPage > ViewBag.First)
 					{
-						<li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
+						<li><a href="@link?page=@ViewBag.First#tin" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
 						<li>
-							<a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
+							<a href="@link?page=@ViewBag.Prev#tin" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
 						</li>
 
 					}
@@ -155,17 +151,17 @@
 					{
 						if (currentPage == i)
 						{
-							<li> <a href="@link?page=@i" class="active" title="Trang @i">@i</a></li>
+							<li> <a href="@link?page=@i#tin" class="active" title="Trang @i">@i</a></li>
 						}
 						else
 						{
-							<li><a href="@link?page=@i" title="Trang @i" class="pos">@i</a></li>
+							<li><a href="@link?page=@i#tin" title="Trang @i" class="pos">@i</a></li>
 						}
 					}
 					@if (currentPage < totalPage)
 					{
-						<li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
-						<li> <a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+						<li><a href="@link?page=@ViewBag.Next#tin" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+						<li> <a href="@link?page=@ViewBag.Last#tin" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
 					}
 
 				</ul>
