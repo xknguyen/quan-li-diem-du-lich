@@ -18,94 +18,15 @@
 			font-family: 'Oswald', sans-serif;
 		}
 
-		#map, #map2 {
+		#map {
 			width: 100%;
 			height: 250px;
 			background-color: grey;
 		}
-
-		#loading {
-			position: fixed;
-			left: 42%;
-			top: 40%;
-			background: #eee url(loading.gif) no-repeat center 70%;
-			height: 50px;
-			width: 150px;
-			text-align: center;
-			padding-top: 10px;
-			border-radius: 8px;
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-		}
 	</style>
-	<script type='text/javascript'>
-		//<![CDATA[
-		$(document.body).append('<div id="loading">Loading...</div>');
-		$(window).on("beforeunload", function () {
-			// ... Show the Animation `.fadeIn()`
-			$('#loading').fadeIn(1000).delay(6000).fadeOut(1000);
-		});
-		//]]>
-	</script>  
-	<script type="text/javascript">
-		$(window).load(function () {
-			$('#loading').fadeOut(50).remove();
-		})
-	</script>
-
-	<script>
-		function getCookie(cname) {
-			var name = cname + "=";
-			var ca = document.cookie.split(';');
-			for (var i = 0; i < ca.length; i++) {
-				var c = ca[i].trim();
-				if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
-			}
-			return "";
-		}
-
-		var style_cookie_name = "style";
-		var style_cookie_duration = 30;
-
-		function switch_style(cssTitle) {
-			var i, linkTag;
-			for (i = 0, linkTag = document.getElementsByTagName("link") ; i < linkTag.length; i++) {
-				if ((linkTag[i].rel.indexOf("stylesheet") !== -1) && linkTag[i].title) {
-					linkTag[i].disabled = true;
-					if (linkTag[i].title === cssTitle) {
-						linkTag[i].disabled = false;
-					}
-				}
-				set_cookie(style_cookie_name, cssTitle, style_cookie_duration);
-			}
-		}
-
-		function set_style_from_cookie() {
-			var cssTitle = getCookie(style_cookie_name);
-			if (cssTitle.length) {
-				switch_style(cssTitle);
-				//alert('Đang chọn ' + cssTitle);
-			}
-		}
-
-		function set_cookie(cookieName, cookieValue, lifespanInDays) {
-			document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + "; max-age=" + 60 * 60 * 24 * lifespanInDays + "; path=/";
-		}
-
-		function get_cookie(cookieName) {
-			var cookieString = document.cookie;
-			var re = new RegExp("(^|;)[\s]*" + cookieName + "=([^;]*)");
-			if (cookieString.length !== 0) {
-				var cookieValue = cookieString.match(re);
-				return decodeURIComponent(cookieValue[2]);
-			}
-			return '';
-		}
-	</script>
 </head>
-
 <body onload=" set_style_from_cookie(); ">
-	@Html.Partial("_header")
+	@RenderSection("header", required: false)
 	<div class="container-fluid top-slider">
 		@RenderSection("slide", required: false)
 		<div class="container">
@@ -118,7 +39,7 @@
 	<div class="clearfix"></div>
 	<div id="thongbao" style="display: none">
 		<div class="guestwarn">
-			<a class="close" onclick=" closeBox('thongbao'); return false; " title="Đóng thông báo này"><i class="fa fa-times" style="color: #fff"></i></a>
+			<a class="close" onclick=" closeBox('#thongbao'); return true; " title="Đóng thông báo này"><i class="fa fa-times" style="color: #fff"></i></a>
 			<div class="abc"></div>
 		</div>
 	</div>
@@ -128,46 +49,6 @@
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/jqueryval")
 	@Scripts.Render("~/bundles/bootstrap")
-	<script type="text/javascript">
-		$('#menu li').click(function () {
-			$('#menu li.active').removeClass('active');
-			$(this).addClass('active');
-		});
-
-		function closeBox() {
-			var div = document.getElementById('thongbao');
-			div.style.display = 'none';
-		};
-
-		setTimeout(closeBox, 9000);
-	</script>
-
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".btn-top").hide();
-			if ($(".btn-top").length > 0) {
-				$(window).scroll(function () {
-					var e = $(window).scrollTop();
-					if (e > 300) {
-						$(".btn-top").show();
-					} else {
-						$(".btn-top").hide();
-					}
-				});
-				$(".btn-top").click(function () {
-					$('body,html').animate({
-						scrollTop: 0
-					});
-				});
-			}
-		});
-	</script>
-	<script>
-		//$(document).ready(function () {
-		//$("html").niceScroll();
-		//});
-
-	</script>
 	@RenderSection("scripts", required: false)
 	@RenderSection("jsFooter", required: false)
 </body>

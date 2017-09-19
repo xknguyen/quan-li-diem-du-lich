@@ -22,7 +22,9 @@ namespace TLTY
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Content/ClientTheme/js/bootstrap.min.js",
 						"~/Scripts/Alert.js",
-						"~/Scripts/jquery.nicescroll.min.js"));
+						"~/Scripts/jquery.nicescroll.min.js",
+						"~/Content/ClientTheme/js/theme.js",
+						"~/Content/ClientTheme/js/chucnang.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/ClientTheme/css/bootstrap.css",
@@ -67,7 +69,7 @@ namespace TLTY
 							  "~/Scripts/jquery.nicescroll.min.js"
 						));
 
-			//BundleTable.EnableOptimizations = true;
+			BundleTable.EnableOptimizations = true;
 		}
 	}
 }

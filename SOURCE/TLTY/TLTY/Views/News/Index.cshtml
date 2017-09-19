@@ -6,36 +6,51 @@
 }
 @section jsFooter
 {
-	<script>
-		$(document).ready(function () {
-			var clickEvent = false;
-			$('#myCarousel').carousel({
-				interval: 4000
-			}).on('click', '.list-group li', function () {
-				clickEvent = true;
-				$('.list-group li').removeClass('active');
-				$(this).addClass('active');
-			}).on('slid.bs.carousel', function (e) {
-				if (!clickEvent) {
-					var count = $('.list-group').children().length - 1;
-					var current = $('.list-group li.active');
-					current.removeClass('active').next().addClass('active');
-					var id = parseInt(current.data('slide-to'));
-					if (count == id) {
-						$('.list-group li').first().addClass('active');
-					}
-				}
-				clickEvent = false;
-			});
-		});
-
-		$(window).load(function () {
-			var boxheight = $('#myCarousel .carousel-inner').innerHeight();
-			var itemlength = $('#myCarousel .item').length;
-			var triggerheight = Math.round(boxheight / itemlength + 1);
-			$('#myCarousel .list-group-item').outerHeight(triggerheight);
-		});
-	</script>
+	<script src="~/Content/ClientTheme/js/newsSlider.js"></script>
+}
+@section header
+{
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-xs12 col-sm-12">
+					<div class="nav">
+						<nav class="navbar navbar-default navbar-fixed-top">
+							<div class="container header-top">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<a href="/" title="Thung lũng tình yêu">
+										<img src="~/DATA/images/Logo/logo.png" alt="logo" width="90" height="60" class="img-responsive">
+									</a>
+								</div>
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav navbar-right" id="menu">
+										<li><a href="/" title="Trang giới thiệu">Giới thiệu</a></li>
+										<li><a href="/dich-vu" title="Trang dịch vụ">Dịch vụ</a></li>
+										<li class="active"><a href="/tin-tuc" title="Trang tin tức">Tin tức</a></li>
+										<li><a href="/bang-gia" title="Trang bảng giá">Bảng giá</a></li>
+										<li><a href="/lien-he" title="Trang liên hệ">Liên hệ</a></li>
+										<li>
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Nhấn để thay đổi giao diện"><i class="glyphicon glyphicon-cog"></i></a>
+											<ul class="dropdown-menu">
+												<li><a href="#theme" onclick="switch_style('theme1'); return false;" id="them1" title="Tinh khôi">Cây cỏ</a></li>
+												<li><a href="#theme" onclick="switch_style('theme2'); return false;" id="them2" title="Huyền ảo">Đất trời</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 }
 @if (slider != null || slider.Count > 0)
 {
@@ -49,20 +64,20 @@
 						<div class="carousel-inner" style="height: 400px">
 							@foreach (var item in slider.Take(4))
 							{
-							<div class="@(i == 0 ? "item active" : "item")">
-								<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
-								<div class="carousel-caption" style="height: 100px">
-									<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
-									<p>@item.Description</p>
+								<div class="@(i == 0 ? "item active" : "item")">
+									<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
+									<div class="carousel-caption" style="height: 100px">
+										<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
+										<p>@item.Description</p>
+									</div>
 								</div>
-							</div>
 								i++;
 							}
 						</div>
 						<ul class="list-group col-sm-4" style="height: 100%">
 							@foreach (var item in slider.Take(4))
 							{
-							<li data-target="#myCarousel" data-slide-to="@j" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
+								<li data-target="#myCarousel" data-slide-to="@j" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
 								j++;
 							}
 						</ul>

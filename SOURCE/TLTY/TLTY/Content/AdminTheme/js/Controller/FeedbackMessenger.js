@@ -23,7 +23,7 @@
 						var hours = (date.getHours() < 10) ? "0" + date.getHours() : date.getHours();
 						var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 						var formattedTime = hours + ":" + minutes;
-						formattedDate = formattedTime + "-" + formattedDate;
+						//formattedDate = formattedTime + "-" + formattedDate;
 						html += '<li><a href="/Admin/Requests/Details/' + jtem.ID + '"  title="Xem chi tiết ' + jtem.Name + '" class="detail-link-mes-re"><div><i class="fa fa-comment-o fa-fw"></i>' + jtem.Name + '<span class="pull-right text-muted small">' + formattedDate + '</span></div></a></li>';
 					});
 					html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Requests"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';
@@ -50,7 +50,7 @@
 						var hours = (date.getHours() < 10) ? "0" + date.getHours() : date.getHours();
 						var minutes = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
 						var formattedTime = hours + ":" + minutes;
-						formattedDate = formattedTime + "-" + formattedDate;
+						//formattedDate = formattedTime + "-" + formattedDate;
 						html += '<li><a href="/Admin/Feedbacks/Details/' + item.ID + '"  title="Xem chi tiết ' + item.Name + '" class="detail-link-mes-fe"><div><strong>' + item.Name + '</strong><span class="pull-right text-muted"><em>' + formattedDate + '</em></span></div><div>' + item.Description + '</div></a></li>';
 					});
 					html += '<li class="divider"></li><li><a class="text-center" href="/Admin/Feedbacks"><strong>Xem toàn bộ </strong><i class="fa fa-angle-right"></i></a></li>';

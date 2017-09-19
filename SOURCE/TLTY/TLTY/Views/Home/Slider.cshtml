@@ -5,8 +5,7 @@
 
 @if (@Model != null || Model.Count > 0)
 {
-	int i = 0;
-	int j = 0;
+	int i = 0,j = 0;
 	<div>
 		<div class="row" id="slider">
 			<div class="col-md-12">
@@ -15,21 +14,20 @@
 						@foreach (var item in Model)
 						{
 							<div class="@(i==0?"active":"") item" data-slide-number="@i">
-								<img src="@item.Link">
+								<img src="@item.Link" title="@item.Name" class="img-responsive" alt="@item.Name">
 								<div class="carousel-caption">
-									@foreach (var ct in content.Where(x => x.ID == item.ContentID))
+									@foreach (var ct in content.Where(x => x.ID == @item.ContentID))
 									{
-										<a href="/@(ct.Category ? "tin-tuc/chi-tiet/" : "dich-vu/chi-tiet/")@ct.MetaTitle-@ct.ID">
+										<a href="/@(ct.Category ? "tin-tuc/chi-tiet/" : "dich-vu/chi-tiet/")@ct.MetaTitle-@ct.ID" title="@item.Name">
 											<h3>@item.Name</h3>
 										</a>
 									}
 									<p>@item.Description</p>
 								</div>
 							</div>
-									i++;
+							i++;
 						}
 					</div>
-					<!-- Controls-->
 					<a class="left carousel-control" href="#mySlider" role="button" data-slide="prev">
 						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
@@ -47,7 +45,7 @@
 					@foreach (var item in Model)
 					{
 						<li>
-							<a id="carousel-thumb-@j" class="@(j == 0 ? "selected" : "")">
+							<a id="carousel-thumb-@j" class="@(j == 0 ? "selected" : "")" title="@item.Name">
 								<img src="@item.Link" style="width: 70px; height: 50px">
 							</a>
 						</li>
