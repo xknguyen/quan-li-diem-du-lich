@@ -12,7 +12,7 @@
 	@Scripts.Render("~/bundles/modernizr")
 	<link rel="stylesheet" type="text/css" title="theme1" href="~/Content/ClientTheme/css/theme1/main.css">
 	<link rel="alternate stylesheet" type="text/css" title="theme2" href="~/Content/ClientTheme/css/theme2/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<style>
 		* {
 			font-family: 'Oswald', sans-serif;
@@ -23,7 +23,36 @@
 			height: 250px;
 			background-color: grey;
 		}
+
+		#loading {
+			position: fixed;
+			left: 42%;
+			top: 40%;
+			background: #eee url(loading.gif) no-repeat center 70%;
+			height: 50px;
+			width: 150px;
+			text-align: center;
+			padding-top: 10px;
+			border-radius: 8px;
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+		}
 	</style>
+	<script type='text/javascript'>
+		//<![CDATA[
+		$(document.body).append('<div id="loading">Loading...</div>');
+		$(window).on("beforeunload", function () {
+			// ... Show the Animation `.fadeIn()`
+			$('#loading').fadeIn(1000).delay(6000).fadeOut(1000);
+		});
+		//]]>
+	</script>  
+	<script type="text/javascript">
+		$(window).load(function () {
+			$('#loading').fadeOut(50).remove();
+		})
+	</script>
+
 	<script>
 		function getCookie(cname) {
 			var name = cname + "=";
@@ -75,7 +104,7 @@
 	</script>
 </head>
 
-<body onload=" set_style_from_cookie();">
+<body onload=" set_style_from_cookie(); ">
 	@Html.Partial("_header")
 	<div class="container-fluid top-slider">
 		@RenderSection("slide", required: false)
@@ -89,7 +118,7 @@
 	<div class="clearfix"></div>
 	<div id="thongbao" style="display: none">
 		<div class="guestwarn">
-			<a class="close" onclick="closeBox('thongbao'); return false;" title="Đóng thông báo này"><i class="fa fa-times" style="color: #fff"></i></a>
+			<a class="close" onclick=" closeBox('thongbao'); return false; " title="Đóng thông báo này"><i class="fa fa-times" style="color: #fff"></i></a>
 			<div class="abc"></div>
 		</div>
 	</div>
@@ -104,13 +133,15 @@
 			$('#menu li.active').removeClass('active');
 			$(this).addClass('active');
 		});
+
 		function closeBox() {
 			var div = document.getElementById('thongbao');
 			div.style.display = 'none';
 		};
+
 		setTimeout(closeBox, 9000);
 	</script>
-	
+
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".btn-top").hide();
@@ -132,9 +163,10 @@
 		});
 	</script>
 	<script>
-		$(document).ready(function () {
-			$("html").niceScroll();
-		});
+		//$(document).ready(function () {
+		//$("html").niceScroll();
+		//});
+
 	</script>
 	@RenderSection("scripts", required: false)
 	@RenderSection("jsFooter", required: false)
