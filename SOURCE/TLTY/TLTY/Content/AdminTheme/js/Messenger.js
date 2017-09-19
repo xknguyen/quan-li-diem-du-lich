@@ -9,4 +9,4 @@ function closeBox() {
 	var div = document.getElementById('thongbao');
 	div.style.display = 'none';
 }
-setTimeout(closeBox, 9000);
+setInterval(closeBox, 9000);
