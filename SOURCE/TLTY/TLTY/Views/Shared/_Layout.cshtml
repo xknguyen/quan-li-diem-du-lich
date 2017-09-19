@@ -18,41 +18,12 @@
 			font-family: 'Oswald', sans-serif;
 		}
 
-		#map, #map2 {
+		#map {
 			width: 100%;
 			height: 250px;
 			background-color: grey;
 		}
-
-		#loading {
-			position: fixed;
-			left: 42%;
-			top: 40%;
-			background: #eee url(loading.gif) no-repeat center 70%;
-			height: 50px;
-			width: 150px;
-			text-align: center;
-			padding-top: 10px;
-			border-radius: 8px;
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-		}
 	</style>
-	<script type='text/javascript'>
-		//<![CDATA[
-		$(document.body).append('<div id="loading">Loading...</div>');
-		$(window).on("beforeunload", function () {
-			// ... Show the Animation `.fadeIn()`
-			$('#loading').fadeIn(1000).delay(6000).fadeOut(1000);
-		});
-		//]]>
-	</script>  
-	<script type="text/javascript">
-		$(window).load(function () {
-			$('#loading').fadeOut(50).remove();
-		})
-	</script>
-
 	<script>
 		function getCookie(cname) {
 			var name = cname + "=";
@@ -103,9 +74,8 @@
 		}
 	</script>
 </head>
-
 <body onload=" set_style_from_cookie(); ">
-	@Html.Partial("_header")
+	@RenderSection("header", required: false)
 	<div class="container-fluid top-slider">
 		@RenderSection("slide", required: false)
 		<div class="container">
@@ -129,19 +99,12 @@
 	@Scripts.Render("~/bundles/jqueryval")
 	@Scripts.Render("~/bundles/bootstrap")
 	<script type="text/javascript">
-		$('#menu li').click(function () {
-			$('#menu li.active').removeClass('active');
-			$(this).addClass('active');
-		});
-
 		function closeBox() {
 			var div = document.getElementById('thongbao');
 			div.style.display = 'none';
 		};
-
 		setTimeout(closeBox, 9000);
 	</script>
-
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".btn-top").hide();
@@ -161,12 +124,6 @@
 				});
 			}
 		});
-	</script>
-	<script>
-		//$(document).ready(function () {
-		//$("html").niceScroll();
-		//});
-
 	</script>
 	@RenderSection("scripts", required: false)
 	@RenderSection("jsFooter", required: false)
