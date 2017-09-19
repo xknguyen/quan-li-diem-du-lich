@@ -24,55 +24,6 @@
 			background-color: grey;
 		}
 	</style>
-	<script>
-		function getCookie(cname) {
-			var name = cname + "=";
-			var ca = document.cookie.split(';');
-			for (var i = 0; i < ca.length; i++) {
-				var c = ca[i].trim();
-				if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
-			}
-			return "";
-		}
-
-		var style_cookie_name = "style";
-		var style_cookie_duration = 30;
-
-		function switch_style(cssTitle) {
-			var i, linkTag;
-			for (i = 0, linkTag = document.getElementsByTagName("link") ; i < linkTag.length; i++) {
-				if ((linkTag[i].rel.indexOf("stylesheet") !== -1) && linkTag[i].title) {
-					linkTag[i].disabled = true;
-					if (linkTag[i].title === cssTitle) {
-						linkTag[i].disabled = false;
-					}
-				}
-				set_cookie(style_cookie_name, cssTitle, style_cookie_duration);
-			}
-		}
-
-		function set_style_from_cookie() {
-			var cssTitle = getCookie(style_cookie_name);
-			if (cssTitle.length) {
-				switch_style(cssTitle);
-				//alert('Đang chọn ' + cssTitle);
-			}
-		}
-
-		function set_cookie(cookieName, cookieValue, lifespanInDays) {
-			document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + "; max-age=" + 60 * 60 * 24 * lifespanInDays + "; path=/";
-		}
-
-		function get_cookie(cookieName) {
-			var cookieString = document.cookie;
-			var re = new RegExp("(^|;)[\s]*" + cookieName + "=([^;]*)");
-			if (cookieString.length !== 0) {
-				var cookieValue = cookieString.match(re);
-				return decodeURIComponent(cookieValue[2]);
-			}
-			return '';
-		}
-	</script>
 </head>
 <body onload=" set_style_from_cookie(); ">
 	@RenderSection("header", required: false)
@@ -98,47 +49,7 @@
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/jqueryval")
 	@Scripts.Render("~/bundles/bootstrap")
-	<script type="text/javascript">
-		function closeBox() {
-			var div = document.getElementById('thongbao');
-			div.style.display = 'none';
-		}
-
-		setInterval(closeBox, 9000);
-	</script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".btn-top").hide();
-			if ($(".btn-top").length > 0) {
-				$(window).scroll(function () {
-					var e = $(window).scrollTop();
-					if (e > 300) {
-						$(".btn-top").show();
-					} else {
-						$(".btn-top").hide();
-					}
-				});
-				$(".btn-top").click(function () {
-					$('body,html').animate({
-						scrollTop: 0
-					});
-				});
-			}
-		});
-	</script>
 	@RenderSection("scripts", required: false)
 	@RenderSection("jsFooter", required: false)
-	<script>
-		$('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
-		$(window).on('load', function () {
-			setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
-		});
-		function removeLoader() {
-			$("#loadingDiv").fadeOut(500, function () {
-				// fadeOut complete. Remove the loading div
-				$("#loadingDiv").remove(); //makes page more lightweight
-			});
-		}
-	</script>
 </body>
 </html>
