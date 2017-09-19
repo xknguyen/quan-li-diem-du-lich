@@ -148,7 +148,7 @@
 			<div class="form-group">
 				<label class="control-label col-md-4"></label>
 				<div class="col-md-8">
-					@Html.ValidationSummary(true, "", new {@class = "text-danger"})
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -174,7 +174,7 @@
 			</div>
 			<div class="form-group col-md-12" id="uphinh" style="display: none">
 				<label>Bạn có muốn thêm hình không:</label>
-				<input type="file" id="imageUploadForm" name="image" multiple="multiple"/>
+				<input type="file" id="imageUploadForm" name="image" multiple="multiple" />
 			</div>
 		}
 		<div class="clearfix"></div>
@@ -218,124 +218,16 @@
 		<span aria-hidden="true" style="font-size: 50px;">&times;</span>
 		<span class="sr-only">Close</span>
 	</button>
-	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 550px; height: 550px;margin-top: 70px"/>
+	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 550px; height: 550px;margin-top: 70px" />
 </div>
 @section scripts{
-	<script>
-		jQuery(document).ready(function($) {
-			$('#mySlider2').carousel({
-				interval: 5000
-			});
-
-			//Handles the carousel thumbnails
-			$('[id^=s1name-]').click(function() {
-				var idSelector = $(this).attr("id");
-				try {
-					var id = /-(\d+)$/.exec(idSelector)[1];
-					console.log(idSelector, id);
-					jQuery('#mySlider2').carousel(parseInt(id));
-				} catch (e) {
-					console.log('Regex failed!', e);
-				}
-			});
-
-			// When the carousel slides, auto update the text
-			$('#mySlider2').on('slid.bs.carousel', function(e) {
-				var id = $('.item.active').data('slide-number');
-				$('#carousel-text').html($('#slide-content-' + id).html());
-			});
-		});
-	</script>
-	<script>
-		$(document).ready(function () {
-			$('img').on('click', function () {
-				var image = $(this).attr('src');
-				$('#myModalImages').on('show.bs.modal', function () {
-					$("#Myid").attr("src", image);
-				});
-			});
-		});
-	</script>
+	<script src="~/Content/ClientTheme/js/jsExpress.js"></script>
 }
 
 @section jsFooter{
+	<script src="~/Content/ClientTheme/js/Controller/expressController.js"></script>
 	<script>
-		var request = {
-			init: function() {
-				request.registerEvents();
-			},
-			registerEvents: function() {
-				$('#btnSend').off('click').on('click', function() {
-					var name = $('#txtName').val();
-					var phone = $('#txtPhone').val();
-					var email = $('#txtEmail').val();
-					var details = $('#txtDetail').val();
-					var contentid = @Model.ID;
-
-
-					var div = document.getElementById('thongbao');
-					var div2 = document.getElementById('uphinh');
-					$.ajax({
-						url: '/Express/Requests',
-						type: 'POST',
-						dataType: 'json',
-						data: {
-							name: name,
-							phone: phone,
-							email: email,
-							details: details,
-							contentid: contentid
-						},
-						success: function(res) {
-							div.style.display = 'block';
-							if (res.status === true) {
-								div2.style.display = 'block';
-								request.upload(parseInt(res.requestid));
-								$('.abc').html("<i class='fa fa-check'></i>" + res.msg);
-								request.resetForm();
-							}
-							if (res.status === false) {
-								$('.abc').html("<i class='fa fa-times'></i>" + res.msg);
-							}
-						}
-					});
-				});
-			},
-			upload: function(id) {
-				var div = document.getElementById('thongbao');
-				$("#imageUploadForm").change(function() {
-					var formData = new FormData();
-					var totalFiles = document.getElementById("imageUploadForm").files.length;
-					for (var i = 0; i < totalFiles; i++) {
-						var file = document.getElementById("imageUploadForm").files[i];
-
-						formData.append("imageUploadForm", file);
-					}
-					formData.append("requestid", id);
-					$.ajax({
-						type: "POST",
-						url: '/Express/Upload',
-						data: formData,
-						dataType: 'json',
-						contentType: false,
-						processData: false
-					});
-					div.style.display = 'block';
-					$('.abc').html("<i class='fa fa-check'></i> Thêm hình thành công! chúng tôi sẽ xác nhận sau!");
-				});
-			},
-			resetForm: function() {
-				$('#txtName').val('');
-				$('#txtPhone').val('');
-				$('#txtEmail').val('');
-				$('#txtDetail').val('');
-			}
-		}
-		request.init();
-	</script>
-
-	<script>
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$('.details img').addClass("img-responsive");
 			$('.details img').addClass("hinh");
 		});
