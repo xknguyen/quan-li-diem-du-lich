@@ -86,10 +86,10 @@
 {
 	int i = 0;
 	int j = 0;
-	<div class="container albumhinh">
+	<div class="container trinhanh">
 		<div class="row baiviet">
 			<div class="col-md-12 chitiet">
-				<h1>Hình ảnh về dịch vụ</h1>
+				<h1>Hình về @Model.Name</h1>
 			</div>
 			<div class="col-sm-6" id="slider-thumbs">
 				<!-- Bottom switcher of slider -->
@@ -98,7 +98,7 @@
 					{
 						<li class="col-sm-3">
 							<a class="thumbnail" id="s1name-@i">
-								<img src="@itemimage.Value" alt="@itemimage.Name">
+								<img src="@itemimage.Value" alt="@itemimage.Name" class="img-responsive" />
 							</a>
 						</li>
 						i++;
@@ -116,7 +116,7 @@
 									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 									{
 										<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
-											<img src="@itemimage.Value" alt="@itemimage.Name">
+											<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" />
 										</div>
 										j++;
 									}
@@ -218,7 +218,7 @@
 		<span aria-hidden="true" style="font-size: 50px;">&times;</span>
 		<span class="sr-only">Close</span>
 	</button>
-	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 550px; height: 550px;margin-top: 70px" />
+	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 700px; height: 500px;margin-top: 70px" />
 </div>
 @section scripts{
 	<script src="~/Content/ClientTheme/js/jsExpress.js"></script>
