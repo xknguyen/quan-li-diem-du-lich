@@ -58,7 +58,7 @@ img{margin-bottom:-4px}
 }
 .hide-bullets{list-style:none;margin-left:-40px;margin-top:20px}
 .thumbnail{padding:0}
-.thumbnail img{margin:1px;height:98%;width:98%}
+.thumbnail img{margin:1px;height:70px;width:98%}
 .carousel-inner > .item > img,.carousel-inner > .item > a > img{width:100%}
 /*Dịch vụ*/.dichvu{margin-bottom:10px}
 .dichvu h1{text-align:center;color:#78b43d;font-weight:bold}
