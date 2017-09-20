@@ -40,7 +40,7 @@ img{margin-bottom:-4px}
 .baiviet .chitiet p{font-size:16px}
 .baiviet .chitiet img{margin:auto;display:block}
 /*Giothieu*/
-.trinhanh{border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg,#57badf 0,#0181b1 100%); padding-bottom: 10px}
+.trinhanh{border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg,#57badf 0,#0181b1 100%); padding-bottom: 10px;z-index: 1031}
 .trinhanh .baiviet .chitiet h1{color:#fff}
 .chitiet .chitiet1 h1{text-align:center;color:#0181b1;font-weight:bold}
 .list-inline{text-align:center}
@@ -59,7 +59,7 @@ img{margin-bottom:-4px}
 }
 .hide-bullets{list-style:none;margin-left:-40px;margin-top:20px}
 .thumbnail{padding:0}
-.thumbnail img{margin:1px;height:98%;width:98%}
+.thumbnail img{margin:1px;height:70px;width:98%}
 .carousel-inner > .item > img,.carousel-inner > .item > a > img{width:100%}
 /*Dịch vụ*/.dichvu{margin-bottom:10px}
 .dichvu h1{text-align:center;color:#0181b1;font-weight:bold}

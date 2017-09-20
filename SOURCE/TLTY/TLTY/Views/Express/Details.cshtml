@@ -86,12 +86,12 @@
 {
 	int i = 0;
 	int j = 0;
-	<div class="container trinhanh">
+	<div class="container trinhanh" style="z-index: 1031;">
 		<div class="row baiviet">
 			<div class="col-md-12 chitiet">
 				<h1>Hình về @Model.Name</h1>
 			</div>
-			<div class="col-sm-6" id="slider-thumbs">
+			<div class="col-sm-5" id="slider-thumbs">
 				<!-- Bottom switcher of slider -->
 				<ul class="hide-bullets">
 					@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
@@ -105,7 +105,7 @@
 					}
 				</ul>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-7">
 				<div class="col-xs-12" id="slider">
 					<!-- Top part of the slider -->
 					<div class="row">
@@ -116,7 +116,7 @@
 									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 									{
 										<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
-											<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" />
+											<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" title="Nhấn vào để xem hình lớn." />
 										</div>
 										j++;
 									}
@@ -215,10 +215,10 @@
 </div>
 <div id="myModalImages" class="modal fade" role="dialog">
 	<button type="button" class="close" data-dismiss="modal" style="margin-right: 50px">
-		<span aria-hidden="true" style="font-size: 50px;">&times;</span>
+		<span aria-hidden="true" style="font-size: 50px;color: #fff">&times;</span>
 		<span class="sr-only">Close</span>
 	</button>
-	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 700px; height: 500px;margin-top: 70px" />
+	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 800px; height: 580px" />
 </div>
 @section scripts{
 	<script src="~/Content/ClientTheme/js/jsExpress.js"></script>
