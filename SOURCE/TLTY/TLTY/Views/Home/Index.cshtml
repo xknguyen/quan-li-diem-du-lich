@@ -84,7 +84,7 @@
 			{
 				int i = 0;
 				int j = 0;
-				<div class="container trinhanh">
+				<div class="container trinhanh" style="z-index: 1031;">
 					<div class="row baiviet">
 						<div class="col-md-12 chitiet">
 							<h1 style="color: #fff">Hình về @item.Name</h1>
@@ -94,11 +94,11 @@
 							<ul class="hide-bullets">
 								@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
 								{
-									<li class="col-sm-3">
-										<a class="thumbnail" id="@item.ID-hinh-@i">
-											<img src="@itemimage.Value" alt="@itemimage.Name" class="img-responsive"/>
-										</a>
-									</li>
+								<li class="col-sm-3">
+									<a class="thumbnail" id="@item.ID-hinh-@i">
+										<img src="@itemimage.Value" alt="@itemimage.Name" class="img-responsive" />
+									</a>
+								</li>
 									i++;
 								}
 							</ul>
@@ -114,7 +114,7 @@
 												@foreach (XElement itemimage in XElement.Parse(item.MoreImages).Elements())
 												{
 													<div class="@(j == 0 ? "active item" : "item")" data-slide-number="@j">
-														<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive"/>
+														<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" title="Nhấn vào để xem hình lớn." />
 													</div>
 													j++;
 												}
