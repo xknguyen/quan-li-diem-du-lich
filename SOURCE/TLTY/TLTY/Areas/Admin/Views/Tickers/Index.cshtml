@@ -15,7 +15,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Tên</th>
+						<th style="width: 30%">Tên</th>
                         <th>Giá</th>
                         <th>Trạng thái</th>
                         <th>Tùy chọn</th>
@@ -28,9 +28,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.ID)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
+							<td style="width: 30%">
+								@Html.DisplayFor(modelItem => item.Name)
+							</td>
                             <td>
                                 @item.Price.ToString("N0") VNĐ
                             </td>
