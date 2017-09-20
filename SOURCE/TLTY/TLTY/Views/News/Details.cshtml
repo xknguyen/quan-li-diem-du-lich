@@ -73,7 +73,7 @@
 </div>
 <div class="col-md-8 col-md-offset-2 chitiet">
 	<div class="col-md-12">
-		<h1 >@Model.Name</h1>
+		<h1>@Model.Name</h1>
 		<p><i class="glyphicon glyphicon-calendar" title="Ngày đăng"></i> <span>@string.Format("{0:dd/MM/yyyy}", Model.CreateDate)</span> - <i class="glyphicon glyphicon-comment" title="Lượt xem"></i> <span>@Model.ViewCount</span> - <i class="glyphicon glyphicon-user" title="Người đăng"></i> <span>@Model.UserName</span></p>
 		<img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
 		<p style="font-weight: bold">@Model.Description</p>
@@ -91,10 +91,10 @@
 {
 	int i = 0;
 	int j = 0;
-	<div class="container" style="border: 1px solid aqua; background: #521a61 linear-gradient(55.93deg, purple 0%, navy 100%); padding-bottom: 10px;">
+	<div class="container trinhanh">
 		<div class="row baiviet">
 			<div class="col-md-12 chitiet">
-				<h1 style="color: #fff">Hình ảnh về dịch vụ</h1>
+				<h1 style="color: #fff">Hình về @Model.Name</h1>
 			</div>
 			<div class="col-sm-6" id="slider-thumbs">
 				<!-- Bottom switcher of slider -->
@@ -103,7 +103,7 @@
 					{
 						<li class="col-sm-3">
 							<a class="thumbnail" id="s1name-@i">
-								<img src="@itemimage.Value" alt="@itemimage.Name">
+								<img src="@itemimage.Value" alt="@itemimage.Name" class="img-responsive" />
 							</a>
 						</li>
 						i++;
@@ -121,7 +121,7 @@
 									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 									{
 										<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
-											<img src="@itemimage.Value" alt="@itemimage.Name">
+											<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" />
 										</div>
 										j++;
 									}
@@ -142,7 +142,13 @@
 		</div>
 	</div>
 }
-
+<div id="myModalImages" class="modal fade" role="dialog">
+	<button type="button" class="close" data-dismiss="modal" style="margin-right: 50px">
+		<span aria-hidden="true" style="font-size: 50px;">&times;</span>
+		<span class="sr-only">Close</span>
+	</button>
+	<img class="img-responsive modal-dialog" id="Myid" src="" style="width: 700px; height: 500px;margin-top: 70px" />
+</div>
 <div class="clearfix"></div>
 <div class="col-md-12 dichvu">
 	<hr />
@@ -277,10 +283,22 @@
 			});
 		});
 	</script>
+	<script>
+		//modal
+		$(document).ready(function () {
+			$('img').on('click', function () {
+				var image = $(this).attr('src');
+				$('#myModalImages').on('show.bs.modal', function () {
+					$("#Myid").attr("src", image);
+				});
+			});
+		});
+	</script>
+
 }
 
 @section jsFooter{
-<script src="~/Content/ClientTheme/js/Controller/newsController.js"></script>
+	<script src="~/Content/ClientTheme/js/Controller/newsController.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.details img').addClass("img-responsive");

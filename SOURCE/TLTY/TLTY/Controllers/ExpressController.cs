@@ -107,7 +107,7 @@ namespace TLTY.Controllers
 
 				var fileName = Path.GetFileName(file.FileName);
 				string filename = string.Format("{0}-{1}",requestid, fileName);
-				var path = Path.Combine(Server.MapPath("~/DATA/Upload/"), filename);
+				var path = Path.Combine(Server.MapPath("~/DATA/images/Upload/"), filename);
 				file.SaveAs(path);
 				listIM.Add(filename);
 			}
@@ -116,7 +116,7 @@ namespace TLTY.Controllers
 				XElement xElement = new XElement("Images");
 				foreach (var item in listIM)
 				{
-					xElement.Add(new XElement("Image", ("/DATA/Upload/" + item)));
+					xElement.Add(new XElement("Image", ("/DATA/images/Upload/" + item)));
 				}
 				UpdateImages(requestid, xElement.ToString());
 			}
