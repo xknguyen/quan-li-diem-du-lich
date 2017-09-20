@@ -1,194 +1,194 @@
 ﻿@model List<EntityModel.EF.Content>
 @{
-	var slider = ((List<EntityModel.EF.Content>)ViewBag.SliderNews);
-	ViewBag.Title = "Tin tức - Thung lũng tình yêu";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    var slider = ((List<EntityModel.EF.Content>)ViewBag.SliderNews);
+    ViewBag.Title = "Tin tức - Thung lũng tình yêu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section jsFooter
 {
-	<script src="~/Content/ClientTheme/js/newsSlider.js"></script>
+    <script src="~/Content/ClientTheme/js/newsSlider.js"></script>
 }
 @section header
 {
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-xs12 col-sm-12">
-					<div class="nav">
-						<nav class="navbar navbar-default navbar-fixed-top">
-							<div class="container header-top">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-									<a href="/" title="Thung lũng tình yêu">
-										<img src="~/DATA/images/Logo/logo.png" alt="logo" width="90" height="60" class="img-responsive">
-									</a>
-								</div>
-								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-									<ul class="nav navbar-nav navbar-right" id="menu">
-										<li><a href="/" title="Trang giới thiệu">Giới thiệu</a></li>
-										<li><a href="/dich-vu" title="Trang dịch vụ">Dịch vụ</a></li>
-										<li class="active"><a href="/tin-tuc" title="Trang tin tức">Tin tức</a></li>
-										<li><a href="/bang-gia" title="Trang bảng giá">Bảng giá</a></li>
-										<li><a href="/lien-he" title="Trang liên hệ">Liên hệ</a></li>
-										<li>
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Nhấn để thay đổi giao diện"><i class="glyphicon glyphicon-cog"></i></a>
-											<ul class="dropdown-menu">
-												<li><a href="#theme" onclick="switch_style('theme1'); return false;" id="them1" title="Tinh khôi">Cây cỏ</a></li>
-												<li><a href="#theme" onclick="switch_style('theme2'); return false;" id="them2" title="Huyền ảo">Đất trời</a></li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs12 col-sm-12">
+                    <div class="nav">
+                        <nav class="navbar navbar-default navbar-fixed-top">
+                            <div class="container header-top">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a href="/" title="Thung lũng tình yêu">
+                                        <img src="~/DATA/images/Logo/logo.png" alt="logo" width="90" height="60" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right" id="menu">
+                                        <li><a href="/" title="Trang giới thiệu">Giới thiệu</a></li>
+                                        <li><a href="/dich-vu" title="Trang dịch vụ">Dịch vụ</a></li>
+                                        <li class="active"><a href="/tin-tuc" title="Trang tin tức">Tin tức</a></li>
+                                        <li><a href="/bang-gia" title="Trang bảng giá">Bảng giá</a></li>
+                                        <li><a href="/lien-he" title="Trang liên hệ">Liên hệ</a></li>
+                                        <li>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Nhấn để thay đổi giao diện"><i class="glyphicon glyphicon-cog"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#theme" onclick="switch_style('theme1'); return false;" id="them1" title="Tinh khôi">Cây cỏ</a></li>
+                                                <li><a href="#theme" onclick="switch_style('theme2'); return false;" id="them2" title="Huyền ảo">Đất trời</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 }
 @if (slider != null || slider.Count > 0)
 {
-	int i = 0, j = 0;
-	@section slide
+    int i = 0, j = 0;
+    @section slide
 	{
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner" style="height: 400px">
-							@foreach (var item in slider.Take(4))
-							{
-								<div class="@(i == 0 ? "item active" : "item")">
-									<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
-									<div class="carousel-caption" style="height: 100px">
-										<h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
-										<p>@item.Description</p>
-									</div>
-								</div>
-								i++;
-							}
-						</div>
-						<ul class="list-group col-sm-4" style="height: 100%">
-							@foreach (var item in slider.Take(4))
-							{
-								<li data-target="#myCarousel" data-slide-to="@j" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
-								j++;
-							}
-						</ul>
-						<div class="carousel-controls">
-							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span>
-							</a>
-							<a class="right carousel-control" href="#myCarousel" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" style="height: 400px">
+                            @foreach (var item in slider.Take(4))
+                            {
+                                <div class="@(i == 0 ? "item active" : "item")">
+                                    <img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
+                                    <div class="carousel-caption" style="height: 100px">
+                                        <h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
+                                        <p>@item.Description</p>
+                                    </div>
+                                </div>
+                                i++;
+                            }
+                        </div>
+                        <ul class="list-group col-sm-4" style="height: 100%">
+                            @foreach (var item in slider.Take(4))
+                            {
+                                <li data-target="#myCarousel" data-slide-to="@j" class="list-group-item active" style="height: 25%"><h4>@item.Name</h4></li>
+                                j++;
+                            }
+                        </ul>
+                        <div class="carousel-controls">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    }
 }
 <div id="tin"></div>
 <div class="col-lg-12 baiviet">
-	<p>
-		<i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a>
-	</p>
+    <p>
+        <i class="glyphicon glyphicon-home"></i> <a href="/">Giới thiệu</a>/ <a href="/tin-tuc">Tin tức</a>
+    </p>
 </div>
 
 <div class="col-md-12">
-	<div class="container lg">
-		<h1>Tin tức về khu du lịch</h1>
-	</div>
-	<div class="container gach"></div>
-	<div class="clearfix"></div>
+    <div class="container lg">
+        <h1>Tin tức về khu du lịch</h1>
+    </div>
+    <div class="container gach"></div>
+    <div class="clearfix"></div>
 </div>
 <div class="col-md-12 dichvu">
 
-	@if (Model != null || Model.Count > 0)
-	{
-		foreach (var item in Model)
-		{
-			<div class="col-md-4  col-xs-12 col-sm-6  idichvu" style="height: 400px">
-				<div class="itdichvu">
-					<a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">
-						<img src="@item.Images" class="img-responsive">
-					</a>
-					<a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID" class="thea">
-						<h4>@item.Name</h4>
-					</a>
-					<h5>@item.Description</h5>
-					<div class="icondichvu">
-						<i class="glyphicon glyphicon-comment"></i>
-						<h6 style="">@item.ViewCount</h6>
-					</div>
-					<div class="icondichvu">
-						<i class="glyphicon glyphicon-user"></i>
-						<h6>@item.UserName</h6>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
+    @if (Model != null || Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-md-4  col-xs-12 col-sm-6  idichvu" style="height: 400px">
+                <div class="itdichvu">
+                    <a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">
+                        <img src="@item.Images" class="img-responsive">
+                    </a>
+                    <a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID" class="thea">
+                        <h4>@item.Name</h4>
+                    </a>
+                    <h5>@item.Description</h5>
+                    <div class="icondichvu">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        <h6 style="">@item.ViewCount</h6>
+                    </div>
+                    <div class="icondichvu">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <h6>@item.UserName</h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
 
-		}
-		<div class="clearfix"></div>
-		<div class="col-md-3 col-md-offset-2"></div>
+        }
+        <div class="clearfix"></div>
+        <div class="col-md-3 col-md-offset-2"></div>
 		<!--Phân trang-->
-		if (ViewBag.TotalPage > 1)
-		{
-			var pageDisplay = (int)ViewBag.MaxPage;
-			int totalPage = (int)ViewBag.TotalPage;
-			int currentPage = ((int)ViewBag.Page);
+        if (ViewBag.TotalPage > 1)
+        {
+            var pageDisplay = (int)ViewBag.MaxPage;
+            int totalPage = (int)ViewBag.TotalPage;
+            int currentPage = ((int)ViewBag.Page);
 
-			// Create numeric links
-			var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
-			var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+            // Create numeric links
+            var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+            var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
 
-			var link = "/tin-tuc/";
-			<nav>
-				<ul class="pagination">
-					@if (currentPage > ViewBag.First)
-					{
-						<li><a href="@link?page=@ViewBag.First#tin" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
-						<li>
-							<a href="@link?page=@ViewBag.Prev#tin" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
-						</li>
+            var link = "/tin-tuc/";
+            <nav>
+                <ul class="pagination">
+                    @if (currentPage > ViewBag.First)
+                    {
+                        <li><a href="@link?page=@ViewBag.First#tin" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
+                        <li>
+                            <a href="@link?page=@ViewBag.Prev#tin" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
+                        </li>
 
-					}
-					@for (int i = startPageIndex; i <= endPageIndex; i++)
-					{
-						if (currentPage == i)
-						{
-							<li> <a href="@link?page=@i#tin" class="active" title="Trang @i">@i</a></li>
-						}
-						else
-						{
-							<li><a href="@link?page=@i#tin" title="Trang @i" class="pos">@i</a></li>
-						}
-					}
-					@if (currentPage < totalPage)
-					{
-						<li><a href="@link?page=@ViewBag.Next#tin" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
-						<li> <a href="@link?page=@ViewBag.Last#tin" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
-					}
+                    }
+                    @for (int i = startPageIndex; i <= endPageIndex; i++)
+                    {
+                        if (currentPage == i)
+                        {
+                            <li> <a href="@link?page=@i#tin" class="active" title="Trang @i">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@link?page=@i#tin" title="Trang @i" class="pos">@i</a></li>
+                        }
+                    }
+                    @if (currentPage < totalPage)
+                    {
+                        <li><a href="@link?page=@ViewBag.Next#tin" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+                        <li> <a href="@link?page=@ViewBag.Last#tin" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                    }
 
-				</ul>
-			</nav>
-		}
-		else
-		{
-			<span>Chỉ có 1 trang!</span>
-		}
-	}
-	else
-	{
-		<h3>Đang cập nhật.</h3>
-	}
+                </ul>
+            </nav>
+        }
+        else
+        {
+            <span>Chỉ có 1 trang!</span>
+        }
+    }
+    else
+    {
+        <h3>Đang cập nhật.</h3>
+    }
 </div>
