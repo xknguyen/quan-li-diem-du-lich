@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 //load
 $('body').append('<div id="loadingDiv"><div class="loader"><h3>Đang tải dữ liệu...</h3></div></div>');
 $(window).on('load', function () {
-	setTimeout(removeLoader, 1000);
+	setTimeout(removeLoader, 2000);
 });
 function removeLoader() {
 	$("#loadingDiv").fadeOut(500, function () {
