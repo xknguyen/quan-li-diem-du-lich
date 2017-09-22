@@ -65,7 +65,7 @@
                             @foreach (var item in slider.Take(4))
                             {
                                 <div class="@(i == 0 ? "item active" : "item")">
-                                    <img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px">
+									<img src="@item.Images" class="img-responsive" style="width: 100%;height: 300px" alt="@item.Name">
                                     <div class="carousel-caption" style="height: 100px">
                                         <h4><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Name</a></h4>
                                         <p>@item.Description</p>
@@ -119,7 +119,7 @@
             <div class="col-md-4  col-xs-12 col-sm-6  idichvu" style="height: 400px">
                 <div class="itdichvu">
                     <a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">
-                        <img src="@item.Images" class="img-responsive">
+						<img src="@item.Images" class="img-responsive" alt="@item.Name">
                     </a>
                     <a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID" class="thea">
                         <h4>@item.Name</h4>
