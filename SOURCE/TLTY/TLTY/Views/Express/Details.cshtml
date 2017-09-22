@@ -2,7 +2,7 @@
 @using System.Xml.Linq
 @{
 	var request = ((List<EntityModel.EF.Request>)ViewBag.Request);
-	ViewBag.Title = "Chi tiết: " + @Model.Name;
+	ViewBag.Title = @Model.Name;
 	ViewBag.Keywords = "Thung lũng tình yêu - " + @Model.Name;
 	ViewBag.Descriptions = @Model.Description;
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -72,7 +72,7 @@
 	<div class="col-md-12 chitiet1">
 		<h1>@Model.Name</h1>
 		<p><i class="glyphicon glyphicon-calendar" title="Ngày đăng"></i> <span>@string.Format("{0:dd/MM/yyyy}", Model.CreateDate)</span> - <i class="glyphicon glyphicon-comment" title="Lượt xem"></i> <span>@Model.ViewCount</span> - <i class="glyphicon glyphicon-user" title="Người đăng"></i> <span>@Model.UserName</span></p>
-		<img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive">
+		<img src="@Model.Images" style="margin: auto; display: block;" class="img-responsive" data-toggle="modal" data-target="#myModalImages" title="Nhấn vào để xem hình lớn.">
 		<strong>@Model.Description</strong>
 		<hr />
 		<div style="line-height: 2; font-size: 16px; text-align: center; display: block" class="details">
@@ -116,7 +116,7 @@
 									@foreach (XElement itemimage in XElement.Parse(Model.MoreImages).Elements())
 									{
 										<div class="@(j == 0 ? "active item" : "item")" data-slide-number="0">
-											<img src="@itemimage.Value" alt="@itemimage.Name" data-toggle="modal" data-target="#myModalImages" class="img-responsive" title="Nhấn vào để xem hình lớn." />
+											<img src="@itemimage.Value" alt="@itemimage.Name" class="img-responsive" data-toggle="modal" data-target="#myModalImages" title="Nhấn vào để xem hình lớn." />
 										</div>
 										j++;
 									}
@@ -230,6 +230,9 @@
 		$(document).ready(function () {
 			$('.details img').addClass("img-responsive");
 			$('.details img').addClass("hinh");
+			$('.details img').attr("data-toggle", "modal");
+			$('.details img').attr("data-target", "#myModalImages");
+			$('.details img').attr("title", "Nhấn vào để xem hình lớn.");
 		});
 	</script>
 }
