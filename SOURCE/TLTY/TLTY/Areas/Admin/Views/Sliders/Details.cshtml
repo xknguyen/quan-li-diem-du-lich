@@ -1,69 +1,69 @@
 ﻿@model EntityModel.EF.Slider
 
 @{
-    ViewBag.Title = "Xem chi tiết trình ảnh" + @Model.Name;
-    Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var content = ((List<EntityModel.EF.Content>)ViewBag.Content);
+	ViewBag.Title = "Xem chi tiết trình ảnh" + @Model.Name;
+	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
 }
 
 <div class="modal fade" id="detailModal">
-    <div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
-        <div class="modal-content">
-            <div class="modal-body" style="max-height: 550px;overflow-y: auto;">
+	<div class="modal-dialog modal-lg" style="overflow-y: initial !important;overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+		<div class="modal-content">
+			<div class="modal-body" style="max-height: 550px;overflow-y: auto;">
 				<button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
 				<h3 style="text-align: center">Xem chi tiết ảnh @Model.Name</h3>
-				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
-				<div class="col-md-7">
-                    <dl class="dl-horizontal">
-                        <dt>
-                            Tên:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Name)
-                        </dd>
-                        <dt>
-                            Thứ tự:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.DisplayOrder)
-                        </dd>
-                        <dt>
-                            Nội dung:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.ContentID)
-                        </dd>
-                        <dt>
-                            Thể loại:
-                        </dt>
-                        <dd>
-                            @{
-                                string a = "Tin tức";
-                                if (Model.Status)
-                                {
-                                    a = "Dịch vụ";
-                                }
-                            }@a
-                        </dd>
-                        <dt>
-                            Mô tả:
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Description)
-                        </dd>
-                        <dt>
-                            Ngày tạo:
-                        </dt>
-                        <dd>
-                            @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.UserName)
-                        </dd>
-                    </dl>
-                </div>
-	            <div class="col-md-5">
-		            <img alt="" src="@Model.Link" width="200" height="245" class="img-responsive"/>
-	            </div>
+				<img alt="" src="@Model.Link" style="margin: 0 auto; display: block; width: 100%;height: 300px" class="img-responsive" />
+				<div class="col-md-12">
+					<dl class="dl-horizontal">
+						<dt>
+							Tên:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Name)
+						</dd>
+						<dt>
+							Thứ tự:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.DisplayOrder)
+						</dd>
+						<dt>
+							Nội dung:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.ContentID)
+						</dd>
+						<dt>
+							Nội dung:
+						</dt>
+						<dd>
+							@{
+								string a = "";
+								foreach (var ct in content.Where(x => x.ID == Model.ContentID))
+								{
+									a = ct.Name;
+								}
+							}
+							@a
+						</dd>
+						<dt>
+							Mô tả:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Description)
+						</dd>
+						<dt>
+							Ngày tạo:
+						</dt>
+						<dd>
+							@string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.UserName)
+						</dd>
+					</dl>
+				</div>
 				<div class="col-md-12">
 					<hr />
 					<div class="form-actions no-color text-center">
@@ -71,10 +71,10 @@
 						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
 					</div>
 				</div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script src="~/Content/AdminTheme/js/edit-modal.js"></script>

@@ -19,6 +19,7 @@ namespace TLTY.Areas.Admin.Controllers
         // GET: Admin/Requests
         public ActionResult Index()
         {
+	        ViewBag.Content = _db.Contents.ToList();
             var requests = _db.Requests;
             return View(requests.ToList());
         }
@@ -36,6 +37,7 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+			ViewBag.Content = _db.Contents.ToList();
             request.Status = true;
             _db.SaveChanges();
             return View(request);

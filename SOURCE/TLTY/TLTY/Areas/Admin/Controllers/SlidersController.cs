@@ -19,6 +19,7 @@ namespace TLTY.Areas.Admin.Controllers
         // GET: Admin/Sliders
         public ActionResult Index()
         {
+			ViewBag.Content = _db.Contents.ToList();
             var sliders = _db.Sliders;
             return View(sliders.ToList());
         }
@@ -36,6 +37,7 @@ namespace TLTY.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+			ViewBag.Content = _db.Contents.ToList();
             return View(slider);
         }
 

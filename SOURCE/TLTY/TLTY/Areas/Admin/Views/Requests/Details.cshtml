@@ -1,61 +1,70 @@
 ﻿@model EntityModel.EF.Request
 @using System.Xml.Linq
 @{
-    ViewBag.Title = "Xem chi tiết phản hồi " + @Model.Name;
-    Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var content = ((List<EntityModel.EF.Content>)ViewBag.Content);
+	ViewBag.Title = "Xem chi tiết phản hồi " + @Model.Name;
+	Layout = null;// "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
 }
 
 <div class="modal fade" id="detailModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body" style="max-height: 550px;overflow-y: auto;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-body" style="max-height: 550px;overflow-y: auto;">
 				<button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span>
 					<span class="sr-only">Close</span>
 				</button>
 				<h3 style="text-align: center">Xem chi tiết phản hồi @Model.Name</h3>
 				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
-	            <div class="col-md-7">
-		            <dl class="dl-horizontal">
-			            <dt>
-				            Tên:
-			            </dt>
-			            <dd>
-				            @Html.DisplayFor(model => model.Name)
-			            </dd>
-			            <dt>
-				            Email:
-			            </dt>
-			            <dd>
-				            @Html.DisplayFor(model => model.Email)
-			            </dd>
-			            <dt>
-				            Điện thoại:
-			            </dt>
-			            <dd>
-				            @Html.DisplayFor(model => model.Phone)
-			            </dd>
-			            <dt>
-				            Thể loại:
-			            </dt>
-			            <dd>
-				            @Html.DisplayFor(model => model.ContentID)
-			            </dd>
-			            <dt>
-				            Chi tiết:
-			            </dt>
-			            <dd>
-				            @Html.DisplayFor(model => model.Detail)
-			            </dd>
-			            <dt>
-				            Ngày tạo:
-			            </dt>
+				<div class="col-md-7">
+					<dl class="dl-horizontal">
+						<dt>
+							Tên:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Name)
+						</dd>
+						<dt>
+							Email:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Email)
+						</dd>
+						<dt>
+							Điện thoại:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Phone)
+						</dd>
+						<dt>
+							Nội dung:
+						</dt>
+						<dd>
+							@{
+								string a = "";
+								foreach (var ct in content.Where(x => x.ID == Model.ContentID))
+								{
+									a = ct.Name;
+								}
+							}
+							@a
+						</dd>
+						<dt>
+							Chi tiết:
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Detail)
+						</dd>
+						<dt>
+							Ngày tạo:
+						</dt>
 
-			            <dd>
-				            @string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.Name)
-			            </dd>
-		            </dl>
-	            </div>
+						<dd>
+							@string.Format("{0:dd-MM-yyyy}", Model.CreateDate) - Tạo bởi: @Html.DisplayFor(model => model.Name)
+						</dd>
+					</dl>
+				</div>
 				<div class="clearfix"></div>
 				<div class="col-md-12" style="border: 1px solid aqua; margin: 10px 10px 10px 10px">
 					<div class="row" style="margin: 10px 10px 10px 10px">
@@ -124,10 +133,10 @@
 						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</button>
 					</div>
 				</div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
 </div>
 <script>
 	jQuery(document).ready(function ($) {

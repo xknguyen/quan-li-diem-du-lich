@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var content = ((List<EntityModel.EF.Content>)ViewBag.Content);
 }
 
 @section header{
@@ -15,9 +16,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-						<th style="width: 30%">Tên</th>
+						<th style="width: 20%">Tên</th>
                         <th>Điện thoại</th>
-                        <th>Thể loại</th>
+						<th style="width: 30%">Nội dung</th>
                         <th>Trạng thái</th>
                         <th>Tùy chọn</th>
                     </tr>
@@ -25,19 +26,26 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
+	                    string a = "";
+						foreach (var ct in content.Where(x=>x.ID == item.ContentID))
+						{
+							a = ct.Name;
+						}
                         <tr class="odd gradeX" role="row" id="item_@item.ID">
                             <td>
                                 @Html.DisplayFor(modelItem => item.ID)
                             </td>
-							<td style="width: 30%">
+							<td style="width: 20%">
 								@Html.DisplayFor(modelItem => item.Name)
 							</td>
-                            <td>
+                            <td >
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ContentID)
-                            </td>
+							<td style="width: 30%">
+								<a href="/Admin/Contents/Details/@item.ContentID" title="Xem chi tiết nội dung @a" class="detail-link" style="text-decoration: none">
+									@a
+								</a>
+							</td>
                             <td class="center" style="text-align: center;">
                                 <a href="#" class="btn-active" title="Kích hoạt" data-id="@item.ID" style="text-decoration: none">@(item.Status ? "Kích hoạt" : "Khóa")</a>
                             </td>
