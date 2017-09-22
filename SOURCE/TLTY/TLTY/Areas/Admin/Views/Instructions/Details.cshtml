@@ -14,8 +14,8 @@
 					<span class="sr-only">Close</span>
 				</button>
 				<h3 style="text-align: center">Xem chi tiết giới thiệu @Model.Name</h3>
-				<img src="~/Content/ClientTheme/image/1.png" class="img-responsive" />
-				<div class="col-md-7">
+				<img alt="" src="@Model.Images" style="margin: 0 auto; display: block; width: 100%;height: 300px" class="img-responsive" />
+				<div class="col-md-12">
 					<dl class="dl-horizontal">
 						<dt>
 							Tiêu đề:
@@ -37,21 +37,19 @@
 						</dd>
 					</dl>
 				</div>
-				<div class="col-md-5">
-					<img alt="" src="@Model.Images" width="200" height="245" class="img-responsive" />
-					<div class="clearfix"></div>
-				</div>
 				<div class="clearfix"></div>
-				<div class="col-md-12" style="border: 1px solid aqua; margin: 10px 10px 10px 10px">
-					<div class="row" style="margin: 10px 10px 10px 10px">
-						<div class="col-sm-5" id="slider-thumbs">
-							<label class="col-md-12">Danh sách hình ảnh</label>
-							<!-- Bottom switcher of slider -->
-							<ul class="hide-bullets">
-								@if (Model.MoreImages != null)
-								{
-									int i = 0;
-									foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+
+				@if (Model.MoreImages != null)
+				{
+					int i = 0, j = 0;
+					<div class="col-md-12" style="border: 1px solid aqua; margin: 10px 10px 10px 10px">
+						<div class="row" style="margin: 10px 10px 10px 10px">
+							<div class="col-sm-5" id="slider-thumbs">
+								<label class="col-md-12">Danh sách hình ảnh</label>
+								<!-- Bottom switcher of slider -->
+								<ul class="hide-bullets">
+
+									@foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
 									{
 										<li class="col-sm-3">
 											<a class="thumbnail" id="carousel-selector-@i">
@@ -60,49 +58,48 @@
 										</li>
 										i++;
 									}
-								}
-							</ul>
-						</div>
-						<div class="col-sm-7">
-							<div class="col-xs-12" id="slider">
-								<!-- Top part of the slider -->
-								<div class="row">
-									<div class="col-sm-12" id="carousel-bounding-box">
-										<div class="carousel slide" id="myCarousel">
-											<!-- Carousel items -->
-											<div class="carousel-inner">
-												@if (Model.MoreImages != null)
-												{
-													int i = 0;
-													foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
+
+								</ul>
+							</div>
+							<div class="col-sm-7">
+								<div class="col-xs-12" id="slider">
+									<!-- Top part of the slider -->
+									<div class="row">
+										<div class="col-sm-12" id="carousel-bounding-box">
+											<div class="carousel slide" id="myCarousel">
+												<!-- Carousel items -->
+												<div class="carousel-inner">
+
+													@foreach (XElement item in XElement.Parse(Model.MoreImages).Elements())
 													{
 
 														string hiteam = "item";
-														if (i == 0)
+														if (j == 0)
 														{
 															hiteam = "active item";
 														}
 														<div class="@hiteam" data-slide-number="i">
 															<img src="@item.Value">
 														</div>
-														i++;
+														j++;
 													}
-												}
+												</div>
+												<!-- Carousel nav -->
+												<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+													<span class="fa fa-arrow-left" style="margin-top: 150px"></span>
+												</a>
+												<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+													<span class="fa fa-arrow-right" style="margin-top: 150px"></span>
+												</a>
 											</div>
-											<!-- Carousel nav -->
-											<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-												<span class="fa fa-arrow-left" style="margin-top: 150px"></span>
-											</a>
-											<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-												<span class="fa fa-arrow-right" style="margin-top: 150px"></span>
-											</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				}
+
 				<div class="col-md-12">
 					<hr />
 					<div class="form-actions no-color text-center">
