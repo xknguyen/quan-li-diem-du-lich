@@ -76,7 +76,7 @@
 		<div class="col-lg-12 baiviet">
 			<div class="col-md-8 col-md-offset-2 chitiet">
 				<h1>@item.Name</h1>
-				<img src="@item.Images" class="img-responsive">
+				<img src="@item.Images" class="img-responsive" data-toggle="modal" data-target="#myModalImages" title="Nhấn vào để xem hình lớn." alt="@item.Name">
 				@Html.Raw(item.Detail)
 			</div>
 			<div class="clearfix"></div>
