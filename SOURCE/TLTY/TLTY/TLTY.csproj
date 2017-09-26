@@ -1174,8 +1174,7 @@
     <Content Include="Content\ClientTheme\image\2.jpg" />
     <Content Include="Content\ClientTheme\image\3.png" />
     <Content Include="Content\ClientTheme\image\4.jpg" />
-    <Content Include="Content\ClientTheme\image\Express\switch\XE-DIEN.jpg" />
-    <Content Include="Content\ClientTheme\image\Express\switch\XE-LUA.jpg" />
+    <Content Include="Content\ClientTheme\image\bg.jpg" />
     <Content Include="Content\ClientTheme\image\tlty.png" />
     <Content Include="Content\ClientTheme\js\bootstrap.js" />
     <Content Include="Content\ClientTheme\js\bootstrap.min.js" />
@@ -1213,6 +1212,10 @@
     <Content Include="DATA\images\Express\IMG_1651.jpg" />
     <Content Include="DATA\images\Express\k-du-lich-nuoc-ngoai-den-vn-370x250.jpg" />
     <Content Include="DATA\images\Instruction\1.png" />
+    <Content Include="DATA\images\Instruction\2.jpg" />
+    <Content Include="DATA\images\Instruction\21.png" />
+    <Content Include="DATA\images\Instruction\3.png" />
+    <Content Include="DATA\images\Instruction\4.jpg" />
     <Content Include="DATA\images\Logo\logo.png" />
     <Content Include="DATA\images\News\11-09-2017-1jpg1.jpg" />
     <Content Include="DATA\images\News\12-09-2017-1.jpg" />
@@ -1224,10 +1227,11 @@
     <Content Include="DATA\images\News\du-khach-di-bo.jpg" />
     <Content Include="DATA\images\News\sp-du-lich-tay-nguyen.jpg" />
     <Content Include="DATA\images\News\trinh-dien-thoi-trang-hue2017.jpg" />
-    <Content Include="DATA\images\Slider\1.jpg" />
     <Content Include="DATA\images\Slider\2.jpg" />
     <Content Include="DATA\images\Slider\3.jpg" />
     <Content Include="DATA\images\Slider\4.jpg" />
+    <Content Include="DATA\images\Slider\XE-DIEN.jpg" />
+    <Content Include="DATA\images\Slider\XE-LUA.jpg" />
     <Content Include="DATA\Upload\1-k-du-lich-nuoc-ngoai-den-vn-370x250.jpg" />
     <Content Include="DATA\Upload\1-XE-LUA.jpg" />
     <Content Include="DATA\Upload\2-anh-quan-oi-dung-so-v-1504763467-400.jpg" />
@@ -1357,6 +1361,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ClientTheme\image\Express\switch\" />
     <Folder Include="DATA\images\Upload\" />
     <Folder Include="Models\" />
   </ItemGroup>
