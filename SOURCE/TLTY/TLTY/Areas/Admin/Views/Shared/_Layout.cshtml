@@ -1,11 +1,11 @@
 ﻿@using TLTY.Areas.Admin.Models
-@{
+@*@{
 	var session = (UserLogin)Session[Constants.USER_SESSION];
 	if (session == null)
 	{
 		Response.RedirectToRoute("~/Admin/Login/Index");
 	}
-}
+}*@
 <!DOCTYPE html>
 <html>
 <head>

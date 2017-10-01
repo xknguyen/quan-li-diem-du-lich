@@ -18,25 +18,21 @@ namespace TLTY.Areas.Admin.Models
 				return false;
 			}
 
-			List<string> privilegeLevels = this.GetCredentialByLoggedInUser(session.UserName);
+			List<string> privilegeLevels = this.GetCredentialByLoggedInUser();
 
 			if (privilegeLevels.Contains(this.PathID) || session.AccountGroupID == Constants.ADMIN_GROUP)
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
+			return false;
 		}
 
 		protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
 		{
 			filterContext.Result = new RedirectResult("~/Admin/Home/NotificationAuthorize");
-			//filterContext.Redirect("~/Admin/Login");
 		}
 
-		private List<string> GetCredentialByLoggedInUser(string userName)
+		private List<string> GetCredentialByLoggedInUser()
 		{
 			var credentials = (List<string>)HttpContext.Current.Session[Constants.SESSION_CREDENTIALS];
 			return credentials;
