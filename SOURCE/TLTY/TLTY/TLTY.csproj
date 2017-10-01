@@ -1181,8 +1181,6 @@
     <Content Include="Content\ClientTheme\css\icon.css" />
     <Content Include="Content\ClientTheme\js\chucnang.js" />
     <Content Include="Content\ClientTheme\js\Controller\contactController.js" />
-    <Content Include="Content\ClientTheme\js\Controller\expressController.js" />
-    <Content Include="Content\ClientTheme\js\Controller\newsController.js" />
     <Content Include="Content\ClientTheme\js\jgallery.js" />
     <Content Include="Content\ClientTheme\js\jgallery.min.js" />
     <Content Include="Content\ClientTheme\js\jquery-2.0.3.min.js" />
