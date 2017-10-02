@@ -103,7 +103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2017 15:33:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>09/20/2017 08:41:59</publishTime>
+      <publishTime>10/01/2017 15:56:04</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Nav.cshtml">
       <publishTime>09/15/2017 20:30:21</publishTime>
@@ -157,7 +157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:35</publishTime>
     </File>
     <File Include="bin/EntityModel.dll">
-      <publishTime>09/26/2017 10:57:40</publishTime>
+      <publishTime>10/02/2017 14:29:05</publishTime>
     </File>
     <File Include="bin/jQuery.Validation.Unobtrusive.Native.dll">
       <publishTime>09/15/2017 19:42:05</publishTime>
@@ -190,7 +190,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2017 07:27:37</publishTime>
     </File>
     <File Include="bin/TLTY.dll">
-      <publishTime>09/26/2017 10:59:29</publishTime>
+      <publishTime>10/02/2017 14:42:27</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -3420,6 +3420,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/ClientTheme/image/4.jpg">
       <publishTime>08/28/2017 07:27:34</publishTime>
     </File>
+    <File Include="Content/ClientTheme/image/bg.jpg">
+      <publishTime>09/14/2017 20:21:55</publishTime>
+    </File>
     <File Include="Content/ClientTheme/image/Express/switch/XE-DIEN.jpg">
       <publishTime>08/28/2017 07:27:34</publishTime>
     </File>
@@ -3469,7 +3472,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 08:41:59</publishTime>
     </File>
     <File Include="Content/ClientTheme/js/theme.js">
-      <publishTime>09/20/2017 08:41:59</publishTime>
+      <publishTime>10/02/2017 14:04:22</publishTime>
     </File>
     <File Include="Content/ClientTheme/js/tinycolor-0.9.16.min.js">
       <publishTime>08/28/2017 07:27:34</publishTime>
@@ -3579,6 +3582,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="DATA/images/Instruction/1.png">
       <publishTime>09/07/2017 16:46:52</publishTime>
     </File>
+    <File Include="DATA/images/Instruction/2.jpg">
+      <publishTime>09/18/2017 08:34:35</publishTime>
+    </File>
+    <File Include="DATA/images/Instruction/21.png">
+      <publishTime>09/18/2017 08:38:44</publishTime>
+    </File>
+    <File Include="DATA/images/Instruction/3.png">
+      <publishTime>09/18/2017 08:37:02</publishTime>
+    </File>
+    <File Include="DATA/images/Instruction/4.jpg">
+      <publishTime>09/18/2017 08:37:56</publishTime>
+    </File>
     <File Include="DATA/images/Logo/logo.png">
       <publishTime>09/10/2017 23:28:45</publishTime>
     </File>
@@ -3623,6 +3638,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="DATA/images/Slider/4.jpg">
       <publishTime>09/11/2017 15:45:42</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/XE-DIEN.jpg">
+      <publishTime>09/15/2017 20:11:35</publishTime>
+    </File>
+    <File Include="DATA/images/Slider/XE-LUA.jpg">
+      <publishTime>09/15/2017 14:57:09</publishTime>
     </File>
     <File Include="DATA/Upload/1-k-du-lich-nuoc-ngoai-den-vn-370x250.jpg">
       <publishTime>09/15/2017 15:06:04</publishTime>
@@ -3760,10 +3781,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2017 17:22:11</publishTime>
     </File>
     <File Include="Views/Contacts/Index.cshtml">
-      <publishTime>09/20/2017 08:47:04</publishTime>
+      <publishTime>10/01/2017 15:15:16</publishTime>
     </File>
     <File Include="Views/Express/Details.cshtml">
-      <publishTime>09/22/2017 16:15:14</publishTime>
+      <publishTime>10/01/2017 15:14:09</publishTime>
     </File>
     <File Include="Views/Express/Index.cshtml">
       <publishTime>09/22/2017 16:07:22</publishTime>
@@ -3772,13 +3793,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 17:57:35</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/22/2017 14:37:49</publishTime>
+      <publishTime>10/01/2017 15:01:43</publishTime>
     </File>
     <File Include="Views/Home/Slider.cshtml">
       <publishTime>09/20/2017 08:42:00</publishTime>
     </File>
     <File Include="Views/News/Details.cshtml">
-      <publishTime>09/22/2017 16:12:31</publishTime>
+      <publishTime>10/01/2017 15:15:52</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
       <publishTime>09/22/2017 16:07:52</publishTime>
@@ -3790,10 +3811,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2017 10:31:06</publishTime>
     </File>
     <File Include="Views/Shared/_header.cshtml">
-      <publishTime>09/19/2017 10:35:47</publishTime>
+      <publishTime>10/02/2017 14:04:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/25/2017 10:45:05</publishTime>
+      <publishTime>10/01/2017 14:55:17</publishTime>
     </File>
     <File Include="Views/Shared/_Layout1.cshtml">
       <publishTime>09/12/2017 14:51:02</publishTime>
