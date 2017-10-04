@@ -32,10 +32,12 @@ function set_style_from_cookie() {
 	}
 }
 
+//Lưu cookie
 function set_cookie(cookieName, cookieValue, lifespanInDays) {
 	document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + "; max-age=" + 60 * 60 * 24 * lifespanInDays + "; path=/";
 }
 
+//Gọi cookie lên
 function get_cookie(cookieName) {
 	var cookieString = document.cookie;
 	var re = new RegExp("(^|;)[\s]*" + cookieName + "=([^;]*)");
