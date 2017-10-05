@@ -85,7 +85,7 @@ namespace TLTY.Areas.Admin.Controllers
 			}
 			else if (account.Phone.Length > 15)
 			{
-				SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự hoặc thấp hơn 10 ký tự xin hãy kiểm tra lại!", "error");
+				SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự!", "error");
 			}
 			else
 			{
@@ -192,9 +192,9 @@ namespace TLTY.Areas.Admin.Controllers
 				{
 					SetAlert("<i class='fa fa-times'></i> Email quá 250 ký tự hoặc thấp hơn 4 ký tự xin hãy kiểm tra lại!", "error");
 				}
-				else if (account.Phone.Length > 15 || account.UserName.Length < 10)
+				else if (account.Phone.Length > 15)
 				{
-					SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự hoặc thấp hơn 10 ký tự xin hãy kiểm tra lại!", "error");
+					SetAlert("<i class='fa fa-times'></i> Số điện thoại quá 15 ký tự!", "error");
 				}
 				else if (account.Birthday > DateTime.Parse("1/1/2017") || account.Birthday < DateTime.Parse("1/1/1950"))
 				{
